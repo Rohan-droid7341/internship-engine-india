@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**44 open roles · 48 new this week · 3,541 companies tracked · updated Jul 05, 2026 at 03:46 UTC**
+**41 open roles · 45 new this week · 3,541 companies tracked · updated Jul 05, 2026 at 07:33 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -61,7 +61,7 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 | Walleye Capital | Volatility Trading Developer Intern (Summer 2027) | Quant | New York, New York | Jun 01, 2026 | [Apply](https://job-boards.greenhouse.io/walleyecapital-external-students/jobs/4679434006) |
 | Ellipsis Labs | Software Engineer - 2027 Interns | Software | New York, New York | Mar 26, 2026 | [Apply](https://jobs.ashbyhq.com/ellipsislabs/02136b22-35b1-4b3d-8bef-567c3380a849) |
 
-## Fall 2026  (37 open)
+## Fall 2026  (34 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
@@ -71,9 +71,6 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 | Figure | Firmware Intern [Fall 2026] | Hardware | San Jose, CA | Jun 22, 2026 | [Apply](https://job-boards.greenhouse.io/figureai/jobs/4691070006) |
 | Intuitive Surgical ✓ | Computer Vision Engineering Intern - Fall 2026 | Data & ML/AI | Sunnyvale, CA, United States | Jun 22, 2026 | [Apply](https://jobs.smartrecruiters.com/Intuitive/744000133458290) |
 | ABB ✓ | AI & Data Scientist  Intern - Fall 2026 🛂 | Data & ML/AI | USA, NC, Cary | Jun 18, 2026 | [Apply](https://abb.wd3.myworkdayjobs.com/external_career_page/job/USA-NC-Cary/AI---Data-Scientist-AI-Intern---Fall-2026_JR00036225) |
-| TD Bank ✓ | 2026 Fall Co-op - Global Technology Solutions - Cyber Security | Security | Mount Laurel, New Jersey | Jun 18, 2026 | [Apply](https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2026-Fall-Co-op---Global-Technology---Solutions---Cyber-Security_R_1495397) |
-| TD Bank ✓ | 2026 Fall Co-op - Global Technology Solutions - Data Engineer | Data & ML/AI | Mount Laurel, New Jersey | Jun 18, 2026 | [Apply](https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2026-Fall-Co-op---Global-Technology-Solutions---Data-Engineer_R_1495653) |
-| TD Bank ✓ | 2026 Fall Co-op - Global Technology Solutions - Software Engineer (SWE) | Software | Mount Laurel, New Jersey | Jun 18, 2026 | [Apply](https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Mount-Laurel-New-Jersey/XMLNAME-2026-Fall-Co-op---Global-Technology-Solutions---Software-Engineer--SWE-_R_1495659) |
 | SoloPulse | Software Engineer Intern/Co-Op - Fall 2026 | Software | Peachtree Corners, GA | Jun 16, 2026 | [Apply](https://jobs.lever.co/solopulseco/00fbde18-a387-4c9f-97d4-77059aec7b56) |
 | Vertex Pharmaceuticals ✓ | Vertex Fall Co-op 2026, AI and Governance 🛂 | Data & ML/AI | Boston, MA | Jun 09, 2026 | [Apply](https://vrtx.wd501.myworkdayjobs.com/vertex_careers/job/Boston-MA/Vertex-Fall-Co-op-2026--AI-and-Governance_REQ-28615-1) |
 | 1Password | Developer Intern, Trust Platforms - Fall 2026 | Software | Remote (United States / Canada) | Jun 09, 2026 | [Apply](https://jobs.ashbyhq.com/1password/8f8774dc-e400-48b1-8100-c6840b8eaed1) |
@@ -137,10 +134,13 @@ Stop refreshing career pages. This is each company's **first intern posting last
 _867 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). "by Nov 05" = the role was already up when last cycle's reference window opened - treat it as a latest bound. "waiting" means not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 5 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 8 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| TD Bank | 2026 Fall Co-op - Global Technology Solutions - Cyber Security | Fall 2026 | 2026-07-05 |
+| TD Bank | 2026 Fall Co-op - Global Technology Solutions - Data Engineer | Fall 2026 | 2026-07-05 |
+| TD Bank | 2026 Fall Co-op - Global Technology Solutions - Software Engineer (SWE) | Fall 2026 | 2026-07-05 |
 | Verkada | Backend Software Engineering Intern - Fall 2026 | Fall 2026 | 2026-07-02 |
 | CACI | AI/ML Engineering Co-op - Fall 2026 | Fall 2026 | 2026-07-02 |
 | OMERS | Intern, AI Enablement & Adoption Specialist (Fall 2026, 4 Months) - New York | Fall 2026 | 2026-07-02 |
@@ -164,7 +164,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,541 companies across 11 ATS platforms · 97% fetch success · completed in 253.9s · median detection latency 2568 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,541 companies across 11 ATS platforms · 99% fetch success · completed in 253.7s · median detection latency 2568 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
