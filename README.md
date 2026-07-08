@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**41 open roles · 13 new this week · 3,589 companies tracked · updated Jul 07, 2026 at 23:08 UTC**
+**41 open roles · 13 new this week · 3,589 companies tracked · updated Jul 08, 2026 at 02:59 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -117,13 +117,13 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | 🎯 Tower Research Capital | Jul 05 | dropped Jul 05 | ✅ [open now](https://www.tower-research.com/open-positions/?gh_jid=8044334) |
 | 🎯 Amazon | May 13 | dropped May 13 · closed | 🗓️ dropped |
 | 🎯 Western Digital | Jun 28 | dropped Jun 28 · closed | 🗓️ dropped |
-| Citadel | ~Aug | ~Aug · in ~25d | ⏳ waiting |
-| Citadel Securities | ~Aug | ~Aug · in ~25d | ⏳ waiting |
-| Databricks | ~Aug | ~Aug · in ~25d | ⏳ waiting |
-| Google | ~Aug | ~Aug · in ~25d | ⏳ waiting |
-| Jane Street | ~Aug | ~Aug · in ~25d | ⏳ waiting |
-| Meta | ~Aug | ~Aug · in ~25d | ⏳ waiting |
-| Optiver | ~Aug | ~Aug · in ~25d | ⏳ waiting |
+| Citadel | ~Aug | ~Aug · in ~24d | ⏳ waiting |
+| Citadel Securities | ~Aug | ~Aug · in ~24d | ⏳ waiting |
+| Databricks | ~Aug | ~Aug · in ~24d | ⏳ waiting |
+| Google | ~Aug | ~Aug · in ~24d | ⏳ waiting |
+| Jane Street | ~Aug | ~Aug · in ~24d | ⏳ waiting |
+| Meta | ~Aug | ~Aug · in ~24d | ⏳ waiting |
+| Optiver | ~Aug | ~Aug · in ~24d | ⏳ waiting |
 | Hudson River Trading | ~Sep | ~Sep | ⏳ waiting |
 | Stripe | ~Sep | ~Sep | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct | ⏳ waiting |
@@ -166,7 +166,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,589 companies across 11 ATS platforms · 98% fetch success · completed in 253.9s · median detection latency 1206 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,589 companies across 11 ATS platforms · 99% fetch success · completed in 269.7s · median detection latency 1206 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
