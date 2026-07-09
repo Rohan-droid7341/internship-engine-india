@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**42 open roles · 6 new this week · 3,593 companies tracked · updated Jul 09, 2026 at 21:41 UTC**
+**41 open roles · 4 new this week · 3,593 companies tracked · updated Jul 09, 2026 at 23:18 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -50,11 +50,10 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 
 ---
 
-## Summer 2027  (9 open)
+## Summer 2027  (8 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
-| Northrop Grumman | 2027 Intern Software Engineer 🇺🇸 🆕 | Software | United States-Florida-Melbourne | Jul 08, 2026 | [Apply](https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Florida-Melbourne/XMLNAME-2027-Intern-Software-Engineer_R10239275) |
 | Tower Research Capital ✓ | Quantitative Developer Intern - Summer 2027 | Quant | New York, Chicago | Jul 05, 2026 | [Apply](https://www.tower-research.com/open-positions/?gh_jid=8044334) |
 | IMC Trading | Software Engineer Intern - Summer 2027 | Software | Chicago, United States | Jul 01, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4823924101) |
 | IMC Trading | Machine Learning Research Intern - Summer 2027 - Chicago | Data & ML/AI | Chicago, United States | Jul 01, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4907430101) |
@@ -117,9 +116,9 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | 🎯 Anduril | Jun 10 | dropped Jun 10 | ✅ [open now](https://boards.greenhouse.io/andurilindustries/jobs/5148079007?gh_jid=5148079007) |
 | 🎯 IMC Trading | Jul 01 | dropped Jul 01 | ✅ [open now](https://job-boards.eu.greenhouse.io/imc/jobs/4823924101) |
 | 🎯 Tower Research Capital | Jul 05 | dropped Jul 05 | ✅ [open now](https://www.tower-research.com/open-positions/?gh_jid=8044334) |
-| 🎯 Northrop Grumman | Jul 08 | dropped Jul 08 | ✅ [open now](https://ngc.wd1.myworkdayjobs.com/Northrop_Grumman_External_Site/job/United-States-Florida-Melbourne/XMLNAME-2027-Intern-Software-Engineer_R10239275) |
 | 🎯 Amazon | May 13 | dropped May 13 · closed | 🗓️ dropped |
 | 🎯 Western Digital | Jun 28 | dropped Jun 28 · closed | 🗓️ dropped |
+| 🎯 Northrop Grumman | Jul 08 | dropped Jul 08 · closed | 🗓️ dropped |
 | Citadel | ~Aug | ~Aug · in ~23d | ⏳ waiting |
 | Citadel Securities | ~Aug | ~Aug · in ~23d | ⏳ waiting |
 | Databricks | ~Aug | ~Aug · in ~23d | ⏳ waiting |
@@ -140,6 +139,7 @@ _25 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-S
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Northrop Grumman | 2027 Intern Software Engineer | Summer 2027 | 2026-07-09 |
 | 1Password | Developer Intern, Trust Platforms - Fall 2026 | Fall 2026 | 2026-07-09 |
 | State Street | BestX AI Engineer, Full-time Internship (July - Dec 2026) | Fall 2026 | 2026-07-09 |
 | Dmainc | Software Development Intern - Fall 2026 | Fall 2026 | 2026-07-08 |
@@ -179,7 +179,6 @@ _25 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-S
 | Snowflake | Software Engineer Intern - Berlin (2026) | Fall 2026 | 2026-06-30 |
 | Snowflake | Software Engineer Intern (AI/ML) - 2026 | Fall 2026 | 2026-06-30 |
 | Snowflake | Research Intern (AI) - 2026 | Fall 2026 | 2026-06-30 |
-| TELUS Digital | Data Science Intern (Argentina) - Year Round 2026 | Fall 2026 | 2026-06-30 |
 
 </details>
 
@@ -198,7 +197,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,593 companies across 12 ATS platforms · 95% fetch success · completed in 249.9s · median detection latency 1064 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,593 companies across 12 ATS platforms · 98% fetch success · completed in 265.2s · median detection latency 1064 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
