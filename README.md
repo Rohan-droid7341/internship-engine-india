@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**39 open roles · 4 new this week · 3,593 companies tracked · updated Jul 12, 2026 at 22:57 UTC**
+**39 open roles · 3 new this week · 3,593 companies tracked · updated Jul 13, 2026 at 03:22 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -117,13 +117,13 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | 🎯 Amazon | May 13 | dropped May 13 · closed | 🗓️ dropped |
 | 🎯 Western Digital | Jun 28 | dropped Jun 28 · closed | 🗓️ dropped |
 | 🎯 Northrop Grumman | Jul 08 | dropped Jul 08 · closed | 🗓️ dropped |
-| Citadel | ~Aug | ~Aug · in ~20d | ⏳ waiting |
-| Citadel Securities | ~Aug | ~Aug · in ~20d | ⏳ waiting |
-| Databricks | ~Aug | ~Aug · in ~20d | ⏳ waiting |
-| Google | ~Aug | ~Aug · in ~20d | ⏳ waiting |
-| Jane Street | ~Aug | ~Aug · in ~20d | ⏳ waiting |
-| Meta | ~Aug | ~Aug · in ~20d | ⏳ waiting |
-| Optiver | ~Aug | ~Aug · in ~20d | ⏳ waiting |
+| Citadel | ~Aug | ~Aug · in ~19d | ⏳ waiting |
+| Citadel Securities | ~Aug | ~Aug · in ~19d | ⏳ waiting |
+| Databricks | ~Aug | ~Aug · in ~19d | ⏳ waiting |
+| Google | ~Aug | ~Aug · in ~19d | ⏳ waiting |
+| Jane Street | ~Aug | ~Aug · in ~19d | ⏳ waiting |
+| Meta | ~Aug | ~Aug · in ~19d | ⏳ waiting |
+| Optiver | ~Aug | ~Aug · in ~19d | ⏳ waiting |
 | Hudson River Trading | ~Sep | ~Sep | ⏳ waiting |
 | Stripe | ~Sep | ~Sep | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct | ⏳ waiting |
@@ -195,7 +195,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,593 companies across 12 ATS platforms · 95% fetch success · completed in 260.1s · median detection latency 1064 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,593 companies across 12 ATS platforms · 99% fetch success · completed in 226.2s · median detection latency 1064 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
