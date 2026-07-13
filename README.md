@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**42 open roles · 8 new this week · 3,641 companies tracked · updated Jul 13, 2026 at 21:03 UTC**
+**41 open roles · 8 new this week · 3,641 companies tracked · updated Jul 13, 2026 at 23:01 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -67,7 +67,7 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 | Walleye Capital | Volatility Trading Developer Intern (Summer 2027) | Quant | New York, New York | Jun 01, 2026 | [Apply](https://job-boards.greenhouse.io/walleyecapital-external-students/jobs/4679434006) |
 | Ellipsis Labs | Software Engineer - 2027 Interns | Software | New York, New York | Mar 26, 2026 | [Apply](https://jobs.ashbyhq.com/ellipsislabs/02136b22-35b1-4b3d-8bef-567c3380a849) |
 
-## Fall 2026  (30 open)
+## Fall 2026  (29 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
@@ -79,7 +79,6 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 | Figure | Firmware Intern [Fall 2026] | Hardware | San Jose, CA | Jun 22, 2026 | [Apply](https://job-boards.greenhouse.io/figureai/jobs/4691070006) |
 | Intuitive Surgical ✓ | Computer Vision Engineering Intern - Fall 2026 | Data & ML/AI | Sunnyvale, CA, United States | Jun 22, 2026 | [Apply](https://jobs.smartrecruiters.com/Intuitive/744000133458290) |
 | SoloPulse | Software Engineer Intern/Co-Op - Fall 2026 | Software | Peachtree Corners, GA | Jun 16, 2026 | [Apply](https://jobs.lever.co/solopulseco/00fbde18-a387-4c9f-97d4-77059aec7b56) |
-| NVIDIA ✓ | Quantum Research Scientist Intern - Fall 2026 | Data & ML/AI | US, CA, Remote | May 27, 2026 | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Remote/Quantum-Research-Scientist-Intern---Fall-2026_JR2018244) |
 | Samsung Research America ✓ | 2026 Fall Intern, Computer Vision/AI | Data & ML/AI | 665 Clyde Avenue +3 more | May 27, 2026 | [Apply](https://job-boards.greenhouse.io/samsungresearchamericainternship/jobs/8560657002) |
 | Rocket Lab | Software Intern Fall 2026 🇺🇸 | Software | Albuquerque, NM | May 21, 2026 | [Apply](https://job-boards.greenhouse.io/rocketlab/jobs/7736776003) |
 | Saronic | Software Engineer Intern (Fall 2026) 🇺🇸 | Software | Austin, TX | May 18, 2026 | [Apply](https://jobs.ashbyhq.com/saronic/1c74957f-0895-415b-9324-08b0994747d7) |
@@ -140,6 +139,9 @@ _26 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-S
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| NVIDIA | Quantum Error Correction Research Scientist Intern - Fall 2026 | Fall 2026 | 2026-07-13 |
+| NVIDIA | Quantum Research Scientist Intern - Fall 2026 | Fall 2026 | 2026-07-13 |
+| NVIDIA | Software Engineering Intern, JAX - Fall 2026 | Fall 2026 | 2026-07-13 |
 | Skydio | Middleware Software Engineer Intern - Fall 2026 | Fall 2026 | 2026-07-13 |
 | CACI | Software Engineering Intern - Fall 2026 | Fall 2026 | 2026-07-13 |
 | Vertex Pharmaceuticals | Vertex Fall Co-op 2026, AI and Governance | Fall 2026 | 2026-07-10 |
@@ -177,9 +179,6 @@ _26 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-S
 | Amazon | 2026 Software Dev Engineer Intern - Haifa, Israel | Fall 2026 | 2026-06-30 |
 | Amazon | Applied Scientist Intern, International Technology, 2026 Beijing | Fall 2026 | 2026-06-30 |
 | Amazon | 2026 Software Dev Engineer Intern (Location : Sydney) | Fall 2026 | 2026-06-30 |
-| Cohere | Machine Learning Intern/Co-op  (Fall, 2026) | Fall 2026 | 2026-06-30 |
-| Cohere | Software Engineer Intern (Fall / Winter 2026) | Fall 2026 | 2026-06-30 |
-| Creatify Lab | Software Engineer Intern 2026 | Fall 2026 | 2026-06-30 |
 
 </details>
 
@@ -198,7 +197,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,641 companies across 12 ATS platforms · 98% fetch success · completed in 287.3s · median detection latency 865 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,641 companies across 12 ATS platforms · 99% fetch success · completed in 232.9s · median detection latency 865 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
