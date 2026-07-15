@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**42 open roles · 10 new this week · 3,641 companies tracked · updated Jul 15, 2026 at 17:24 UTC**
+**42 open roles · 10 new this week · 3,641 companies tracked · updated Jul 15, 2026 at 19:20 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -59,7 +59,7 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 | Akuna Capital ✓ | Software Engineer Intern - C++, Summer 2027 🆕 | Software | Chicago, IL | Jul 13, 2026 | [Apply](https://www.akunacapital.com/careers/job/8018847/?gh_jid=8018847) |
 | Akuna Capital ✓ | Software Engineer Intern - Python, Summer 2027 🆕 | Software | Chicago, IL | Jul 13, 2026 | [Apply](https://www.akunacapital.com/careers/job/8018853/?gh_jid=8018853) |
 | Akuna Capital ✓ | Platform Engineer Intern, Summer 2027 🆕 | Software | Chicago, IL | Jul 13, 2026 | [Apply](https://www.akunacapital.com/careers/job/8018856/?gh_jid=8018856) |
-| Hudson River Trading ✓ | Software Engineering Internship (C++ or Python) – Summer 2027 🆕 | Software | Austin +9 more | Jul 13, 2026 | [Apply](https://www.hudsonrivertrading.com/careers/job/?gh_jid=8052083) |
+| Hudson River Trading ✓ | Software Engineering Internship (C++ or Python) – Summer 2027 | Software | Austin +9 more | Jul 13, 2026 | [Apply](https://www.hudsonrivertrading.com/careers/job/?gh_jid=8052083) |
 | Tower Research Capital ✓ | Quantitative Developer Intern - Summer 2027 | Quant | New York, Chicago | Jul 05, 2026 | [Apply](https://www.tower-research.com/open-positions/?gh_jid=8044334) |
 | IMC Trading | Software Engineer Intern - Summer 2027 | Software | Chicago, United States | Jul 01, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4823924101) |
 | IMC Trading | Machine Learning Research Intern - Summer 2027 - Chicago | Data & ML/AI | Chicago, United States | Jul 01, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4907430101) |
@@ -181,7 +181,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,641 companies across 12 ATS platforms · 98% fetch success · completed in 281.4s · median detection latency 544 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,641 companies across 12 ATS platforms · 98% fetch success · completed in 315.5s · median detection latency 544 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
