@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**40 open roles · 8 new this week · 3,641 companies tracked · updated Jul 15, 2026 at 15:31 UTC**
+**42 open roles · 10 new this week · 3,641 companies tracked · updated Jul 15, 2026 at 17:24 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -50,10 +50,11 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 
 ---
 
-## Summer 2027  (13 open)
+## Summer 2027  (14 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
+| The Trade Desk ✓ | 2027 North America Software Engineering Internship 🆕 | Software | Bellevue +5 more | Jul 15, 2026 | [Apply](https://job-boards.greenhouse.io/thetradedesk/jobs/5187605007) |
 | Five Rings | Summer Intern 2027 - Software Developer 🆕 | Software | New York | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/fiveringsllc/jobs/5349707008) |
 | Akuna Capital ✓ | Software Engineer Intern - C++, Summer 2027 🆕 | Software | Chicago, IL | Jul 13, 2026 | [Apply](https://www.akunacapital.com/careers/job/8018847/?gh_jid=8018847) |
 | Akuna Capital ✓ | Software Engineer Intern - Python, Summer 2027 🆕 | Software | Chicago, IL | Jul 13, 2026 | [Apply](https://www.akunacapital.com/careers/job/8018853/?gh_jid=8018853) |
@@ -68,10 +69,11 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 | Walleye Capital | Volatility Trading Developer Intern (Summer 2027) | Quant | New York, New York | Jun 01, 2026 | [Apply](https://job-boards.greenhouse.io/walleyecapital-external-students/jobs/4679434006) |
 | Ellipsis Labs | Software Engineer - 2027 Interns | Software | New York, New York | Mar 26, 2026 | [Apply](https://jobs.ashbyhq.com/ellipsislabs/02136b22-35b1-4b3d-8bef-567c3380a849) |
 
-## Fall 2026  (27 open)
+## Fall 2026  (28 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
+| Sentara Health | Enterprise Data & AI Intern- Fall 2026 Internship 🆕 | Data & ML/AI | Virginia Beach, VA | Jul 15, 2026 | [Apply](https://sentara.wd1.myworkdayjobs.com/SCS/job/Virginia-Beach-VA/Enterprise-Data---AI-Intern--Fall-2026-Internship_JR-102685) |
 | NVIDIA ✓ | Performance Engineer Intern, Systems Software-  Fall 2026 | Software | US, MO, St. Louis | Jul 06, 2026 | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-MO-St-Louis/Performance-Engineer-Intern--Systems-Software---Fall-2026_JR2015779) |
 | Saronic | Enterprise Technology Intern - AI and Automation (Fall 2026) 🇺🇸 | Data & ML/AI | Austin, TX | Jul 02, 2026 | [Apply](https://jobs.ashbyhq.com/saronic/c95c2e3a-4c67-47b0-a03d-0e0317ac11a3) |
 | NVIDIA ✓ | Applied Research Intern, NLP - Fall 2026 | Data & ML/AI | US, CA, Santa Clara | Jul 01, 2026 | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Applied-Research-Intern--NLP---Fall-2026_JR2010488) |
@@ -118,6 +120,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | 🎯 Akuna Capital | Jul 13 | dropped Jul 13 | ✅ [open now](https://www.akunacapital.com/careers/job/8018847/?gh_jid=8018847) |
 | 🎯 Hudson River Trading | Jul 13 | dropped Jul 13 | ✅ [open now](https://www.hudsonrivertrading.com/careers/job/?gh_jid=8052083) |
 | 🎯 Five Rings | Jul 14 | dropped Jul 14 | ✅ [open now](https://job-boards.greenhouse.io/fiveringsllc/jobs/5349707008) |
+| 🎯 The Trade Desk | Jul 15 | dropped Jul 15 | ✅ [open now](https://job-boards.greenhouse.io/thetradedesk/jobs/5187605007) |
 | 🎯 Amazon | May 13 | dropped May 13 · closed | 🗓️ dropped |
 | 🎯 Western Digital | Jun 28 | dropped Jun 28 · closed | 🗓️ dropped |
 | 🎯 Northrop Grumman | Jul 08 | dropped Jul 08 · closed | 🗓️ dropped |
@@ -129,9 +132,8 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | Meta | ~Aug | ~Aug · in ~17d | ⏳ waiting |
 | Optiver | ~Aug | ~Aug · in ~17d | ⏳ waiting |
 | Stripe | ~Sep | ~Sep | ⏳ waiting |
-| D.E. Shaw | ~Oct | ~Oct | ⏳ waiting |
 
-_27 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). **11** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
+_28 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). **12** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
 <summary><strong>Recently closed</strong> — 23 roles taken down in the last 14 days</summary>
@@ -179,7 +181,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,641 companies across 12 ATS platforms · 99% fetch success · completed in 251.1s · median detection latency 544 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,641 companies across 12 ATS platforms · 98% fetch success · completed in 281.4s · median detection latency 544 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
