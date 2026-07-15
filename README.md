@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**42 open roles · 9 new this week · 3,641 companies tracked · updated Jul 14, 2026 at 23:03 UTC**
+**41 open roles · 9 new this week · 3,641 companies tracked · updated Jul 15, 2026 at 02:45 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -68,7 +68,7 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 | Walleye Capital | Volatility Trading Developer Intern (Summer 2027) | Quant | New York, New York | Jun 01, 2026 | [Apply](https://job-boards.greenhouse.io/walleyecapital-external-students/jobs/4679434006) |
 | Ellipsis Labs | Software Engineer - 2027 Interns | Software | New York, New York | Mar 26, 2026 | [Apply](https://jobs.ashbyhq.com/ellipsislabs/02136b22-35b1-4b3d-8bef-567c3380a849) |
 
-## Fall 2026  (29 open)
+## Fall 2026  (28 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
@@ -81,7 +81,6 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 | Intuitive Surgical ✓ | Computer Vision Engineering Intern - Fall 2026 | Data & ML/AI | Sunnyvale, CA, United States | Jun 22, 2026 | [Apply](https://jobs.smartrecruiters.com/Intuitive/744000133458290) |
 | SoloPulse | Software Engineer Intern/Co-Op - Fall 2026 | Software | Peachtree Corners, GA | Jun 16, 2026 | [Apply](https://jobs.lever.co/solopulseco/00fbde18-a387-4c9f-97d4-77059aec7b56) |
 | Samsung Research America ✓ | 2026 Fall Intern, Computer Vision/AI | Data & ML/AI | 665 Clyde Avenue +3 more | May 27, 2026 | [Apply](https://job-boards.greenhouse.io/samsungresearchamericainternship/jobs/8560657002) |
-| Rocket Lab | Software Intern Fall 2026 🇺🇸 | Software | Albuquerque, NM | May 21, 2026 | [Apply](https://job-boards.greenhouse.io/rocketlab/jobs/7736776003) |
 | Saronic | Software Engineer Intern (Fall 2026) 🇺🇸 | Software | Austin, TX | May 18, 2026 | [Apply](https://jobs.ashbyhq.com/saronic/1c74957f-0895-415b-9324-08b0994747d7) |
 | Astranis | Software Engineer- Backend Intern (Fall 2026) 🇺🇸 | Software | San Francisco, CA | May 13, 2026 | [Apply](https://job-boards.greenhouse.io/astranis/jobs/4681183006) |
 | Samsung Research America ✓ | 2026 Fall Intern, ML/NLP Research | Data & ML/AI | 665 Clyde Avenue +3 more | May 08, 2026 | [Apply](https://job-boards.greenhouse.io/samsungresearchamericainternship/jobs/8541339002) |
@@ -123,23 +122,24 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | 🎯 Amazon | May 13 | dropped May 13 · closed | 🗓️ dropped |
 | 🎯 Western Digital | Jun 28 | dropped Jun 28 · closed | 🗓️ dropped |
 | 🎯 Northrop Grumman | Jul 08 | dropped Jul 08 · closed | 🗓️ dropped |
-| Citadel | ~Aug | ~Aug · in ~18d | ⏳ waiting |
-| Citadel Securities | ~Aug | ~Aug · in ~18d | ⏳ waiting |
-| Databricks | ~Aug | ~Aug · in ~18d | ⏳ waiting |
-| Google | ~Aug | ~Aug · in ~18d | ⏳ waiting |
-| Jane Street | ~Aug | ~Aug · in ~18d | ⏳ waiting |
-| Meta | ~Aug | ~Aug · in ~18d | ⏳ waiting |
-| Optiver | ~Aug | ~Aug · in ~18d | ⏳ waiting |
+| Citadel | ~Aug | ~Aug · in ~17d | ⏳ waiting |
+| Citadel Securities | ~Aug | ~Aug · in ~17d | ⏳ waiting |
+| Databricks | ~Aug | ~Aug · in ~17d | ⏳ waiting |
+| Google | ~Aug | ~Aug · in ~17d | ⏳ waiting |
+| Jane Street | ~Aug | ~Aug · in ~17d | ⏳ waiting |
+| Meta | ~Aug | ~Aug · in ~17d | ⏳ waiting |
+| Optiver | ~Aug | ~Aug · in ~17d | ⏳ waiting |
 | Stripe | ~Sep | ~Sep | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct | ⏳ waiting |
 
 _27 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). **11** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 21 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 22 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Rocket Lab | Software Intern Fall 2026 | Fall 2026 | 2026-07-15 |
 | NVIDIA | Quantum Error Correction Research Scientist Intern - Fall 2026 | Fall 2026 | 2026-07-13 |
 | NVIDIA | Quantum Research Scientist Intern - Fall 2026 | Fall 2026 | 2026-07-13 |
 | NVIDIA | Software Engineering Intern, JAX - Fall 2026 | Fall 2026 | 2026-07-13 |
@@ -179,7 +179,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,641 companies across 12 ATS platforms · 98% fetch success · completed in 257.3s · median detection latency 544 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,641 companies across 12 ATS platforms · 97% fetch success · completed in 254.5s · median detection latency 544 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
