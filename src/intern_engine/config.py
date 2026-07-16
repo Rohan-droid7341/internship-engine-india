@@ -96,6 +96,18 @@ def max_per_company(cfg: dict):
     return cfg.get("max_per_company", 0)
 
 
+def infer_undated(cfg: dict) -> bool:
+    """When true, titles with no explicit year are bucketed into a cycle
+    inferred from their posting date (recent postings only, marked `~`)."""
+    return bool(cfg.get("infer_undated", True))
+
+
+def infer_max_age_days(cfg: dict) -> int:
+    """Only infer a cycle for roles posted within this many days — recency is
+    what makes the inference trustworthy."""
+    return int(cfg.get("infer_max_age_days", 45))
+
+
 def allowlist_only(cfg: dict) -> bool:
     """When true, show only recognizable (priority-listed) companies. Off by default."""
     return bool(cfg.get("allowlist_only", False))

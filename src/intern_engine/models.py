@@ -24,6 +24,8 @@ class Job:
     url: str
     posted_at: str | None = None   # real publish date, or None when unknown
     season: str = "Unspecified"    # cycle label, assigned by the pipeline
+    season_inferred: bool = False  # True when the cycle came from the posting
+                                   # date, not a year stated in the title
     category: str = "Other"
     sponsorship: str = "unknown"   # citizens-only | no-sponsorship | offers | unknown
     salary: str | None = None      # pay text when the ATS exposes it (Ashby/Lever/Breezy)

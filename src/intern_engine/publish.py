@@ -180,8 +180,9 @@ def write_radar_ics(store_data: dict, cycle: str | None = None) -> int:
 
 
 _API_FIELDS = (
-    "id", "company", "title", "season", "category", "location", "url",
-    "posted_at", "first_seen_at", "sponsorship", "salary", "skills", "source",
+    "id", "company", "title", "season", "season_inferred", "category",
+    "location", "url", "posted_at", "first_seen_at", "sponsorship", "salary",
+    "skills", "source",
 )
 
 

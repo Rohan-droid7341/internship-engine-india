@@ -1,3 +1,5 @@
+from datetime import UTC, datetime
+
 from intern_engine import filters
 
 CYCLES = ["Summer 2027", "Fall 2026"]
@@ -61,9 +63,59 @@ class TestRegion:
         # "DE-Berlin" is Germany, not the Delaware state code
         assert not filters.region_ok("DE-Berlin-Trion", want_us=True, want_canada=False)
 
+    def test_named_foreign_country_beats_state_code_lookalike(self):
+        # "IN - Bangalore, India" is India, not Indiana
+        assert not filters.is_united_states("IN - Bangalore, India")
+        assert not filters.is_united_states("Munich, Germany")
+        assert not filters.is_united_states("CA - Sydney, Australia")
+
+    def test_explicit_us_token_wins_for_multi_country_strings(self):
+        assert filters.is_united_states("New York, USA; Bangalore, India")
+
+    def test_state_code_with_spaced_suffix_still_us(self):
+        assert filters.is_united_states("Dallas, TX - Headquarters")
+
 
 class TestCategory:
     def test_categories(self):
         assert filters.categorize("Software Engineer Intern") == "Software"
         assert filters.categorize("Machine Learning Intern") == "Data & ML/AI"
         assert filters.categorize("Cybersecurity Intern") == "Security"
+
+
+class TestInferSeason:
+    """Yearless titles bucketed from the posting date (detect_season stays strict)."""
+
+    NOW = datetime(2026, 7, 15, tzinfo=UTC)
+
+    def _infer(self, title, posted, **kw):
+        return filters.infer_season(title, posted, CYCLES, now=self.NOW, **kw)
+
+    def test_plain_intern_posted_after_april_is_next_summer(self):
+        assert self._infer("Software Engineer Intern", "2026-07-10") == "Summer 2027"
+
+    def test_summer_word_without_year(self):
+        assert self._infer("Summer Intern - Backend", "2026-07-01") == "Summer 2027"
+
+    def test_fall_word_maps_to_same_year_until_august(self):
+        assert self._infer("Fall Software Intern", "2026-07-01") == "Fall 2026"
+
+    def test_stale_posting_is_never_inferred(self):
+        # 60 days old with a 45-day trust window -> evergreen sludge, drop.
+        assert self._infer("Software Engineer Intern", "2026-05-01") is None
+
+    def test_wider_window_accepts_older(self):
+        assert self._infer("Software Engineer Intern", "2026-05-01",
+                           max_age_days=90) == "Summer 2027"
+
+    def test_no_posted_date_is_never_inferred(self):
+        assert self._infer("Software Engineer Intern", None) is None
+
+    def test_untracked_inferred_cycle_is_dropped(self):
+        # "Fall Intern" posted in October -> Fall 2027, which we don't track.
+        now = datetime(2026, 10, 20, tzinfo=UTC)
+        assert filters.infer_season("Fall Intern", "2026-10-15", CYCLES, now=now) is None
+
+    def test_explicit_year_never_reaches_inference(self):
+        # Belt and suspenders: detect_season handles dated titles first.
+        assert filters.detect_season("Software Intern Summer 2027", CYCLES) == "Summer 2027"

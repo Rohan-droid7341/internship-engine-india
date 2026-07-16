@@ -127,6 +127,12 @@ def _rows(open_jobs: list[dict]) -> str:
             [str(r.get(k) or "") for k in ("company", "title", "location", "category")]
             + skills
         ).lower()
+        cycle_tag = (
+            "<span class='tag' title='cycle inferred from the posting date'>"
+            f"{escape(r.get('season', ''))} ~</span>"
+            if r.get("season_inferred")
+            else f"<span class='tag'>{escape(r.get('season', ''))}</span>"
+        )
         rows.append(
             f'<tr data-cycle="{escape(r.get("season", ""))}" '
             f'data-category="{escape(r.get("category", ""))}" '
@@ -135,7 +141,7 @@ def _rows(open_jobs: list[dict]) -> str:
             f'data-text="{escape(haystack)}">'
             f"<td>{escape(r.get('company', ''))}{check}</td>"
             f"<td>{escape(r.get('title', ''))} {flag}{chips}</td>"
-            f"<td><span class='tag'>{escape(r.get('season', ''))}</span></td>"
+            f"<td>{cycle_tag}</td>"
             f"<td>{escape(r.get('category', ''))}</td>"
             f"<td>{escape((r.get('location') or '')[:48])}</td>"
             f"<td class='muted'>{escape(salary[:36])}</td>"

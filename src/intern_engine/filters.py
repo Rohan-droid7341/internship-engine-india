@@ -7,6 +7,7 @@ we widen/narrow these patterns here, in one place.
 from __future__ import annotations
 
 import re
+from datetime import UTC, datetime
 
 # --- internship detection (whole words, never substrings) --------------------
 _INTERN_RE = re.compile(r"\b(intern|interns|internship|co[\s-]?op)\b", re.IGNORECASE)
@@ -74,9 +75,9 @@ def detect_season(title: str, cycles=("Summer 2027", "Fall 2026"), *_ignored) ->
     """Bucket a title into a cycle ONLY if the year is explicit in the title.
 
     This is strict on purpose: a role must actually state its year (e.g. "2027"
-    or "Fall 2026"). Roles with no year, or a year/term we don't track, are
-    dropped — so the list contains only genuine, dated postings (like the
-    reference repos), never undated roles defaulted into a cycle.
+    or "Fall 2026"). Titles with no year fall through to `infer_season`, which
+    reasons from the posting date instead and marks the result as inferred —
+    a stated year always wins over an inference.
 
     Examples (cycles = Summer 2027, Fall 2026):
       "Software Engineer Intern, Summer 2027"  -> "Summer 2027"
@@ -121,6 +122,56 @@ def detect_season(title: str, cycles=("Summer 2027", "Fall 2026"), *_ignored) ->
     return None
 
 
+# For yearless titles: the month a term's recruiting rolls over to next year.
+# Posting month <= rollover -> that term THIS year is still the plausible target;
+# after it -> companies are hiring for the term NEXT year. ("Summer Intern"
+# posted in March means this summer; posted in July it means next summer.)
+_TERM_ROLLOVER_MONTH = {"Summer": 4, "Fall": 8, "Spring": 2, "Winter": 10}
+
+
+def infer_season(title: str, posted_at: str | None,
+                 cycles=("Summer 2027", "Fall 2026"),
+                 max_age_days: int = 45,
+                 now: datetime | None = None) -> str | None:
+    """Best-effort cycle for a title with NO explicit year, from its posting date.
+
+    `detect_season` stays strict (a stated year always wins and never lands
+    here). This handles the measured majority of real postings whose titles
+    just say "Software Engineer Intern": a role *posted recently* is recruiting
+    for the next upcoming cycle of its term (default term: Summer, the dominant
+    intern cycle). Recency is what makes the guess sound, so postings older
+    than `max_age_days` — evergreen/stale listings — are never inferred.
+
+    Returns a tracked cycle label, or None (leave the role dropped).
+    """
+    if not posted_at:
+        return None  # no date -> nothing to reason from
+    try:
+        posted = datetime.strptime(posted_at[:10], "%Y-%m-%d").replace(tzinfo=UTC)
+    except ValueError:
+        return None
+    now = now or datetime.now(UTC)
+    age_days = (now - posted).days
+    if not (-1 <= age_days <= max_age_days):  # -1 tolerates feed timezone skew
+        return None
+
+    t = title.lower()
+    if "summer" in t:
+        term = "Summer"
+    elif "fall" in t or "autumn" in t:
+        term = "Fall"
+    elif "spring" in t:
+        term = "Spring"
+    elif "winter" in t:
+        term = "Winter"
+    else:
+        term = "Summer"
+
+    year = posted.year if posted.month <= _TERM_ROLLOVER_MONTH[term] else posted.year + 1
+    label = f"{term} {year}"
+    return label if label in cycles else None
+
+
 # --- location: US / Canada detection -----------------------------------------
 # Full state/province names are matched case-insensitively; the 2-letter codes
 # are matched case-SENSITIVELY (uppercase) so "OR"/"IN" don't match the words
@@ -154,6 +205,25 @@ _CA_CODES = ["ON", "QC", "BC", "AB", "MB", "SK", "NS", "NB", "NL", "PE", "YT", "
 _US_COUNTRY = ("united states", "u.s.a", "u.s.", "u.s", "usa", "america")
 _CA_COUNTRY = ("canada", "canadian")
 
+# Countries that appear in ATS location strings and must never read as US, even
+# when a state-code lookalike sits next to them ("IN - Bangalore, India" is not
+# Indiana). An explicit US token still wins for multi-country strings.
+_NON_US_COUNTRIES = (
+    "india", "united kingdom", "germany", "france", "poland", "ireland",
+    "netherlands", "spain", "italy", "portugal", "romania", "hungary",
+    "czech", "slovakia", "sweden", "switzerland", "belgium", "austria",
+    "denmark", "norway", "finland", "greece", "turkey", "israel",
+    "united arab emirates", "saudi arabia", "qatar", "egypt", "nigeria",
+    "kenya", "south africa", "brazil", "mexico", "argentina", "colombia",
+    "chile", "peru", "costa rica", "japan", "china", "singapore", "korea",
+    "taiwan", "hong kong", "philippines", "indonesia", "vietnam", "thailand",
+    "malaysia", "pakistan", "bangladesh", "sri lanka", "australia",
+    "new zealand",
+)
+_NON_US_RE = re.compile(
+    r"\b(" + "|".join(re.escape(c) for c in _NON_US_COUNTRIES) + r")\b"
+)
+
 _US_NAME_RE = re.compile(
     r"\b(" + "|".join(re.escape(n) for n in _US_STATES) + r")\b", re.IGNORECASE
 )
@@ -172,6 +242,8 @@ def is_united_states(location: str) -> bool:
     low = location.lower()
     if any(token in low for token in _US_COUNTRY):
         return True
+    if _NON_US_RE.search(low):
+        return False  # a named foreign country outranks state-name/code guesses
     if _US_NAME_RE.search(low):
         return True
     if _US_CODE_RE.search(location):

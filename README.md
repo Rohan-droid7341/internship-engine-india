@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**42 open roles · 10 new this week · 3,641 companies tracked · updated Jul 15, 2026 at 19:20 UTC**
+**91 open roles · 60 new this week · 3,641 companies tracked · updated Jul 16, 2026 at 07:42 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -50,34 +50,85 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 
 ---
 
-## Summer 2027  (14 open)
+## Summer 2027  (61 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
+| Acds | AI Software Engineer Intern- Bastazo ~ 🆕 | Data & ML/AI | Bentonville, AR | Jul 15, 2026 | [Apply](https://jobs.lever.co/acds/65b739c3-02ad-4814-ad24-24abecbc83f4) |
+| Fortive | IT Infrastructure Internship ~ 🆕 | Software | Irvine, CA, United States | Jul 15, 2026 | [Apply](https://ejta.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/10126) |
+| Datasite | AI Transformation / Forward Deployed Engineer (FDE) Internship ~ 🆕 | Data & ML/AI | USA - MN - Minneapolis | Jul 15, 2026 | [Apply](https://datasite.wd1.myworkdayjobs.com/datasite/job/USA---MN---Minneapolis/AI-Transformation---Forward-Deployed-Engineer--FDE--Intern_R36255) |
+| Tencent ✓ | Research Intern – Video World Models (Research & ML Systems) ~ 🆕 | Data & ML/AI | US-California-Palo Alto | Jul 15, 2026 | [Apply](https://tencent.wd1.myworkdayjobs.com/Tencent_Careers/job/US-California-Palo-Alto/Research-Intern---Video-World-Models--Research---ML-Systems-_R107752-1) |
 | The Trade Desk ✓ | 2027 North America Software Engineering Internship 🆕 | Software | Bellevue +5 more | Jul 15, 2026 | [Apply](https://job-boards.greenhouse.io/thetradedesk/jobs/5187605007) |
 | Five Rings | Summer Intern 2027 - Software Developer 🆕 | Software | New York | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/fiveringsllc/jobs/5349707008) |
-| Akuna Capital ✓ | Software Engineer Intern - C++, Summer 2027 🆕 | Software | Chicago, IL | Jul 13, 2026 | [Apply](https://www.akunacapital.com/careers/job/8018847/?gh_jid=8018847) |
-| Akuna Capital ✓ | Software Engineer Intern - Python, Summer 2027 🆕 | Software | Chicago, IL | Jul 13, 2026 | [Apply](https://www.akunacapital.com/careers/job/8018853/?gh_jid=8018853) |
-| Akuna Capital ✓ | Platform Engineer Intern, Summer 2027 🆕 | Software | Chicago, IL | Jul 13, 2026 | [Apply](https://www.akunacapital.com/careers/job/8018856/?gh_jid=8018856) |
+| Acds | AI Operations Intern - Naukr AI ~ 🆕 | Data & ML/AI | Bentonville, AR | Jul 13, 2026 | [Apply](https://jobs.lever.co/acds/41bee5e2-6477-428f-b359-34b4071d545f) |
+| Akuna Capital ✓ | Software Engineer Intern - C++, Summer 2027 | Software | Chicago, IL | Jul 13, 2026 | [Apply](https://www.akunacapital.com/careers/job/8018847/?gh_jid=8018847) |
+| Akuna Capital ✓ | Software Engineer Intern - Python, Summer 2027 | Software | Chicago, IL | Jul 13, 2026 | [Apply](https://www.akunacapital.com/careers/job/8018853/?gh_jid=8018853) |
+| Akuna Capital ✓ | Platform Engineer Intern, Summer 2027 | Software | Chicago, IL | Jul 13, 2026 | [Apply](https://www.akunacapital.com/careers/job/8018856/?gh_jid=8018856) |
 | Hudson River Trading ✓ | Software Engineering Internship (C++ or Python) – Summer 2027 | Software | Austin +9 more | Jul 13, 2026 | [Apply](https://www.hudsonrivertrading.com/careers/job/?gh_jid=8052083) |
+| Exowatt | Software Engineering Intern - Agent Platform (AI) ~ 🆕 | Data & ML/AI | Miami, FL | Jul 10, 2026 | [Apply](https://jobs.lever.co/exowatt/2623555d-8b81-4f95-8bca-de9fafd2381c) |
+| Exowatt | Software Engineering Intern  - Inventory Automation & IoT/Robotics ~ 🆕 | Hardware | Austin, TX | Jul 10, 2026 | [Apply](https://jobs.lever.co/exowatt/46c8f4fd-f059-4ad6-a5f4-4fcd55d84f9c) |
+| Palantir ✓ | Forward Deployed Infrastructure Engineer, Internship - US Government ~ 🇺🇸 🆕 | Software | Washington, D.C. | Jul 10, 2026 | [Apply](https://jobs.lever.co/palantir/3db7e40a-28e0-4ad1-96c5-93de5bc96aa9) |
+| Xsolla | AI-First Engineering Intern ~ 🆕 | Data & ML/AI | Los Angeles, United States | Jul 10, 2026 | [Apply](https://jobs.lever.co/xsolla/1c0e5375-2352-4a2c-a816-48ddebbdd3d6) |
+| Manhattan Associates ✓ | A.I. Developer Co-Op (Boston, MA) ~ 🆕 | Software | US - Home Office | Jul 10, 2026 | [Apply](https://manh.wd5.myworkdayjobs.com/campus/job/US---Home-Office/AI-Developer-Co-Op--Boston--MA-_16931) |
+| Jump Trading | Campus AI Research Engineer (Intern) ~ 🆕 | Data & ML/AI | Chicago; New York | Jul 08, 2026 | [Apply](https://www.jumptrading.com/hr/job?gh_jid=8052281) |
+| Jump Trading | Campus AI Research Engineer - Deep Learning (Intern) ~ 🆕 | Data & ML/AI | Chicago; New York | Jul 08, 2026 | [Apply](https://www.jumptrading.com/hr/job?gh_jid=8052338) |
+| Jump Trading | Campus AI Research Engineer – Research Automation (Intern) ~ 🆕 | Data & ML/AI | Chicago; New York | Jul 08, 2026 | [Apply](https://www.jumptrading.com/hr/job?gh_jid=8052351) |
+| Copart ✓ | DevOps Engineering Intern ~ 🆕 | Software | Dallas, TX - Headquarters | Jul 08, 2026 | [Apply](https://copart.wd12.myworkdayjobs.com/copart/job/Dallas-TX---Headquarters/DevOps-Engineering-Intern_JR109490) |
+| Nexstar | Unpaid Programming Intern ~ 🆕 | Software | FL, Tampa | Jul 07, 2026 | [Apply](https://nexstar.wd5.myworkdayjobs.com/nexstar/job/FL-Tampa/Unpaid-Programming-Intern_REQ-42139) |
+| VetsEZ | Full Stack Developer Intern (Remote Opportunity) ~ 🆕 | Software | Dallas, TX | Jul 06, 2026 | [Apply](https://vetsez.breezy.hr/p/d18961a7a7e701-full-stack-developer-intern-remote-opportunity) |
 | Tower Research Capital ✓ | Quantitative Developer Intern - Summer 2027 | Quant | New York, Chicago | Jul 05, 2026 | [Apply](https://www.tower-research.com/open-positions/?gh_jid=8044334) |
+| Bot Auto | Intern, Deep Learning Engineer ~ 🆕 | Data & ML/AI | Houston, TX | Jul 02, 2026 | [Apply](https://job-boards.greenhouse.io/botauto/jobs/5289440008) |
+| Traackr | Software Engineering Intern (Part-Time, Internal Tooling) ~ 🆕 | Software | New York City | Jul 02, 2026 | [Apply](https://jobs.lever.co/traackr/9d884d26-018c-45b2-8cfb-f17d29d4e688) |
+| ConnectPrep | Data Analyst Internship ~ 🇺🇸 🆕 | Data & ML/AI | Washington +2 more | Jul 02, 2026 | [Apply](https://apply.workable.com/connectprep/j/C0CA13664F/) |
+| Palantir ✓ | Forward Deployed Software Engineer, Internship - Intel ~ 🆕 | Software | Washington, D.C. | Jul 01, 2026 | [Apply](https://jobs.lever.co/palantir/9e40d77f-b07c-437b-98e7-def9b0184d89) |
+| Nelnet ✓ | Intern - AI Engineer ~ 🆕 | Data & ML/AI | Lincoln, NE | Jul 01, 2026 | [Apply](https://nelnet.wd1.myworkdayjobs.com/MyNelnet/job/Lincoln-NE/Intern---AI-Engineer_R22763) |
 | IMC Trading | Software Engineer Intern - Summer 2027 | Software | Chicago, United States | Jul 01, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4823924101) |
 | IMC Trading | Machine Learning Research Intern - Summer 2027 - Chicago | Data & ML/AI | Chicago, United States | Jul 01, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4907430101) |
+| Palantir ✓ | Forward Deployed Software Engineer, Internship - Commercial ~ 🆕 | Software | Chicago, IL | Jun 30, 2026 | [Apply](https://jobs.lever.co/palantir/d5486403-c050-4920-b2e0-91b69b61ebb2) |
+| Sony | Research Intern on Generative and Protective AI for Content Creation ~ 🆕 | Data & ML/AI | Remote - New York | Jun 30, 2026 | [Apply](https://sonyglobal.wd1.myworkdayjobs.com/SonyGlobalCareers/job/Remote---New-York/Research-Intern-on-Generative-and-Protective-AI-for-Content-Creation_JR-119335) |
+| Lila Sciences | Co-Op, LS AI, ML Scientist for Protein Engineering ~ 🆕 | Data & ML/AI | San Francisco, CA USA | Jun 29, 2026 | [Apply](https://job-boards.greenhouse.io/lilasciences/jobs/4289387009) |
+| Point C | Account Management AI Intern ~ 🆕 | Data & ML/AI | United States - Remote | Jun 25, 2026 | [Apply](https://job-boards.greenhouse.io/pointc/jobs/5282753008) |
+| Altasciences | Process Innovation - Software Engineering Intern ~ 🆕 | Software | Overland Park, Kansas | Jun 24, 2026 | [Apply](https://altasciences.wd1.myworkdayjobs.com/Careers/job/Overland-Park-Kansas/Process-Innovation---Software-Engineering-Intern_R102750) |
+| RFCUNY | Data Analyst Intern ~ 🆕 | Data & ML/AI | New York, NY | Jun 23, 2026 | [Apply](https://rfcuny.wd108.myworkdayjobs.com/RFCUNY/job/New-York-NY/Data-Analyst-Intern_JR2987) |
+| Centerfield ✓ | Data Science Intern ~ 🆕 | Data & ML/AI | Los Angeles, California | Jun 22, 2026 | [Apply](https://jobs.ashbyhq.com/centerfield/916dcf42-d69a-4f00-875a-f8fe630e0f33) |
+| Nio | AI Robotics Researcher Intern (Dexterous Manipulation) ~ 🆕 | Data & ML/AI | San Jose-US | Jun 19, 2026 | [Apply](https://nio.wd3.myworkdayjobs.com/NIO_Careers/job/San-Jose-US/AI-Robotics-Researcher-Intern--Dexterous-Manipulation-_R-000144) |
+| Doctors Without Borders | Data Science Intern ~ 🆕 | Data & ML/AI | New York, New York, United States | Jun 18, 2026 | [Apply](https://job-boards.greenhouse.io/msfcareers/jobs/5271141008) |
+| Acds | Digital Marketer Intern-Align AI ~ 🆕 | Data & ML/AI | Bentonville, AR | Jun 18, 2026 | [Apply](https://jobs.lever.co/acds/d0d04e55-9fbe-4c07-9710-f6550032b6bb) |
+| Copart ✓ | Software Engineering Intern ~ 🆕 | Software | Dallas, TX - Headquarters | Jun 18, 2026 | [Apply](https://copart.wd12.myworkdayjobs.com/copart/job/Dallas-TX---Headquarters/Software-Engineering-Intern_JR109441) |
+| Generac ✓ | Intern Firmware Engineering ~ 🆕 | Hardware | Reno, NV - USA | Jun 18, 2026 | [Apply](https://generac.wd5.myworkdayjobs.com/external/job/Reno-NV---USA/Intern-Firmware-Engineering_JR14674) |
+| iHerb | Software Development Intern ~ 🆕 | Software | United States of America - Remote / Hom… | Jun 17, 2026 | [Apply](https://job-boards.greenhouse.io/iherb/jobs/7776154003) |
+| Institute of Foundation Models | AI Research Internship - WM ~ 🆕 | Data & ML/AI | Sunnyvale, CA | Jun 12, 2026 | [Apply](https://jobs.lever.co/ifm-us/3eec355c-6dde-4a3e-8cdf-b2a8930d5678) |
+| Lila Sciences | Co-op, Machine Learning for Digital Twins ~ 🆕 | Data & ML/AI | Cambridge, MA USA | Jun 11, 2026 | [Apply](https://job-boards.greenhouse.io/lilasciences/jobs/4280809009) |
+| Lila Sciences | Co-Op, AI Security ~ 🆕 | Data & ML/AI | Cambridge, MA USA | Jun 11, 2026 | [Apply](https://job-boards.greenhouse.io/lilasciences/jobs/4280945009) |
 | Anduril | 2027 Software Engineer Intern 🇺🇸 | Software | Atlanta +17 more | Jun 10, 2026 | [Apply](https://boards.greenhouse.io/andurilindustries/jobs/5148079007?gh_jid=5148079007) |
+| Centerfield ✓ | Software Engineer Intern ~ 🆕 | Software | Los Angeles, California | Jun 09, 2026 | [Apply](https://jobs.ashbyhq.com/centerfield/3279e803-56ab-4e12-8168-c2fd60bc8e60) |
+| Tenstorrent ✓ | CPU/AI Workload Analysis Intern ~ 🆕 | Data & ML/AI | Santa Clara, California, United States | Jun 08, 2026 | [Apply](https://job-boards.greenhouse.io/tenstorrentuniversity/jobs/5158533007) |
+| Scale AI ✓ | AI Builder Intern ~ 🆕 | Data & ML/AI | San Francisco, CA; New York, NY | Jun 06, 2026 | [Apply](https://job-boards.greenhouse.io/scaleai/jobs/4703343005) |
+| Clarity Innovations | Junior Software Engineer Internship ~ 🇺🇸 🆕 | Software | Herndon, VA | Jun 05, 2026 | [Apply](https://job-boards.greenhouse.io/clarityinnovates/jobs/5155449007) |
+| XPENG Motors | AI Infra Onboard Performance Intern ~ 🆕 | Data & ML/AI | Santa Clara, CA | Jun 05, 2026 | [Apply](https://job-boards.greenhouse.io/xpengmotors/jobs/8581353002) |
+| Beaconsoftware | Software Engineering Intern ~ 🆕 | Software | San Francisco, CA | Jun 02, 2026 | [Apply](https://jobs.ashbyhq.com/beaconsoftware/2452d342-a069-4eda-adbe-9df296808ca1) |
+| Four Hands | Cybersecurity Intern ~ 🆕 | Security | Austin, TX | Jun 02, 2026 | [Apply](https://job-boards.greenhouse.io/fourhands/jobs/4267718009) |
+| TransMarket Group | DevOps/SRE Intern ~ 🆕 | Software | Chicago, Illinois, United States | Jun 02, 2026 | [Apply](https://job-boards.greenhouse.io/transmarketgroup/jobs/5151577007?gh_jid=5151577007) |
+| Fluxergy | Firmware Engineer Intern ~ 🆕 | Hardware | Irvine, California | Jun 02, 2026 | [Apply](https://jobs.lever.co/fluxergy-2/c592763e-56ba-4d20-b751-3a4574470eec) |
+| GenBio AI | Software Engineering Intern ~ 🆕 | Software | Palo Alto, CA | Jun 01, 2026 | [Apply](https://jobs.lever.co/genbio/4bdb14ae-e19f-40c8-84db-1307dbdabe74) |
 | Walleye Capital | Investment Data Science Intern (Summer 2027) | Data & ML/AI | New York, New York | Jun 01, 2026 | [Apply](https://job-boards.greenhouse.io/walleyecapital-external-students/jobs/4676587006) |
 | Walleye Capital | Quantic – Quantitative Developer Intern (Summer 2027) | Quant | Boston, MA | Jun 01, 2026 | [Apply](https://job-boards.greenhouse.io/walleyecapital-external-students/jobs/4679168006) |
 | Walleye Capital | Volatility Trading Developer Intern (Summer 2027) | Quant | New York, New York | Jun 01, 2026 | [Apply](https://job-boards.greenhouse.io/walleyecapital-external-students/jobs/4679434006) |
 | Ellipsis Labs | Software Engineer - 2027 Interns | Software | New York, New York | Mar 26, 2026 | [Apply](https://jobs.ashbyhq.com/ellipsislabs/02136b22-35b1-4b3d-8bef-567c3380a849) |
 
-## Fall 2026  (28 open)
+_~ = the title doesn't state a year; bucketed here from its posting date (47 of 61)._
+
+## Fall 2026  (30 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
+| onsemi | Fall 2026 - AI & Data Analytics Intern 🆕 | Data & ML/AI | Scottsdale, AZ, United States | Jul 15, 2026 | [Apply](https://hctz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/2505878) |
 | Sentara Health | Enterprise Data & AI Intern- Fall 2026 Internship 🆕 | Data & ML/AI | Virginia Beach, VA | Jul 15, 2026 | [Apply](https://sentara.wd1.myworkdayjobs.com/SCS/job/Virginia-Beach-VA/Enterprise-Data---AI-Intern--Fall-2026-Internship_JR-102685) |
 | NVIDIA ✓ | Performance Engineer Intern, Systems Software-  Fall 2026 | Software | US, MO, St. Louis | Jul 06, 2026 | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-MO-St-Louis/Performance-Engineer-Intern--Systems-Software---Fall-2026_JR2015779) |
 | Saronic | Enterprise Technology Intern - AI and Automation (Fall 2026) 🇺🇸 | Data & ML/AI | Austin, TX | Jul 02, 2026 | [Apply](https://jobs.ashbyhq.com/saronic/c95c2e3a-4c67-47b0-a03d-0e0317ac11a3) |
 | NVIDIA ✓ | Applied Research Intern, NLP - Fall 2026 | Data & ML/AI | US, CA, Santa Clara | Jul 01, 2026 | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Applied-Research-Intern--NLP---Fall-2026_JR2010488) |
 | Junior | Software Engineering Intern — Fall 2026 🇺🇸 | Software | New York City | Jun 30, 2026 | [Apply](https://jobs.ashbyhq.com/junior/23ee686b-d305-4ac9-860d-16c99ddb4891) |
+| Altom Transport | Fall Software Development Intern ~ 🆕 | Software | Hammond, Indiana, United States | Jun 23, 2026 | [Apply](https://apply.workable.com/altom-transport/j/9FC654F05E/) |
 | Figure | Firmware Intern [Fall 2026] | Hardware | San Jose, CA | Jun 22, 2026 | [Apply](https://job-boards.greenhouse.io/figureai/jobs/4691070006) |
 | Intuitive Surgical ✓ | Computer Vision Engineering Intern - Fall 2026 | Data & ML/AI | Sunnyvale, CA, United States | Jun 22, 2026 | [Apply](https://jobs.smartrecruiters.com/Intuitive/744000133458290) |
 | SoloPulse | Software Engineer Intern/Co-Op - Fall 2026 | Software | Peachtree Corners, GA | Jun 16, 2026 | [Apply](https://jobs.lever.co/solopulseco/00fbde18-a387-4c9f-97d4-77059aec7b56) |
@@ -102,6 +153,8 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 | Amazon ✓ | Robotics - Software Development Engineer Intern/Co-op - 2026 | Hardware | Westboro, Wisconsin, USA | Dec 03, 2025 | [Apply](https://www.amazon.jobs/en/jobs/3136266/robotics-software-development-engineer-intern-co-op-2026) |
 | Amazon ✓ | Amazon Industrial Robotics - Applied Scientist II Intern / Co-op - 2026, Amazon Industrial Robotics | Data & ML/AI | North Reading, Massachusetts, USA | Nov 25, 2025 | [Apply](https://www.amazon.jobs/en/jobs/3132414/amazon-industrial-robotics-applied-scientist-ii-intern-co-op-2026-amazon-industrial-robotics) |
 
+_~ = the title doesn't state a year; bucketed here from its posting date (1 of 30)._
+
 <a id="drop-radar"></a>
 
 ## 📅 Drop Radar — when companies usually post for Summer 2027
@@ -113,30 +166,30 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | Company | Typical opening | Expected this cycle | Status |
 |---|---|---|---|
 | 🎯 Ellipsis Labs | Mar 26 | dropped Mar 26 | ✅ [open now](https://jobs.ashbyhq.com/ellipsislabs/02136b22-35b1-4b3d-8bef-567c3380a849) |
+| 🎯 GenBio AI | Jun 01 | dropped Jun 01 | ✅ [open now](https://jobs.lever.co/genbio/4bdb14ae-e19f-40c8-84db-1307dbdabe74) |
 | 🎯 Walleye Capital | Jun 01 | dropped Jun 01 | ✅ [open now](https://job-boards.greenhouse.io/walleyecapital-external-students/jobs/4676587006) |
+| 🎯 Beaconsoftware | Jun 02 | dropped Jun 02 | ✅ [open now](https://jobs.ashbyhq.com/beaconsoftware/2452d342-a069-4eda-adbe-9df296808ca1) |
+| 🎯 Fluxergy | Jun 02 | dropped Jun 02 | ✅ [open now](https://jobs.lever.co/fluxergy-2/c592763e-56ba-4d20-b751-3a4574470eec) |
+| 🎯 Four Hands | Jun 02 | dropped Jun 02 | ✅ [open now](https://job-boards.greenhouse.io/fourhands/jobs/4267718009) |
+| 🎯 TransMarket Group | Jun 02 | dropped Jun 02 | ✅ [open now](https://job-boards.greenhouse.io/transmarketgroup/jobs/5151577007?gh_jid=5151577007) |
+| 🎯 Clarity Innovations | Jun 05 | dropped Jun 05 | ✅ [open now](https://job-boards.greenhouse.io/clarityinnovates/jobs/5155449007) |
+| 🎯 XPENG Motors | Jun 05 | dropped Jun 05 | ✅ [open now](https://job-boards.greenhouse.io/xpengmotors/jobs/8581353002) |
+| 🎯 Scale AI | Jun 06 | dropped Jun 06 | ✅ [open now](https://job-boards.greenhouse.io/scaleai/jobs/4703343005) |
+| 🎯 Tenstorrent | Jun 08 | dropped Jun 08 | ✅ [open now](https://job-boards.greenhouse.io/tenstorrentuniversity/jobs/5158533007) |
+| 🎯 Centerfield | Jun 09 | dropped Jun 09 | ✅ [open now](https://jobs.ashbyhq.com/centerfield/3279e803-56ab-4e12-8168-c2fd60bc8e60) |
 | 🎯 Anduril | Jun 10 | dropped Jun 10 | ✅ [open now](https://boards.greenhouse.io/andurilindustries/jobs/5148079007?gh_jid=5148079007) |
-| 🎯 IMC Trading | Jul 01 | dropped Jul 01 | ✅ [open now](https://job-boards.eu.greenhouse.io/imc/jobs/4823924101) |
-| 🎯 Tower Research Capital | Jul 05 | dropped Jul 05 | ✅ [open now](https://www.tower-research.com/open-positions/?gh_jid=8044334) |
-| 🎯 Akuna Capital | Jul 13 | dropped Jul 13 | ✅ [open now](https://www.akunacapital.com/careers/job/8018847/?gh_jid=8018847) |
-| 🎯 Hudson River Trading | Jul 13 | dropped Jul 13 | ✅ [open now](https://www.hudsonrivertrading.com/careers/job/?gh_jid=8052083) |
-| 🎯 Five Rings | Jul 14 | dropped Jul 14 | ✅ [open now](https://job-boards.greenhouse.io/fiveringsllc/jobs/5349707008) |
-| 🎯 The Trade Desk | Jul 15 | dropped Jul 15 | ✅ [open now](https://job-boards.greenhouse.io/thetradedesk/jobs/5187605007) |
-| 🎯 Amazon | May 13 | dropped May 13 · closed | 🗓️ dropped |
-| 🎯 Western Digital | Jun 28 | dropped Jun 28 · closed | 🗓️ dropped |
-| 🎯 Northrop Grumman | Jul 08 | dropped Jul 08 · closed | 🗓️ dropped |
-| Citadel | ~Aug | ~Aug · in ~17d | ⏳ waiting |
-| Citadel Securities | ~Aug | ~Aug · in ~17d | ⏳ waiting |
-| Databricks | ~Aug | ~Aug · in ~17d | ⏳ waiting |
-| Google | ~Aug | ~Aug · in ~17d | ⏳ waiting |
-| Jane Street | ~Aug | ~Aug · in ~17d | ⏳ waiting |
-| Meta | ~Aug | ~Aug · in ~17d | ⏳ waiting |
-| Optiver | ~Aug | ~Aug · in ~17d | ⏳ waiting |
-| Stripe | ~Sep | ~Sep | ⏳ waiting |
+| 🎯 Lila Sciences | Jun 11 | dropped Jun 11 | ✅ [open now](https://job-boards.greenhouse.io/lilasciences/jobs/4280809009) |
+| 🎯 Institute of Foundation Models | Jun 12 | dropped Jun 12 | ✅ [open now](https://jobs.lever.co/ifm-us/3eec355c-6dde-4a3e-8cdf-b2a8930d5678) |
+| 🎯 iHerb | Jun 17 | dropped Jun 17 | ✅ [open now](https://job-boards.greenhouse.io/iherb/jobs/7776154003) |
+| 🎯 Acds | Jun 18 | dropped Jun 18 | ✅ [open now](https://jobs.lever.co/acds/41bee5e2-6477-428f-b359-34b4071d545f) |
+| 🎯 Copart | Jun 18 | dropped Jun 18 | ✅ [open now](https://copart.wd12.myworkdayjobs.com/copart/job/Dallas-TX---Headquarters/DevOps-Engineering-Intern_JR109490) |
+| 🎯 Doctors Without Borders | Jun 18 | dropped Jun 18 | ✅ [open now](https://job-boards.greenhouse.io/msfcareers/jobs/5271141008) |
+| 🎯 Generac | Jun 18 | dropped Jun 18 | ✅ [open now](https://generac.wd5.myworkdayjobs.com/external/job/Reno-NV---USA/Intern-Firmware-Engineering_JR14674) |
 
-_28 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). **12** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
+_64 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). **49** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 23 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 21 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -161,8 +214,6 @@ _28 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-S
 | Verkada | Backend Software Engineering Intern - Fall 2026 | Fall 2026 | 2026-07-02 |
 | CACI | AI/ML Engineering Co-op - Fall 2026 | Fall 2026 | 2026-07-02 |
 | OMERS | Intern, AI Enablement & Adoption Specialist (Fall 2026, 4 Months) - New York | Fall 2026 | 2026-07-02 |
-| Point72 | Summer 2027 Quantitative Developer Internship | Summer 2027 | 2026-07-01 |
-| Verkada | Frontend Software Engineering Intern - Fall 2026 | Fall 2026 | 2026-07-01 |
 
 </details>
 
@@ -181,7 +232,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,641 companies across 12 ATS platforms · 98% fetch success · completed in 315.5s · median detection latency 544 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,641 companies across 12 ATS platforms · 100% fetch success · completed in 517.5s · median detection latency 1119 min · real posted dates on 100% of open roles._
 
 ## Contributing
 

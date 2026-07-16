@@ -93,6 +93,8 @@ def _row(record: dict) -> str:
     if h1b.badge(h1b.approvals_for(record.get("company") or "")):
         company += " ✓"
     title = _md_cell(record.get("title"))
+    if record.get("season_inferred"):
+        title += " ~"
     badges = " ".join(
         b for b in (sponsorship.flag(record.get("sponsorship")), "🆕" if _is_new(record) else "")
         if b
@@ -436,6 +438,13 @@ def generate(store_data: dict) -> dict:
         lines.append("|---|---|---|---|---|---|")
         lines.extend(_row(r) for r in rows)
         lines.append("")
+        n_inferred = sum(1 for r in rows if r.get("season_inferred"))
+        if n_inferred:
+            lines.append(
+                f"_~ = the title doesn't state a year; bucketed here from its "
+                f"posting date ({n_inferred} of {len(rows)})._"
+            )
+            lines.append("")
 
     if not displayed:
         lines.append(
@@ -458,8 +467,9 @@ def generate(store_data: dict) -> dict:
 
 def _write_csv(open_jobs: list[dict]) -> None:
     fields = [
-        "company", "title", "season", "category", "location", "sponsorship",
-        "h1b_approvals", "salary", "skills", "posted_at", "first_seen_at", "url",
+        "company", "title", "season", "season_inferred", "category", "location",
+        "sponsorship", "h1b_approvals", "salary", "skills", "posted_at",
+        "first_seen_at", "url",
     ]
     with open(paths.CSV_PATH, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")

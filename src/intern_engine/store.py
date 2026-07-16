@@ -47,7 +47,7 @@ def save(path: str, data: dict) -> None:
 # must never be clobbered by a run that didn't re-enrich.
 _REFRESH_FIELDS = (
     "title", "location", "url",
-    "season", "category", "company", "source", "company_slug",
+    "season", "season_inferred", "category", "company", "source", "company_slug",
 )
 
 
