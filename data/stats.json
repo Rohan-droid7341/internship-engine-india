@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-17T02:55:09Z",
-  "duration_seconds": 267.9,
+  "generated_at": "2026-07-17T06:25:04Z",
+  "duration_seconds": 334.3,
   "companies_total": 3641,
   "companies_by_source": {
     "greenhouse": 972,
@@ -16,25 +16,23 @@
     "breezy": 10,
     "eightfold": 1
   },
-  "quarantined": 170,
-  "fetched_ok": 3436,
-  "fetch_errors": 35,
+  "quarantined": 179,
+  "fetched_ok": 3413,
+  "fetch_errors": 49,
   "errors_by_source": {
-    "oracle": 2,
-    "workday": 31,
-    "greenhouse": 1,
-    "ashby": 1
+    "workable": 46,
+    "workday": 2,
+    "lever": 1
   },
-  "fetch_success_rate": 0.99,
-  "roles_matched": 93,
-  "roles_cycle_inferred": 44,
-  "dropped_no_year_in_title": 329,
+  "fetch_success_rate": 0.986,
+  "roles_matched": 92,
+  "roles_cycle_inferred": 42,
+  "dropped_no_year_in_title": 324,
   "dropped_offcycle_by_text": 0,
   "roles_by_source": {
     "lever": 18,
     "greenhouse": 37,
-    "workday": 17,
-    "workable": 3,
+    "workday": 19,
     "amazon": 4,
     "ashby": 9,
     "oracle": 3,
@@ -42,11 +40,11 @@
     "breezy": 1
   },
   "roles_by_cycle": {
-    "Summer 2027": 60,
+    "Summer 2027": 59,
     "Fall 2026": 33
   },
   "roles_by_region": {
-    "US": 93
+    "US": 92
   },
   "sponsorship_counts": {
     "unknown": 74,
