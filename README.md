@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**95 open roles · 64 new this week · 3,641 companies tracked · updated Jul 18, 2026 at 17:04 UTC**
+**95 open roles · 64 new this week · 3,641 companies tracked · updated Jul 18, 2026 at 19:13 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -60,7 +60,7 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 | Deepgram | Software Engineering- Internship (Fall 2026/Summer 2027) 🆕 | Software | USA / Remote | Jul 17, 2026 | [Apply](https://jobs.ashbyhq.com/deepgram/dc8693b5-72ce-4ca3-ab15-9c8434d35da1) |
 | Stevens Institute of Technology ✓ | Summer 2026 Intern:  Cyber Security and Reliable AI for UAS and Contested Environments ~ 🆕 | Data & ML/AI | Hoboken, NJ - Main Campus | Jul 17, 2026 | [Apply](https://stevens.wd5.myworkdayjobs.com/External/job/Hoboken-NJ---Main-Campus/Summer-2026-Intern---Cyber-Security-and-Reliable-AI-for-UAS-and-Contested-Environments_RQ30408-1) |
 | Torch Technologies | Software Engineer Intern ~ 🇺🇸 🆕 | Software | Huntsville, AL | Jul 16, 2026 | [Apply](https://starfish.wd501.myworkdayjobs.com/Careers/job/Huntsville-AL/Software-Engineer-Intern_R1381) |
-| Chevron Corporation ✓ | 2026-2027 Information Technology - Software Engineer - Intern 🛂 🆕 | Software | Houston, Texas, United States of America | Jul 16, 2026 | [Apply](https://chevron.wd5.myworkdayjobs.com/University/job/Houston-Texas-United-States-of-America/XMLNAME-2026-2027-Information-Technology---Software-Engineer---Intern_R000072398-1) |
+| Chevron Corporation ✓ | 2026-2027 Information Technology - Software Engineer - Intern 🛂 | Software | Houston, Texas, United States of America | Jul 16, 2026 | [Apply](https://chevron.wd5.myworkdayjobs.com/University/job/Houston-Texas-United-States-of-America/XMLNAME-2026-2027-Information-Technology---Software-Engineer---Intern_R000072398-1) |
 | DNV | AI Research Internship ~ | Data & ML/AI | Oakland, CA, United States | Jul 16, 2026 | [Apply](https://ecyq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/7094) |
 | Acds | AI Software Engineer Intern- Bastazo ~ | Data & ML/AI | Bentonville, AR | Jul 15, 2026 | [Apply](https://jobs.lever.co/acds/65b739c3-02ad-4814-ad24-24abecbc83f4) |
 | Fortive | IT Infrastructure Internship ~ | Software | Irvine, CA, United States | Jul 15, 2026 | [Apply](https://ejta.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/10126) |
@@ -236,7 +236,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,641 companies across 12 ATS platforms · 98% fetch success · completed in 266.7s · median detection latency 1055 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,641 companies across 12 ATS platforms · 97% fetch success · completed in 240.3s · median detection latency 1055 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
