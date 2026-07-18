@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**95 open roles · 64 new this week · 3,641 companies tracked · updated Jul 18, 2026 at 15:00 UTC**
+**95 open roles · 64 new this week · 3,641 companies tracked · updated Jul 18, 2026 at 17:04 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -61,7 +61,7 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 | Stevens Institute of Technology ✓ | Summer 2026 Intern:  Cyber Security and Reliable AI for UAS and Contested Environments ~ 🆕 | Data & ML/AI | Hoboken, NJ - Main Campus | Jul 17, 2026 | [Apply](https://stevens.wd5.myworkdayjobs.com/External/job/Hoboken-NJ---Main-Campus/Summer-2026-Intern---Cyber-Security-and-Reliable-AI-for-UAS-and-Contested-Environments_RQ30408-1) |
 | Torch Technologies | Software Engineer Intern ~ 🇺🇸 🆕 | Software | Huntsville, AL | Jul 16, 2026 | [Apply](https://starfish.wd501.myworkdayjobs.com/Careers/job/Huntsville-AL/Software-Engineer-Intern_R1381) |
 | Chevron Corporation ✓ | 2026-2027 Information Technology - Software Engineer - Intern 🛂 🆕 | Software | Houston, Texas, United States of America | Jul 16, 2026 | [Apply](https://chevron.wd5.myworkdayjobs.com/University/job/Houston-Texas-United-States-of-America/XMLNAME-2026-2027-Information-Technology---Software-Engineer---Intern_R000072398-1) |
-| DNV | AI Research Internship ~ 🆕 | Data & ML/AI | Oakland, CA, United States | Jul 16, 2026 | [Apply](https://ecyq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/7094) |
+| DNV | AI Research Internship ~ | Data & ML/AI | Oakland, CA, United States | Jul 16, 2026 | [Apply](https://ecyq.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/7094) |
 | Acds | AI Software Engineer Intern- Bastazo ~ | Data & ML/AI | Bentonville, AR | Jul 15, 2026 | [Apply](https://jobs.lever.co/acds/65b739c3-02ad-4814-ad24-24abecbc83f4) |
 | Fortive | IT Infrastructure Internship ~ | Software | Irvine, CA, United States | Jul 15, 2026 | [Apply](https://ejta.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/10126) |
 | Datasite | AI Transformation / Forward Deployed Engineer (FDE) Internship ~ | Data & ML/AI | USA - MN - Minneapolis | Jul 15, 2026 | [Apply](https://datasite.wd1.myworkdayjobs.com/datasite/job/USA---MN---Minneapolis/AI-Transformation---Forward-Deployed-Engineer--FDE--Intern_R36255) |
@@ -124,7 +124,7 @@ _~ = the title doesn't state a year; bucketed here from its posting date (47 of 
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
-| Moog | Intern, IT Computer Science - Data Analytics 🆕 | Data & ML/AI | Buffalo, NY | Jul 16, 2026 | [Apply](https://moog.wd5.myworkdayjobs.com/moog_external_career_site/job/Buffalo-NY/Intern--IT-Computer-Science---Data-Analytics_R-26-17145) |
+| Moog | Intern, IT Computer Science - Data Analytics | Data & ML/AI | Buffalo, NY | Jul 16, 2026 | [Apply](https://moog.wd5.myworkdayjobs.com/moog_external_career_site/job/Buffalo-NY/Intern--IT-Computer-Science---Data-Analytics_R-26-17145) |
 | Sentara Health | Enterprise Data & AI Intern- Fall 2026 Internship | Data & ML/AI | Virginia Beach, VA | Jul 15, 2026 | [Apply](https://sentara.wd1.myworkdayjobs.com/SCS/job/Virginia-Beach-VA/Enterprise-Data---AI-Intern--Fall-2026-Internship_JR-102685) |
 | NVIDIA ✓ | Performance Engineer Intern, Systems Software-  Fall 2026 | Software | US, MO, St. Louis | Jul 06, 2026 | [Apply](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-MO-St-Louis/Performance-Engineer-Intern--Systems-Software---Fall-2026_JR2015779) |
 | Saronic | Enterprise Technology Intern - AI and Automation (Fall 2026) 🇺🇸 | Data & ML/AI | Austin, TX | Jul 02, 2026 | [Apply](https://jobs.ashbyhq.com/saronic/c95c2e3a-4c67-47b0-a03d-0e0317ac11a3) |
@@ -236,7 +236,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,641 companies across 12 ATS platforms · 99% fetch success · completed in 265.0s · median detection latency 1055 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,641 companies across 12 ATS platforms · 98% fetch success · completed in 266.7s · median detection latency 1055 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
