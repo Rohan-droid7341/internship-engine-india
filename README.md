@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**94 open roles · 63 new this week · 3,641 companies tracked · updated Jul 19, 2026 at 20:57 UTC**
+**94 open roles · 63 new this week · 3,641 companies tracked · updated Jul 19, 2026 at 22:59 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -54,7 +54,7 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
-| Altera Corporation ✓ | AI Software Development Engineer - Intern ~ 🆕 | Data & ML/AI | San Jose, California, United States | Jul 17, 2026 | [Apply](https://altera.wd1.myworkdayjobs.com/altera/job/San-Jose-California-United-States/AI-Software-Development-Engineer---Intern_R02707) |
+| Altera Corporation ✓ | AI Software Development Engineer - Intern ~ | Data & ML/AI | San Jose, California, United States | Jul 17, 2026 | [Apply](https://altera.wd1.myworkdayjobs.com/altera/job/San-Jose-California-United-States/AI-Software-Development-Engineer---Intern_R02707) |
 | Intel ✓ | AI Software Engineering Intern ~ | Data & ML/AI | US, Arizona, Phoenix | Jul 17, 2026 | [Apply](https://intel.wd1.myworkdayjobs.com/external/job/US-Arizona-Phoenix/AI-Software-Engineering-Intern_JR0282641) |
 | Magna International | AI Engineering Co-Op Student (4 months) ~ | Data & ML/AI | Milton, Ontario, CA | Jul 17, 2026 | [Apply](https://magna.wd3.myworkdayjobs.com/Magna/job/Milton-Ontario-CA/AI-Engineering-Co-Op-Student--4-months-_R00252238) |
 | Deepgram | Software Engineering- Internship (Fall 2026/Summer 2027) | Software | USA / Remote | Jul 17, 2026 | [Apply](https://jobs.ashbyhq.com/deepgram/dc8693b5-72ce-4ca3-ab15-9c8434d35da1) |
@@ -233,7 +233,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,641 companies across 12 ATS platforms · 99% fetch success · completed in 243.0s · median detection latency 1055 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,641 companies across 12 ATS platforms · 99% fetch success · completed in 263.9s · median detection latency 1055 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
