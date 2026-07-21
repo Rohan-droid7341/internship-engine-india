@@ -292,9 +292,9 @@ def generate(store_data: dict, stats: dict) -> None:
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Internship Engine - Live Dashboard</title>
-<meta name="description" content="Summer 2027 & Fall 2026 tech internships, refreshed every 2 hours. Auto-detected visa sponsorship flags, proven H-1B sponsor badges, email alerts.">
+<meta name="description" content="Summer 2027 & Fall 2026 tech internships, refreshed every hour. Auto-detected visa sponsorship flags, proven H-1B sponsor badges, email alerts.">
 <meta property="og:title" content="Internship Engine - Live Dashboard">
-<meta property="og:description" content="{len(open_jobs)} open tech internships, refreshed every 2 hours. Visa-sponsorship flags + proven H-1B sponsor badges for international students.">
+<meta property="og:description" content="{len(open_jobs)} open tech internships, refreshed every hour. Visa-sponsorship flags + proven H-1B sponsor badges for international students.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="alternate" type="application/atom+xml" title="New internships" href="feed.xml">

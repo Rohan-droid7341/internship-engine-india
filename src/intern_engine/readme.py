@@ -153,7 +153,7 @@ def _header(cfg: dict, total_open: int, companies: int, new_week: int) -> list[s
         f"(https://github.com/{repo}/actions/workflows/ci.yml) "
         f"![Open roles](https://img.shields.io/badge/dynamic/json?label=open%20roles"
         f"&query=open_total&url={stats_url}&color=2f81f7) "
-        "![Updates](https://img.shields.io/badge/updates-every%202%20hours-3fb950) "
+        "![Updates](https://img.shields.io/badge/updates-every%20hour-3fb950) "
         f"[![RSS](https://img.shields.io/badge/RSS-subscribe-e67e22)]({pages}/feed.xml)",
         "",
         "A self-updating engine that tracks tech internships so you don't have to. "
@@ -201,7 +201,7 @@ def _header(cfg: dict, total_open: int, companies: int, new_week: int) -> list[s
         f"[RSS]({pages}/feed.xml), or Discord - plus a [live dashboard]({pages}/) "
         "with search, filters, and an F-1 friendly toggle.",
         f"- **An engine, not a spreadsheet** - {companies:,} companies polled every "
-        "2 hours across 12 job platforms, 175+ tests, full source in this repo.",
+        "hour across 12 job platforms, 175+ tests, full source in this repo.",
         "",
         "## Scope",
         "",

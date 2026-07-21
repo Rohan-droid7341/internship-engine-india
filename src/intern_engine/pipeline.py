@@ -390,7 +390,7 @@ def _write_stats(stats: dict) -> None:
         json.dump(stats, f, indent=2, ensure_ascii=False)
 
 
-_HISTORY_KEEP = 1000  # ~3 months of 2-hourly runs
+_HISTORY_KEEP = 2000  # ~3 months of hourly runs
 
 
 def _append_history(stats: dict) -> None:
