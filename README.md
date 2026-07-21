@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**97 open roles · 60 new this week · 3,705 companies tracked · updated Jul 21, 2026 at 15:52 UTC**
+**96 open roles · 60 new this week · 3,705 companies tracked · updated Jul 21, 2026 at 17:27 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -121,7 +121,7 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 
 _~ = the title doesn't state a year; bucketed here from its posting date (42 of 64)._
 
-## Fall 2026  (33 open)
+## Fall 2026  (32 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
@@ -139,7 +139,6 @@ _~ = the title doesn't state a year; bucketed here from its posting date (42 of 
 | SoloPulse | Software Engineer Intern/Co-Op - Fall 2026 | Software | Peachtree Corners, GA | Jun 16, 2026 | [Apply](https://jobs.lever.co/solopulseco/00fbde18-a387-4c9f-97d4-77059aec7b56) |
 | Beaconsoftware | Software Engineering Intern | Software | San Francisco, CA | Jun 02, 2026 | [Apply](https://jobs.ashbyhq.com/beaconsoftware/2452d342-a069-4eda-adbe-9df296808ca1) |
 | Four Hands | Cybersecurity Intern | Security | Austin, TX | Jun 02, 2026 | [Apply](https://job-boards.greenhouse.io/fourhands/jobs/4267718009) |
-| Samsung Research America ✓ | 2026 Fall Intern, Computer Vision/AI | Data & ML/AI | 665 Clyde Avenue +3 more | May 27, 2026 | [Apply](https://job-boards.greenhouse.io/samsungresearchamericainternship/jobs/8560657002) |
 | Saronic | Software Engineer Intern (Fall 2026) 🇺🇸 | Software | Austin, TX | May 18, 2026 | [Apply](https://jobs.ashbyhq.com/saronic/1c74957f-0895-415b-9324-08b0994747d7) |
 | Astranis | Software Engineer- Backend Intern (Fall 2026) 🇺🇸 | Software | San Francisco, CA | May 13, 2026 | [Apply](https://job-boards.greenhouse.io/astranis/jobs/4681183006) |
 | Samsung Research America ✓ | 2026 Fall Intern, ML/NLP Research | Data & ML/AI | 665 Clyde Avenue +3 more | May 08, 2026 | [Apply](https://job-boards.greenhouse.io/samsungresearchamericainternship/jobs/8541339002) |
@@ -159,7 +158,7 @@ _~ = the title doesn't state a year; bucketed here from its posting date (42 of 
 | Amazon ✓ | Robotics - Software Development Engineer Intern/Co-op - 2026 | Hardware | Westboro, Wisconsin, USA | Dec 03, 2025 | [Apply](https://www.amazon.jobs/en/jobs/3136266/robotics-software-development-engineer-intern-co-op-2026) |
 | Amazon ✓ | Amazon Industrial Robotics - Applied Scientist II Intern / Co-op - 2026, Amazon Industrial Robotics | Data & ML/AI | North Reading, Massachusetts, USA | Nov 25, 2025 | [Apply](https://www.amazon.jobs/en/jobs/3132414/amazon-industrial-robotics-applied-scientist-ii-intern-co-op-2026-amazon-industrial-robotics) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (1 of 33)._
+_~ = the title doesn't state a year; bucketed here from its posting date (1 of 32)._
 
 <a id="drop-radar"></a>
 
@@ -195,10 +194,11 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _78 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). **63** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 23 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 24 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Samsung Research America | 2026 Fall Intern, Computer Vision/AI | Fall 2026 | 2026-07-21 |
 | DNV | AI Research Internship | Summer 2027 | 2026-07-21 |
 | Fortive | IT Infrastructure Internship | Summer 2027 | 2026-07-21 |
 | Altera Corporation | AI Software Development Engineer - Intern | Summer 2027 | 2026-07-20 |
@@ -240,7 +240,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,705 companies across 12 ATS platforms · 98% fetch success · completed in 275.9s · median detection latency 1040 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,705 companies across 12 ATS platforms · 99% fetch success · completed in 243.8s · median detection latency 1040 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
