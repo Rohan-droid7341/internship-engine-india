@@ -43,3 +43,34 @@ def test_normalizes_company_variants_together():
     keys = list(out["companies"])
     assert len(keys) == 1
     assert out["companies"][keys[0]]["cycles"]["Summer 2027"]["first_posted"] == "2026-06-25"
+
+
+CYCLES = ["Summer 2027", "Fall 2026"]
+
+
+def test_inferred_cycle_is_not_recorded():
+    # A date-inferred (guessed) cycle must never become a radar "observation" —
+    # it would surface as a 🎯 verified drop date and project fiction forward.
+    store = {
+        "1": {"company": "GuessCo", "season": "Summer 2027", "season_inferred": True,
+              "posted_at": "2026-06-01T00:00:00Z"},
+        "2": {"company": "RealCo", "season": "Summer 2027", "season_inferred": False,
+              "posted_at": "2026-06-02T00:00:00Z"},
+    }
+    out = observe.update_from_store(store, {"companies": {}}, CYCLES)
+    assert "guessco" not in out["companies"]
+    assert out["companies"]["realco"]["cycles"]["Summer 2027"]["first_posted"] == "2026-06-02"
+
+
+def test_off_tracked_cycle_is_not_recorded():
+    # An off-cycle tombstone ("Summer 2026") is real but was never swept in full;
+    # recording it would let the radar invent a cadence via prev-cycle projection.
+    store = {
+        "1": {"company": "OneOff", "season": "Summer 2026", "season_inferred": False,
+              "posted_at": "2026-06-18T00:00:00Z"},
+        "2": {"company": "Tracked", "season": "Fall 2026", "season_inferred": False,
+              "posted_at": "2026-06-18T00:00:00Z"},
+    }
+    out = observe.update_from_store(store, {"companies": {}}, CYCLES)
+    assert "oneoff" not in out["companies"]
+    assert "tracked" in out["companies"]

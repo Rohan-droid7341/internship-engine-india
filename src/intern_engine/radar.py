@@ -89,11 +89,19 @@ def _window_expected(cycle: str, month: str) -> date | None:
 
 
 def _open_this_cycle(store_data: dict, cycle: str) -> dict[str, dict]:
-    """{normalized company: {url, name}} for roles open in the target cycle."""
+    """{normalized company: {url, name}} for roles CONFIRMED open in the cycle.
+
+    "Confirmed" means the cycle is stated (title or verified text), not merely
+    inferred from a posting date. The radar marks live companies "🎯 verified";
+    a company whose only open role is a date-inferred guess must not earn that
+    badge — it's still in the main list, just not asserted on the radar.
+    """
     seen: dict[str, dict] = {}
     for r in store_data.values():
         if not r.get("is_open") or r.get("season") != cycle:
             continue
+        if r.get("season_inferred"):
+            continue  # a guessed cycle can't confirm a radar drop (see docstring)
         name = r.get("company") or ""
         key = h1b.normalize(name)
         if key and key not in seen:
@@ -176,11 +184,13 @@ def rows(store_data: dict, cycle: str, today: date | None = None) -> list[dict]:
             "note": (k_info or {}).get("note", ""),
         })
 
-    _rank = {"open": 0, "dropped": 1, "waiting": 2}
+    # open now (apply today) -> waiting (what's coming, the radar's point) ->
+    # dropped (opened and already closed this cycle; least actionable).
+    _rank = {"open": 0, "waiting": 1, "dropped": 2}
 
     def _sortkey(r: dict) -> tuple:
         return (
-            _rank[r["status"]],                 # open, then dropped, then waiting
+            _rank[r["status"]],
             r["rolling"],                       # dated before rolling
             r["expected"] or "9999-99-99",      # soonest expected next
             r["company"].lower(),

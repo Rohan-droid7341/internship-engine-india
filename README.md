@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**95 open roles · 58 new this week · 3,710 companies tracked · updated Jul 21, 2026 at 21:41 UTC**
+**95 open roles · 58 new this week · 3,710 companies tracked · updated Jul 21, 2026 at 21:55 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -18,7 +18,7 @@ This is an engine, not a hand-kept list. It polls company career feeds several t
 
 ## What makes this different
 
-- **📅 [Drop Radar](#drop-radar)** - the only list that shows **what's coming**: each company's expected posting window, projected from last cycle's real first-post dates.
+- **📅 [Drop Radar](#drop-radar)** - the only list that shows **what's coming**: each marquee company's typical opening window, then confirmed with the real drop date the moment the engine catches it live.
 - **Visa intel, computed** - 🇺🇸 / 🛂 flags detected automatically from every job description, plus ✓ for employers with a real H-1B track record (official USCIS data). The big lists crowdsource this by hand; here it's code.
 - **Real posted dates on every role** - pulled from each job portal itself, so newest-first actually means newest.
 - **Skill tags + pay, extracted** - every posting's text is scanned for the stack it wants (Python, C++, PyTorch, ...) and the pay it states - searchable on the [dashboard](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/), included in the CSV and API.
@@ -169,28 +169,38 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 
 | Company | Typical opening | Expected this cycle | Status |
 |---|---|---|---|
-| 🎯 Ellipsis Labs | Mar 26 | dropped Mar 26 | ✅ [open now](https://jobs.ashbyhq.com/ellipsislabs/02136b22-35b1-4b3d-8bef-567c3380a849) |
-| 🎯 GenBio AI | Jun 01 | dropped Jun 01 | ✅ [open now](https://jobs.lever.co/genbio/4bdb14ae-e19f-40c8-84db-1307dbdabe74) |
-| 🎯 Walleye Capital | Jun 01 | dropped Jun 01 | ✅ [open now](https://job-boards.greenhouse.io/walleyecapital-external-students/jobs/4676587006) |
-| 🎯 Fluxergy | Jun 02 | dropped Jun 02 | ✅ [open now](https://jobs.lever.co/fluxergy-2/c592763e-56ba-4d20-b751-3a4574470eec) |
-| 🎯 TransMarket Group | Jun 02 | dropped Jun 02 | ✅ [open now](https://job-boards.greenhouse.io/transmarketgroup/jobs/5151577007?gh_jid=5151577007) |
-| 🎯 Clarity Innovations | Jun 05 | dropped Jun 05 | ✅ [open now](https://job-boards.greenhouse.io/clarityinnovates/jobs/5155449007) |
-| 🎯 XPENG Motors | Jun 05 | dropped Jun 05 | ✅ [open now](https://job-boards.greenhouse.io/xpengmotors/jobs/8581353002) |
-| 🎯 Scale AI | Jun 06 | dropped Jun 06 | ✅ [open now](https://job-boards.greenhouse.io/scaleai/jobs/4703343005) |
-| 🎯 Tenstorrent | Jun 08 | dropped Jun 08 | ✅ [open now](https://job-boards.greenhouse.io/tenstorrentuniversity/jobs/5158533007) |
-| 🎯 Centerfield | Jun 09 | dropped Jun 09 | ✅ [open now](https://jobs.ashbyhq.com/centerfield/3279e803-56ab-4e12-8168-c2fd60bc8e60) |
-| 🎯 Anduril | Jun 10 | dropped Jun 10 | ✅ [open now](https://boards.greenhouse.io/andurilindustries/jobs/5148079007?gh_jid=5148079007) |
-| 🎯 Lila Sciences | Jun 11 | dropped Jun 11 | ✅ [open now](https://job-boards.greenhouse.io/lilasciences/jobs/4280809009) |
-| 🎯 Voloridge | Jun 11 | dropped Jun 11 | ✅ [open now](https://job-boards.greenhouse.io/voloridgeinvestmentmanagement/jobs/4224862009) |
-| 🎯 Institute of Foundation Models | Jun 12 | dropped Jun 12 | ✅ [open now](https://jobs.lever.co/ifm-us/3eec355c-6dde-4a3e-8cdf-b2a8930d5678) |
-| 🎯 iHerb | Jun 17 | dropped Jun 17 | ✅ [open now](https://job-boards.greenhouse.io/iherb/jobs/7776154003) |
-| 🎯 Acds | Jun 18 | dropped Jun 18 | ✅ [open now](https://jobs.lever.co/acds/01fdf41b-a835-4e00-8d01-0275677a8f08) |
-| 🎯 Copart | Jun 18 | dropped Jun 18 | ✅ [open now](https://copart.wd12.myworkdayjobs.com/copart/job/Dallas-TX---Headquarters/DevOps-Engineering-Intern_JR109490) |
-| 🎯 Generac | Jun 18 | dropped Jun 18 | ✅ [open now](https://generac.wd5.myworkdayjobs.com/external/job/Reno-NV---USA/Intern-Firmware-Engineering_JR14674) |
-| 🎯 Nio | Jun 19 | dropped Jun 19 | ✅ [open now](https://nio.wd3.myworkdayjobs.com/NIO_Careers/job/San-Jose-US/AI-Robotics-Researcher-Intern--Dexterous-Manipulation-_R-000144) |
-| 🎯 RFCUNY | Jun 23 | dropped Jun 23 | ✅ [open now](https://rfcuny.wd108.myworkdayjobs.com/RFCUNY/job/New-York-NY/Data-Analyst-Intern_JR2987) |
+| Citadel | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| Citadel Securities | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| Databricks | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| DoorDash | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| DRW | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| Google | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| Jane Street | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| Meta | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| Optiver | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| Pinterest | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| Salesforce | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| SIG | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| Snowflake | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| Uber | ~Aug | ~Aug · in ~11d | ⏳ waiting |
+| Adobe | ~Sep | ~Sep · in ~42d | ⏳ waiting |
+| Airbnb | ~Sep | ~Sep · in ~42d | ⏳ waiting |
+| Bloomberg | ~Sep | ~Sep · in ~42d | ⏳ waiting |
+| Dropbox | ~Sep | ~Sep · in ~42d | ⏳ waiting |
+| Plaid | ~Sep | ~Sep · in ~42d | ⏳ waiting |
+| Point72 | ~Sep | ~Sep · in ~42d | ⏳ waiting |
+| Robinhood | ~Sep | ~Sep · in ~42d | ⏳ waiting |
+| Roblox | ~Sep | ~Sep · in ~42d | ⏳ waiting |
+| Stripe | ~Sep | ~Sep · in ~42d | ⏳ waiting |
+| D.E. Shaw | ~Oct | ~Oct | ⏳ waiting |
+| Coinbase | ~Dec | ~Dec | ⏳ waiting |
+| Ramp | ~Dec | ~Dec | ⏳ waiting |
+| Two Sigma | ~Dec | ~Dec | ⏳ waiting |
+| Apple | rolling | year-round | ⏳ waiting |
+| Datadog | rolling | year-round | ⏳ waiting |
+| Jump Trading | rolling | year-round | ⏳ waiting |
 
-_78 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). **63** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
+_53 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). **18** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
 <summary><strong>Recently closed</strong> — 25 roles taken down in the last 14 days</summary>

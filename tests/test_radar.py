@@ -95,6 +95,33 @@ def test_live_only_company_with_no_date(monkeypatch):
     assert radar.pretty_expected(row) == "live now"
 
 
+def test_inferred_open_role_does_not_confirm_the_radar(monkeypatch):
+    # A company whose only open role has a GUESSED cycle must not earn a radar
+    # row (no false "🎯 verified open now") — it's in the list, not the forecast.
+    store = {"x": {"company": "GuessCo", "season": "Summer 2027", "season_inferred": True,
+                   "is_open": True, "url": "https://g"}}
+    assert radar.rows(store, "Summer 2027", today=TODAY) == []
+
+
+def test_stated_open_role_still_confirms_the_radar(monkeypatch):
+    store = {"x": {"company": "StatedCo", "season": "Summer 2027", "season_inferred": False,
+                   "is_open": True, "url": "https://s"}}
+    row = next(r for r in radar.rows(store, "Summer 2027", today=TODAY) if r["company"] == "StatedCo")
+    assert row["status"] == "open"
+
+
+def test_waiting_sorts_before_dropped(monkeypatch):
+    # Forecast (what's coming) must rank above a role that already closed.
+    _observed(monkeypatch, {
+        "gonecorp": {"name": "GoneCorp",
+                     "cycles": {"Summer 2027": {"first_posted": "2026-05-01", "count": 1}}},
+    })
+    _known(monkeypatch, [{"name": "Meta", "opens": "08", "precision": "month"}])
+    # GoneCorp posted this cycle but is not open now -> "dropped"; Meta -> "waiting".
+    companies = [r["company"] for r in radar.rows({}, "Summer 2027", today=TODAY)]
+    assert companies.index("Meta") < companies.index("GoneCorp")
+
+
 def test_posted_rows_sort_before_waiting(monkeypatch):
     _observed(monkeypatch, {
         "stripe": {"name": "Stripe", "cycles": {"Summer 2027": {"first_posted": "2026-06-30", "count": 1}}},

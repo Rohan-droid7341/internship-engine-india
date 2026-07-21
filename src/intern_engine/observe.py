@@ -31,7 +31,7 @@ from __future__ import annotations
 import json
 from datetime import UTC, datetime
 
-from . import h1b, paths
+from . import config, h1b, paths
 
 
 def load() -> dict:
@@ -53,21 +53,38 @@ def _posted_day(record: dict) -> str | None:
         return None
 
 
-def update_from_store(store_data: dict, observed: dict | None = None) -> dict:
+def update_from_store(store_data: dict, observed: dict | None = None,
+                      cycles: list[str] | None = None) -> dict:
     """Fold the store's real posted dates into the observed record.
 
     Keeps, per company and cycle, the EARLIEST posted date we have ever seen and
     a running count of distinct roles. Monotonic: a role closing and being purged
     from the store never erases the date we learned from it.
+
+    Two guards keep the radar honest — a record is recorded only when BOTH hold:
+
+      1. The cycle was STATED (title or verified text), not inferred from a
+         posting date. The radar renders observations as "🎯 verified — the
+         engine saw the drop itself"; a date-inferred guess would project
+         fiction forward a year.
+      2. The cycle is one we actually TRACK. Off-cycle tombstones (e.g. a lone
+         "Summer 2026" role we dropped) are real but incomplete — we never swept
+         that cycle in full, so projecting it forward would invent a cadence the
+         company doesn't have. Cross-cycle projection is a next-cycle feature: we
+         record this cycle's real drops now, and project them forward once THIS
+         cycle becomes "last cycle".
     """
     observed = observed if observed is not None else load()
     companies = observed.setdefault("companies", {})
+    tracked = set(cycles if cycles is not None else config.cycles(config.load_config()))
 
     for record in store_data.values():
+        if record.get("season_inferred"):
+            continue  # a guessed cycle is not a real observation (see docstring)
         cycle = record.get("season")
         day = _posted_day(record)
-        if not cycle or not day:
-            continue
+        if not cycle or not day or cycle not in tracked:
+            continue  # only real, tracked-cycle drops become observations
         name = (record.get("company") or "").strip()
         key = h1b.normalize(name)
         if not key:

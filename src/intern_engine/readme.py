@@ -187,8 +187,9 @@ def _header(cfg: dict, total_open: int, companies: int, new_week: int) -> list[s
         "## What makes this different",
         "",
         "- **📅 [Drop Radar](#drop-radar)** - "
-        "the only list that shows **what's coming**: each company's expected posting "
-        "window, projected from last cycle's real first-post dates.",
+        "the only list that shows **what's coming**: each marquee company's typical "
+        "opening window, then confirmed with the real drop date the moment the "
+        "engine catches it live.",
         "- **Visa intel, computed** - 🇺🇸 / 🛂 flags detected automatically from every "
         "job description, plus ✓ for employers with a real H-1B track record "
         "(official USCIS data). The big lists crowdsource this by hand; here it's code.",
@@ -328,12 +329,23 @@ def _new_this_week(open_jobs: list[dict]) -> int:
     return sum(1 for r in open_jobs if (r.get("first_seen_at") or "") >= cutoff)
 
 
-def _radar_section(store_data: dict, cycle: str, cap: int = 20) -> list[str]:
+def _radar_section(store_data: dict, cycle: str, cap: int = 30) -> list[str]:
     """The Drop Radar: which companies haven't posted yet, and when to expect
-    them — from the engine's own observed dates + hand-verified opening windows."""
+    them — from the engine's own observed dates + hand-verified opening windows.
+
+    The README teaser leads with the FORECAST (waiting, soonest first) — that's
+    the radar's unique value; "open now" rows just echo the list above — then
+    shows a few recent drops as proof the forecast is real. The dashboard keeps
+    the full, searchable list."""
     rows = radar.rows(store_data, cycle)
     if not rows:
         return []
+    waiting = [r for r in rows if r["status"] == "waiting"]
+    opened = [r for r in rows if r["status"] == "open"]
+    dropped = [r for r in rows if r["status"] == "dropped"]
+    # Forecast first (what to watch for), then a handful of recent drops as proof.
+    ordered = waiting + opened[:8] + dropped[:4]
+
     pages = config.pages_base()
     verified = sum(1 for r in rows if r.get("source") == "engine")
     lines = [
@@ -353,7 +365,7 @@ def _radar_section(store_data: dict, cycle: str, cap: int = 20) -> list[str]:
         "| Company | Typical opening | Expected this cycle | Status |",
         "|---|---|---|---|",
     ]
-    for r in rows[:cap]:
+    for r in ordered[:cap]:
         if r["status"] == "open":
             status = f"✅ [open now]({r['url']})" if r["url"] else "✅ open now"
         elif r["status"] == "dropped":
