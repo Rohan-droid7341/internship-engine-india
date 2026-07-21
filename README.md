@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**97 open roles · 60 new this week · 3,705 companies tracked · updated Jul 21, 2026 at 02:57 UTC**
+**97 open roles · 60 new this week · 3,705 companies tracked · updated Jul 21, 2026 at 06:34 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -54,8 +54,8 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
-| Axon ✓ | 2027 US Firmware Engineering Internship 🆕 | Hardware | Seattle, Washington, United States | Jul 20, 2026 | [Apply](https://job-boards.greenhouse.io/axontalentcommunity/jobs/7800628003) |
 | Axon ✓ | 2027 US Software Engineering Internship 🆕 | Software | Seattle, Washington, United States | Jul 20, 2026 | [Apply](https://job-boards.greenhouse.io/axontalentcommunity/jobs/7800617003) |
+| Axon ✓ | 2027 US Firmware Engineering Internship 🆕 | Hardware | Seattle, Washington, United States | Jul 20, 2026 | [Apply](https://job-boards.greenhouse.io/axontalentcommunity/jobs/7800628003) |
 | Nokia ✓ | AI R&D Engineer Co-op ~ 🆕 | Data & ML/AI | United States | Jul 20, 2026 | [Apply](https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/38783) |
 | Western Digital ✓ | Summer 2027 - Software Engineering Internship 🆕 | Software | San Jose, CA, United States | Jul 20, 2026 | [Apply](https://jobs.smartrecruiters.com/WesternDigital/744000138727213) |
 | AVEVA ✓ | Software Developer Intern- Drexel Co-op US ~ 🆕 | Software | Philadelphia +2 more | Jul 20, 2026 | [Apply](https://aveva.wd3.myworkdayjobs.com/AVEVA_careers/job/Philadelphia-Pennsylvania-United-States-of-America/Software-Developer-Intern--Drexel-Co-op-US_R014478) |
@@ -195,7 +195,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _77 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). **62** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 23 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 22 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -221,7 +221,6 @@ _77 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-S
 | 1Password | Developer Intern, Trust Platforms - Fall 2026 | Fall 2026 | 2026-07-09 |
 | State Street | BestX AI Engineer, Full-time Internship (July - Dec 2026) | Fall 2026 | 2026-07-09 |
 | Dmainc | Software Development Intern - Fall 2026 | Fall 2026 | 2026-07-08 |
-| 1Password | Developer Intern, Service Development - Fall 2026 | Fall 2026 | 2026-07-07 |
 
 </details>
 
@@ -240,7 +239,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,705 companies across 12 ATS platforms · 98% fetch success · completed in 273.0s · median detection latency 1042 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,705 companies across 12 ATS platforms · 97% fetch success · completed in 220.9s · median detection latency 1042 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
