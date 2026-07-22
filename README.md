@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**94 open roles · 57 new this week · 3,710 companies tracked · updated Jul 21, 2026 at 23:57 UTC**
+**93 open roles · 57 new this week · 3,710 companies tracked · updated Jul 22, 2026 at 02:16 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -119,7 +119,7 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 
 _~ = the title doesn't state a year; bucketed here from its posting date (42 of 62)._
 
-## Fall 2026  (32 open)
+## Fall 2026  (31 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
@@ -152,11 +152,10 @@ _~ = the title doesn't state a year; bucketed here from its posting date (42 of 
 | Hermeus | Software Engineering Intern (HMI) - Fall 2026 🇺🇸 | Software | Atlanta, GA | Apr 01, 2026 | [Apply](https://jobs.lever.co/hermeus/a3a1f0ea-6a4f-42e5-81c8-3b34dac22a67) |
 | Motorola ✓ | Intern - Embedded Software, System, and Test Engineer - 2026 🇺🇸 | Software | Irvine, CA | Mar 30, 2026 | [Apply](https://motorolasolutions.wd5.myworkdayjobs.com/Careers/job/Irvine-CA/Intern---Embedded-Software--System--and-Test-Engineer---2026_R62372) |
 | Varda Space | Flight Software Internship - Fall 2026 🇺🇸 | Software | El Segundo, California, United States | Mar 23, 2026 | [Apply](https://job-boards.greenhouse.io/vardaspace/jobs/7676465003) |
-| Center for AI Safety | Research Engineer Intern (Fall 2026) | Software | San Francisco, CA | Mar 05, 2026 | [Apply](https://jobs.lever.co/aisafety/e011814b-9a80-43d6-bb0c-cc153ea4bec4) |
 | Amazon ✓ | Robotics - Software Development Engineer Intern/Co-op - 2026 | Hardware | Westboro, Wisconsin, USA | Dec 03, 2025 | [Apply](https://www.amazon.jobs/en/jobs/3136266/robotics-software-development-engineer-intern-co-op-2026) |
 | Amazon ✓ | Amazon Industrial Robotics - Applied Scientist II Intern / Co-op - 2026, Amazon Industrial Robotics | Data & ML/AI | North Reading, Massachusetts, USA | Nov 25, 2025 | [Apply](https://www.amazon.jobs/en/jobs/3132414/amazon-industrial-robotics-applied-scientist-ii-intern-co-op-2026-amazon-industrial-robotics) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (1 of 32)._
+_~ = the title doesn't state a year; bucketed here from its posting date (1 of 31)._
 
 <a id="drop-radar"></a>
 
@@ -168,29 +167,29 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 
 | Company | Typical opening | Expected this cycle | Status |
 |---|---|---|---|
-| Citadel | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| Citadel Securities | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| Databricks | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| DoorDash | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| DRW | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| Google | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| Jane Street | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| Meta | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| Optiver | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| Pinterest | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| Salesforce | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| SIG | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| Snowflake | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| Uber | ~Aug | ~Aug · in ~11d | ⏳ waiting |
-| Adobe | ~Sep | ~Sep · in ~42d | ⏳ waiting |
-| Airbnb | ~Sep | ~Sep · in ~42d | ⏳ waiting |
-| Bloomberg | ~Sep | ~Sep · in ~42d | ⏳ waiting |
-| Dropbox | ~Sep | ~Sep · in ~42d | ⏳ waiting |
-| Plaid | ~Sep | ~Sep · in ~42d | ⏳ waiting |
-| Point72 | ~Sep | ~Sep · in ~42d | ⏳ waiting |
-| Robinhood | ~Sep | ~Sep · in ~42d | ⏳ waiting |
-| Roblox | ~Sep | ~Sep · in ~42d | ⏳ waiting |
-| Stripe | ~Sep | ~Sep · in ~42d | ⏳ waiting |
+| Citadel | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| Citadel Securities | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| Databricks | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| DoorDash | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| DRW | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| Google | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| Jane Street | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| Meta | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| Optiver | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| Pinterest | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| Salesforce | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| SIG | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| Snowflake | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| Uber | ~Aug | ~Aug · in ~10d | ⏳ waiting |
+| Adobe | ~Sep | ~Sep · in ~41d | ⏳ waiting |
+| Airbnb | ~Sep | ~Sep · in ~41d | ⏳ waiting |
+| Bloomberg | ~Sep | ~Sep · in ~41d | ⏳ waiting |
+| Dropbox | ~Sep | ~Sep · in ~41d | ⏳ waiting |
+| Plaid | ~Sep | ~Sep · in ~41d | ⏳ waiting |
+| Point72 | ~Sep | ~Sep · in ~41d | ⏳ waiting |
+| Robinhood | ~Sep | ~Sep · in ~41d | ⏳ waiting |
+| Roblox | ~Sep | ~Sep · in ~41d | ⏳ waiting |
+| Stripe | ~Sep | ~Sep · in ~41d | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct | ⏳ waiting |
 | Coinbase | ~Dec | ~Dec | ⏳ waiting |
 | Ramp | ~Dec | ~Dec | ⏳ waiting |
@@ -202,10 +201,11 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _53 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). **18** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 27 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 28 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Center for AI Safety | Research Engineer Intern (Fall 2026) | Fall 2026 | 2026-07-22 |
 | Axon | 2027 US Software Engineering Internship | Summer 2027 | 2026-07-21 |
 | Axon | 2027 US Firmware Engineering Internship | Summer 2027 | 2026-07-21 |
 | Kulicke & Soffa | Intern, Software Engineering | Summer 2027 | 2026-07-21 |
@@ -251,7 +251,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,710 companies across 12 ATS platforms · 98% fetch success · completed in 245.9s · median detection latency 1042 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,710 companies across 12 ATS platforms · 98% fetch success · completed in 301.0s · median detection latency 1042 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
