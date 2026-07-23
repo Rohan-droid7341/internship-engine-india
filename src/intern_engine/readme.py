@@ -90,17 +90,11 @@ def _is_new(record: dict, hours: int = 48) -> bool:
 
 def _row(record: dict) -> str:
     company = _md_cell(record.get("company"))
-    if h1b.badge(h1b.approvals_for(record.get("company") or "")):
-        company += " ✓"
     title = _md_cell(record.get("title"))
     if record.get("season_inferred"):
         title += " ~"
-    badges = " ".join(
-        b for b in (sponsorship.flag(record.get("sponsorship")), "🆕" if _is_new(record) else "")
-        if b
-    )
-    if badges:
-        title = f"{title} {badges}"
+    if _is_new(record):
+        title = f"{title} 🆕"
     location = _short_location(record.get("location"))
     category = _md_cell(record.get("category"))
     posted = _pretty_date(record)
@@ -176,7 +170,18 @@ def _header(cfg: dict, total_open: int, companies: int, new_week: int) -> list[s
         "- one email a day, only when new internships actually appeared, "
         f"one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too]"
         f"({_email_subscribe_url()}).)",
+        "---",
         "",
+    ]
+
+
+def _about_section(cfg: dict) -> list[str]:
+    region = _region_label(cfg)
+    cycles = config.cycles(cfg)
+    cycles_phrase = " and ".join(cycles)
+    pages = config.pages_base()
+    
+    return [
         "## What this is",
         "",
         "This is an engine, not a hand-kept list. It polls company career feeds several "
@@ -190,9 +195,6 @@ def _header(cfg: dict, total_open: int, companies: int, new_week: int) -> list[s
         "the only list that shows **what's coming**: each marquee company's typical "
         "opening window, then confirmed with the real drop date the moment the "
         "engine catches it live.",
-        "- **Visa intel, computed** - 🇺🇸 / 🛂 flags detected automatically from every "
-        "job description, plus ✓ for employers with a real H-1B track record "
-        "(official USCIS data). The big lists crowdsource this by hand; here it's code.",
         "- **Real posted dates on every role** - pulled from each job portal itself, "
         "so newest-first actually means newest.",
         "- **Skill tags + pay, extracted** - every posting's text is scanned for the "
@@ -200,9 +202,9 @@ def _header(cfg: dict, total_open: int, companies: int, new_week: int) -> list[s
         f"searchable on the [dashboard]({pages}/), included in the CSV and API.",
         f"- **Alerts your way** - [email digests]({pages}/#subscribe), "
         f"[RSS]({pages}/feed.xml), or Discord - plus a [live dashboard]({pages}/) "
-        "with search, filters, and an F-1 friendly toggle.",
-        f"- **An engine, not a spreadsheet** - {companies:,} companies polled every "
-        "hour across 12 job platforms, 175+ tests, full source in this repo.",
+        "with search and custom filters.",
+        f"- **An engine, not a spreadsheet** - polled every "
+        "hour across multiple ATS platforms with full source in this repo.",
         "",
         "## Scope",
         "",
@@ -215,33 +217,15 @@ def _header(cfg: dict, total_open: int, companies: int, new_week: int) -> list[s
         "",
         "## About",
         "",
-        "I'm an international student studying in the United States, so I built "
-        "this for the search I'm doing myself. The list is US roles only for now - "
-        "that's where I'm searching. Use it to spot roles early and apply before "
+        "I built this engine to automate tracking for top-tier tech internships across "
+        "India and globally remote roles. Use it to spot roles early and apply before "
         "they fill up - being first genuinely helps.",
-        "",
-        "## Where this is going",
-        "",
-        "I'm building this in the open and adding to it as it grows. Recently "
-        "shipped: **email alerts**, the **Drop Radar**, **auto-detected sponsorship "
-        "flags**, and the **live dashboard**. Next up: personalized alerts (pick "
-        "your categories), per-company hiring pages, and a ghost-posting detector. "
-        "If it helps you, a star means a lot and tells me to keep going.",
         "",
         "## How to use",
         "",
-        "- Roles are grouped by cycle below - **newest posting on top, oldest at the bottom.**",
+        "- Roles are grouped by cycle - **newest posting on top, oldest at the bottom.**",
         "- The **Posted** column is the date the company published the role.",
-        "- **Flags:** 🇺🇸 = requires U.S. citizenship or a security clearance · "
-        "🛂 = the posting says it won't sponsor a work visa · 🆕 = spotted in the "
-        "last 48 hours. Sponsorship flags are detected automatically from each job "
-        "description - treat them as a strong hint and confirm on the posting.",
-        f"- **✓ after a company name** = a real H-1B track record: USCIS approved "
-        f"{h1b.BADGE_THRESHOLD}+ petitions for that employer in "
-        f"{h1b.window_label() or 'recent fiscal years'} (matched automatically "
-        "against the official [H-1B Employer Data Hub]"
-        "(https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub)). "
-        "No ✓ doesn't mean they won't sponsor - it means we can't prove they have.",
+        "- **Flags:** 🆕 = spotted in the last 48 hours.",
         "- Track your applications with [`data/internships.csv`](data/internships.csv) "
         "(opens in Excel / Google Sheets).",
         "- Missing a company? Adding one takes a single line, see "
@@ -471,6 +455,7 @@ def generate(store_data: dict) -> dict:
         )
         lines.append("")
 
+    lines.extend(_about_section(cfg))
     lines.extend(_radar_section(store_data, cycles[0]))
     lines.extend(_closed_section(store_data, cycles))
     lines.extend(_footer())
