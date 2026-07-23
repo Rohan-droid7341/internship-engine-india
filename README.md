@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**9 open roles · 6 new this week · 3,896 companies tracked · updated Jul 23, 2026 at 23:21 UTC**
+**3 open roles · 3 new this week · 140 companies tracked · updated Jul 23, 2026 at 23:30 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -23,7 +23,7 @@ This is an engine, not a hand-kept list. It polls company career feeds several t
 - **Real posted dates on every role** - pulled from each job portal itself, so newest-first actually means newest.
 - **Skill tags + pay, extracted** - every posting's text is scanned for the stack it wants (Python, C++, PyTorch, ...) and the pay it states - searchable on the [dashboard](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/), included in the CSV and API.
 - **Alerts your way** - [email digests](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#subscribe), [RSS](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/feed.xml), or Discord - plus a [live dashboard](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/) with search, filters, and an F-1 friendly toggle.
-- **An engine, not a spreadsheet** - 3,896 companies polled every hour across 12 job platforms, 175+ tests, full source in this repo.
+- **An engine, not a spreadsheet** - 140 companies polled every hour across 12 job platforms, 175+ tests, full source in this repo.
 
 ## Scope
 
@@ -50,35 +50,15 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 
 ---
 
-## Summer 2027  (1 open)
+## Summer 2027 (International)  (3 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
-| ConnectPrep | Data Analyst Internship ~ 🇺🇸 | Data & ML/AI | Washington +2 more | Jul 02, 2026 | [Apply](https://apply.workable.com/connectprep/j/C0CA13664F/) |
-
-_~ = the title doesn't state a year; bucketed here from its posting date (1 of 1)._
-
-## Fall 2026  (2 open)
-
-| Company | Role | Category | Location | Posted | Apply |
-|---|---|---|---|---|---|
-| Altom Transport | Fall Software Development Intern ~ | Software | Hammond, Indiana, United States | Jun 23, 2026 | [Apply](https://apply.workable.com/altom-transport/j/9FC654F05E/) |
-| TMEIC ✓ | Intern - Applications, AI and Machine Learning (Fall 2026) (ET26021) 🛂 | Data & ML/AI | Roanoke, Virginia, United States | Apr 24, 2026 | [Apply](https://apply.workable.com/tmeic-corporation-americas/j/FD4C9770FF/) |
-
-_~ = the title doesn't state a year; bucketed here from its posting date (1 of 2)._
-
-## Summer 2027 (International)  (6 open)
-
-| Company | Role | Category | Location | Posted | Apply |
-|---|---|---|---|---|---|
-| Boston Medical Center ✓ | Cybersecurity & AI/Data Governance Intern ~ 🆕 | Data & ML/AI | Remote | Jul 23, 2026 | [Apply](https://bmc.wd1.myworkdayjobs.com/BMC/job/Remote/Cybersecurity---AI-Data-Governance-Intern_50294) |
-| Scopely ✓ | Intern - Gen. AI Art ~ 🆕 | Data & ML/AI | IN - Bangalore, India | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5341537008?gh_jid=5341537008) |
 | Stripe ✓ | Software Engineer, Intern ~ 🆕 | Software | Bengaluru | Jul 10, 2026 | [Apply](https://stripe.com/jobs/search?gh_jid=8031833) |
 | IMC Trading | 2027 - Software Engineering Intern - IIT Bombay 🆕 | Software | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4860319101) |
 | IMC Trading | 2027 - Software Engineering Intern - BITS Pilani 🆕 | Software | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4917549101) |
-| Ancestry ✓ | Data Science - AI Document Understanding, Co-op ~ 🆕 | Data & ML/AI | Remote | Jun 30, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Data-Science---AI-Document-Understanding--Co-op_R003371) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (4 of 6)._
+_~ = the title doesn't state a year; bucketed here from its posting date (1 of 3)._
 
 <a id="drop-radar"></a>
 
@@ -124,50 +104,40 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _54 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). **19** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 40 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 30 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
-| Deepgram | Software Engineering- Internship (Fall 2026/Summer 2027) | Summer 2027 | 2026-07-23 |
-| Ada | Software Engineering Intern | Summer 2027 | 2026-07-23 |
-| iHerb | Software Development Intern | Summer 2027 | 2026-07-23 |
-| HireVue | Data Science Intern / Fully Remote US | Summer 2027 | 2026-07-23 |
-| Autodesk | Stagiaire en Développement Cloud, Intern Cloud Developer | Summer 2027 | 2026-07-23 |
-| Ciena | Stagiaire en développement logiciel - COOP Software developer | Summer 2027 | 2026-07-23 |
-| Ensemble Health Partners | Data Scientist Intern | Summer 2027 | 2026-07-23 |
-| Revvity | Full-Stack AI Developer Intern | Summer 2027 | 2026-07-23 |
-| Sony | Research Intern on Generative and Protective AI for Content Creation | Summer 2027 | 2026-07-23 |
 | Amazon | Software Development Engineer Intern, AWS Data Services - Fall 2026 (US) | Fall 2026 | 2026-07-23 |
 | Amazon | Software Development Engineer Internship - Fall 2026 (US) | Fall 2026 | 2026-07-23 |
 | Amazon | Amazon Industrial Robotics - Applied Scientist II Intern / Co-op - 2026, Amazon Industrial Robotics | Fall 2026 | 2026-07-23 |
 | Amazon | Robotics - Software Development Engineer Intern/Co-op - 2026 | Fall 2026 | 2026-07-23 |
-| Beaconsoftware | Software Engineering Intern | Fall 2026 | 2026-07-23 |
-| Centerfield | Software Engineer Intern | Summer 2027 | 2026-07-23 |
-| Centerfield | Data Science Intern | Summer 2027 | 2026-07-23 |
-| Ellipsis Labs | Software Engineer - 2027 Interns | Summer 2027 | 2026-07-23 |
-| Junior | Software Engineering Intern — Fall 2026 | Fall 2026 | 2026-07-23 |
 | Notion | Software Engineer Intern (Fall 2026) | Fall 2026 | 2026-07-23 |
-| Saronic | Software Engineer Intern (Fall 2026) | Fall 2026 | 2026-07-23 |
-| Saronic | Enterprise Technology Intern - AI and Automation (Fall 2026) | Fall 2026 | 2026-07-23 |
-| Veeda AI | Internship - Veeda AI Scientist | Summer 2027 | 2026-07-23 |
-| VetsEZ | Full Stack Developer Intern (Remote Opportunity) | Summer 2027 | 2026-07-23 |
 | Akuna Capital | Software Engineer Intern - C++, Summer 2027 | Summer 2027 | 2026-07-23 |
 | Akuna Capital | Software Engineer Intern - Python, Summer 2027 | Summer 2027 | 2026-07-23 |
 | Akuna Capital | Platform Engineer Intern, Summer 2027 | Summer 2027 | 2026-07-23 |
 | Akuna Capital | Software Engineer Intern - C# .NET Desktop, Summer 2027 | Summer 2027 | 2026-07-23 |
 | Akuna Capital | Software Engineer Intern - Full Stack Web, Summer 2027 | Summer 2027 | 2026-07-23 |
-| Anduril | 2027 Software Engineer Intern | Summer 2027 | 2026-07-23 |
-| Appian | Software Engineering Intern | Summer 2027 | 2026-07-23 |
-| Astranis | Software Engineer- Backend Intern (Fall 2026) | Fall 2026 | 2026-07-23 |
-| Astranis | Software Engineer Intern - Enterprise Systems (Fall 2026) | Fall 2026 | 2026-07-23 |
-| Bot Auto | Intern, Deep Learning Engineer | Summer 2027 | 2026-07-23 |
-| Charlesriveranalytics90 | Software QA Tester Intern/Co-op (Fall 2026) | Fall 2026 | 2026-07-23 |
-| Clarity Innovations | Junior Software Engineer Internship | Summer 2027 | 2026-07-23 |
-| Chicago Trading Company | Software Engineering Internship - Summer 2027 | Summer 2027 | 2026-07-23 |
-| Figure | Firmware Intern [Fall 2026] | Fall 2026 | 2026-07-23 |
 | Five Rings | Summer Intern 2027 - Software Developer | Summer 2027 | 2026-07-23 |
-| Four Hands | Cybersecurity Intern | Fall 2026 | 2026-07-23 |
-| Gemini | Software Engineering Intern (Fall 2026) | Fall 2026 | 2026-07-23 |
+| IMC Trading | Software Engineer Intern - Summer 2027 | Summer 2027 | 2026-07-23 |
+| IMC Trading | Machine Learning Research Intern - Summer 2027 - Chicago | Summer 2027 | 2026-07-23 |
+| Jump Trading | Campus AI Research Engineer (Intern) | Summer 2027 | 2026-07-23 |
+| Jump Trading | Campus AI Research Engineer - Deep Learning (Intern) | Summer 2027 | 2026-07-23 |
+| Jump Trading | Campus AI Research Engineer – Research Automation (Intern) | Summer 2027 | 2026-07-23 |
+| Tower Research Capital | Quantitative Developer Intern - Summer 2027 | Summer 2027 | 2026-07-23 |
+| Hudson River Trading | Software Engineering Internship (C++ or Python) – Summer 2027 | Summer 2027 | 2026-07-23 |
+| Palantir | Forward Deployed Infrastructure Engineer, Internship - US Government | Summer 2027 | 2026-07-23 |
+| Palantir | Year at Palantir - Forward Deployed Software Engineer, Internship - Commercial | Summer 2027 | 2026-07-23 |
+| Palantir | Forward Deployed Software Engineer, Internship - Intel | Summer 2027 | 2026-07-23 |
+| Palantir | Forward Deployed Software Engineer, Internship - Commercial | Summer 2027 | 2026-07-23 |
+| NVIDIA | Applied Research Intern, NLP - Fall 2026 | Fall 2026 | 2026-07-23 |
+| NVIDIA | Performance Engineer Intern, Systems Software-  Fall 2026 | Fall 2026 | 2026-07-23 |
+| Tencent | Research Intern – Video World Models (Research & ML Systems) | Summer 2027 | 2026-07-23 |
+| Intel | AI Software Engineering Intern | Summer 2027 | 2026-07-23 |
+| Uber Freight | Data Scientist Intern - Fall 2026 | Fall 2026 | 2026-07-15 |
+| NVIDIA | Quantum Error Correction Research Scientist Intern - Fall 2026 | Fall 2026 | 2026-07-13 |
+| NVIDIA | Quantum Research Scientist Intern - Fall 2026 | Fall 2026 | 2026-07-13 |
+| NVIDIA | Software Engineering Intern, JAX - Fall 2026 | Fall 2026 | 2026-07-13 |
 
 </details>
 
@@ -186,7 +156,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,896 companies across 14 ATS platforms · 97% fetch success · completed in 641.7s · median detection latency 1045 min · real posted dates on 100% of open roles._
+_Engine (last run): 140 companies across 11 ATS platforms · 76% fetch success · completed in 93.8s · median detection latency 181 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
