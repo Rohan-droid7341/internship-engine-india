@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**18 open roles · 13 new this week · 3,896 companies tracked · updated Jul 23, 2026 at 23:09 UTC**
+**9 open roles · 6 new this week · 3,896 companies tracked · updated Jul 23, 2026 at 23:21 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -50,17 +50,13 @@ I'm building this in the open and adding to it as it grows. Recently shipped: **
 
 ---
 
-## Summer 2027  (5 open)
+## Summer 2027  (1 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
-| HireVue | Data Science Intern / Fully Remote US ~ 🆕 | Data & ML/AI | Sandy, UT, United States (Remote) | Jul 20, 2026 | [Apply](https://jobs.smartrecruiters.com/HireVue/744000138728139) |
-| Deepgram | Software Engineering- Internship (Fall 2026/Summer 2027) | Software | USA / Remote | Jul 17, 2026 | [Apply](https://jobs.ashbyhq.com/deepgram/dc8693b5-72ce-4ca3-ab15-9c8434d35da1) |
 | ConnectPrep | Data Analyst Internship ~ 🇺🇸 | Data & ML/AI | Washington +2 more | Jul 02, 2026 | [Apply](https://apply.workable.com/connectprep/j/C0CA13664F/) |
-| Sony | Research Intern on Generative and Protective AI for Content Creation ~ | Data & ML/AI | Remote - New York | Jun 30, 2026 | [Apply](https://sonyglobal.wd1.myworkdayjobs.com/SonyGlobalCareers/job/Remote---New-York/Research-Intern-on-Generative-and-Protective-AI-for-Content-Creation_JR-119335) |
-| iHerb | Software Development Intern ~ | Software | United States of America - Remote / Hom… | Jun 17, 2026 | [Apply](https://job-boards.greenhouse.io/iherb/jobs/7776154003) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (4 of 5)._
+_~ = the title doesn't state a year; bucketed here from its posting date (1 of 1)._
 
 ## Fall 2026  (2 open)
 
@@ -71,23 +67,18 @@ _~ = the title doesn't state a year; bucketed here from its posting date (4 of 5
 
 _~ = the title doesn't state a year; bucketed here from its posting date (1 of 2)._
 
-## Summer 2027 (International)  (11 open)
+## Summer 2027 (International)  (6 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
 | Boston Medical Center ✓ | Cybersecurity & AI/Data Governance Intern ~ 🆕 | Data & ML/AI | Remote | Jul 23, 2026 | [Apply](https://bmc.wd1.myworkdayjobs.com/BMC/job/Remote/Cybersecurity---AI-Data-Governance-Intern_50294) |
-| Autodesk ✓ | Stagiaire en Développement Cloud, Intern Cloud Developer ~ 🆕 | Software | Quebec, CAN - Remote | Jul 21, 2026 | [Apply](https://autodesk.wd1.myworkdayjobs.com/uni/job/Quebec-CAN---Remote/Stagiaire-en-Dveloppement-Cloud--Intern-Cloud-Developer_26WD99464-1) |
-| Ensemble Health Partners | Data Scientist Intern ~ 🆕 | Data & ML/AI | Remote - Nationwide | Jul 17, 2026 | [Apply](https://ensemblehp.wd5.myworkdayjobs.com/ensemblehealthpartnerscareers/job/Remote---Nationwide/Data-Scientist--AI_R048077) |
-| Revvity | Full-Stack AI Developer Intern ~ 🆕 | Data & ML/AI | CAD Remote – ON | Jul 15, 2026 | [Apply](https://revvity.wd103.myworkdayjobs.com/External/job/CAD-Remote--ON/Full-Stack-AI-Developer-Intern_JR-044905) |
 | Scopely ✓ | Intern - Gen. AI Art ~ 🆕 | Data & ML/AI | IN - Bangalore, India | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5341537008?gh_jid=5341537008) |
 | Stripe ✓ | Software Engineer, Intern ~ 🆕 | Software | Bengaluru | Jul 10, 2026 | [Apply](https://stripe.com/jobs/search?gh_jid=8031833) |
-| Ada | Software Engineering Intern ~ 🆕 | Software | Remote - Canada | Jul 06, 2026 | [Apply](https://job-boards.greenhouse.io/ada18/jobs/5180710007) |
-| IMC Trading | 2027 - Software Engineering Intern - BITS Pilani 🆕 | Software | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4917549101) |
 | IMC Trading | 2027 - Software Engineering Intern - IIT Bombay 🆕 | Software | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4860319101) |
+| IMC Trading | 2027 - Software Engineering Intern - BITS Pilani 🆕 | Software | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4917549101) |
 | Ancestry ✓ | Data Science - AI Document Understanding, Co-op ~ 🆕 | Data & ML/AI | Remote | Jun 30, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Data-Science---AI-Document-Understanding--Co-op_R003371) |
-| Ciena ✓ | Stagiaire en développement logiciel - COOP Software developer ~ 🆕 | Software | Remote-Canada | Jun 29, 2026 | [Apply](https://ciena.wd5.myworkdayjobs.com/careers/job/Remote-Canada/Stagiaire-en-dveloppement-logiciel---COOP-Software-developer_R031275) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (9 of 11)._
+_~ = the title doesn't state a year; bucketed here from its posting date (4 of 6)._
 
 <a id="drop-radar"></a>
 
@@ -137,6 +128,15 @@ _54 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-S
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Deepgram | Software Engineering- Internship (Fall 2026/Summer 2027) | Summer 2027 | 2026-07-23 |
+| Ada | Software Engineering Intern | Summer 2027 | 2026-07-23 |
+| iHerb | Software Development Intern | Summer 2027 | 2026-07-23 |
+| HireVue | Data Science Intern / Fully Remote US | Summer 2027 | 2026-07-23 |
+| Autodesk | Stagiaire en Développement Cloud, Intern Cloud Developer | Summer 2027 | 2026-07-23 |
+| Ciena | Stagiaire en développement logiciel - COOP Software developer | Summer 2027 | 2026-07-23 |
+| Ensemble Health Partners | Data Scientist Intern | Summer 2027 | 2026-07-23 |
+| Revvity | Full-Stack AI Developer Intern | Summer 2027 | 2026-07-23 |
+| Sony | Research Intern on Generative and Protective AI for Content Creation | Summer 2027 | 2026-07-23 |
 | Amazon | Software Development Engineer Intern, AWS Data Services - Fall 2026 (US) | Fall 2026 | 2026-07-23 |
 | Amazon | Software Development Engineer Internship - Fall 2026 (US) | Fall 2026 | 2026-07-23 |
 | Amazon | Amazon Industrial Robotics - Applied Scientist II Intern / Co-op - 2026, Amazon Industrial Robotics | Fall 2026 | 2026-07-23 |
@@ -168,15 +168,6 @@ _54 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-S
 | Five Rings | Summer Intern 2027 - Software Developer | Summer 2027 | 2026-07-23 |
 | Four Hands | Cybersecurity Intern | Fall 2026 | 2026-07-23 |
 | Gemini | Software Engineering Intern (Fall 2026) | Fall 2026 | 2026-07-23 |
-| IMC Trading | Software Engineer Intern - Summer 2027 | Summer 2027 | 2026-07-23 |
-| IMC Trading | Machine Learning Research Intern - Summer 2027 - Chicago | Summer 2027 | 2026-07-23 |
-| Jump Trading | Campus AI Research Engineer (Intern) | Summer 2027 | 2026-07-23 |
-| Jump Trading | Campus AI Research Engineer - Deep Learning (Intern) | Summer 2027 | 2026-07-23 |
-| Jump Trading | Campus AI Research Engineer – Research Automation (Intern) | Summer 2027 | 2026-07-23 |
-| Lila Sciences | Co-op, Machine Learning for Digital Twins | Summer 2027 | 2026-07-23 |
-| Lila Sciences | Co-Op, LS AI, ML Scientist for Protein Engineering | Summer 2027 | 2026-07-23 |
-| Samsung Research America | 2026 Fall Intern, ML/NLP Research | Fall 2026 | 2026-07-23 |
-| Scale AI | AI Builder Intern | Summer 2027 | 2026-07-23 |
 
 </details>
 
@@ -195,7 +186,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,926 companies across 14 ATS platforms · 98% fetch success · completed in 668.2s · median detection latency 1045 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,896 companies across 14 ATS platforms · 97% fetch success · completed in 641.7s · median detection latency 1045 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
