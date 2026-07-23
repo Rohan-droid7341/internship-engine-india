@@ -6,6 +6,7 @@ Change behavior without touching code:
   - default_cycle : where to put roles that have no clear term/year (e.g. just
                     "Software Engineer Intern"). Must be one of `cycles`.
   - regions       : ["US"] for United States only, ["US", "Canada"] for both,
+                    ["India"] for India only, ["India", "Remote"] for India + remote,
                     or ["Global"] to disable the location filter entirely.
   - role_scope    : "tech" (SWE/data/ML/quant/hardware/...) or "all" internships.
 """
@@ -50,6 +51,9 @@ def pages_base() -> str:
 
 _GLOBAL_TOKENS = {"global", "international", "worldwide", "any", "all"}
 _US_TOKENS = {"us", "usa", "united states", "u.s.", "america"}
+_INDIA_TOKENS = {"india", "in", "bharat"}
+_REMOTE_TOKENS = {"remote", "wfh", "work from home", "anywhere"}
+_HYBRID_TOKENS = {"hybrid"}
 
 
 def load_config() -> dict:
@@ -79,6 +83,14 @@ def want_us(cfg: dict) -> bool:
 
 def want_canada(cfg: dict) -> bool:
     return any(str(r).lower() == "canada" for r in (cfg.get("regions") or []))
+
+
+def want_india(cfg: dict) -> bool:
+    return any(str(r).lower() in _INDIA_TOKENS for r in (cfg.get("regions") or []))
+
+
+def want_remote(cfg: dict) -> bool:
+    return any(str(r).lower() in _REMOTE_TOKENS | _HYBRID_TOKENS for r in (cfg.get("regions") or []))
 
 
 def section_limit(cfg: dict, label: str):

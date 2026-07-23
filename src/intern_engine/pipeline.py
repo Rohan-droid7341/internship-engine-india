@@ -29,11 +29,13 @@ from .connectors import (
     breezy,
     eightfold,
     greenhouse,
+    internshala,
     lever,
     oracle,
     recruitee,
     rippling,
     smartrecruiters,
+    unstop,
     workable,
     workday,
 )
@@ -52,6 +54,8 @@ CONNECTORS = {
     "breezy": breezy.fetch,
     "recruitee": recruitee.fetch,
     "eightfold": eightfold.fetch,
+    "unstop": unstop.fetch,
+    "internshala": internshala.fetch,
 }
 
 GLOBAL_CONCURRENCY = 32
@@ -141,6 +145,8 @@ def _keep_matching(results, cfg, blocklist, existing=None) -> tuple[list, set[st
     restrict = config.restrict_region(cfg)
     wants_us = config.want_us(cfg)
     wants_canada = config.want_canada(cfg)
+    wants_india = config.want_india(cfg)
+    wants_remote = config.want_remote(cfg)
     include_intl = config.include_international(cfg)
     allowlist_only = config.allowlist_only(cfg)
     infer = config.infer_undated(cfg)
@@ -203,7 +209,8 @@ def _keep_matching(results, cfg, blocklist, existing=None) -> tuple[list, set[st
             if season is None:
                 dropped_no_year += 1
                 continue
-            in_region = filters.region_ok(job.location, wants_us, wants_canada)
+            in_region = filters.region_ok(job.location, wants_us, wants_canada,
+                                          wants_india, wants_remote)
             if restrict and not in_region and not include_intl:
                 continue
             loc = (job.location or "").strip()
@@ -366,7 +373,10 @@ def _build_stats(companies, benched, succeeded, errors, errors_by_ats, kept, exi
         "roles_by_source": dict(Counter(j.source for j in kept)),
         "roles_by_cycle": dict(Counter(j.season for j in kept)),
         "roles_by_region": dict(Counter(
-            "US" if filters.is_united_states(j.location) else "International" for j in kept
+            "India" if filters.is_india(j.location)
+            else "Remote" if filters.is_remote_or_hybrid(j.location)
+            else "US" if filters.is_united_states(j.location)
+            else "International" for j in kept
         )),
         "sponsorship_counts": dict(Counter(
             r.get("sponsorship", "unknown") for r in open_records

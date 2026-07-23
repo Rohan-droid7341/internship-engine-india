@@ -311,7 +311,7 @@ _US_CODES = [
 ]
 _CA_CODES = ["ON", "QC", "BC", "AB", "MB", "SK", "NS", "NB", "NL", "PE", "YT", "NT", "NU"]
 
-_US_COUNTRY = ("united states", "u.s.a", "u.s.", "u.s", "usa", "america")
+_US_COUNTRY = ("united states", "u.s.a", "u.s.", "u.s", "usa", "america", "nationwide", "north america", "namer", "noram")
 _CA_COUNTRY = ("canada", "canadian")
 # "Latin America" / "South America" must not read as the US ("america" token).
 _AMERICA_NOT_US_RE = re.compile(r"\b(?:south|latin|central)\s+america")
@@ -384,14 +384,86 @@ def is_us_or_canada(location: str) -> bool:
     return is_united_states(location) or is_canada(location)
 
 
-def region_ok(location: str, want_us: bool, want_canada: bool) -> bool:
+# --- location: India detection ------------------------------------------------
+_INDIA_COUNTRY = ("india", "bharat")
+_INDIA_CITIES = [
+    "bangalore", "bengaluru", "hyderabad", "mumbai", "pune", "delhi",
+    "new delhi", "gurgaon", "gurugram", "noida", "chennai", "kolkata",
+    "ahmedabad", "jaipur", "lucknow", "chandigarh", "indore", "kochi",
+    "coimbatore", "thiruvananthapuram", "trivandrum", "nagpur", "bhopal",
+    "visakhapatnam", "vizag", "mysore", "mysuru", "mangalore", "mangaluru",
+    "vadodara", "surat", "goa", "patna", "ranchi", "bhubaneswar",
+    "dehradun", "agra", "varanasi", "amritsar", "ludhiana",
+    "greater noida", "faridabad", "ghaziabad", "navi mumbai",
+    "thane", "mohali", "panchkula",
+]
+_INDIA_STATES = [
+    "karnataka", "telangana", "maharashtra", "tamil nadu", "andhra pradesh",
+    "west bengal", "gujarat", "rajasthan", "uttar pradesh", "madhya pradesh",
+    "haryana", "kerala", "punjab", "odisha", "jharkhand", "uttarakhand",
+    "goa", "assam", "himachal pradesh", "chhattisgarh", "bihar",
+]
+_INDIA_CITY_RE = re.compile(
+    r"\b(" + "|".join(re.escape(c) for c in _INDIA_CITIES) + r")\b", re.IGNORECASE
+)
+_INDIA_STATE_RE = re.compile(
+    r"\b(" + "|".join(re.escape(s) for s in _INDIA_STATES) + r")\b", re.IGNORECASE
+)
+
+
+def is_india(location: str) -> bool:
+    """True when the location string points to India."""
+    if not location:
+        return False
+    low = location.lower()
+    if any(token in low for token in _INDIA_COUNTRY):
+        return True
+    if _INDIA_CITY_RE.search(low):
+        return True
+    if _INDIA_STATE_RE.search(low):
+        return True
+    return False
+
+
+# --- remote / hybrid detection -----------------------------------------------
+_REMOTE_RE = re.compile(
+    r"\b(remote|work\s+from\s+home|wfh|anywhere|distributed|virtual)\b",
+    re.IGNORECASE,
+)
+_HYBRID_RE = re.compile(
+    r"\b(hybrid|flexible\s+location|partly\s+remote)\b",
+    re.IGNORECASE,
+)
+
+
+def is_remote_or_hybrid(location: str) -> bool:
+    """True when the location suggests remote or hybrid work."""
+    if not location:
+        return False
+    return bool(_REMOTE_RE.search(location) or _HYBRID_RE.search(location))
+
+
+def region_ok(location: str, want_us: bool, want_canada: bool,
+             want_india: bool = False, want_remote: bool = False) -> bool:
     """True if the location matches one of the wanted regions.
 
-    Conservative: a bare "Remote" with no country mentioned matches nothing.
+    Conservative: a bare "Remote" with no country mentioned matches only when
+    want_remote is True.
     """
+    # If the user strictly doesn't want US/Canada, reject jobs localized there.
+    # This prevents "Remote - US" jobs from leaking into the Indian job market.
+    if not want_us and is_united_states(location):
+        return False
+    if not want_canada and is_canada(location):
+        return False
+
     if want_us and is_united_states(location):
         return True
     if want_canada and is_canada(location):
+        return True
+    if want_india and is_india(location):
+        return True
+    if want_remote and is_remote_or_hybrid(location):
         return True
     return False
 
