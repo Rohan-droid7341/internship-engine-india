@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**4 open roles · 4 new this week · 985 companies tracked · updated Jul 24, 2026 at 08:15 UTC**
+**6 open roles · 6 new this week · 3,836 companies tracked · updated Jul 24, 2026 at 11:10 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,16 +13,18 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (4 open)
+## Summer 2027 (International)  (6 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
+| Boston Medical Center | Cybersecurity & AI/Data Governance Intern ~ 🆕 | Data & ML/AI | Remote | Jul 23, 2026 | [Apply](https://bmc.wd1.myworkdayjobs.com/BMC/job/Remote/Cybersecurity---AI-Data-Governance-Intern_50294) |
 | Scopely | Intern - Gen. AI Art ~ 🆕 | Data & ML/AI | IN - Bangalore, India | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5341537008?gh_jid=5341537008) |
 | Stripe | Software Engineer, Intern ~ 🆕 | Software | Bengaluru | Jul 10, 2026 | [Apply](https://stripe.com/jobs/search?gh_jid=8031833) |
 | IMC Trading | 2027 - Software Engineering Intern - IIT Bombay 🆕 | Software | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4860319101) |
 | IMC Trading | 2027 - Software Engineering Intern - BITS Pilani 🆕 | Software | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4917549101) |
+| Ancestry | Data Science - AI Document Understanding, Co-op ~ 🆕 | Data & ML/AI | Remote | Jun 30, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Data-Science---AI-Document-Understanding--Co-op_R003371) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (2 of 4)._
+_~ = the title doesn't state a year; bucketed here from its posting date (4 of 6)._
 
 ## What this is
 
@@ -152,7 +154,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 985 companies across 13 ATS platforms · 87% fetch success · completed in 78.1s · median detection latency 181 min · real posted dates on 100% of open roles._
+_Engine (last run): 3,836 companies across 14 ATS platforms · 96% fetch success · completed in 773.8s · median detection latency 217 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
