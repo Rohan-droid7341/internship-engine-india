@@ -1,28 +1,28 @@
 # Summer 2027 Tech Internships
 
-[![CI](https://github.com/Rohan-droid7341/internship-engine-india/actions/workflows/ci.yml/badge.svg)](https://github.com/Rohan-droid7341/internship-engine-india/actions/workflows/ci.yml) ![Open roles](https://img.shields.io/badge/dynamic/json?label=open%20roles&query=open_total&url=https%3A%2F%2Frohan-droid7341.github.io%2Finternship-engine-india%2Fapi%2Fstats.json&color=2f81f7) ![Updates](https://img.shields.io/badge/updates-every%20hour-3fb950) [![RSS](https://img.shields.io/badge/RSS-subscribe-e67e22)](https://rohan-droid7341.github.io/internship-engine-india/feed.xml)
+[![CI](https://github.com/zshah101/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/actions/workflows/ci.yml/badge.svg)](https://github.com/zshah101/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/actions/workflows/ci.yml) ![Open roles](https://img.shields.io/badge/dynamic/json?label=open%20roles&query=open_total&url=https%3A%2F%2Fzshah101.github.io%2FAutomated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships%2Fapi%2Fstats.json&color=2f81f7) ![Updates](https://img.shields.io/badge/updates-every%20hour-3fb950) [![RSS](https://img.shields.io/badge/RSS-subscribe-e67e22)](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/feed.xml)
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**6 open roles · 6 new this week · 3,836 companies tracked · updated Jul 24, 2026 at 11:10 UTC**
+**6 open roles · 6 new this week · 3,894 companies tracked · updated Jul 24, 2026 at 11:35 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
-**Live:** [dashboard](https://rohan-droid7341.github.io/internship-engine-india/) · [RSS feed](https://rohan-droid7341.github.io/internship-engine-india/feed.xml) (instant alerts in any RSS app) · [JSON API](https://rohan-droid7341.github.io/internship-engine-india/api/jobs.json)
+**Live:** [dashboard](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/) · [RSS feed](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/feed.xml) (instant alerts in any RSS app) · [JSON API](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/api/jobs.json)
 
-**🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
+**🔔 New roles in your inbox:** [subscribe by email](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2Fzshah101%2FAutomated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
 ## Summer 2027 (International)  (6 open)
 
 | Company | Role | Category | Location | Posted | Apply |
 |---|---|---|---|---|---|
-| Boston Medical Center | Cybersecurity & AI/Data Governance Intern ~ 🆕 | Data & ML/AI | Remote | Jul 23, 2026 | [Apply](https://bmc.wd1.myworkdayjobs.com/BMC/job/Remote/Cybersecurity---AI-Data-Governance-Intern_50294) |
 | Scopely | Intern - Gen. AI Art ~ 🆕 | Data & ML/AI | IN - Bangalore, India | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5341537008?gh_jid=5341537008) |
 | Stripe | Software Engineer, Intern ~ 🆕 | Software | Bengaluru | Jul 10, 2026 | [Apply](https://stripe.com/jobs/search?gh_jid=8031833) |
 | IMC Trading | 2027 - Software Engineering Intern - IIT Bombay 🆕 | Software | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4860319101) |
 | IMC Trading | 2027 - Software Engineering Intern - BITS Pilani 🆕 | Software | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4917549101) |
-| Ancestry | Data Science - AI Document Understanding, Co-op ~ 🆕 | Data & ML/AI | Remote | Jun 30, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Data-Science---AI-Document-Understanding--Co-op_R003371) |
+| Epifi | Ai Engg Intern ~ 🆕 | Data & ML/AI | Bangalore | Jul 03, 2026 | [Apply](https://jobs.lever.co/epifi/08c743e8-2b29-4f78-827e-5bd90476ed86) |
+| Epifi | DS/ML Intern ~ 🆕 | Data & ML/AI | Bangalore | Jul 02, 2026 | [Apply](https://jobs.lever.co/epifi/08fc1577-4593-4b94-b66b-08e638d29f37) |
 
 _~ = the title doesn't state a year; bucketed here from its posting date (4 of 6)._
 
@@ -34,8 +34,8 @@ This is an engine, not a hand-kept list. It polls company career feeds several t
 
 - **📅 [Drop Radar](#drop-radar)** - the only list that shows **what's coming**: each marquee company's typical opening window, then confirmed with the real drop date the moment the engine catches it live.
 - **Real posted dates on every role** - pulled from each job portal itself, so newest-first actually means newest.
-- **Skill tags + pay, extracted** - every posting's text is scanned for the stack it wants (Python, C++, PyTorch, ...) and the pay it states - searchable on the [dashboard](https://rohan-droid7341.github.io/internship-engine-india/), included in the CSV and API.
-- **Alerts your way** - [email digests](https://rohan-droid7341.github.io/internship-engine-india/#subscribe), [RSS](https://rohan-droid7341.github.io/internship-engine-india/feed.xml), or Discord - plus a [live dashboard](https://rohan-droid7341.github.io/internship-engine-india/) with search and custom filters.
+- **Skill tags + pay, extracted** - every posting's text is scanned for the stack it wants (Python, C++, PyTorch, ...) and the pay it states - searchable on the [dashboard](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/), included in the CSV and API.
+- **Alerts your way** - [email digests](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#subscribe), [RSS](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/feed.xml), or Discord - plus a [live dashboard](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/) with search and custom filters.
 - **An engine, not a spreadsheet** - polled every hour across multiple ATS platforms with full source in this repo.
 
 ## Scope
@@ -99,7 +99,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | Datadog | rolling | year-round | ⏳ waiting |
 | Jump Trading | rolling | year-round | ⏳ waiting |
 
-_54 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **19** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
+_54 companies on the [full radar](https://zshah101.github.io/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/#radar). **19** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
 <summary><strong>Recently closed</strong> — 30 roles taken down in the last 14 days</summary>
@@ -154,7 +154,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 3,836 companies across 14 ATS platforms · 96% fetch success · completed in 773.8s · median detection latency 217 min · real posted dates on 100% of open roles._
+_Engine (last run): 1,009 companies across 13 ATS platforms · 93% fetch success · completed in 667.2s · median detection latency 181 min · real posted dates on 100% of open roles._
 
 ## Contributing
 
