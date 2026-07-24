@@ -271,6 +271,12 @@ def _footer() -> list[str]:
         "",
         _engine_metrics(),
         "",
+        "## Platforms Scraped",
+        "",
+        "The engine currently extracts live data from the following platforms:",
+        "- **Direct ATS (Applicant Tracking Systems):** Greenhouse, Lever, Ashby, SmartRecruiters, Workable",
+        "- **Aggregators:** Instahyre",
+        "",
         "## Contributing",
         "",
         "Adding a company takes one line, see [CONTRIBUTING.md](CONTRIBUTING.md). "
