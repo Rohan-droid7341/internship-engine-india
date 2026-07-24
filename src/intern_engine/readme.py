@@ -97,10 +97,19 @@ def _row(record: dict) -> str:
         title = f"{title} 🆕"
     location = _short_location(record.get("location"))
     category = _md_cell(record.get("category"))
+    
+    specs = []
+    if record.get("stipend"): specs.append(record.get("stipend"))
+    elif record.get("salary"): specs.append(record.get("salary"))
+    if record.get("experience"): specs.append(record.get("experience"))
+    if record.get("degree"): specs.append(record.get("degree"))
+    if record.get("batch"): specs.append(record.get("batch"))
+    specs_str = "<br>".join(specs) if specs else "—"
+
     posted = _pretty_date(record)
     url = record.get("url") or ""
     apply = f"[Apply]({url})" if url else "—"
-    return f"| {company} | {title} | {category} | {location} | {posted} | {apply} |"
+    return f"| {company} | {title} | {category} | {specs_str} | {location} | {posted} | {apply} |"
 
 
 def _region_label(cfg: dict) -> str:
@@ -436,8 +445,8 @@ def generate(store_data: dict) -> dict:
     for heading, rows in sections:
         lines.append(f"## {heading}  ({len(rows)} open)")
         lines.append("")
-        lines.append("| Company | Role | Category | Location | Posted | Apply |")
-        lines.append("|---|---|---|---|---|---|")
+        lines.append("| Company | Role | Category | Pay & Specs | Location | Posted | Apply |")
+        lines.append("|---|---|---|---|---|---|---|")
         lines.extend(_row(r) for r in rows)
         lines.append("")
         n_inferred = sum(1 for r in rows if r.get("season_inferred"))

@@ -1,35 +1,9 @@
 {
- "generated_at": "2026-07-24T11:10:27Z",
- "source": "https://github.com/Rohan-droid7341/internship-engine-india",
+ "generated_at": "2026-07-24T11:35:05Z",
+ "source": "https://github.com/zshah101/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships",
  "h1b_window": "FY2022–2023",
  "count": 6,
  "jobs": [
-  {
-   "id": "workday:bmc:/job/Remote/Cybersecurity---AI-Data-Governance-Intern_50294",
-   "company": "Boston Medical Center",
-   "title": "Cybersecurity & AI/Data Governance Intern",
-   "season": "Summer 2027",
-   "season_inferred": true,
-   "category": "Data & ML/AI",
-   "location": "Remote",
-   "url": "https://bmc.wd1.myworkdayjobs.com/BMC/job/Remote/Cybersecurity---AI-Data-Governance-Intern_50294",
-   "posted_at": "2026-07-23T00:00:00Z",
-   "first_seen_at": "2026-07-24T11:10:27Z",
-   "sponsorship": "unknown",
-   "salary": null,
-   "skills": [
-    "Python",
-    "Java",
-    "C++",
-    "TypeScript",
-    "SQL",
-    "Kotlin",
-    "AWS",
-    "Kubernetes"
-   ],
-   "source": "workday",
-   "h1b_approvals": 65
-  },
   {
    "id": "greenhouse:scopely:5341537008",
    "company": "Scopely",
@@ -111,26 +85,42 @@
    "h1b_approvals": null
   },
   {
-   "id": "workday:ancestry:/job/Remote/Data-Science---AI-Document-Understanding--Co-op_R003371",
-   "company": "Ancestry",
-   "title": "Data Science - AI Document Understanding, Co-op",
+   "id": "lever:epifi:08c743e8-2b29-4f78-827e-5bd90476ed86",
+   "company": "Epifi",
+   "title": "Ai Engg Intern",
    "season": "Summer 2027",
    "season_inferred": true,
    "category": "Data & ML/AI",
-   "location": "Remote",
-   "url": "https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Data-Science---AI-Document-Understanding--Co-op_R003371",
-   "posted_at": "2026-06-30T00:00:00Z",
-   "first_seen_at": "2026-07-24T11:10:27Z",
+   "location": "Bangalore",
+   "url": "https://jobs.lever.co/epifi/08c743e8-2b29-4f78-827e-5bd90476ed86",
+   "posted_at": "2026-07-03T09:42:17Z",
+   "first_seen_at": "2026-07-24T11:35:05Z",
+   "sponsorship": "unknown",
+   "salary": null,
+   "skills": [],
+   "source": "lever",
+   "h1b_approvals": null
+  },
+  {
+   "id": "lever:epifi:08fc1577-4593-4b94-b66b-08e638d29f37",
+   "company": "Epifi",
+   "title": "DS/ML Intern",
+   "season": "Summer 2027",
+   "season_inferred": true,
+   "category": "Data & ML/AI",
+   "location": "Bangalore",
+   "url": "https://jobs.lever.co/epifi/08fc1577-4593-4b94-b66b-08e638d29f37",
+   "posted_at": "2026-07-02T08:14:59Z",
+   "first_seen_at": "2026-07-24T11:35:05Z",
    "sponsorship": "unknown",
    "salary": null,
    "skills": [
     "Python",
-    "LLMs",
-    "AWS",
-    "GCP"
+    "SQL",
+    "LLMs"
    ],
-   "source": "workday",
-   "h1b_approvals": 88
+   "source": "lever",
+   "h1b_approvals": null
   }
  ]
 }

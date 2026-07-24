@@ -149,6 +149,14 @@ async def enrich_jobs(jobs: list[Job], existing: dict, net: Net) -> tuple[set[st
         job.skills = skills.extract(text)
         if not job.salary:
             job.salary = skills.extract_pay(text)
+        if not job.stipend:
+            job.stipend = skills.extract_stipend(text)
+        if not job.degree:
+            job.degree = skills.extract_degree(text)
+        if not job.experience:
+            job.experience = skills.extract_experience(text)
+        if not job.batch:
+            job.batch = skills.extract_batch(text)
         if job.season_inferred:
             # The posting text is ground truth for date-inferred cycles: an
             # explicitly stated term+year replaces the guess (and un-marks the
