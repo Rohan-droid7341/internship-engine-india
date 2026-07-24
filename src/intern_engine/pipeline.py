@@ -29,6 +29,7 @@ from .connectors import (
     breezy,
     eightfold,
     greenhouse,
+    instahyre,
     internshala,
     lever,
     oracle,
@@ -56,6 +57,7 @@ CONNECTORS = {
     "eightfold": eightfold.fetch,
     "unstop": unstop.fetch,
     "internshala": internshala.fetch,
+    "instahyre": instahyre.fetch,
 }
 
 GLOBAL_CONCURRENCY = 32
