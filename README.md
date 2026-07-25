@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**9 open roles · 9 new this week · 4,428 companies tracked · updated Jul 25, 2026 at 17:58 UTC**
+**8 open roles · 8 new this week · 4,428 companies tracked · updated Jul 25, 2026 at 19:03 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,11 +13,10 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (9 open)
+## Summer 2027 (International)  (8 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| eBay | Software Engineer Intern ~ 🆕 | Software | B.Tech/BS | Bengaluru, India | Jul 25, 2026 | [Apply](https://ebay.wd5.myworkdayjobs.com/apply/job/Bengaluru-India/Software-Engineer-Intern_R0069699) |
 | Boston Medical Center | Cybersecurity & AI/Data Governance Intern ~ 🆕 | Data & ML/AI | — | Remote | Jul 23, 2026 | [Apply](https://bmc.wd1.myworkdayjobs.com/BMC/job/Remote/Cybersecurity---AI-Data-Governance-Intern_50294) |
 | Scopely | Intern - Gen. AI Art ~ 🆕 | Data & ML/AI | — | IN - Bangalore, India | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5341537008?gh_jid=5341537008) |
 | Stripe | Software Engineer, Intern ~ 🆕 | Software | — | Bengaluru | Jul 10, 2026 | [Apply](https://stripe.com/jobs/search?gh_jid=8031833) |
@@ -27,7 +26,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Epifi | DS/ML Intern ~ 🆕 | Data & ML/AI | — | Bangalore | Jul 02, 2026 | [Apply](https://jobs.lever.co/epifi/08fc1577-4593-4b94-b66b-08e638d29f37) |
 | Ancestry | Data Science - AI Document Understanding, Co-op ~ 🆕 | Data & ML/AI | B.Tech/BS | Remote | Jun 30, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Data-Science---AI-Document-Understanding--Co-op_R003371) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (7 of 9)._
+_~ = the title doesn't state a year; bucketed here from its posting date (6 of 8)._
 
 ## What this is
 
@@ -105,10 +104,11 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _54 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **19** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 30 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 31 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| eBay | Software Engineer Intern | Summer 2027 | 2026-07-25 |
 | Amazon | Software Development Engineer Intern, AWS Data Services - Fall 2026 (US) | Fall 2026 | 2026-07-23 |
 | Amazon | Software Development Engineer Internship - Fall 2026 (US) | Fall 2026 | 2026-07-23 |
 | Amazon | Amazon Industrial Robotics - Applied Scientist II Intern / Co-op - 2026, Amazon Industrial Robotics | Fall 2026 | 2026-07-23 |
@@ -157,7 +157,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,428 companies across 15 ATS platforms · 98% fetch success · completed in 282.0s · median detection latency 220 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,428 companies across 15 ATS platforms · 99% fetch success · completed in 331.8s · median detection latency 220 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
