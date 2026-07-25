@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**8 open roles · 8 new this week · 4,389 companies tracked · updated Jul 25, 2026 at 09:48 UTC**
+**8 open roles · 8 new this week · 4,428 companies tracked · updated Jul 25, 2026 at 11:09 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -156,7 +156,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,389 companies across 15 ATS platforms · 98% fetch success · completed in 335.9s · median detection latency 217 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,428 companies across 15 ATS platforms · 99% fetch success · completed in 275.8s · median detection latency 217 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
