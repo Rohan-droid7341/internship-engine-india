@@ -27,11 +27,14 @@ from .connectors import (
     amazon,
     ashby,
     breezy,
+    custom_careers,
     eightfold,
     greenhouse,
     instahyre,
     internshala,
     lever,
+    linkedin,
+    naukri,
     oracle,
     recruitee,
     rippling,
@@ -58,6 +61,9 @@ CONNECTORS = {
     "unstop": unstop.fetch,
     "internshala": internshala.fetch,
     "instahyre": instahyre.fetch,
+    "linkedin": linkedin.fetch,
+    "naukri": naukri.fetch,
+    "custom": custom_careers.fetch,
 }
 
 GLOBAL_CONCURRENCY = 32

@@ -25,7 +25,10 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          # Install Playwright browser for Scrapling's StealthyFetcher (Naukri etc.)
+          python -m playwright install chromium --with-deps
 
       - name: Run the engine
         env:

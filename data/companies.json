@@ -1446,7 +1446,7 @@
     "site": "ankura"
   },
   {
-    "name": "Ann & Robert H. Lurie Children’s Hospital of Chicago",
+    "name": "Ann & Robert H. Lurie Children\u2019s Hospital of Chicago",
     "slug": "luriechildrens",
     "ats": "workday",
     "wd": "wd1",
@@ -2245,7 +2245,7 @@
     "ats": "smartrecruiters"
   },
   {
-    "name": "AtkinsRéalis",
+    "name": "AtkinsR\u00e9alis",
     "slug": "slihrms",
     "ats": "workday",
     "wd": "wd3",
@@ -3465,7 +3465,7 @@
     "ats": "smartrecruiters"
   },
   {
-    "name": "Boar’s Head Brand",
+    "name": "Boar\u2019s Head Brand",
     "slug": "boarshead",
     "ats": "workday",
     "wd": "wd1",
@@ -4879,7 +4879,7 @@
     "site": "cignacareers"
   },
   {
-    "name": "Cincinnati Children’s Hospital and Medical Center",
+    "name": "Cincinnati Children\u2019s Hospital and Medical Center",
     "slug": "cincinnatichildrens",
     "ats": "workday",
     "wd": "wd5",
@@ -5722,12 +5722,12 @@
     "site": "CX_1"
   },
   {
-    "name": "Condé Nast",
+    "name": "Cond\u00e9 Nast",
     "slug": "condnast",
     "ats": "smartrecruiters"
   },
   {
-    "name": "Condé Nast Technology Lab",
+    "name": "Cond\u00e9 Nast Technology Lab",
     "slug": "condnasttechnologylab",
     "ats": "smartrecruiters"
   },
@@ -6477,7 +6477,7 @@
     "ats": "smartrecruiters"
   },
   {
-    "name": "Dassault Systèmes",
+    "name": "Dassault Syst\u00e8mes",
     "slug": "dassaultsystmes",
     "ats": "smartrecruiters"
   },
@@ -9270,7 +9270,7 @@
     "ats": "ashby"
   },
   {
-    "name": "Fussball Club Cincinnati LLC (“FC Cincinnati”)",
+    "name": "Fussball Club Cincinnati LLC (\u201cFC Cincinnati\u201d)",
     "slug": "fccincinnati",
     "ats": "greenhouse"
   },
@@ -11259,7 +11259,7 @@
     "site": "hyster-yalecareers"
   },
   {
-    "name": "Höganäs",
+    "name": "H\u00f6gan\u00e4s",
     "slug": "hoganas",
     "ats": "workday",
     "wd": "wd3",
@@ -14243,7 +14243,7 @@
     "site": "external"
   },
   {
-    "name": "McCoy’s",
+    "name": "McCoy\u2019s",
     "slug": "mccoys",
     "ats": "workday",
     "wd": "wd1",
@@ -20564,7 +20564,7 @@
     "ats": "smartrecruiters"
   },
   {
-    "name": "Société Générale de Surveillance (SGS)",
+    "name": "Soci\u00e9t\u00e9 G\u00e9n\u00e9rale de Surveillance (SGS)",
     "slug": "SGS",
     "ats": "smartrecruiters"
   },
@@ -22206,7 +22206,7 @@
     "ats": "greenhouse"
   },
   {
-    "name": "The Pokémon Company",
+    "name": "The Pok\u00e9mon Company",
     "slug": "pokemoncareers",
     "ats": "greenhouse"
   },
@@ -25284,5 +25284,70 @@
     "name": "Zynga",
     "slug": "zynga-careers",
     "ats": "smartrecruiters"
+  },
+  {
+    "name": "LinkedIn \u2014 Software Intern India",
+    "slug": "software+engineer+intern",
+    "ats": "linkedin"
+  },
+  {
+    "name": "LinkedIn \u2014 Data Science Intern India",
+    "slug": "data+science+intern",
+    "ats": "linkedin"
+  },
+  {
+    "name": "LinkedIn \u2014 ML Intern India",
+    "slug": "machine+learning+intern",
+    "ats": "linkedin"
+  },
+  {
+    "name": "LinkedIn \u2014 SWE Intern India",
+    "slug": "swe+intern+india",
+    "ats": "linkedin"
+  },
+  {
+    "name": "Naukri \u2014 Software Intern",
+    "slug": "software-internship",
+    "ats": "naukri"
+  },
+  {
+    "name": "Naukri \u2014 Backend Intern",
+    "slug": "backend-developer-internship",
+    "ats": "naukri"
+  },
+  {
+    "name": "Paytm",
+    "slug": "paytm-custom",
+    "ats": "custom",
+    "careers_url": "https://jobs.lever.co/paytm",
+    "job_link_pattern": "paytm"
+  },
+  {
+    "name": "PhonePe",
+    "slug": "phonepe-custom",
+    "ats": "custom",
+    "careers_url": "https://www.phonepe.com/en/careers/all-jobs/",
+    "job_link_pattern": "job"
+  },
+  {
+    "name": "Swiggy",
+    "slug": "swiggy-custom",
+    "ats": "custom",
+    "careers_url": "https://careers.swiggy.com/#/careers",
+    "job_link_pattern": "job"
+  },
+  {
+    "name": "Zomato",
+    "slug": "zomato-custom",
+    "ats": "custom",
+    "careers_url": "https://www.zomato.com/careers",
+    "job_link_pattern": "job"
+  },
+  {
+    "name": "Meesho",
+    "slug": "meesho-custom",
+    "ats": "custom",
+    "careers_url": "https://meesho.io/careers",
+    "job_link_pattern": "job"
   }
 ]
