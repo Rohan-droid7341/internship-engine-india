@@ -179,16 +179,20 @@ def infer_season(
         # an explicit OFF-cycle role ("Summer 2026 Intern"). Guessing a cycle
         # from the posting date would override what the company wrote.
         return None
-    if not posted_at:
-        return None  # no date -> nothing to reason from
-    try:
-        posted = datetime.strptime(posted_at[:10], "%Y-%m-%d").replace(tzinfo=UTC)
-    except ValueError:
-        return None
     now = now or datetime.now(UTC)
-    age_days = (now - posted).days
-    if not (-1 <= age_days <= max_age_days):  # -1 tolerates feed timezone skew
-        return None
+    
+    if not posted_at:
+        # For scrapers that can't easily extract a precise date (LinkedIn, Naukri, etc.),
+        # assume the posting is fresh since it is currently actively listed.
+        posted = now
+    else:
+        try:
+            posted = datetime.strptime(posted_at[:10], "%Y-%m-%d").replace(tzinfo=UTC)
+            age_days = (now - posted).days
+            if not (-1 <= age_days <= max_age_days):  # -1 tolerates feed timezone skew
+                return None
+        except ValueError:
+            posted = now
 
     t = title.lower()
     if "summer" in t:

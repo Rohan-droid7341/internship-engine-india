@@ -146,8 +146,8 @@ class TestInferSeason:
             self._infer("Software Engineer Intern", "2026-05-01", max_age_days=90) == "Summer 2027"
         )
 
-    def test_no_posted_date_is_never_inferred(self):
-        assert self._infer("Software Engineer Intern", None) is None
+    def test_no_posted_date_is_assumed_fresh(self):
+        assert self._infer("Software Engineer Intern", None) == "Summer 2027"
 
     def test_explicit_offcycle_year_is_never_reinferred(self):
         # "Summer 2026 Intern" was refused by detect_season for a reason —
