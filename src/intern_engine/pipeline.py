@@ -40,8 +40,10 @@ from .connectors import (
     rippling,
     smartrecruiters,
     unstop,
+    wellfound,
     workable,
     workday,
+    indeed,
 )
 from .net import HostLimiter, Net
 
@@ -64,6 +66,8 @@ CONNECTORS = {
     "linkedin": linkedin.fetch,
     "naukri": naukri.fetch,
     "custom": custom_careers.fetch,
+    "indeed": indeed.fetch,
+    "wellfound": wellfound.fetch,
 }
 
 GLOBAL_CONCURRENCY = 32

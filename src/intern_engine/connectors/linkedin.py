@@ -20,7 +20,7 @@ _SEARCH_URL = (
     "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
     "?keywords={keywords}&location=India&start={start}&count=25"
 )
-_MAX_PAGES = 4  # 4 × 25 = 100 results per search term
+_MAX_PAGES = 10  # 10 × 25 = 250 results per search term
 
 _HEADERS = {
     "User-Agent": (

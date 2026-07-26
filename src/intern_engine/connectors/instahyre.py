@@ -6,7 +6,7 @@ from ..models import Job
 from ..net import Net
 
 URL = "https://www.instahyre.com/api/v1/job_search?search=internship&offset={offset}"
-_MAX_PAGES = 5
+_MAX_PAGES = 20
 
 
 async def fetch(company: dict, net: Net) -> list[Job]:

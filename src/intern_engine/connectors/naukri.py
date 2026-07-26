@@ -37,7 +37,7 @@ _HEADERS = {
     "X-Requested-With": "XMLHttpRequest",
 }
 
-_MAX_PAGES = 3
+_MAX_PAGES = 10
 
 
 def _scrape_page(url: str) -> dict:
