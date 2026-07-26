@@ -15,20 +15,20 @@ TRANSIENT_FIELDS = ("description",)
 
 @dataclass
 class Job:
-    id: str               # stable: "<source>:<company_slug>:<external_id>"
+    id: str  # stable: "<source>:<company_slug>:<external_id>"
     source: str
     company: str
     company_slug: str
     title: str
     location: str
     url: str
-    posted_at: str | None = None   # real publish date, or None when unknown
-    season: str = "Unspecified"    # cycle label, assigned by the pipeline
+    posted_at: str | None = None  # real publish date, or None when unknown
+    season: str = "Unspecified"  # cycle label, assigned by the pipeline
     season_inferred: bool = False  # True when the cycle came from the posting
-                                   # date, not a year stated in the title
+    # date, not a year stated in the title
     category: str = "Other"
-    sponsorship: str = "unknown"   # citizens-only | no-sponsorship | offers | unknown
-    salary: str | None = None      # pay text when the ATS exposes it (Ashby/Lever/Breezy)
+    sponsorship: str = "unknown"  # citizens-only | no-sponsorship | offers | unknown
+    salary: str | None = None  # pay text when the ATS exposes it (Ashby/Lever/Breezy)
     stipend: str | None = None
     experience: str | None = None
     degree: str | None = None

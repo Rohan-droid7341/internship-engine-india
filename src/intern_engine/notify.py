@@ -61,8 +61,7 @@ def send_new_roles(store_data: dict, new_ids: list[str]) -> bool:
     try:
         httpx.post(
             webhook,
-            json={"content": content,
-                  "embeds": [_embed(r, colors) for r in records[:_MAX_EMBEDS]]},
+            json={"content": content, "embeds": [_embed(r, colors) for r in records[:_MAX_EMBEDS]]},
             timeout=10,
         ).raise_for_status()
         return True

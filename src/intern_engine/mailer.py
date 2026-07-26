@@ -27,14 +27,15 @@ import httpx
 
 from . import config, h1b, paths, sponsorship
 
-_MIN_HOURS_BETWEEN = 22          # "daily", tolerant of cron jitter
-_NEW_WINDOW_HOURS = 26           # a role counts as news if first seen in this window
-_MAX_ROLES = 30                  # cap the digest body
-_MAX_SENDS = 250                 # stay under Brevo's free 300/day
+_MIN_HOURS_BETWEEN = 22  # "daily", tolerant of cron jitter
+_NEW_WINDOW_HOURS = 26  # a role counts as news if first seen in this window
+_MAX_ROLES = 30  # cap the digest body
+_MAX_SENDS = 250  # stay under Brevo's free 300/day
 _BREVO_URL = "https://api.brevo.com/v3/smtp/email"
 
 
 # --- state (committed, so CI runs share it) -----------------------------------
+
 
 def _load_state() -> dict:
     try:
@@ -65,7 +66,8 @@ def new_roles(store_data: dict, now: datetime | None = None) -> list[dict]:
     now = now or datetime.now(UTC)
     cutoff = now - timedelta(hours=_NEW_WINDOW_HOURS)
     fresh = [
-        r for r in store_data.values()
+        r
+        for r in store_data.values()
         if r.get("is_open") and (_parse_ts(r.get("first_seen_at")) or cutoff) > cutoff
     ]
     fresh.sort(key=lambda r: r.get("first_seen_at") or "", reverse=True)
@@ -83,6 +85,7 @@ def should_send(state: dict, fresh_count: int, now: datetime | None = None) -> b
 
 # --- composition ---------------------------------------------------------------
 
+
 def _role_row(r: dict) -> str:
     flag = sponsorship.flag(r.get("sponsorship"))
     approvals = h1b.approvals_for(r.get("company") or "")
@@ -90,7 +93,7 @@ def _role_row(r: dict) -> str:
     bits = [b for b in (r.get("season"), r.get("location"), r.get("salary")) if b]
     return (
         '<tr><td style="padding:10px 0;border-bottom:1px solid #eee">'
-        f'<strong>{escape(r.get("company") or "")}{check}</strong> — '
+        f"<strong>{escape(r.get('company') or '')}{check}</strong> — "
         f'<a href="{escape(r.get("url") or "")}">{escape(r.get("title") or "")}</a> {flag}'
         f'<br><span style="color:#666;font-size:13px">{escape(" · ".join(bits))}</span>'
         "</td></tr>"
@@ -109,14 +112,14 @@ def build_digest_html(fresh: list[dict]) -> str:
     if extra > 0:
         rows += (
             '<tr><td style="padding:10px 0;color:#666">'
-            f'…plus {extra} more new role{"s" if extra != 1 else ""} on '
+            f"…plus {extra} more new role{'s' if extra != 1 else ''} on "
             f'<a href="{config.pages_base()}/">the live dashboard</a>.'
             "</td></tr>"
         )
     return (
         '<div style="font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;'
         'max-width:640px;margin:0 auto;color:#1a1a1a">'
-        f"<h2 style=\"font-size:18px\">{len(fresh)} new internship"
+        f'<h2 style="font-size:18px">{len(fresh)} new internship'
         f"{'s' if len(fresh) != 1 else ''} spotted</h2>"
         '<p style="color:#666;font-size:13px">✓ = the employer has a real H-1B '
         "track record (USCIS data) · 🇺🇸 = citizens only · 🛂 = no visa "
@@ -156,6 +159,7 @@ def _subscribers(base_url: str, service_key: str) -> list[dict]:
 
 
 # --- sending -------------------------------------------------------------------
+
 
 def send_digest(store_data: dict) -> int:
     """Send today's digest if due. Returns how many emails went out."""

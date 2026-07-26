@@ -4,11 +4,14 @@ Uses Naukri's internal search JSON API with browser-like headers.
 Scrapling's StealthyFetcher is used to bypass Cloudflare protection.
 Falls back to a plain request if Scrapling/Playwright is unavailable.
 """
+
 from __future__ import annotations
+
 import asyncio
 import json
 import re
 from concurrent.futures import ThreadPoolExecutor
+
 from ..models import Job
 from ..net import Net
 
@@ -41,6 +44,7 @@ def _scrape_page(url: str) -> dict:
     """Fetch one page using Scrapling's StealthyFetcher to bypass Cloudflare."""
     try:
         from scrapling.fetchers import StealthyFetcher
+
         fetcher = StealthyFetcher(auto_match=False)
         resp = fetcher.get(url, headers=_HEADERS, timeout=30, stealth=True)
         text = resp.content or ""
@@ -61,7 +65,7 @@ def _location(job: dict) -> str:
             return (p.get("label") or "").strip() or "India"
     locs = job.get("locations", [])
     if locs:
-        return ", ".join(str(l) for l in locs[:3])
+        return ", ".join(str(loc) for loc in locs[:3])
     return "India"
 
 
@@ -85,16 +89,18 @@ async def fetch(company: dict, net: Net) -> list[Job]:
             comp = (item.get("companyName") or "Unknown").strip()
             jd_url = item.get("jdURL") or f"https://www.naukri.com/job-listings-{job_id}"
 
-            jobs.append(Job(
-                id=f"naukri:{job_id}",
-                source="naukri",
-                company=comp,
-                company_slug=re.sub(r"[^a-z0-9]", "-", comp.lower()).strip("-"),
-                title=title,
-                location=_location(item),
-                url=jd_url,
-                posted_at=item.get("footerPlaceholderLabel"),
-            ))
+            jobs.append(
+                Job(
+                    id=f"naukri:{job_id}",
+                    source="naukri",
+                    company=comp,
+                    company_slug=re.sub(r"[^a-z0-9]", "-", comp.lower()).strip("-"),
+                    title=title,
+                    location=_location(item),
+                    url=jd_url,
+                    posted_at=item.get("footerPlaceholderLabel"),
+                )
+            )
 
         await asyncio.sleep(2.0)  # be extra polite to Naukri
 

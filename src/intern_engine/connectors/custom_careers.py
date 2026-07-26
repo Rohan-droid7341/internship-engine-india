@@ -14,10 +14,13 @@ Each company entry in companies.json needs:
 
 Scrapling's adaptive selectors auto-detect job links on the page.
 """
+
 from __future__ import annotations
+
 import asyncio
 import re
 from concurrent.futures import ThreadPoolExecutor
+
 from ..models import Job
 from ..net import Net
 
@@ -32,8 +35,13 @@ _HEADERS = {
 }
 
 # Common regex patterns for extracting job titles and links from raw HTML
-_LINK_RE = re.compile(r'href=["\']([^"\']*(?:job|career|opening|position|role)[^"\']*)["\']', re.IGNORECASE)
-_TITLE_RE = re.compile(r'<(?:h[1-4]|span|div|a)[^>]*class="[^"]*(?:title|position|role|job-name)[^"]*"[^>]*>\s*([^<]{5,100})', re.IGNORECASE)
+_LINK_RE = re.compile(
+    r'href=["\']([^"\']*(?:job|career|opening|position|role)[^"\']*)["\']', re.IGNORECASE
+)
+_TITLE_RE = re.compile(
+    r'<(?:h[1-4]|span|div|a)[^>]*class="[^"]*(?:title|position|role|job-name)[^"]*"[^>]*>\s*([^<]{5,100})',
+    re.IGNORECASE,
+)
 _TAG_RE = re.compile(r"<[^>]+>")
 
 
@@ -46,6 +54,7 @@ def _scrape_careers_page(url: str, link_pattern: str | None) -> list[dict]:
     results: list[dict] = []
     try:
         from scrapling.fetchers import Fetcher
+
         fetcher = Fetcher(auto_match=False)
         resp = fetcher.get(url, headers=_HEADERS, timeout=25)
         html = resp.content or ""
@@ -69,6 +78,7 @@ def _scrape_careers_page(url: str, link_pattern: str | None) -> list[dict]:
             abs_url = href
         elif href.startswith("/"):
             from urllib.parse import urlparse
+
             parsed = urlparse(url)
             abs_url = f"{parsed.scheme}://{parsed.netloc}{href}"
         else:
@@ -76,13 +86,21 @@ def _scrape_careers_page(url: str, link_pattern: str | None) -> list[dict]:
 
         # Try to get title from nearby context (rough)
         idx = html.find(link_match.group(0))
-        context = html[max(0, idx - 200): idx + 500]
+        context = html[max(0, idx - 200) : idx + 500]
         title_m = _TITLE_RE.search(context)
         title = _clean(title_m.group(1)) if title_m else ""
         if not title:
             # fallback: grab text inside the <a> tag
-            a_text_m = re.search(r">" + re.escape(href.split("/")[-1].replace("-", " ")) + r"<", context, re.IGNORECASE)
-            title = href.split("/")[-1].replace("-", " ").replace("_", " ").title() if not a_text_m else ""
+            a_text_m = re.search(
+                r">" + re.escape(href.split("/")[-1].replace("-", " ")) + r"<",
+                context,
+                re.IGNORECASE,
+            )
+            title = (
+                href.split("/")[-1].replace("-", " ").replace("_", " ").title()
+                if not a_text_m
+                else ""
+            )
 
         results.append({"url": abs_url, "title": title or "Open Role"})
         if len(results) >= 30:  # cap per company
@@ -105,15 +123,17 @@ async def fetch(company: dict, net: Net) -> list[Job]:
 
     jobs: list[Job] = []
     for i, item in enumerate(raw):
-        jobs.append(Job(
-            id=f"custom:{slug}:{i}:{re.sub(r'[^a-z0-9]', '', item['url'][-30:].lower())}",
-            source="custom",
-            company=company.get("name", slug.title()),
-            company_slug=slug,
-            title=item["title"],
-            location="India",
-            url=item["url"],
-            posted_at=None,
-        ))
+        jobs.append(
+            Job(
+                id=f"custom:{slug}:{i}:{re.sub(r'[^a-z0-9]', '', item['url'][-30:].lower())}",
+                source="custom",
+                company=company.get("name", slug.title()),
+                company_slug=slug,
+                title=item["title"],
+                location="India",
+                url=item["url"],
+                posted_at=None,
+            )
+        )
 
     return jobs

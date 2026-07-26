@@ -21,7 +21,7 @@ _CONCURRENCY = 8
 
 _BROWSER_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                  "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+    "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
     "Accept": "application/json",
 }
 
@@ -46,7 +46,7 @@ async def _smartrecruiters(job: Job, net: Net) -> str | None:
     external_id = job.id.rsplit(":", 1)[-1]
     url = f"https://api.smartrecruiters.com/v1/companies/{job.company_slug}/postings/{external_id}"
     data = await net.get_json(url)
-    sections = ((data.get("jobAd") or {}).get("sections") or {})
+    sections = (data.get("jobAd") or {}).get("sections") or {}
     return " ".join(
         str((sections.get(k) or {}).get("text") or "")
         for k in ("jobDescription", "qualifications", "additionalInformation")
@@ -125,9 +125,7 @@ async def enrich_jobs(jobs: list[Job], existing: dict, net: Net) -> tuple[set[st
     async def _resolve(job: Job) -> str | None:
         nonlocal fetched
         prior = existing.get(job.id) or {}
-        settled = bool(
-            prior.get("enriched_at") or prior.get("sponsorship", "unknown") != "unknown"
-        )
+        settled = bool(prior.get("enriched_at") or prior.get("sponsorship", "unknown") != "unknown")
         if settled and prior.get("skills") is not None:
             job.sponsorship = prior.get("sponsorship", "unknown")
             return None  # already settled on an earlier run

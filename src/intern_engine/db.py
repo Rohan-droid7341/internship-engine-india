@@ -52,31 +52,42 @@ def _job_rows(store_data: dict) -> list[dict]:
     rows = []
     for r in store_data.values():
         location = r.get("location") or ""
-        rows.append({
-            "id": r["id"],
-            "company_key": f"{r.get('source')}:{r.get('company_slug')}",
-            "source": r.get("source"),
-            "company": r.get("company"),
-            "title": r.get("title"),
-            "location": location,
-            "url": r.get("url"),
-            "category": r.get("category"),
-            "season": r.get("season"),
-            "region": "US" if filters.is_united_states(location) else "International",
-            "sponsorship": r.get("sponsorship", "unknown"),
-            "posted_at": r.get("posted_at"),
-            "first_seen_at": r.get("first_seen_at"),
-            "last_seen_at": r.get("last_seen_at"),
-            "is_open": bool(r.get("is_open")),
-        })
+        rows.append(
+            {
+                "id": r["id"],
+                "company_key": f"{r.get('source')}:{r.get('company_slug')}",
+                "source": r.get("source"),
+                "company": r.get("company"),
+                "title": r.get("title"),
+                "location": location,
+                "url": r.get("url"),
+                "category": r.get("category"),
+                "season": r.get("season"),
+                "region": "US" if filters.is_united_states(location) else "International",
+                "sponsorship": r.get("sponsorship", "unknown"),
+                "posted_at": r.get("posted_at"),
+                "first_seen_at": r.get("first_seen_at"),
+                "last_seen_at": r.get("last_seen_at"),
+                "is_open": bool(r.get("is_open")),
+            }
+        )
     return rows
 
 
 def _run_row(stats: dict) -> dict:
     keep = (
-        "duration_seconds", "companies_total", "fetched_ok", "fetch_errors",
-        "fetch_success_rate", "roles_matched", "new_this_run", "open_total",
-        "roles_by_source", "roles_by_cycle", "roles_by_region", "detection_latency",
+        "duration_seconds",
+        "companies_total",
+        "fetched_ok",
+        "fetch_errors",
+        "fetch_success_rate",
+        "roles_matched",
+        "new_this_run",
+        "open_total",
+        "roles_by_source",
+        "roles_by_cycle",
+        "roles_by_region",
+        "detection_latency",
     )
     return {k: stats.get(k) for k in keep}
 
@@ -91,12 +102,12 @@ def sync(store_data: dict, stats: dict) -> bool:
         if companies:
             for i in range(0, len(companies), _JOB_BATCH):
                 client.table("companies").upsert(
-                    companies[i:i + _JOB_BATCH], on_conflict="key"
+                    companies[i : i + _JOB_BATCH], on_conflict="key"
                 ).execute()
 
         jobs = _job_rows(store_data)
         for i in range(0, len(jobs), _JOB_BATCH):
-            client.table("jobs").upsert(jobs[i:i + _JOB_BATCH], on_conflict="id").execute()
+            client.table("jobs").upsert(jobs[i : i + _JOB_BATCH], on_conflict="id").execute()
 
         client.table("scrape_runs").insert(_run_row(stats)).execute()
         return True

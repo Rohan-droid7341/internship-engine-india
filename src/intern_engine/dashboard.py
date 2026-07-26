@@ -114,18 +114,26 @@ def _rows(open_jobs: list[dict]) -> str:
         proven = "1" if h1b.badge(approvals) else "0"
         check = (
             f' <span class="ok" title="~{h1b.pretty_count(approvals)} H-1B approvals '
-            f'({escape(window)}, USCIS)">✓</span>' if proven == "1" else ""
+            f'({escape(window)}, USCIS)">✓</span>'
+            if proven == "1"
+            else ""
         )
         salary = r.get("salary") or ""
         skills = [s for s in (r.get("skills") or []) if s][:6]
         chips = (
-            '<span class="sks">'
-            + "".join(f'<span class="sk">{escape(s)}</span>' for s in skills)
-            + "</span>"
-        ) if skills else ""
+            (
+                '<span class="sks">'
+                + "".join(f'<span class="sk">{escape(s)}</span>' for s in skills)
+                + "</span>"
+            )
+            if skills
+            else ""
+        )
         haystack = " ".join(
-            [str(r.get(k) or "") for k in
-             ("company", "title", "location", "category", "season", "salary")]
+            [
+                str(r.get(k) or "")
+                for k in ("company", "title", "location", "category", "season", "salary")
+            ]
             + skills
         ).lower()
         cycle_tag = (
@@ -170,15 +178,20 @@ def _radar_rows(rows: list[dict]) -> str:
     out = []
     for r in rows:
         if r["status"] == "open":
-            status = (f'<a href="{escape(r["url"])}" target="_blank" rel="noopener">✅ open now</a>'
-                      if r["url"] else "✅ open now")
+            status = (
+                f'<a href="{escape(r["url"])}" target="_blank" rel="noopener">✅ open now</a>'
+                if r["url"]
+                else "✅ open now"
+            )
         elif r["status"] == "dropped":
             status = '<span class="muted">🗓️ dropped</span>'
         else:
             status = '<span class="muted">⏳ waiting</span>'
         conf = r.get("confidence", "estimated")
-        cf = (f'<span class="cf cf-{conf}" title="{escape(_CF_TITLE.get(conf, ""))}">'
-              f'{escape(radar.confidence_note(r))}</span>')
+        cf = (
+            f'<span class="cf cf-{conf}" title="{escape(_CF_TITLE.get(conf, ""))}">'
+            f"{escape(radar.confidence_note(r))}</span>"
+        )
         mark = "🎯 " if r.get("source") == "engine" else ""
         out.append(
             f'<tr data-text="{escape(r["company"].lower())}">'
@@ -279,10 +292,7 @@ def generate(store_data: dict, stats: dict) -> None:
     cycles = sorted({r.get("season", "") for r in open_jobs if r.get("season")})
     categories = sorted({r.get("category", "") for r in open_jobs if r.get("category")})
     repo = config.repo_slug()
-    proven_roles = sum(
-        1 for r in open_jobs
-        if h1b.badge(h1b.approvals_for(r.get("company") or ""))
-    )
+    proven_roles = sum(1 for r in open_jobs if h1b.badge(h1b.approvals_for(r.get("company") or "")))
     by_category: dict[str, int] = {}
     for r in open_jobs:
         cat = r.get("category") or "Other"

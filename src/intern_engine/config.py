@@ -30,7 +30,7 @@ _FALLBACK_REPO = "zshah101/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Inte
 
 
 def repo_slug() -> str:
-    """"owner/name" for this repo: from Actions env, else the git remote."""
+    """ "owner/name" for this repo: from Actions env, else the git remote."""
     env = os.environ.get("GITHUB_REPOSITORY")
     if env and "/" in env:
         return env
@@ -48,6 +48,7 @@ def pages_base() -> str:
     """The GitHub Pages base URL serving docs/ (dashboard, feed, JSON API)."""
     owner, _, name = repo_slug().partition("/")
     return f"https://{owner.lower()}.github.io/{name}"
+
 
 _GLOBAL_TOKENS = {"global", "international", "worldwide", "any", "all"}
 _US_TOKENS = {"us", "usa", "united states", "u.s.", "america"}
@@ -90,7 +91,9 @@ def want_india(cfg: dict) -> bool:
 
 
 def want_remote(cfg: dict) -> bool:
-    return any(str(r).lower() in _REMOTE_TOKENS | _HYBRID_TOKENS for r in (cfg.get("regions") or []))
+    return any(
+        str(r).lower() in _REMOTE_TOKENS | _HYBRID_TOKENS for r in (cfg.get("regions") or [])
+    )
 
 
 def section_limit(cfg: dict, label: str):

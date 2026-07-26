@@ -53,8 +53,9 @@ def _posted_day(record: dict) -> str | None:
         return None
 
 
-def update_from_store(store_data: dict, observed: dict | None = None,
-                      cycles: list[str] | None = None) -> dict:
+def update_from_store(
+    store_data: dict, observed: dict | None = None, cycles: list[str] | None = None
+) -> dict:
     """Fold the store's real posted dates into the observed record.
 
     Keeps, per company and cycle, the EARLIEST posted date we have ever seen and

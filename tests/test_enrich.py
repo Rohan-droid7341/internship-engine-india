@@ -22,8 +22,16 @@ class FakeNet:
 
 
 def _job(jid="lever:acme:1", source="lever", description=None, url="https://x", slug="acme"):
-    return Job(id=jid, source=source, company="Acme", company_slug=slug,
-               title="SWE Intern", location="NY", url=url, description=description)
+    return Job(
+        id=jid,
+        source=source,
+        company="Acme",
+        company_slug=slug,
+        title="SWE Intern",
+        location="NY",
+        url=url,
+        description=description,
+    )
 
 
 def _run(coro):
@@ -42,9 +50,13 @@ class TestEnrich:
     def test_stored_verdict_carried_over_no_refetch(self):
         net = FakeNet({})
         job = _job(jid="greenhouse:acme:9", source="greenhouse")
-        existing = {"greenhouse:acme:9": {
-            "sponsorship": "citizens-only", "enriched_at": "x", "skills": ["Python"],
-        }}
+        existing = {
+            "greenhouse:acme:9": {
+                "sponsorship": "citizens-only",
+                "enriched_at": "x",
+                "skills": ["Python"],
+            }
+        }
         enriched, fetched = _run(enrich.enrich_jobs([job], existing, net))
         assert job.sponsorship == "citizens-only"
         assert enriched == set() and net.calls == 0
@@ -68,12 +80,17 @@ class TestEnrich:
         assert enriched == {job.id} and fetched == 1
 
     def test_workday_detail_backfills_posted_date(self):
-        net = FakeNet({"jobPostingInfo": {
-            "jobDescription": "No visa sponsorship for this role.",
-            "startDate": "2026-06-20",
-        }})
+        net = FakeNet(
+            {
+                "jobPostingInfo": {
+                    "jobDescription": "No visa sponsorship for this role.",
+                    "startDate": "2026-06-20",
+                }
+            }
+        )
         job = _job(
-            jid="workday:acme:/job/NY/SWE_R1", source="workday",
+            jid="workday:acme:/job/NY/SWE_R1",
+            source="workday",
             url="https://acme.wd5.myworkdayjobs.com/Careers/job/NY/SWE-Intern_R1",
         )
         assert job.posted_at is None
@@ -87,8 +104,7 @@ class TestEnrich:
                 raise RuntimeError("board deleted")
 
         job = _job(jid="greenhouse:acme:7", source="greenhouse")
-        enriched, _fetched = _run(enrich.enrich_jobs([job], {}, ExplodingNet({}))
-                                  )
+        enriched, _fetched = _run(enrich.enrich_jobs([job], {}, ExplodingNet({})))
         assert job.sponsorship == "unknown"
         assert enriched == set()  # no enriched_at stamp -> retried next run
 
@@ -102,10 +118,11 @@ class TestEnrich:
 
     def test_text_stated_cycle_replaces_inferred(self):
         net = FakeNet({})
-        job = _job(description=(
-            "Join our Fall 2026 co-op program in Boston. "
-            "No visa sponsorship for this role."
-        ))
+        job = _job(
+            description=(
+                "Join our Fall 2026 co-op program in Boston. No visa sponsorship for this role."
+            )
+        )
         job.season, job.season_inferred = "Summer 2027", True
         _run(enrich.enrich_jobs([job], {}, net))
         assert job.season == "Fall 2026"

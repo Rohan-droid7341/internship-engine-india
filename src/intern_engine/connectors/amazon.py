@@ -44,7 +44,8 @@ async def fetch(company: dict, net: Net) -> list[Job]:
                     company="Amazon",
                     company_slug="amazon",
                     title=(j.get("title") or "").strip(),
-                    location=(j.get("normalized_location") or j.get("location") or "—").strip() or "—",
+                    location=(j.get("normalized_location") or j.get("location") or "—").strip()
+                    or "—",
                     url=("https://www.amazon.jobs" + path) if path else "https://www.amazon.jobs",
                     posted_at=_posted(j.get("posted_date")),
                     description=description.strip() or None,

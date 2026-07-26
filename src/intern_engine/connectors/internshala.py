@@ -4,10 +4,13 @@ Uses Scrapling's Fetcher (lightweight, no browser needed) to parse
 Internshala's AJAX endpoint which returns JSON with an HTML fragment.
 Adaptive selectors make this self-healing when page structure changes.
 """
+
 from __future__ import annotations
+
 import asyncio
 import re
 from concurrent.futures import ThreadPoolExecutor
+
 from ..models import Job
 from ..net import Net
 
@@ -25,8 +28,13 @@ _AJAX_HEADERS = {
 # Scrapling-assisted parsing fallback regexes (used when Scrapling unavailable)
 _PATH_RE = re.compile(r'href="(/internship/detail/[^"]+)"')
 _TITLE_RE = re.compile(r'class="[^"]*profile[^"]*"[^>]*>\s*<a[^>]*>([^<]+)</a>', re.IGNORECASE)
-_COMPANY_RE = re.compile(r'class="[^"]*company_name[^"]*"[^>]*>.*?(?:<a[^>]*>)?\s*([^<\n]{2,80}?)\s*(?:</a>)?\s*</div>', re.DOTALL | re.IGNORECASE)
-_LOCATION_RE = re.compile(r'class="[^"]*location[^"]*"[^>]*>\s*(?:<[^>]+>)*\s*([^<]{2,60}?)\s*(?:<|$)', re.IGNORECASE)
+_COMPANY_RE = re.compile(
+    r'class="[^"]*company_name[^"]*"[^>]*>.*?(?:<a[^>]*>)?\s*([^<\n]{2,80}?)\s*(?:</a>)?\s*</div>',
+    re.DOTALL | re.IGNORECASE,
+)
+_LOCATION_RE = re.compile(
+    r'class="[^"]*location[^"]*"[^>]*>\s*(?:<[^>]+>)*\s*([^<]{2,60}?)\s*(?:<|$)', re.IGNORECASE
+)
 _TAG_RE = re.compile(r"<[^>]+>")
 
 
@@ -39,6 +47,7 @@ def _parse_html_with_scrapling(html: str, category: str) -> list[Job]:
     jobs: list[Job] = []
     try:
         from scrapling import Adaptor
+
         page = Adaptor(html, auto_match=False)
 
         for card in page.css(".individual_internship"):
@@ -101,16 +110,18 @@ def _parse_html_regex(html: str, category: str) -> list[Job]:
         location = _clean(loc_m.group(1)) if loc_m else "—"
         job_id_m = re.search(r"-([a-zA-Z0-9]+)$", path)
         job_id = job_id_m.group(1) if job_id_m else path[-10:]
-        jobs.append(Job(
-            id=f"internshala:{category}:{job_id}",
-            source="internshala",
-            company=company,
-            company_slug=category,
-            title=title,
-            location=location,
-            url=f"https://internshala.com{path}",
-            posted_at=None,
-        ))
+        jobs.append(
+            Job(
+                id=f"internshala:{category}:{job_id}",
+                source="internshala",
+                company=company,
+                company_slug=category,
+                title=title,
+                location=location,
+                url=f"https://internshala.com{path}",
+                posted_at=None,
+            )
+        )
     return jobs
 
 
@@ -118,12 +129,14 @@ def _fetch_page_sync(url: str) -> dict:
     """Synchronous page fetch via Scrapling Fetcher."""
     try:
         from scrapling.fetchers import Fetcher
+
         fetcher = Fetcher(auto_match=False)
         resp = fetcher.get(url, headers=_AJAX_HEADERS, timeout=20)
         return resp.json() or {}
     except ImportError:
         # Fall back to requests if Scrapling unavailable
         import requests as req
+
         r = req.get(url, headers=_AJAX_HEADERS, timeout=15)
         return r.json()
     except Exception:

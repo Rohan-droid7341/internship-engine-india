@@ -46,13 +46,21 @@ def save(path: str, data: dict) -> None:
 # sponsorship/salary/enriched_at are handled specially below: a settled verdict
 # must never be clobbered by a run that didn't re-enrich.
 _REFRESH_FIELDS = (
-    "title", "location", "url",
-    "season", "season_inferred", "category", "company", "source", "company_slug",
+    "title",
+    "location",
+    "url",
+    "season",
+    "season_inferred",
+    "category",
+    "company",
+    "source",
+    "company_slug",
 )
 
 
-def upsert(existing: dict, jobs: list[dict], succeeded_keys: set[str],
-           enriched_ids: set[str] | None = None) -> list[str]:
+def upsert(
+    existing: dict, jobs: list[dict], succeeded_keys: set[str], enriched_ids: set[str] | None = None
+) -> list[str]:
     """Merge freshly-fetched jobs into the existing store.
 
     Returns the list of NEWLY-seen job ids (this is the "Spotter" result).
@@ -126,8 +134,10 @@ def purge(existing: dict, keep_closed_days: int = 60) -> int:
     """
     cutoff = (datetime.now(UTC) - timedelta(days=keep_closed_days)).strftime("%Y-%m-%dT%H:%M:%SZ")
     stale = [
-        jid for jid, record in existing.items()
-        if not record.get("is_open") and (record.get("closed_at") or record.get("last_seen_at") or "") < cutoff
+        jid
+        for jid, record in existing.items()
+        if not record.get("is_open")
+        and (record.get("closed_at") or record.get("last_seen_at") or "") < cutoff
     ]
     for jid in stale:
         del existing[jid]

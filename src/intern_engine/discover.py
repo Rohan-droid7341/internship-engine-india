@@ -196,17 +196,26 @@ def discover() -> tuple[list[dict], int]:
         merged.setdefault((ats, slug), {"name": name, "slug": slug, "ats": ats})
     for info in wd.values():
         record = {
-            "name": info["name"], "slug": info["tenant"], "ats": "workday",
-            "wd": info["wd"], "site": info["site"],
+            "name": info["name"],
+            "slug": info["tenant"],
+            "ats": "workday",
+            "wd": info["wd"],
+            "site": info["site"],
         }
         if info.get("host"):
             record["host"] = info["host"]  # path-style tenant (myworkdaysite.com)
         merged.setdefault(("workday", info["tenant"]), record)
     for info in orc.values():
-        merged.setdefault(("oracle", info["host"]), {
-            "name": info["name"], "slug": info["host"], "ats": "oracle",
-            "host": info["host"], "site": info["site"],
-        })
+        merged.setdefault(
+            ("oracle", info["host"]),
+            {
+                "name": info["name"],
+                "slug": info["host"],
+                "ats": "oracle",
+                "host": info["host"],
+                "site": info["site"],
+            },
+        )
     # Amazon is one fixed search endpoint, not discovered per-URL.
     merged.setdefault(("amazon", "amazon"), {"name": "Amazon", "slug": "amazon", "ats": "amazon"})
 

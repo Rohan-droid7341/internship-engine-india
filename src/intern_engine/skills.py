@@ -146,6 +146,7 @@ def extract_pay(text: str | None) -> str | None:
             return f"{_fmt_annual(lo)}/yr"
     return None
 
+
 # --- degree, experience, batch, stipend (Indian contexts) ---
 _STIPEND_INR_RE = re.compile(
     r"(?:₹|rs\.?|inr)\s*(\d{1,3}(?:,\d{3})+|\d{4,5})(?:\s*(?:-|to)\s*(?:₹|rs\.?|inr)?\s*(\d{1,3}(?:,\d{3})+|\d{4,5}))?\s*(?:/|per|a\s+)?(month|mo)",
@@ -160,59 +161,78 @@ _CTC_LPA_RE = re.compile(
     re.IGNORECASE,
 )
 
-_DEGREE_RE = re.compile(r"\b(B\.?Tech|M\.?Tech|B\.?E\.?|M\.?E\.?|B\.?S\.?|M\.?S\.?|Ph\.?D|Bachelor's|Master's)\b", re.IGNORECASE)
+_DEGREE_RE = re.compile(
+    r"\b(B\.?Tech|M\.?Tech|B\.?E\.?|M\.?E\.?|B\.?S\.?|M\.?S\.?|Ph\.?D|Bachelor's|Master's)\b",
+    re.IGNORECASE,
+)
 _EXP_RE = re.compile(r"(fresher|0-1\s*years?|1-2\s*years?|2\+?\s*years?)", re.IGNORECASE)
 _BATCH_RE = re.compile(r"(?:batch|class)\s*(?:of)?\s*(202[4-9])", re.IGNORECASE)
 
+
 def extract_stipend(text: str | None) -> str | None:
-    if not text: return None
+    if not text:
+        return None
     flat = _WS_RE.sub(" ", text)
     m = _STIPEND_INR_RE.search(flat)
     if m:
         lo = m.group(1).replace(",", "")
         hi = m.group(2).replace(",", "") if m.group(2) else None
-        if hi and hi != lo: return f"₹{int(lo)//1000}k–{int(hi)//1000}k/mo"
-        return f"₹{int(lo)//1000}k/mo"
+        if hi and hi != lo:
+            return f"₹{int(lo) // 1000}k–{int(hi) // 1000}k/mo"
+        return f"₹{int(lo) // 1000}k/mo"
     m = _STIPEND_K_RE.search(flat)
     if m:
         lo = m.group(1)
         hi = m.group(2) if m.group(2) else None
-        if hi and hi != lo: return f"₹{lo}k–{hi}k/mo"
+        if hi and hi != lo:
+            return f"₹{lo}k–{hi}k/mo"
         return f"₹{lo}k/mo"
     m = _CTC_LPA_RE.search(flat)
     if m:
         lo = m.group(1)
         hi = m.group(2) if m.group(2) else None
-        if hi and hi != lo: return f"{lo}–{hi} LPA"
+        if hi and hi != lo:
+            return f"{lo}–{hi} LPA"
         return f"{lo} LPA"
     return None
 
+
 def extract_degree(text: str | None) -> str | None:
-    if not text: return None
+    if not text:
+        return None
     m = _DEGREE_RE.search(text)
     if m:
         d = m.group(1).lower().replace(".", "").replace("'", "")
-        if d in ("btech", "be", "bachelors", "bs"): return "B.Tech/BS"
-        if d in ("mtech", "me", "masters", "ms"): return "M.Tech/MS"
-        if d == "phd": return "PhD"
+        if d in ("btech", "be", "bachelors", "bs"):
+            return "B.Tech/BS"
+        if d in ("mtech", "me", "masters", "ms"):
+            return "M.Tech/MS"
+        if d == "phd":
+            return "PhD"
         return m.group(1)
     return None
 
+
 def extract_experience(text: str | None) -> str | None:
-    if not text: return None
+    if not text:
+        return None
     m = _EXP_RE.search(text)
     if m:
         e = m.group(1).lower()
-        if "fresher" in e or "0-1" in e: return "0-1 Yr"
-        if "1-2" in e: return "1-2 Yrs"
-        if "2+" in e or "2 years" in e: return "2+ Yrs"
+        if "fresher" in e or "0-1" in e:
+            return "0-1 Yr"
+        if "1-2" in e:
+            return "1-2 Yrs"
+        if "2+" in e or "2 years" in e:
+            return "2+ Yrs"
         return m.group(1)
     return None
 
+
 def extract_batch(text: str | None) -> str | None:
-    if not text: return None
+    if not text:
+        return None
     m = _BATCH_RE.search(text)
     if m:
         return m.group(1)
     return None
-

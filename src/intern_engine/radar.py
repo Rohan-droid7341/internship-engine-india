@@ -127,14 +127,18 @@ def rows(store_data: dict, cycle: str, today: date | None = None) -> list[dict]:
         cycles = (o_info or {}).get("cycles") or {}
         obs_this = cycles.get(cycle)
         obs_prev = cycles.get(prev_cycle(cycle))
-        name = ((k_info or {}).get("name") or (o_info or {}).get("name")
-                or (l_info or {}).get("name") or key)
+        name = (
+            (k_info or {}).get("name")
+            or (o_info or {}).get("name")
+            or (l_info or {}).get("name")
+            or key
+        )
         is_posted = l_info is not None
         url = (l_info or {}).get("url", "")
 
         # Defaults
-        last = ""            # last cycle's date/month we project from (display)
-        posted_on = ""       # the real date it dropped this cycle, if we caught it
+        last = ""  # last cycle's date/month we project from (display)
+        posted_on = ""  # the real date it dropped this cycle, if we caught it
         precision = "day"
         confidence = "window"
         source = "known"
@@ -169,20 +173,22 @@ def rows(store_data: dict, cycle: str, today: date | None = None) -> list[dict]:
         else:
             status = "waiting"
 
-        out.append({
-            "company": name,
-            "last_cycle_posted": last,
-            "posted_on": posted_on,
-            "precision": precision,             # day | month
-            "rolling": rolling,
-            "confidence": confidence,           # verified | window | rolling
-            "source": source,                   # engine | known
-            "expected": expected.strftime("%Y-%m-%d") if expected else "",
-            "days_until": (expected - today).days if expected else None,
-            "status": status,                   # open | dropped | waiting
-            "url": url,
-            "note": (k_info or {}).get("note", ""),
-        })
+        out.append(
+            {
+                "company": name,
+                "last_cycle_posted": last,
+                "posted_on": posted_on,
+                "precision": precision,  # day | month
+                "rolling": rolling,
+                "confidence": confidence,  # verified | window | rolling
+                "source": source,  # engine | known
+                "expected": expected.strftime("%Y-%m-%d") if expected else "",
+                "days_until": (expected - today).days if expected else None,
+                "status": status,  # open | dropped | waiting
+                "url": url,
+                "note": (k_info or {}).get("note", ""),
+            }
+        )
 
     # open now (apply today) -> waiting (what's coming, the radar's point) ->
     # dropped (opened and already closed this cycle; least actionable).
@@ -191,8 +197,8 @@ def rows(store_data: dict, cycle: str, today: date | None = None) -> list[dict]:
     def _sortkey(r: dict) -> tuple:
         return (
             _rank[r["status"]],
-            r["rolling"],                       # dated before rolling
-            r["expected"] or "9999-99-99",      # soonest expected next
+            r["rolling"],  # dated before rolling
+            r["expected"] or "9999-99-99",  # soonest expected next
             r["company"].lower(),
         )
 
@@ -201,6 +207,7 @@ def rows(store_data: dict, cycle: str, today: date | None = None) -> list[dict]:
 
 
 # --- display helpers (shared by README + dashboard) -----------------------------
+
 
 def _fmt(iso_day: str, month_only: bool = False) -> str:
     d = datetime.strptime(iso_day, "%Y-%m-%d")

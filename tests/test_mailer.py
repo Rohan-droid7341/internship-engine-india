@@ -8,9 +8,15 @@ from intern_engine import mailer
 def _record(hours_ago: float, **extra) -> dict:
     ts = (datetime.now(UTC) - timedelta(hours=hours_ago)).strftime("%Y-%m-%dT%H:%M:%SZ")
     rec = {
-        "id": f"x:{hours_ago}", "company": "Acme", "title": "SWE Intern",
-        "season": "Summer 2027", "location": "NYC", "url": "https://x/1",
-        "is_open": True, "first_seen_at": ts, "sponsorship": "unknown",
+        "id": f"x:{hours_ago}",
+        "company": "Acme",
+        "title": "SWE Intern",
+        "season": "Summer 2027",
+        "location": "NYC",
+        "url": "https://x/1",
+        "is_open": True,
+        "first_seen_at": ts,
+        "sponsorship": "unknown",
     }
     rec.update(extra)
     return rec
@@ -18,10 +24,11 @@ def _record(hours_ago: float, **extra) -> dict:
 
 # --- what counts as news -------------------------------------------------------
 
+
 def test_new_roles_window():
     store = {
         "a": _record(2),
-        "b": _record(30),               # too old
+        "b": _record(30),  # too old
         "c": _record(1, is_open=False),  # closed
     }
     fresh = mailer.new_roles(store)
@@ -48,6 +55,7 @@ def test_digest_html_caps_rows_and_says_plus_n_more():
 
 # --- daily gate ----------------------------------------------------------------
 
+
 def test_should_send_requires_news():
     assert mailer.should_send({}, fresh_count=0) is False
     assert mailer.should_send({}, fresh_count=3) is True
@@ -63,6 +71,7 @@ def test_should_send_at_most_daily():
 
 # --- composition ---------------------------------------------------------------
 
+
 def test_digest_html_lists_roles_and_unsub_slot():
     fresh = [
         _record(1, company="Stripe", title="Backend Intern", salary="$55/hr"),
@@ -71,8 +80,8 @@ def test_digest_html_lists_roles_and_unsub_slot():
     html = mailer.build_digest_html(fresh)
     assert "Stripe" in html and "Backend Intern" in html
     assert "$55/hr" in html
-    assert "\U0001f6c2" in html            # 🛂 flag carried into the email
-    assert "{{UNSUB_URL}}" in html          # per-recipient link slot survives
+    assert "\U0001f6c2" in html  # 🛂 flag carried into the email
+    assert "{{UNSUB_URL}}" in html  # per-recipient link slot survives
 
 
 def test_sender_parsing(monkeypatch):
@@ -85,6 +94,7 @@ def test_sender_parsing(monkeypatch):
 
 
 # --- the contract: unset env = silent no-op ------------------------------------
+
 
 def test_send_digest_noop_without_env(monkeypatch):
     for var in ("BREVO_API_KEY", "SUPABASE_URL", "SUPABASE_SERVICE_KEY", "MAIL_FROM"):

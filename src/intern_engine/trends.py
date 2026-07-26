@@ -42,7 +42,9 @@ def _week_start(day: datetime) -> datetime:
     return day - timedelta(days=day.weekday())  # Monday
 
 
-def weekly_postings(store_data: dict, weeks: int = 16, now: datetime | None = None) -> list[tuple[str, int]]:
+def weekly_postings(
+    store_data: dict, weeks: int = 16, now: datetime | None = None
+) -> list[tuple[str, int]]:
     """[(monday_iso, roles_posted_that_week)] for the trailing `weeks` weeks.
 
     Buckets by the role's real published date; a role without one falls back to
@@ -150,8 +152,9 @@ def svg_bar_chart(buckets: list[tuple[str, int]], width: int = 640, height: int 
     return "".join(parts)
 
 
-def _line_chart_svg(buckets: list[tuple[str, int]], theme: dict,
-                    width: int = 720, height: int = 200) -> str:
+def _line_chart_svg(
+    buckets: list[tuple[str, int]], theme: dict, width: int = 720, height: int = 200
+) -> str:
     """A standalone SVG document (for the README <picture> embed): weekly
     posting volume as a line with a soft area fill. Transparent background so
     it sits on GitHub's own surface; every color is a literal (no CSS vars)."""
@@ -168,18 +171,14 @@ def _line_chart_svg(buckets: list[tuple[str, int]], theme: dict,
     )
     if not buckets or top == 0:
         return (
-            head
-            + f'<text x="{width / 2}" y="{height / 2}" text-anchor="middle" '
+            head + f'<text x="{width / 2}" y="{height / 2}" text-anchor="middle" '
             f'fill="{theme["ink"]}" font-size="13" '
             f'font-family="-apple-system,Segoe UI,Roboto,sans-serif">'
             "chart appears as dated roles accumulate</text></svg>"
         )
 
     step = plot_w / (len(buckets) - 1) if len(buckets) > 1 else plot_w
-    pts = [
-        (pad_l + i * step, pad_t + plot_h - (n / top) * plot_h)
-        for i, n in enumerate(values)
-    ]
+    pts = [(pad_l + i * step, pad_t + plot_h - (n / top) * plot_h) for i, n in enumerate(values)]
     line = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
     area = (
         f"M{pts[0][0]:.1f},{pad_t + plot_h} L{line.replace(' ', ' L')} "
@@ -226,6 +225,5 @@ def write_readme_charts(store_data: dict) -> None:
     via <picture> so each GitHub theme gets a chart drawn for its surface."""
     buckets = weekly_postings(store_data)
     for mode, theme in _THEMES.items():
-        with open(os.path.join(paths.DOCS_DIR, f"trends-{mode}.svg"), "w",
-                  encoding="utf-8") as f:
+        with open(os.path.join(paths.DOCS_DIR, f"trends-{mode}.svg"), "w", encoding="utf-8") as f:
             f.write(_line_chart_svg(buckets, theme))

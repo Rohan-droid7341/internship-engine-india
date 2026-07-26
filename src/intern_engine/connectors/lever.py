@@ -19,9 +19,7 @@ def _epoch_ms_to_iso(ms) -> str | None:
     if not ms:
         return None
     try:
-        return datetime.fromtimestamp(ms / 1000, tz=UTC).strftime(
-            "%Y-%m-%dT%H:%M:%SZ"
-        )
+        return datetime.fromtimestamp(ms / 1000, tz=UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     except (ValueError, OSError, TypeError):
         return None
 

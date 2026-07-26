@@ -44,8 +44,7 @@ def _entry(record: dict, base: str) -> str:
     approvals = h1b.approvals_for(record.get("company") or "")
     if h1b.badge(approvals):
         summary_bits.append(
-            f"H-1B track record: ~{h1b.pretty_count(approvals)} approvals "
-            f"({h1b.window_label()})"
+            f"H-1B track record: ~{h1b.pretty_count(approvals)} approvals ({h1b.window_label()})"
         )
     summary = " · ".join(b for b in summary_bits if b)
     updated = _first_seen(record) or datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -53,9 +52,9 @@ def _entry(record: dict, base: str) -> str:
         "  <entry>\n"
         f"    <id>urn:intern-engine:{escape(record.get('id', ''))}</id>\n"
         f"    <title>{escape(title)}</title>\n"
-        f"    <link href=\"{escape(record.get('url') or base)}\"/>\n"
+        f'    <link href="{escape(record.get("url") or base)}"/>\n'
         f"    <updated>{escape(updated)}</updated>\n"
-        f"    <category term=\"{escape(record.get('season') or 'Internship')}\"/>\n"
+        f'    <category term="{escape(record.get("season") or "Internship")}"/>\n'
         f"    <summary>{escape(summary)}</summary>\n"
         "  </entry>\n"
     )
@@ -90,8 +89,7 @@ def write_feed(store_data: dict) -> int:
 
 
 def _ics_escape(text: str) -> str:
-    return (text.replace("\\", "\\\\").replace(";", "\\;")
-                .replace(",", "\\,").replace("\n", "\\n"))
+    return text.replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,").replace("\n", "\\n")
 
 
 def _ics_fold(line: str) -> str:
@@ -125,8 +123,11 @@ def write_radar_ics(store_data: dict, cycle: str | None = None) -> int:
     cycle = cycle or config.cycles(config.load_config())[0]
     base = config.pages_base()
     now = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
-    rows = [r for r in radar.rows(store_data, cycle)
-            if r["status"] == "waiting" and not r["rolling"] and r["expected"]]
+    rows = [
+        r
+        for r in radar.rows(store_data, cycle)
+        if r["status"] == "waiting" and not r["rolling"] and r["expected"]
+    ]
 
     lines = [
         "BEGIN:VCALENDAR",
@@ -142,16 +143,20 @@ def write_radar_ics(store_data: dict, cycle: str | None = None) -> int:
     ]
     for r in rows:
         start = r["expected"].replace("-", "")
-        end = (datetime.strptime(r["expected"], "%Y-%m-%d").date()
-               + timedelta(days=1)).strftime("%Y%m%d")
+        end = (datetime.strptime(r["expected"], "%Y-%m-%d").date() + timedelta(days=1)).strftime(
+            "%Y%m%d"
+        )
         uid = f"radar-{h1b.normalize(r['company']) or r['company']}-{start}@intern-engine"
         verified = r["source"] == "engine"
         precise = r["precision"] == "day"
         mark = "🎯 " if verified else ""
         when = "expected to open" if precise else "typically opens"
         summary = f"{mark}{r['company']} — {when} ({cycle})"
-        trust = ("date verified from our own live career-page observations"
-                 if verified else "hand-verified typical opening month (month-level)")
+        trust = (
+            "date verified from our own live career-page observations"
+            if verified
+            else "hand-verified typical opening month (month-level)"
+        )
         desc_bits = [f"{r['company']} {when} around this date.", trust]
         if r.get("note"):
             desc_bits.append(r["note"])
@@ -181,18 +186,28 @@ def write_radar_ics(store_data: dict, cycle: str | None = None) -> int:
 
 
 _API_FIELDS = (
-    "id", "company", "title", "season", "season_inferred", "category",
-    "location", "url", "posted_at", "first_seen_at", "sponsorship", "salary",
-    "skills", "source",
+    "id",
+    "company",
+    "title",
+    "season",
+    "season_inferred",
+    "category",
+    "location",
+    "url",
+    "posted_at",
+    "first_seen_at",
+    "sponsorship",
+    "salary",
+    "skills",
+    "source",
 )
 
 
 def write_api(store_data: dict, stats: dict) -> int:
     """Static JSON API: every open role + the latest run metrics."""
     open_jobs = [r for r in store_data.values() if r.get("is_open")]
-    open_jobs.sort(
-        key=lambda r: ((r.get("posted_at") or "")[:10], _first_seen(r)), reverse=True
-    )
+    open_jobs.sort(key=lambda r: ((r.get("posted_at") or "")[:10], _first_seen(r)), reverse=True)
+
     def _job(r: dict) -> dict:
         row = {k: r.get(k) for k in _API_FIELDS}
         row["h1b_approvals"] = h1b.approvals_for(r.get("company") or "")

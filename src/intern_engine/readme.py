@@ -12,7 +12,7 @@ import json
 from datetime import UTC, datetime, timedelta
 from urllib.parse import quote
 
-from . import config, filters, h1b, paths, priority, radar, sponsorship
+from . import config, filters, h1b, paths, priority, radar
 
 
 def _engine_metrics() -> str:
@@ -97,13 +97,18 @@ def _row(record: dict) -> str:
         title = f"{title} 🆕"
     location = _short_location(record.get("location"))
     category = _md_cell(record.get("category"))
-    
+
     specs = []
-    if record.get("stipend"): specs.append(record.get("stipend"))
-    elif record.get("salary"): specs.append(record.get("salary"))
-    if record.get("experience"): specs.append(record.get("experience"))
-    if record.get("degree"): specs.append(record.get("degree"))
-    if record.get("batch"): specs.append(record.get("batch"))
+    if record.get("stipend"):
+        specs.append(record.get("stipend"))
+    elif record.get("salary"):
+        specs.append(record.get("salary"))
+    if record.get("experience"):
+        specs.append(record.get("experience"))
+    if record.get("degree"):
+        specs.append(record.get("degree"))
+    if record.get("batch"):
+        specs.append(record.get("batch"))
     specs_str = "<br>".join(specs) if specs else "—"
 
     posted = _pretty_date(record)
@@ -142,9 +147,9 @@ def _email_subscribe_url() -> str:
 
 
 def _header(cfg: dict, total_open: int, companies: int, new_week: int) -> list[str]:
-    region = _region_label(cfg)
+    _region_label(cfg)
     cycles = config.cycles(cfg)
-    cycles_phrase = " and ".join(cycles)
+    " and ".join(cycles)
     pages = config.pages_base()
 
     repo = config.repo_slug()
@@ -189,7 +194,7 @@ def _about_section(cfg: dict) -> list[str]:
     cycles = config.cycles(cfg)
     cycles_phrase = " and ".join(cycles)
     pages = config.pages_base()
-    
+
     return [
         "## What this is",
         "",
@@ -212,7 +217,7 @@ def _about_section(cfg: dict) -> list[str]:
         f"- **Alerts your way** - [email digests]({pages}/#subscribe), "
         f"[RSS]({pages}/feed.xml), or Discord - plus a [live dashboard]({pages}/) "
         "with search and custom filters.",
-        f"- **An engine, not a spreadsheet** - polled every "
+        "- **An engine, not a spreadsheet** - polled every "
         "hour across multiple ATS platforms with full source in this repo.",
         "",
         "## Scope",
@@ -220,8 +225,11 @@ def _about_section(cfg: dict) -> list[str]:
         "- **Roles:** Software Engineering, Data Science & Machine Learning "
         "(and closely related technical internships)",
         f"- **Region:** {region}"
-        + (" (primary), with a separate International section"
-           if config.include_international(cfg) else ""),
+        + (
+            " (primary), with a separate International section"
+            if config.include_international(cfg)
+            else ""
+        ),
         f"- **Cycles:** {cycles_phrase}",
         "",
         "## About",
@@ -290,8 +298,7 @@ def _footer() -> list[str]:
         "guessed date. The ones that do publish a date are dated. Know the real date for "
         "a dashed role? Open a PR and I'll merge it.",
         "",
-        "Roles can close at any time, so always confirm on the company's own site before "
-        "applying.",
+        "Roles can close at any time, so always confirm on the company's own site before applying.",
         "",
     ]
 
@@ -357,9 +364,9 @@ def _radar_section(store_data: dict, cycle: str, cap: int = 30) -> list[str]:
         "company's own careers API; the rest are hand-checked typical opening "
         "windows for marquee names. ✅ = already live in the list above.",
         "",
-        "> **Heads up:** companies trend *earlier* every cycle, and \"~Aug\" is a "
-        "month, not a day. Treat \"expected\" as when to **start watching**, and "
-        "\"rolling\" companies as worth checking year-round.",
+        '> **Heads up:** companies trend *earlier* every cycle, and "~Aug" is a '
+        'month, not a day. Treat "expected" as when to **start watching**, and '
+        '"rolling" companies as worth checking year-round.',
         "",
         "| Company | Typical opening | Expected this cycle | Status |",
         "|---|---|---|---|",
@@ -376,29 +383,37 @@ def _radar_section(store_data: dict, cycle: str, cap: int = 30) -> list[str]:
             f"| {mark}{_md_cell(r['company'])} | {radar.pretty_last(r)} | "
             f"{radar.pretty_expected(r)} | {status} |"
         )
-    verified_note = (f"**{verified}** dated from our own live observations 🎯 "
-                     "(this grows every cycle). " if verified else "")
-    lines.extend([
-        "",
-        f"_{len(rows)} companies on the [full radar]({pages}/#radar). {verified_note}"
-        "\"~Aug\" = hand-verified typical month, not a promise of the day; "
-        "\"rolling\" = posts year-round; \"waiting\" = not seen in our tracked "
-        "feeds yet, not a guarantee it isn't out somewhere else._",
-        "",
-    ])
+    verified_note = (
+        f"**{verified}** dated from our own live observations 🎯 (this grows every cycle). "
+        if verified
+        else ""
+    )
+    lines.extend(
+        [
+            "",
+            f"_{len(rows)} companies on the [full radar]({pages}/#radar). {verified_note}"
+            '"~Aug" = hand-verified typical month, not a promise of the day; '
+            '"rolling" = posts year-round; "waiting" = not seen in our tracked '
+            "feeds yet, not a guarantee it isn't out somewhere else._",
+            "",
+        ]
+    )
     return lines
 
 
-def _closed_section(store_data: dict, cycles: list[str],
-                    days: int = 14, cap: int = 40) -> list[str]:
+def _closed_section(
+    store_data: dict, cycles: list[str], days: int = 14, cap: int = 40
+) -> list[str]:
     """Roles that recently closed, kept visible (collapsed) so nobody wastes an
     application on a listing that just died. Only tracked cycles appear here —
     an off-cycle tombstone (text-verified "Summer 2026") was never on the list,
     so it has no business in its obituary either."""
     cutoff = (datetime.now(UTC) - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%S")
     closed = [
-        r for r in store_data.values()
-        if not r.get("is_open") and (r.get("closed_at") or "") >= cutoff
+        r
+        for r in store_data.values()
+        if not r.get("is_open")
+        and (r.get("closed_at") or "") >= cutoff
         and r.get("season") in cycles
     ]
     if not closed:
@@ -485,9 +500,19 @@ def generate(store_data: dict) -> dict:
 
 def _write_csv(open_jobs: list[dict]) -> None:
     fields = [
-        "company", "title", "season", "season_inferred", "category", "location",
-        "sponsorship", "h1b_approvals", "salary", "skills", "posted_at",
-        "first_seen_at", "url",
+        "company",
+        "title",
+        "season",
+        "season_inferred",
+        "category",
+        "location",
+        "sponsorship",
+        "h1b_approvals",
+        "salary",
+        "skills",
+        "posted_at",
+        "first_seen_at",
+        "url",
     ]
     with open(paths.CSV_PATH, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")

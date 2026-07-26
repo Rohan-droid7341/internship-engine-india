@@ -1,5 +1,7 @@
 """Unstop jobs API: public search."""
+
 from __future__ import annotations
+
 from ..models import Job
 from ..net import Net
 
@@ -12,31 +14,41 @@ HEADERS = {
     "Accept": "application/json",
 }
 
+
 async def fetch(company: dict, net: Net) -> list[Job]:
     category = company["slug"]
     jobs = []
-    
+
     for page in range(1, _MAX_PAGES + 1):
         params = {"page": str(page), "opportunity": "internships", "searchTerm": category}
         data = await net.get_json(URL, params=params, headers=HEADERS)
-        
+
         # Handle variations in response format
-        items = data.get("data", {}).get("data", []) if isinstance(data.get("data"), dict) else data.get("data", [])
+        items = (
+            data.get("data", {}).get("data", [])
+            if isinstance(data.get("data"), dict)
+            else data.get("data", [])
+        )
         if not items:
             items = data.get("opportunities", [])
-        
+
         if not items:
             break
-            
+
         for item in items:
             org = item.get("organisation", {})
             comp_name = org.get("name", "Unknown")
-            
+
             cities = item.get("city", [])
             location = ", ".join(cities) if cities else "—"
-            
-            path = item.get("seo_url") or item.get("opportunityUrl") or item.get("public_url") or f"opportunity/{item.get('id')}"
-            
+
+            path = (
+                item.get("seo_url")
+                or item.get("opportunityUrl")
+                or item.get("public_url")
+                or f"opportunity/{item.get('id')}"
+            )
+
             jobs.append(
                 Job(
                     id=f"unstop:{category}:{item.get('id')}",
@@ -49,11 +61,11 @@ async def fetch(company: dict, net: Net) -> list[Job]:
                     posted_at=item.get("start_date") or item.get("published_date"),
                 )
             )
-            
+
         # Pagination check if applicable
         current_page = data.get("data", {}).get("current_page")
         last_page = data.get("data", {}).get("last_page")
         if current_page and last_page and current_page >= last_page:
             break
-            
+
     return jobs

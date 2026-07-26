@@ -31,8 +31,13 @@ async def fetch(company: dict, net: Net) -> list[Job]:
     jobs: list[Job] = []
     token = None
     for _ in range(_MAX_PAGES):
-        body: dict = {"query": "intern", "location": [], "department": [],
-                      "worktype": [], "remote": []}
+        body: dict = {
+            "query": "intern",
+            "location": [],
+            "department": [],
+            "worktype": [],
+            "remote": [],
+        }
         if token:
             body["token"] = token
         data = await net.post_json(URL.format(slug=slug), json=body)

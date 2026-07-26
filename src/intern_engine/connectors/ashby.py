@@ -15,7 +15,9 @@ URL = "https://api.ashbyhq.com/posting-api/job-board/{slug}?includeCompensation=
 def _salary(posting: dict) -> str | None:
     comp = posting.get("compensation")
     if isinstance(comp, dict):
-        summary = comp.get("compensationTierSummary") or comp.get("scrapeableCompensationSalarySummary")
+        summary = comp.get("compensationTierSummary") or comp.get(
+            "scrapeableCompensationSalarySummary"
+        )
         if summary:
             return str(summary).strip()
     return None

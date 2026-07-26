@@ -9,6 +9,7 @@ def _index(employers):
 
 # --- name normalization -------------------------------------------------------
 
+
 def test_normalize_strips_legal_suffixes():
     assert h1b.normalize("PALANTIR TECHNOLOGIES INC") == "palantir technologies"
     assert h1b.normalize("Google LLC") == "google"
@@ -26,6 +27,7 @@ def test_normalize_keeps_identity_words():
 
 
 # --- matching -----------------------------------------------------------------
+
 
 def test_exact_match():
     idx = _index({"nvidia": 851})
@@ -50,9 +52,14 @@ def test_single_token_prefix_takes_max_not_sum():
 
 def test_single_token_prefix_rejects_wide_ambiguity():
     # Four unrelated "Figure ..." companies -> refuse to guess.
-    idx = _index({
-        "figure ai": 5, "figure eight": 8, "figure markets": 3, "figure lending": 11,
-    })
+    idx = _index(
+        {
+            "figure ai": 5,
+            "figure eight": 8,
+            "figure markets": 3,
+            "figure lending": 11,
+        }
+    )
     assert h1b.approvals_for("Figure", idx) is None
 
 
@@ -72,6 +79,7 @@ def test_empty_index_returns_none():
 
 
 # --- presentation -------------------------------------------------------------
+
 
 def test_badge_threshold():
     assert h1b.badge(h1b.BADGE_THRESHOLD) == "✓"

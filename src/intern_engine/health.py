@@ -21,9 +21,9 @@ from datetime import UTC, datetime, timedelta
 
 from . import paths
 
-_THRESHOLD = 3          # consecutive failures before quarantine kicks in
-_BASE_HOURS = 6         # first quarantine window
-_CAP_HOURS = 72         # never back off longer than this — boards do come back
+_THRESHOLD = 3  # consecutive failures before quarantine kicks in
+_BASE_HOURS = 6  # first quarantine window
+_CAP_HOURS = 72  # never back off longer than this — boards do come back
 
 
 def key(company: dict) -> str:
@@ -64,7 +64,9 @@ def is_quarantined(entry: dict | None, now: datetime) -> bool:
     return now < last_dt + timedelta(hours=_window_hours(failures))
 
 
-def partition(companies: list[dict], data: dict, now: datetime | None = None) -> tuple[list[dict], list[dict]]:
+def partition(
+    companies: list[dict], data: dict, now: datetime | None = None
+) -> tuple[list[dict], list[dict]]:
     """Split into (companies to fetch, companies sitting out this run)."""
     now = now or datetime.now(UTC)
     active, benched = [], []

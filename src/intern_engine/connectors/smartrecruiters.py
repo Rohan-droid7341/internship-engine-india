@@ -17,8 +17,13 @@ _PAGE_SIZE = 100
 _MAX_JOBS = 300
 
 _COUNTRY = {
-    "us": "United States", "ca": "Canada", "gb": "United Kingdom",
-    "in": "India", "de": "Germany", "ie": "Ireland", "au": "Australia",
+    "us": "United States",
+    "ca": "Canada",
+    "gb": "United Kingdom",
+    "in": "India",
+    "de": "Germany",
+    "ie": "Ireland",
+    "au": "Australia",
 }
 
 

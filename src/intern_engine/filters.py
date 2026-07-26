@@ -156,10 +156,13 @@ def detect_season(title: str, cycles=("Summer 2027", "Fall 2026"), *_ignored) ->
 _TERM_ROLLOVER_MONTH = {"Summer": 4, "Fall": 8, "Spring": 2, "Winter": 10}
 
 
-def infer_season(title: str, posted_at: str | None,
-                 cycles=("Summer 2027", "Fall 2026"),
-                 max_age_days: int = 45,
-                 now: datetime | None = None) -> str | None:
+def infer_season(
+    title: str,
+    posted_at: str | None,
+    cycles=("Summer 2027", "Fall 2026"),
+    max_age_days: int = 45,
+    now: datetime | None = None,
+) -> str | None:
     """Best-effort cycle for a title with NO explicit year, from its posting date.
 
     `detect_season` stays strict (a stated year always wins and never lands
@@ -215,14 +218,45 @@ _TEXT_MONTH_RE = re.compile(
     re.I,
 )
 _MONTH_NUM = {
-    "january": 1, "jan": 1, "february": 2, "feb": 2, "march": 3, "mar": 3,
-    "april": 4, "apr": 4, "may": 5, "june": 6, "jun": 6, "july": 7, "jul": 7,
-    "august": 8, "aug": 8, "september": 9, "sept": 9, "sep": 9,
-    "october": 10, "oct": 10, "november": 11, "nov": 11, "december": 12, "dec": 12,
+    "january": 1,
+    "jan": 1,
+    "february": 2,
+    "feb": 2,
+    "march": 3,
+    "mar": 3,
+    "april": 4,
+    "apr": 4,
+    "may": 5,
+    "june": 6,
+    "jun": 6,
+    "july": 7,
+    "jul": 7,
+    "august": 8,
+    "aug": 8,
+    "september": 9,
+    "sept": 9,
+    "sep": 9,
+    "october": 10,
+    "oct": 10,
+    "november": 11,
+    "nov": 11,
+    "december": 12,
+    "dec": 12,
 }
-_MONTH_TERM = {1: "Winter", 2: "Winter", 3: "Spring", 4: "Spring",
-               5: "Summer", 6: "Summer", 7: "Summer", 8: "Summer",
-               9: "Fall", 10: "Fall", 11: "Fall", 12: "Winter"}
+_MONTH_TERM = {
+    1: "Winter",
+    2: "Winter",
+    3: "Spring",
+    4: "Spring",
+    5: "Summer",
+    6: "Summer",
+    7: "Summer",
+    8: "Summer",
+    9: "Fall",
+    10: "Fall",
+    11: "Fall",
+    12: "Winter",
+}
 _INTERNISH_RE = re.compile(
     r"\b(intern(?:ship)?s?|co[\s-]?op|start\s+date|program|term|semester)\b", re.I
 )
@@ -235,8 +269,7 @@ _NOT_CYCLE_BACK_RE = re.compile(
 )
 
 
-def season_from_text(text: str, near: int = 90,
-                     now: datetime | None = None) -> str | None:
+def season_from_text(text: str, near: int = 90, now: datetime | None = None) -> str | None:
     """The cycle a posting's own text states, or None.
 
     Precision-first, mirroring detect_season's ethos. A mention counts only when
@@ -260,9 +293,9 @@ def season_from_text(text: str, near: int = 90,
         if not (year_lo <= year <= year_hi):
             return None
         lo = max(0, m.start() - near)
-        if not _INTERNISH_RE.search(text[lo:m.end() + near]):
+        if not _INTERNISH_RE.search(text[lo : m.end() + near]):
             return None
-        if _NOT_CYCLE_BACK_RE.search(text[lo:m.start()]):
+        if _NOT_CYCLE_BACK_RE.search(text[lo : m.start()]):
             return None
         return label
 
@@ -286,32 +319,143 @@ def season_from_text(text: str, near: int = 90,
 # are matched case-SENSITIVELY (uppercase) so "OR"/"IN" don't match the words
 # "or"/"in" inside a city name.
 _US_STATES = [
-    "alabama", "alaska", "arizona", "arkansas", "california", "colorado",
-    "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho",
-    "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", "maine",
-    "maryland", "massachusetts", "michigan", "minnesota", "mississippi",
-    "missouri", "montana", "nebraska", "nevada", "new hampshire", "new jersey",
-    "new mexico", "new york", "north carolina", "north dakota", "ohio",
-    "oklahoma", "oregon", "pennsylvania", "rhode island", "south carolina",
-    "south dakota", "tennessee", "texas", "utah", "vermont", "virginia",
-    "washington", "west virginia", "wisconsin", "wyoming",
+    "alabama",
+    "alaska",
+    "arizona",
+    "arkansas",
+    "california",
+    "colorado",
+    "connecticut",
+    "delaware",
+    "florida",
+    "georgia",
+    "hawaii",
+    "idaho",
+    "illinois",
+    "indiana",
+    "iowa",
+    "kansas",
+    "kentucky",
+    "louisiana",
+    "maine",
+    "maryland",
+    "massachusetts",
+    "michigan",
+    "minnesota",
+    "mississippi",
+    "missouri",
+    "montana",
+    "nebraska",
+    "nevada",
+    "new hampshire",
+    "new jersey",
+    "new mexico",
+    "new york",
+    "north carolina",
+    "north dakota",
+    "ohio",
+    "oklahoma",
+    "oregon",
+    "pennsylvania",
+    "rhode island",
+    "south carolina",
+    "south dakota",
+    "tennessee",
+    "texas",
+    "utah",
+    "vermont",
+    "virginia",
+    "washington",
+    "west virginia",
+    "wisconsin",
+    "wyoming",
     "district of columbia",
 ]
 _CA_PROVINCES = [
-    "ontario", "quebec", "british columbia", "alberta", "manitoba",
-    "saskatchewan", "nova scotia", "new brunswick", "newfoundland", "labrador",
-    "prince edward island", "yukon", "northwest territories", "nunavut",
+    "ontario",
+    "quebec",
+    "british columbia",
+    "alberta",
+    "manitoba",
+    "saskatchewan",
+    "nova scotia",
+    "new brunswick",
+    "newfoundland",
+    "labrador",
+    "prince edward island",
+    "yukon",
+    "northwest territories",
+    "nunavut",
 ]
 _US_CODES = [
-    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID",
-    "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS",
-    "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK",
-    "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV",
-    "WI", "WY", "DC", "US", "USA",
+    "AL",
+    "AK",
+    "AZ",
+    "AR",
+    "CA",
+    "CO",
+    "CT",
+    "DE",
+    "FL",
+    "GA",
+    "HI",
+    "ID",
+    "IL",
+    "IN",
+    "IA",
+    "KS",
+    "KY",
+    "LA",
+    "ME",
+    "MD",
+    "MA",
+    "MI",
+    "MN",
+    "MS",
+    "MO",
+    "MT",
+    "NE",
+    "NV",
+    "NH",
+    "NJ",
+    "NM",
+    "NY",
+    "NC",
+    "ND",
+    "OH",
+    "OK",
+    "OR",
+    "PA",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "UT",
+    "VT",
+    "VA",
+    "WA",
+    "WV",
+    "WI",
+    "WY",
+    "DC",
+    "US",
+    "USA",
 ]
 _CA_CODES = ["ON", "QC", "BC", "AB", "MB", "SK", "NS", "NB", "NL", "PE", "YT", "NT", "NU"]
 
-_US_COUNTRY = ("united states", "u.s.a", "u.s.", "u.s", "usa", "america", "nationwide", "north america", "namer", "noram")
+_US_COUNTRY = (
+    "united states",
+    "u.s.a",
+    "u.s.",
+    "u.s",
+    "usa",
+    "america",
+    "nationwide",
+    "north america",
+    "namer",
+    "noram",
+)
 _CA_COUNTRY = ("canada", "canadian")
 # "Latin America" / "South America" must not read as the US ("america" token).
 _AMERICA_NOT_US_RE = re.compile(r"\b(?:south|latin|central)\s+america")
@@ -320,20 +464,62 @@ _AMERICA_NOT_US_RE = re.compile(r"\b(?:south|latin|central)\s+america")
 # when a state-code lookalike sits next to them ("IN - Bangalore, India" is not
 # Indiana). An explicit US token still wins for multi-country strings.
 _NON_US_COUNTRIES = (
-    "india", "united kingdom", "germany", "france", "poland", "ireland",
-    "netherlands", "spain", "italy", "portugal", "romania", "hungary",
-    "czech", "slovakia", "sweden", "switzerland", "belgium", "austria",
-    "denmark", "norway", "finland", "greece", "turkey", "israel",
-    "united arab emirates", "saudi arabia", "qatar", "egypt", "nigeria",
-    "kenya", "south africa", "brazil", "mexico", "argentina", "colombia",
-    "chile", "peru", "costa rica", "japan", "china", "singapore", "korea",
-    "taiwan", "hong kong", "philippines", "indonesia", "vietnam", "thailand",
-    "malaysia", "pakistan", "bangladesh", "sri lanka", "australia",
+    "india",
+    "united kingdom",
+    "germany",
+    "france",
+    "poland",
+    "ireland",
+    "netherlands",
+    "spain",
+    "italy",
+    "portugal",
+    "romania",
+    "hungary",
+    "czech",
+    "slovakia",
+    "sweden",
+    "switzerland",
+    "belgium",
+    "austria",
+    "denmark",
+    "norway",
+    "finland",
+    "greece",
+    "turkey",
+    "israel",
+    "united arab emirates",
+    "saudi arabia",
+    "qatar",
+    "egypt",
+    "nigeria",
+    "kenya",
+    "south africa",
+    "brazil",
+    "mexico",
+    "argentina",
+    "colombia",
+    "chile",
+    "peru",
+    "costa rica",
+    "japan",
+    "china",
+    "singapore",
+    "korea",
+    "taiwan",
+    "hong kong",
+    "philippines",
+    "indonesia",
+    "vietnam",
+    "thailand",
+    "malaysia",
+    "pakistan",
+    "bangladesh",
+    "sri lanka",
+    "australia",
     "new zealand",
 )
-_NON_US_RE = re.compile(
-    r"\b(" + "|".join(re.escape(c) for c in _NON_US_COUNTRIES) + r")\b"
-)
+_NON_US_RE = re.compile(r"\b(" + "|".join(re.escape(c) for c in _NON_US_COUNTRIES) + r")\b")
 
 _US_NAME_RE = re.compile(
     r"\b(" + "|".join(re.escape(n) for n in _US_STATES) + r")\b", re.IGNORECASE
@@ -387,21 +573,76 @@ def is_us_or_canada(location: str) -> bool:
 # --- location: India detection ------------------------------------------------
 _INDIA_COUNTRY = ("india", "bharat")
 _INDIA_CITIES = [
-    "bangalore", "bengaluru", "hyderabad", "mumbai", "pune", "delhi",
-    "new delhi", "gurgaon", "gurugram", "noida", "chennai", "kolkata",
-    "ahmedabad", "jaipur", "lucknow", "chandigarh", "indore", "kochi",
-    "coimbatore", "thiruvananthapuram", "trivandrum", "nagpur", "bhopal",
-    "visakhapatnam", "vizag", "mysore", "mysuru", "mangalore", "mangaluru",
-    "vadodara", "surat", "goa", "patna", "ranchi", "bhubaneswar",
-    "dehradun", "agra", "varanasi", "amritsar", "ludhiana",
-    "greater noida", "faridabad", "ghaziabad", "navi mumbai",
-    "thane", "mohali", "panchkula",
+    "bangalore",
+    "bengaluru",
+    "hyderabad",
+    "mumbai",
+    "pune",
+    "delhi",
+    "new delhi",
+    "gurgaon",
+    "gurugram",
+    "noida",
+    "chennai",
+    "kolkata",
+    "ahmedabad",
+    "jaipur",
+    "lucknow",
+    "chandigarh",
+    "indore",
+    "kochi",
+    "coimbatore",
+    "thiruvananthapuram",
+    "trivandrum",
+    "nagpur",
+    "bhopal",
+    "visakhapatnam",
+    "vizag",
+    "mysore",
+    "mysuru",
+    "mangalore",
+    "mangaluru",
+    "vadodara",
+    "surat",
+    "goa",
+    "patna",
+    "ranchi",
+    "bhubaneswar",
+    "dehradun",
+    "agra",
+    "varanasi",
+    "amritsar",
+    "ludhiana",
+    "greater noida",
+    "faridabad",
+    "ghaziabad",
+    "navi mumbai",
+    "thane",
+    "mohali",
+    "panchkula",
 ]
 _INDIA_STATES = [
-    "karnataka", "telangana", "maharashtra", "tamil nadu", "andhra pradesh",
-    "west bengal", "gujarat", "rajasthan", "uttar pradesh", "madhya pradesh",
-    "haryana", "kerala", "punjab", "odisha", "jharkhand", "uttarakhand",
-    "goa", "assam", "himachal pradesh", "chhattisgarh", "bihar",
+    "karnataka",
+    "telangana",
+    "maharashtra",
+    "tamil nadu",
+    "andhra pradesh",
+    "west bengal",
+    "gujarat",
+    "rajasthan",
+    "uttar pradesh",
+    "madhya pradesh",
+    "haryana",
+    "kerala",
+    "punjab",
+    "odisha",
+    "jharkhand",
+    "uttarakhand",
+    "goa",
+    "assam",
+    "himachal pradesh",
+    "chhattisgarh",
+    "bihar",
 ]
 _INDIA_CITY_RE = re.compile(
     r"\b(" + "|".join(re.escape(c) for c in _INDIA_CITIES) + r")\b", re.IGNORECASE
@@ -443,8 +684,13 @@ def is_remote_or_hybrid(location: str) -> bool:
     return bool(_REMOTE_RE.search(location) or _HYBRID_RE.search(location))
 
 
-def region_ok(location: str, want_us: bool, want_canada: bool,
-             want_india: bool = False, want_remote: bool = False) -> bool:
+def region_ok(
+    location: str,
+    want_us: bool,
+    want_canada: bool,
+    want_india: bool = False,
+    want_remote: bool = False,
+) -> bool:
     """True if the location matches one of the wanted regions.
 
     Conservative: a bare "Remote" with no country mentioned matches only when

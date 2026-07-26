@@ -4,8 +4,10 @@ from intern_engine import skills
 
 
 def test_extract_basic_stack():
-    text = ("Requirements: strong Python and C++ skills, experience with PyTorch "
-            "or TensorFlow, familiarity with AWS and Docker. Git required.")
+    text = (
+        "Requirements: strong Python and C++ skills, experience with PyTorch "
+        "or TensorFlow, familiarity with AWS and Docker. Git required."
+    )
     got = skills.extract(text)
     assert "Python" in got
     assert "C++" in got
@@ -19,8 +21,10 @@ def test_extract_basic_stack():
 def test_extract_whole_words_only():
     # None of these mention a real skill: "go" the verb, "Spring 2027" the
     # season, "spark" the marketing verb, "javascript" absent.
-    text = ("Go above and beyond in our Spring 2027 program. Spark your "
-            "creativity! We iterate rapidly and swiftly ship rustic ideas.")
+    text = (
+        "Go above and beyond in our Spring 2027 program. Spark your "
+        "creativity! We iterate rapidly and swiftly ship rustic ideas."
+    )
     assert skills.extract(text) == []
 
 
@@ -31,8 +35,7 @@ def test_extract_java_vs_javascript():
 
 
 def test_extract_cap_and_order():
-    text = ("Python Java C++ C# Rust TypeScript JavaScript SQL Swift Kotlin "
-            "MATLAB golang")
+    text = "Python Java C++ C# Rust TypeScript JavaScript SQL Swift Kotlin MATLAB golang"
     got = skills.extract(text)
     assert len(got) == skills.MAX_SKILLS
     assert got[0] == "Python"  # canonical order, not text order

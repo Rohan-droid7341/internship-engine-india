@@ -9,18 +9,50 @@ def _rows(monkeypatch, rows):
 
 def test_ics_has_events_only_for_dated_waiting_rows(monkeypatch, tmp_path):
     from intern_engine import paths
+
     monkeypatch.setattr(paths, "RADAR_ICS_PATH", str(tmp_path / "radar.ics"))
     monkeypatch.setattr(paths, "DOCS_DIR", str(tmp_path))
-    _rows(monkeypatch, [
-        {"company": "Meta", "status": "waiting", "rolling": False, "expected": "2026-08-01",
-         "precision": "month", "source": "known", "note": "late Aug"},
-        {"company": "NVIDIA", "status": "waiting", "rolling": False, "expected": "2026-08-24",
-         "precision": "day", "source": "engine", "note": ""},
-        {"company": "Microsoft", "status": "waiting", "rolling": True, "expected": "",
-         "precision": "day", "source": "known", "note": ""},          # rolling: skipped
-        {"company": "Anduril", "status": "open", "rolling": False, "expected": "2026-06-10",
-         "precision": "day", "source": "engine", "note": ""},          # already open: skipped
-    ])
+    _rows(
+        monkeypatch,
+        [
+            {
+                "company": "Meta",
+                "status": "waiting",
+                "rolling": False,
+                "expected": "2026-08-01",
+                "precision": "month",
+                "source": "known",
+                "note": "late Aug",
+            },
+            {
+                "company": "NVIDIA",
+                "status": "waiting",
+                "rolling": False,
+                "expected": "2026-08-24",
+                "precision": "day",
+                "source": "engine",
+                "note": "",
+            },
+            {
+                "company": "Microsoft",
+                "status": "waiting",
+                "rolling": True,
+                "expected": "",
+                "precision": "day",
+                "source": "known",
+                "note": "",
+            },  # rolling: skipped
+            {
+                "company": "Anduril",
+                "status": "open",
+                "rolling": False,
+                "expected": "2026-06-10",
+                "precision": "day",
+                "source": "engine",
+                "note": "",
+            },  # already open: skipped
+        ],
+    )
     n = publish.write_radar_ics({}, "Summer 2027")
     assert n == 2
     text = open(str(tmp_path / "radar.ics"), encoding="utf-8").read()
@@ -39,12 +71,23 @@ def test_ics_has_events_only_for_dated_waiting_rows(monkeypatch, tmp_path):
 
 def test_ics_escapes_special_characters(monkeypatch, tmp_path):
     from intern_engine import paths
+
     monkeypatch.setattr(paths, "RADAR_ICS_PATH", str(tmp_path / "radar.ics"))
     monkeypatch.setattr(paths, "DOCS_DIR", str(tmp_path))
-    _rows(monkeypatch, [
-        {"company": "A; B, Inc.", "status": "waiting", "rolling": False,
-         "expected": "2026-09-01", "precision": "month", "source": "known", "note": "x"},
-    ])
+    _rows(
+        monkeypatch,
+        [
+            {
+                "company": "A; B, Inc.",
+                "status": "waiting",
+                "rolling": False,
+                "expected": "2026-09-01",
+                "precision": "month",
+                "source": "known",
+                "note": "x",
+            },
+        ],
+    )
     publish.write_radar_ics({}, "Summer 2027")
     text = open(str(tmp_path / "radar.ics"), encoding="utf-8").read()
     assert "A\\; B\\, Inc." in text

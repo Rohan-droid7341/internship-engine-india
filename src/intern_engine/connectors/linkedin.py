@@ -4,10 +4,13 @@ Uses LinkedIn's public /jobs-guest/ endpoint which returns HTML job cards.
 Since Scrapling is synchronous we run it in a thread-pool executor so the
 async pipeline is not blocked.
 """
+
 from __future__ import annotations
+
 import asyncio
 import re
 from concurrent.futures import ThreadPoolExecutor
+
 from ..models import Job
 from ..net import Net
 
@@ -34,7 +37,9 @@ _LI_RE = re.compile(r"<li>(.*?)</li>", re.DOTALL)
 _JOB_ID_RE = re.compile(r'data-entity-urn="urn:li:jobPosting:(\d+)"')
 _TITLE_RE = re.compile(r'class="[^"]*sr-only[^"]*"[^>]*>\s*([^<]+?)\s*</', re.DOTALL)
 _COMPANY_RE = re.compile(r'class="[^"]*hidden-nested-link[^"]*"[^>]*>\s*([^<]+?)\s*</', re.DOTALL)
-_LOCATION_RE = re.compile(r'class="[^"]*job-search-card__location[^"]*"[^>]*>\s*([^<]+?)\s*</', re.DOTALL)
+_LOCATION_RE = re.compile(
+    r'class="[^"]*job-search-card__location[^"]*"[^>]*>\s*([^<]+?)\s*</', re.DOTALL
+)
 _DATE_RE = re.compile(r'<time[^>]+datetime="([^"]+)"')
 
 
@@ -42,6 +47,7 @@ def _scrape_page(url: str) -> str:
     """Fetch one page using Scrapling's plain Fetcher (fast, low overhead)."""
     try:
         from scrapling.fetchers import Fetcher
+
         fetcher = Fetcher(auto_match=False)
         resp = fetcher.get(url, headers=_HEADERS, timeout=20)
         return resp.content or ""
@@ -73,16 +79,18 @@ def _parse_cards(html: str, keywords: str) -> list[Job]:
         date_m = _DATE_RE.search(card)
         posted_at = date_m.group(1) if date_m else None
 
-        jobs.append(Job(
-            id=f"linkedin:{job_id}",
-            source="linkedin",
-            company=company,
-            company_slug=re.sub(r"[^a-z0-9]", "-", company.lower()).strip("-"),
-            title=title,
-            location=location,
-            url=f"https://www.linkedin.com/jobs/view/{job_id}/",
-            posted_at=posted_at,
-        ))
+        jobs.append(
+            Job(
+                id=f"linkedin:{job_id}",
+                source="linkedin",
+                company=company,
+                company_slug=re.sub(r"[^a-z0-9]", "-", company.lower()).strip("-"),
+                title=title,
+                location=location,
+                url=f"https://www.linkedin.com/jobs/view/{job_id}/",
+                posted_at=posted_at,
+            )
+        )
     return jobs
 
 

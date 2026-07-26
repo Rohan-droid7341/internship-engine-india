@@ -69,8 +69,8 @@ _WS_RE = re.compile(r"\s+")
 # Emoji used in the README / dashboard — same visual language readers already
 # know from the big hand-curated lists.
 FLAGS = {
-    "citizens-only": "\U0001f1fa\U0001f1f8",   # 🇺🇸
-    "no-sponsorship": "\U0001f6c2",            # 🛂
+    "citizens-only": "\U0001f1fa\U0001f1f8",  # 🇺🇸
+    "no-sponsorship": "\U0001f6c2",  # 🛂
 }
 
 

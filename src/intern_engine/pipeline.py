@@ -160,10 +160,7 @@ def _keep_matching(results, cfg, blocklist, existing=None) -> tuple[list, set[st
     infer = config.infer_undated(cfg)
     infer_age = config.infer_max_age_days(cfg)
     max_age = config.max_age_days(cfg)
-    cutoff = (
-        (datetime.now(UTC) - timedelta(days=max_age)).strftime("%Y-%m-%d")
-        if max_age else None
-    )
+    cutoff = (datetime.now(UTC) - timedelta(days=max_age)).strftime("%Y-%m-%d") if max_age else None
 
     existing = existing or {}
     kept = []
@@ -217,8 +214,9 @@ def _keep_matching(results, cfg, blocklist, existing=None) -> tuple[list, set[st
             if season is None:
                 dropped_no_year += 1
                 continue
-            in_region = filters.region_ok(job.location, wants_us, wants_canada,
-                                          wants_india, wants_remote)
+            in_region = filters.region_ok(
+                job.location, wants_us, wants_canada, wants_india, wants_remote
+            )
             if restrict and not in_region and not include_intl:
                 continue
             loc = (job.location or "").strip()
@@ -275,12 +273,8 @@ def run_update() -> tuple[dict, dict, list[str]]:
             offcycle += 1
             record = existing.get(job.id)
             if record is None:
-                record = {
-                    k: v for k, v in asdict(job).items()
-                    if k not in models.TRANSIENT_FIELDS
-                }
-                record.update(first_seen_at=ts, last_seen_at=ts,
-                              is_open=False, closed_at=ts)
+                record = {k: v for k, v in asdict(job).items() if k not in models.TRANSIENT_FIELDS}
+                record.update(first_seen_at=ts, last_seen_at=ts, is_open=False, closed_at=ts)
                 existing[job.id] = record
             else:
                 record["season"] = job.season
@@ -289,8 +283,9 @@ def run_update() -> tuple[dict, dict, list[str]]:
         kept = still
         return succeeded, errors, errors_by_ats, ids_a | ids_b, n_a + n_b, no_year, offcycle
 
-    results, (succeeded, errors, errors_by_ats, enriched_ids, detail_fetches, no_year,
-              offcycle) = asyncio.run(_fetch_all(active, _enrich_stage))
+    results, (succeeded, errors, errors_by_ats, enriched_ids, detail_fetches, no_year, offcycle) = (
+        asyncio.run(_fetch_all(active, _enrich_stage))
+    )
 
     for company, _jobs, error in results:
         health.record(health_data, company, error)
@@ -313,9 +308,20 @@ def run_update() -> tuple[dict, dict, list[str]]:
     observe.record_run(existing)
 
     stats = _build_stats(
-        companies, benched, succeeded, errors, errors_by_ats, kept, existing, new_ids,
-        len(enriched_ids), detail_fetches, purged, round(time.monotonic() - started, 1),
-        no_year, offcycle,
+        companies,
+        benched,
+        succeeded,
+        errors,
+        errors_by_ats,
+        kept,
+        existing,
+        new_ids,
+        len(enriched_ids),
+        detail_fetches,
+        purged,
+        round(time.monotonic() - started, 1),
+        no_year,
+        offcycle,
     )
     _write_stats(stats)
     _append_history(stats)
@@ -358,9 +364,22 @@ def _detection_latency(existing: dict, window_days: int = 7) -> dict:
     }
 
 
-def _build_stats(companies, benched, succeeded, errors, errors_by_ats, kept, existing,
-                 new_ids, enriched, detail_fetches, purged, duration,
-                 dropped_no_year=0, dropped_offcycle=0) -> dict:
+def _build_stats(
+    companies,
+    benched,
+    succeeded,
+    errors,
+    errors_by_ats,
+    kept,
+    existing,
+    new_ids,
+    enriched,
+    detail_fetches,
+    purged,
+    duration,
+    dropped_no_year=0,
+    dropped_offcycle=0,
+) -> dict:
     open_records = [r for r in existing.values() if r.get("is_open")]
     attempted = len(companies) - len(benched)
     dated = sum(1 for r in open_records if r.get("posted_at"))
@@ -380,15 +399,19 @@ def _build_stats(companies, benched, succeeded, errors, errors_by_ats, kept, exi
         "dropped_offcycle_by_text": dropped_offcycle,
         "roles_by_source": dict(Counter(j.source for j in kept)),
         "roles_by_cycle": dict(Counter(j.season for j in kept)),
-        "roles_by_region": dict(Counter(
-            "India" if filters.is_india(j.location)
-            else "Remote" if filters.is_remote_or_hybrid(j.location)
-            else "US" if filters.is_united_states(j.location)
-            else "International" for j in kept
-        )),
-        "sponsorship_counts": dict(Counter(
-            r.get("sponsorship", "unknown") for r in open_records
-        )),
+        "roles_by_region": dict(
+            Counter(
+                "India"
+                if filters.is_india(j.location)
+                else "Remote"
+                if filters.is_remote_or_hybrid(j.location)
+                else "US"
+                if filters.is_united_states(j.location)
+                else "International"
+                for j in kept
+            )
+        ),
+        "sponsorship_counts": dict(Counter(r.get("sponsorship", "unknown") for r in open_records)),
         "posted_date_coverage": round(dated / max(len(open_records), 1), 3),
         "enriched_this_run": enriched,
         "enrichment_detail_fetches": detail_fetches,
@@ -396,10 +419,13 @@ def _build_stats(companies, benched, succeeded, errors, errors_by_ats, kept, exi
         "new_this_run": len(new_ids),
         "open_total": len(open_records),
         "detection_latency": _detection_latency(existing),
-        "posting_lifetime": dict(zip(
-            ("median_days", "sample_size"), trends.median_days_open(existing),
-            strict=True,
-        )),
+        "posting_lifetime": dict(
+            zip(
+                ("median_days", "sample_size"),
+                trends.median_days_open(existing),
+                strict=True,
+            )
+        ),
     }
 
 
@@ -413,15 +439,18 @@ _HISTORY_KEEP = 2000  # ~3 months of hourly runs
 
 def _append_history(stats: dict) -> None:
     """One compact line per run — the time series behind the dashboard chart."""
-    line = json.dumps({
-        "ts": stats["generated_at"],
-        "open": stats["open_total"],
-        "new": stats["new_this_run"],
-        "companies": stats["companies_total"],
-        "ok_rate": stats["fetch_success_rate"],
-        "quarantined": stats["quarantined"],
-        "secs": stats["duration_seconds"],
-    }, ensure_ascii=False)
+    line = json.dumps(
+        {
+            "ts": stats["generated_at"],
+            "open": stats["open_total"],
+            "new": stats["new_this_run"],
+            "companies": stats["companies_total"],
+            "ok_rate": stats["fetch_success_rate"],
+            "quarantined": stats["quarantined"],
+            "secs": stats["duration_seconds"],
+        },
+        ensure_ascii=False,
+    )
     lines = []
     try:
         with open(paths.HISTORY_PATH, encoding="utf-8") as f:

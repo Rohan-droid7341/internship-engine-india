@@ -31,10 +31,11 @@ class TestDetectionLatency:
         # Regression: a single offset-less posted_at next to a Z-suffixed
         # first_seen_at crashed every run with TypeError (2026-07-15 outage).
         existing = {
-            "a": {"posted_at": "2026-07-15T18:00:00",   # naive from the ATS
-                  "first_seen_at": "2026-07-15T21:00:00Z"},
-            "b": {"posted_at": "2026-07-15T10:00:00Z",
-                  "first_seen_at": "2026-07-15T11:00:00Z"},
+            "a": {
+                "posted_at": "2026-07-15T18:00:00",  # naive from the ATS
+                "first_seen_at": "2026-07-15T21:00:00Z",
+            },
+            "b": {"posted_at": "2026-07-15T10:00:00Z", "first_seen_at": "2026-07-15T11:00:00Z"},
         }
         out = _detection_latency(existing)
         assert out["sample_size"] == 2
@@ -46,8 +47,7 @@ class TestDetectionLatency:
 
     def test_old_backfills_outside_window_excluded(self):
         existing = {
-            "old": {"posted_at": "2026-01-01T00:00:00Z",
-                    "first_seen_at": "2026-07-15T00:00:00Z"},
+            "old": {"posted_at": "2026-01-01T00:00:00Z", "first_seen_at": "2026-07-15T00:00:00Z"},
         }
         assert _detection_latency(existing)["sample_size"] == 0
 
@@ -55,22 +55,35 @@ class TestDetectionLatency:
 class TestStickySeasons:
     """A season already on record wins over re-inference (see _keep_matching)."""
 
-    CFG = {"cycles": ["Summer 2027", "Fall 2026"], "regions": ["US"],
-           "role_scope": "tech", "infer_undated": True, "infer_max_age_days": 45}
+    CFG = {
+        "cycles": ["Summer 2027", "Fall 2026"],
+        "regions": ["US"],
+        "role_scope": "tech",
+        "infer_undated": True,
+        "infer_max_age_days": 45,
+    }
 
     def _results(self, posted_days_ago):
         from datetime import UTC, datetime, timedelta
 
         from intern_engine.models import Job
+
         posted = (datetime.now(UTC) - timedelta(days=posted_days_ago)).strftime("%Y-%m-%d")
-        job = Job(id="greenhouse:acme:1", source="greenhouse", company="Acme",
-                  company_slug="acme", title="Software Engineer Intern",
-                  location="New York, NY", url="https://x",
-                  posted_at=f"{posted}T00:00:00Z")
+        job = Job(
+            id="greenhouse:acme:1",
+            source="greenhouse",
+            company="Acme",
+            company_slug="acme",
+            title="Software Engineer Intern",
+            location="New York, NY",
+            url="https://x",
+            posted_at=f"{posted}T00:00:00Z",
+        )
         return [({"ats": "greenhouse", "slug": "acme", "name": "Acme"}, [job], None)]
 
     def _keep(self, results, existing):
         from intern_engine.pipeline import _keep_matching
+
         kept, *_ = _keep_matching(results, self.CFG, {}, existing)
         return kept
 
@@ -105,11 +118,18 @@ class TestStickySeasons:
         from datetime import UTC, datetime, timedelta
 
         from intern_engine.models import Job
+
         posted = (datetime.now(UTC) - timedelta(days=2)).strftime("%Y-%m-%d")
-        job = Job(id="workday:stevens:1", source="workday", company="Stevens",
-                  company_slug="stevens", title="Summer 2026 Intern: Cyber Security",
-                  location="Hoboken, NJ", url="https://x",
-                  posted_at=f"{posted}T00:00:00Z")
+        job = Job(
+            id="workday:stevens:1",
+            source="workday",
+            company="Stevens",
+            company_slug="stevens",
+            title="Summer 2026 Intern: Cyber Security",
+            location="Hoboken, NJ",
+            url="https://x",
+            posted_at=f"{posted}T00:00:00Z",
+        )
         results = [({"ats": "workday", "slug": "stevens", "name": "Stevens"}, [job], None)]
         existing = {"workday:stevens:1": {"season": "Summer 2027", "season_inferred": True}}
         assert self._keep(results, existing) == []
@@ -129,17 +149,24 @@ class TestRegionConfig:
         from datetime import UTC, datetime, timedelta
 
         from intern_engine.models import Job
+
         posted = (datetime.now(UTC) - timedelta(days=3)).strftime("%Y-%m-%d")
-        job = Job(id="greenhouse:acme:1", source="greenhouse", company="Acme",
-                  company_slug="acme", title="Software Engineer Intern, Summer 2027",
-                  location=location, url="https://x",
-                  posted_at=f"{posted}T00:00:00Z")
+        job = Job(
+            id="greenhouse:acme:1",
+            source="greenhouse",
+            company="Acme",
+            company_slug="acme",
+            title="Software Engineer Intern, Summer 2027",
+            location=location,
+            url="https://x",
+            posted_at=f"{posted}T00:00:00Z",
+        )
         return [({"ats": "greenhouse", "slug": "acme", "name": "Acme"}, [job], None)]
 
     def _keep(self, results, regions):
         from intern_engine.pipeline import _keep_matching
-        cfg = {"cycles": ["Summer 2027", "Fall 2026"], "regions": regions,
-               "role_scope": "tech"}
+
+        cfg = {"cycles": ["Summer 2027", "Fall 2026"], "regions": regions, "role_scope": "tech"}
         kept, *_ = _keep_matching(results, cfg, {}, {})
         return kept
 

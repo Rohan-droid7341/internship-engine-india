@@ -25,33 +25,53 @@ def _observed(monkeypatch, companies):
 
 def _known(monkeypatch, entries):
     from intern_engine import h1b
-    monkeypatch.setattr(radar, "_known_cache",
-                        {h1b.normalize(e["name"]): e for e in entries})
+
+    monkeypatch.setattr(radar, "_known_cache", {h1b.normalize(e["name"]): e for e in entries})
 
 
 STORE = {
-    "a": {"company": "Stripe, Inc.", "season": "Summer 2027", "is_open": True,
-          "url": "https://stripe/apply"},
-    "b": {"company": "NVIDIA", "season": "Fall 2026", "is_open": True,
-          "url": "https://nv/fall"},          # wrong cycle: must NOT count as posted
+    "a": {
+        "company": "Stripe, Inc.",
+        "season": "Summer 2027",
+        "is_open": True,
+        "url": "https://stripe/apply",
+    },
+    "b": {
+        "company": "NVIDIA",
+        "season": "Fall 2026",
+        "is_open": True,
+        "url": "https://nv/fall",
+    },  # wrong cycle: must NOT count as posted
 }
 
 
 def test_verified_observed_prev_cycle_projects_forward(monkeypatch):
-    _observed(monkeypatch, {
-        "nvidia": {"name": "NVIDIA", "cycles": {"Summer 2026": {"first_posted": "2025-08-24", "count": 5}}},
-    })
+    _observed(
+        monkeypatch,
+        {
+            "nvidia": {
+                "name": "NVIDIA",
+                "cycles": {"Summer 2026": {"first_posted": "2025-08-24", "count": 5}},
+            },
+        },
+    )
     row = next(r for r in radar.rows(STORE, "Summer 2027", today=TODAY) if r["company"] == "NVIDIA")
     assert row["source"] == "engine"
     assert row["confidence"] == "verified"
     assert row["expected"] == "2026-08-24"
-    assert row["status"] == "waiting"          # only Fall 2026 NVIDIA is open
+    assert row["status"] == "waiting"  # only Fall 2026 NVIDIA is open
 
 
 def test_live_drop_date_is_shown_and_verified(monkeypatch):
-    _observed(monkeypatch, {
-        "stripe": {"name": "Stripe", "cycles": {"Summer 2027": {"first_posted": "2026-06-30", "count": 1}}},
-    })
+    _observed(
+        monkeypatch,
+        {
+            "stripe": {
+                "name": "Stripe",
+                "cycles": {"Summer 2027": {"first_posted": "2026-06-30", "count": 1}},
+            },
+        },
+    )
     row = next(r for r in radar.rows(STORE, "Summer 2027", today=TODAY) if r["company"] == "Stripe")
     assert row["status"] == "open"
     assert row["source"] == "engine"
@@ -64,14 +84,16 @@ def test_known_month_window_projects_to_prior_calendar_year(monkeypatch):
     row = next(r for r in radar.rows(STORE, "Summer 2027", today=TODAY) if r["company"] == "Meta")
     assert row["source"] == "known"
     assert row["confidence"] == "window"
-    assert row["expected"] == "2026-08-01"      # Summer 2027 opens Aug 2026
+    assert row["expected"] == "2026-08-01"  # Summer 2027 opens Aug 2026
     assert radar.pretty_last(row) == "~Aug"
     assert radar.pretty_expected(row).startswith("~Aug")
 
 
 def test_rolling_company_has_no_date(monkeypatch):
     _known(monkeypatch, [{"name": "Microsoft", "opens": None, "precision": "rolling"}])
-    row = next(r for r in radar.rows(STORE, "Summer 2027", today=TODAY) if r["company"] == "Microsoft")
+    row = next(
+        r for r in radar.rows(STORE, "Summer 2027", today=TODAY) if r["company"] == "Microsoft"
+    )
     assert row["rolling"] is True
     assert row["expected"] == ""
     assert radar.pretty_last(row) == "rolling"
@@ -79,18 +101,28 @@ def test_rolling_company_has_no_date(monkeypatch):
 
 
 def test_observed_beats_known_window(monkeypatch):
-    _observed(monkeypatch, {
-        "meta": {"name": "Meta", "cycles": {"Summer 2026": {"first_posted": "2025-09-15", "count": 3}}},
-    })
+    _observed(
+        monkeypatch,
+        {
+            "meta": {
+                "name": "Meta",
+                "cycles": {"Summer 2026": {"first_posted": "2025-09-15", "count": 3}},
+            },
+        },
+    )
     _known(monkeypatch, [{"name": "Meta", "opens": "08", "precision": "month"}])
     row = next(r for r in radar.rows(STORE, "Summer 2027", today=TODAY) if r["company"] == "Meta")
-    assert row["source"] == "engine"            # our own data wins over the seed
+    assert row["source"] == "engine"  # our own data wins over the seed
     assert row["expected"] == "2026-09-15"
 
 
 def test_live_only_company_with_no_date(monkeypatch):
-    store = {"x": {"company": "Anduril", "season": "Summer 2027", "is_open": True, "url": "https://a"}}
-    row = next(r for r in radar.rows(store, "Summer 2027", today=TODAY) if r["company"] == "Anduril")
+    store = {
+        "x": {"company": "Anduril", "season": "Summer 2027", "is_open": True, "url": "https://a"}
+    }
+    row = next(
+        r for r in radar.rows(store, "Summer 2027", today=TODAY) if r["company"] == "Anduril"
+    )
     assert row["status"] == "open"
     assert radar.pretty_expected(row) == "live now"
 
@@ -98,24 +130,45 @@ def test_live_only_company_with_no_date(monkeypatch):
 def test_inferred_open_role_does_not_confirm_the_radar(monkeypatch):
     # A company whose only open role has a GUESSED cycle must not earn a radar
     # row (no false "🎯 verified open now") — it's in the list, not the forecast.
-    store = {"x": {"company": "GuessCo", "season": "Summer 2027", "season_inferred": True,
-                   "is_open": True, "url": "https://g"}}
+    store = {
+        "x": {
+            "company": "GuessCo",
+            "season": "Summer 2027",
+            "season_inferred": True,
+            "is_open": True,
+            "url": "https://g",
+        }
+    }
     assert radar.rows(store, "Summer 2027", today=TODAY) == []
 
 
 def test_stated_open_role_still_confirms_the_radar(monkeypatch):
-    store = {"x": {"company": "StatedCo", "season": "Summer 2027", "season_inferred": False,
-                   "is_open": True, "url": "https://s"}}
-    row = next(r for r in radar.rows(store, "Summer 2027", today=TODAY) if r["company"] == "StatedCo")
+    store = {
+        "x": {
+            "company": "StatedCo",
+            "season": "Summer 2027",
+            "season_inferred": False,
+            "is_open": True,
+            "url": "https://s",
+        }
+    }
+    row = next(
+        r for r in radar.rows(store, "Summer 2027", today=TODAY) if r["company"] == "StatedCo"
+    )
     assert row["status"] == "open"
 
 
 def test_waiting_sorts_before_dropped(monkeypatch):
     # Forecast (what's coming) must rank above a role that already closed.
-    _observed(monkeypatch, {
-        "gonecorp": {"name": "GoneCorp",
-                     "cycles": {"Summer 2027": {"first_posted": "2026-05-01", "count": 1}}},
-    })
+    _observed(
+        monkeypatch,
+        {
+            "gonecorp": {
+                "name": "GoneCorp",
+                "cycles": {"Summer 2027": {"first_posted": "2026-05-01", "count": 1}},
+            },
+        },
+    )
     _known(monkeypatch, [{"name": "Meta", "opens": "08", "precision": "month"}])
     # GoneCorp posted this cycle but is not open now -> "dropped"; Meta -> "waiting".
     companies = [r["company"] for r in radar.rows({}, "Summer 2027", today=TODAY)]
@@ -123,19 +176,28 @@ def test_waiting_sorts_before_dropped(monkeypatch):
 
 
 def test_posted_rows_sort_before_waiting(monkeypatch):
-    _observed(monkeypatch, {
-        "stripe": {"name": "Stripe", "cycles": {"Summer 2027": {"first_posted": "2026-06-30", "count": 1}}},
-    })
+    _observed(
+        monkeypatch,
+        {
+            "stripe": {
+                "name": "Stripe",
+                "cycles": {"Summer 2027": {"first_posted": "2026-06-30", "count": 1}},
+            },
+        },
+    )
     _known(monkeypatch, [{"name": "Meta", "opens": "08", "precision": "month"}])
     companies = [r["company"] for r in radar.rows(STORE, "Summer 2027", today=TODAY)]
     assert companies.index("Stripe") < companies.index("Meta")
 
 
 def test_dated_sorts_before_rolling(monkeypatch):
-    _known(monkeypatch, [
-        {"name": "Meta", "opens": "08", "precision": "month"},
-        {"name": "Microsoft", "opens": None, "precision": "rolling"},
-    ])
+    _known(
+        monkeypatch,
+        [
+            {"name": "Meta", "opens": "08", "precision": "month"},
+            {"name": "Microsoft", "opens": None, "precision": "rolling"},
+        ],
+    )
     companies = [r["company"] for r in radar.rows({}, "Summer 2027", today=TODAY)]
     assert companies.index("Meta") < companies.index("Microsoft")
 
@@ -155,11 +217,17 @@ def test_plus_one_year_handles_leap_day():
 
 
 def test_pretty_expected_countdown(monkeypatch):
-    _observed(monkeypatch, {
-        "nvidia": {"name": "NVIDIA", "cycles": {"Summer 2026": {"first_posted": "2025-08-24", "count": 5}}},
-    })
+    _observed(
+        monkeypatch,
+        {
+            "nvidia": {
+                "name": "NVIDIA",
+                "cycles": {"Summer 2026": {"first_posted": "2025-08-24", "count": 5}},
+            },
+        },
+    )
     row = next(r for r in radar.rows(STORE, "Summer 2027", today=TODAY) if r["company"] == "NVIDIA")
-    assert radar.pretty_expected(row) == "~Aug 24"          # 52d out: no countdown
+    assert radar.pretty_expected(row) == "~Aug 24"  # 52d out: no countdown
     assert "in ~20d" in radar.pretty_expected(dict(row, days_until=20))
     assert "any day now" in radar.pretty_expected(dict(row, days_until=-3))
 

@@ -28,18 +28,36 @@ BADGE_THRESHOLD = 10
 # conservative on purpose: "technologies", "systems", "labs" are identity, not
 # boilerplate, so they stay.
 _SUFFIXES = {
-    "inc", "incorporated", "llc", "llp", "lp", "ltd", "limited", "corp",
-    "corporation", "co", "company", "plc", "pllc", "pc", "sa", "ag", "gmbh",
-    "bv", "nv", "se", "ulc",
+    "inc",
+    "incorporated",
+    "llc",
+    "llp",
+    "lp",
+    "ltd",
+    "limited",
+    "corp",
+    "corporation",
+    "co",
+    "company",
+    "plc",
+    "pllc",
+    "pc",
+    "sa",
+    "ag",
+    "gmbh",
+    "bv",
+    "nv",
+    "se",
+    "ulc",
 }
 
 # Brand name (normalized) -> employer name (normalized) when the public brand
 # and the petitioning legal entity differ too much for a prefix match.
 _ALIASES = {
-    "google": "google",                       # resolved by prefix, kept for clarity
+    "google": "google",  # resolved by prefix, kept for clarity
     "meta": "meta platforms",
     "ibm": "international business machines",
-    "amazon": "amazon com services",          # 13 "Amazon ..." entities; this is the petitioner
+    "amazon": "amazon com services",  # 13 "Amazon ..." entities; this is the petitioner
     "aws": "amazon web services",
     "gm": "general motors",
     "jpmorgan": "jpmorgan chase",
@@ -53,9 +71,26 @@ _ALIASES = {
 
 # Names too generic to prefix-match on their own (exact/alias still allowed).
 _GENERIC = {
-    "the", "tech", "labs", "lab", "data", "cloud", "global", "digital",
-    "systems", "software", "solutions", "group", "partners", "capital",
-    "american", "united", "national", "first", "general", "one",
+    "the",
+    "tech",
+    "labs",
+    "lab",
+    "data",
+    "cloud",
+    "global",
+    "digital",
+    "systems",
+    "software",
+    "solutions",
+    "group",
+    "partners",
+    "capital",
+    "american",
+    "united",
+    "national",
+    "first",
+    "general",
+    "one",
 }
 
 _PUNCT_RE = re.compile(r"[^\w\s]")

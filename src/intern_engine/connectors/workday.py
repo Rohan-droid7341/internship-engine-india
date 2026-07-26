@@ -25,14 +25,14 @@ from ..net import Net
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                  "(KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+    "(KHTML, like Gecko) Chrome/120.0 Safari/537.36",
     "Accept": "application/json",
 }
 
 _DAYS_AGO = re.compile(r"(\d+)\s*\+?\s*days?\s+ago", re.IGNORECASE)
 
-_PAGE_SIZE = 20   # hard server-side cap per request
-_MAX_JOBS = 100   # intern-search results beyond this are noise
+_PAGE_SIZE = 20  # hard server-side cap per request
+_MAX_JOBS = 100  # intern-search results beyond this are noise
 
 
 def _resolve_posted(text: str | None) -> str | None:
