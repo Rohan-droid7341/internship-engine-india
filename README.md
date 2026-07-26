@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**7 open roles · 7 new this week · 4,432 companies tracked · updated Jul 26, 2026 at 12:02 UTC**
+**7 open roles · 7 new this week · 4,432 companies tracked · updated Jul 26, 2026 at 13:26 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -17,13 +17,13 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Boston Medical Center | Cybersecurity & AI/Data Governance Intern ~ 🆕 | Data & ML/AI | — | Remote | Jul 23, 2026 | [Apply](https://bmc.wd1.myworkdayjobs.com/BMC/job/Remote/Cybersecurity---AI-Data-Governance-Intern_50294) |
+| Boston Medical Center | Cybersecurity & AI/Data Governance Intern ~ | Data & ML/AI | — | Remote | Jul 23, 2026 | [Apply](https://bmc.wd1.myworkdayjobs.com/BMC/job/Remote/Cybersecurity---AI-Data-Governance-Intern_50294) |
 | Scopely | Intern - Gen. AI Art ~ | Data & ML/AI | — | IN - Bangalore, India | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5341537008?gh_jid=5341537008) |
 | Stripe | Software Engineer, Intern ~ | Software | — | Bengaluru | Jul 10, 2026 | [Apply](https://stripe.com/jobs/search?gh_jid=8031833) |
 | IMC Trading | 2027 - Software Engineering Intern - BITS Pilani | Software | — | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4917549101) |
 | Epifi | Ai Engg Intern ~ | Data & ML/AI | — | Bangalore | Jul 03, 2026 | [Apply](https://jobs.lever.co/epifi/08c743e8-2b29-4f78-827e-5bd90476ed86) |
 | Epifi | DS/ML Intern ~ | Data & ML/AI | — | Bangalore | Jul 02, 2026 | [Apply](https://jobs.lever.co/epifi/08fc1577-4593-4b94-b66b-08e638d29f37) |
-| Ancestry | Data Science - AI Document Understanding, Co-op ~ 🆕 | Data & ML/AI | B.Tech/BS | Remote | Jun 30, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Data-Science---AI-Document-Understanding--Co-op_R003371) |
+| Ancestry | Data Science - AI Document Understanding, Co-op ~ | Data & ML/AI | B.Tech/BS | Remote | Jun 30, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Data-Science---AI-Document-Understanding--Co-op_R003371) |
 
 _~ = the title doesn't state a year; bucketed here from its posting date (6 of 7)._
 
@@ -157,7 +157,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,432 companies across 15 ATS platforms · 99% fetch success · completed in 271.2s · median detection latency 220 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,432 companies across 15 ATS platforms · 98% fetch success · completed in 302.8s · median detection latency 220 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
