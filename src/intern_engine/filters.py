@@ -28,8 +28,6 @@ _INCLUDE_RE = re.compile(
     r"web developer|web engineer|mobile|ios|android|devops|sre|site reliability|"
     r"infrastructure|platform engineer|platform engineering|distributed systems|"
     r"operating system|compiler|embedded|firmware|"
-    r"cyber|cybersecurity|appsec|application security|information security|infosec|"
-    r"security engineer|"
     r"data science|data scientist|data engineer|data analyst|analytics engineer|"
     r"machine learning|ml|deep learning|ai|artificial intelligence|nlp|computer vision|"
     r"research scientist|applied scientist|research engineer|ml engineer|ai engineer|"
@@ -49,7 +47,9 @@ _EXCLUDE_RE = re.compile(
     r"legal|counsel|accounting|human resources|people operations|people team|talent|"
     r"communications|supply chain|business development|product design|product designer|"
     r"product manager|product management|ux design|graphic design|industrial design|"
-    r"phd|ph\.d|doctoral"
+    r"cyber|cybersecurity|appsec|application security|information security|infosec|"
+    r"security|security engineer|"
+    r"phd|ph\.d|doctoral|mba|bba|bcom|b\.com|mca|chartered accountant|ca"
     r")\b",
     re.IGNORECASE,
 )
@@ -738,7 +738,6 @@ _CATEGORY_PATTERNS = [
             re.IGNORECASE,
         ),
     ),
-    ("Security", re.compile(r"\b(cyber|infosec|appsec|security)", re.IGNORECASE)),
     (
         "Software",
         re.compile(
