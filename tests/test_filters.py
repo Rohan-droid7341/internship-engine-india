@@ -117,7 +117,7 @@ class TestCategory:
     def test_categories(self):
         assert filters.categorize("Software Engineer Intern") == "Software"
         assert filters.categorize("Machine Learning Intern") == "Data & ML/AI"
-        assert filters.categorize("Cybersecurity Intern") == "Security"
+        assert filters.categorize("Hardware Engineering Intern") == "Hardware"
 
 
 class TestInferSeason:
