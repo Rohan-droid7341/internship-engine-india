@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**12 open roles · 12 new this week · 4,443 companies tracked · updated Jul 26, 2026 at 22:23 UTC**
+**10 open roles · 10 new this week · 4,459 companies tracked · updated Jul 26, 2026 at 22:52 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,12 +13,11 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (12 open)
+## Summer 2027 (International)  (10 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
 | Criteo | Data Analyst- Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Gurgaon | Jul 24, 2026 | [Apply](https://criteo.wd3.myworkdayjobs.com/Criteo_Career_Site/job/Gurgaon/Data-Analyst--Intern_r20878) |
-| Boston Medical Center | Cybersecurity & AI/Data Governance Intern ~ | Data & ML/AI | — | Remote | Jul 23, 2026 | [Apply](https://bmc.wd1.myworkdayjobs.com/BMC/job/Remote/Cybersecurity---AI-Data-Governance-Intern_50294) |
 | Scopely | Intern - Gen. AI Art ~ | Data & ML/AI | — | IN - Bangalore, India | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5341537008?gh_jid=5341537008) |
 | Stripe | Software Engineer, Intern ~ | Software | — | Bengaluru | Jul 10, 2026 | [Apply](https://stripe.com/jobs/search?gh_jid=8031833) |
 | IMC Trading | 2027 - Software Engineering Intern - BITS Pilani | Software | — | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4917549101) |
@@ -27,10 +26,9 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Ancestry | Data Science - AI Document Understanding, Co-op ~ | Data & ML/AI | B.Tech/BS | Remote | Jun 30, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Data-Science---AI-Document-Understanding--Co-op_R003371) |
 | Ancestry | Machine Learning Engineer, Co-op ~ 🆕 | Data & ML/AI | B.Tech/BS | Remote | Jun 08, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Machine-Learning-Engineer--Co-op_R003378) |
 | GlobalFoundries | Intern - Compact Modeling Flow using AI/ML/Automation ~ 🆕 | Data & ML/AI | B.Tech/BS | IND - Karnataka - Bengaluru - North | May 07, 2026 | [Apply](https://globalfoundries.wd1.myworkdayjobs.com/External/job/IND---Karnataka---Bengaluru---North/Intern---SOI-LDMOS-Compact--SPICE--Modeling_JR-2501258) |
-| Member Solutions | Cybersecurity GRC Intern ~ 🆕 | Security | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
 | Valeo | Intern - AI ~ 🆕 | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (11 of 12)._
+_~ = the title doesn't state a year; bucketed here from its posting date (9 of 10)._
 
 ## What this is
 
@@ -108,10 +106,12 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _54 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **19** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 32 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 34 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Boston Medical Center | Cybersecurity & AI/Data Governance Intern | Summer 2027 | 2026-07-26 |
+| Member Solutions | Cybersecurity GRC Intern | Summer 2027 | 2026-07-26 |
 | IMC Trading | 2027 - Software Engineering Intern - IIT Bombay | Summer 2027 | 2026-07-26 |
 | eBay | Software Engineer Intern | Summer 2027 | 2026-07-25 |
 | Amazon | Software Development Engineer Intern, AWS Data Services - Fall 2026 (US) | Fall 2026 | 2026-07-23 |
@@ -162,7 +162,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,443 companies across 18 ATS platforms · 99% fetch success · completed in 257.6s · median detection latency 224 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,459 companies across 18 ATS platforms · 98% fetch success · completed in 277.3s · median detection latency 224 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
