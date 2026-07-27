@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**11 open roles · 11 new this week · 4,475 companies tracked · updated Jul 27, 2026 at 22:05 UTC**
+**11 open roles · 11 new this week · 4,475 companies tracked · updated Jul 27, 2026 at 23:16 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -107,7 +107,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _54 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **19** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 35 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 32 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -143,9 +143,6 @@ _54 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Tencent | Research Intern – Video World Models (Research & ML Systems) | Summer 2027 | 2026-07-23 |
 | Intel | AI Software Engineering Intern | Summer 2027 | 2026-07-23 |
 | Uber Freight | Data Scientist Intern - Fall 2026 | Fall 2026 | 2026-07-15 |
-| NVIDIA | Quantum Error Correction Research Scientist Intern - Fall 2026 | Fall 2026 | 2026-07-13 |
-| NVIDIA | Quantum Research Scientist Intern - Fall 2026 | Fall 2026 | 2026-07-13 |
-| NVIDIA | Software Engineering Intern, JAX - Fall 2026 | Fall 2026 | 2026-07-13 |
 
 </details>
 
@@ -164,7 +161,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,475 companies across 20 ATS platforms · 99% fetch success · completed in 315.8s · median detection latency 388 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,475 companies across 20 ATS platforms · 98% fetch success · completed in 294.3s · median detection latency 388 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
