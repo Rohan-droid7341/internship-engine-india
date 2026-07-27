@@ -15,7 +15,7 @@ from ..net import Net
 _EXECUTOR = ThreadPoolExecutor(max_workers=1, thread_name_prefix="indeed")
 
 _SEARCH_URL = "https://in.indeed.com/jobs?q={keyword}&start={start}"
-_MAX_PAGES = 5  # 5 pages * 15 jobs = ~75 jobs per keyword
+_MAX_PAGES = 3  # 3 pages * 15 jobs = ~45 jobs per keyword
 
 _HEADERS = {
     "User-Agent": (
@@ -84,6 +84,8 @@ async def fetch(company: dict, net: Net) -> list[Job]:
         page_jobs = await loop.run_in_executor(_EXECUTOR, _scrape_page, url)
         
         if not page_jobs:
+            if page == 0:
+                raise RuntimeError("Indeed rate limited or returned 0 jobs on page 1")
             break
             
         jobs.extend(page_jobs)

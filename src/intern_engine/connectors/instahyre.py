@@ -6,7 +6,7 @@ from ..models import Job
 from ..net import Net
 
 URL = "https://www.instahyre.com/api/v1/job_search?search=internship&offset={offset}"
-_MAX_PAGES = 20
+_MAX_PAGES = 5
 
 
 async def fetch(company: dict, net: Net) -> list[Job]:
@@ -22,6 +22,8 @@ async def fetch(company: dict, net: Net) -> list[Job]:
         data = await net.get_json(url)
         objects = data.get("objects")
         if not objects:
+            if page == 0:
+                raise RuntimeError("Instahyre returned 0 jobs on page 1")
             break
 
         for posting in objects:

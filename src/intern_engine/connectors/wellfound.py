@@ -93,4 +93,6 @@ async def fetch(company: dict, net: Net) -> list[Job]:
     # Aggregator: ignores company parameter
     loop = asyncio.get_event_loop()
     jobs = await loop.run_in_executor(_EXECUTOR, _scrape_page, _SEARCH_URL)
+    if not jobs:
+        raise RuntimeError("Wellfound rate limited or returned 0 jobs")
     return jobs

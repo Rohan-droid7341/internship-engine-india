@@ -20,7 +20,7 @@ _SEARCH_URL = (
     "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
     "?keywords={keywords}&location=India&start={start}&count=25"
 )
-_MAX_PAGES = 10  # 10 × 25 = 250 results per search term
+_MAX_PAGES = 3  # 3 × 25 = 75 results per search term
 
 _HEADERS = {
     "User-Agent": (
@@ -105,9 +105,13 @@ async def fetch(company: dict, net: Net) -> list[Job]:
         url = _SEARCH_URL.format(keywords=keywords, start=start)
         html = await loop.run_in_executor(_EXECUTOR, _scrape_page, url)
         if not html:
+            if page == 0:
+                raise RuntimeError("LinkedIn rate limited or returned 0 jobs on page 1")
             break
         page_jobs = _parse_cards(html, keywords)
         if not page_jobs:
+            if page == 0:
+                raise RuntimeError("LinkedIn rate limited or returned 0 jobs on page 1")
             break
         jobs.extend(page_jobs)
         await asyncio.sleep(1.5)  # be polite between pages

@@ -37,7 +37,7 @@ _HEADERS = {
     "X-Requested-With": "XMLHttpRequest",
 }
 
-_MAX_PAGES = 10
+_MAX_PAGES = 3
 
 
 def _scrape_page(url: str) -> dict:
@@ -81,6 +81,8 @@ async def fetch(company: dict, net: Net) -> list[Job]:
 
         job_list = data.get("jobDetails", [])
         if not job_list:
+            if page == 1:
+                raise RuntimeError("Naukri rate limited or returned 0 jobs on page 1")
             break
 
         for item in job_list:
