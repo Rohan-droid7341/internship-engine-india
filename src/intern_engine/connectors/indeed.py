@@ -32,8 +32,11 @@ _MOSAIC_RE = re.compile(r'window\.mosaic\.providerData\["mosaic-provider-jobcard
 
 def _scrape_page(url: str) -> list[Job]:
     try:
+        import os
         from scrapling.fetchers import StealthyFetcher
-        fetcher = StealthyFetcher(auto_match=False)
+
+        proxy = os.environ.get("WORKDAY_PROXY")
+        fetcher = StealthyFetcher(auto_match=False, proxy=proxy) if proxy else StealthyFetcher(auto_match=False)
         resp = fetcher.get(url, headers=_HEADERS, timeout=30, stealth=True)
         html = resp.content or ""
         

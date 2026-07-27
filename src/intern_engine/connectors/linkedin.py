@@ -46,9 +46,11 @@ _DATE_RE = re.compile(r'<time[^>]+datetime="([^"]+)"')
 def _scrape_page(url: str) -> str:
     """Fetch one page using Scrapling's plain Fetcher (fast, low overhead)."""
     try:
+        import os
         from scrapling.fetchers import Fetcher
 
-        fetcher = Fetcher(auto_match=False)
+        proxy = os.environ.get("WORKDAY_PROXY")
+        fetcher = Fetcher(auto_match=False, proxy=proxy) if proxy else Fetcher(auto_match=False)
         resp = fetcher.get(url, headers=_HEADERS, timeout=20)
         return resp.content or ""
     except ImportError:

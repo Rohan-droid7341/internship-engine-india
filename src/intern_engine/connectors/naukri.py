@@ -43,9 +43,11 @@ _MAX_PAGES = 3
 def _scrape_page(url: str) -> dict:
     """Fetch one page using Scrapling's StealthyFetcher to bypass Cloudflare."""
     try:
+        import os
         from scrapling.fetchers import StealthyFetcher
 
-        fetcher = StealthyFetcher(auto_match=False)
+        proxy = os.environ.get("WORKDAY_PROXY")
+        fetcher = StealthyFetcher(auto_match=False, proxy=proxy) if proxy else StealthyFetcher(auto_match=False)
         resp = fetcher.get(url, headers=_HEADERS, timeout=30, stealth=True)
         text = resp.content or ""
         # Strip BOM if present
