@@ -41,34 +41,6 @@ def _embed(record: dict, colors: dict[str, int]) -> dict:
     }
 
 
-def _send_whatsapp(records: list[dict]) -> bool:
-    phone = os.environ.get("WHATSAPP_PHONE")
-    apikey = os.environ.get("WHATSAPP_API_KEY")
-    if not phone or not apikey:
-        return False
-        
-    import urllib.parse
-    
-    text = f"*{len(records)} new internship{'s' if len(records) != 1 else ''} spotted!*\n\n"
-    for r in records[:_MAX_EMBEDS]:
-        title = f"{r.get('company', '')} — {r.get('title', '')}"
-        url = r.get("url") or ""
-        text += f"🏢 {title}\n🔗 {url}\n\n"
-        
-    extra = len(records) - _MAX_EMBEDS
-    if extra > 0:
-        text += f"(+{extra} more on the dashboard)\n"
-        
-    encoded_text = urllib.parse.quote_plus(text)
-    api_url = f"https://api.callmebot.com/whatsapp.php?phone={phone}&text={encoded_text}&apikey={apikey}"
-    
-    try:
-        httpx.get(api_url, timeout=10).raise_for_status()
-        return True
-    except Exception:
-        return False
-
-
 def _send_discord(records: list[dict]) -> bool:
     webhook = os.environ.get("DISCORD_WEBHOOK_URL")
     if not webhook:
@@ -92,7 +64,7 @@ def _send_discord(records: list[dict]) -> bool:
 
 
 def send_new_roles(store_data: dict, new_ids: list[str]) -> bool:
-    """Post this run's new roles to Discord and WhatsApp. Returns True if any sent."""
+    """Post this run's new roles to Discord (hourly). Returns True if sent."""
     if not new_ids:
         return False
 
@@ -101,6 +73,73 @@ def send_new_roles(store_data: dict, new_ids: list[str]) -> bool:
     if not records:
         return False
 
-    sent_discord = _send_discord(records)
-    sent_whatsapp = _send_whatsapp(records)
-    return sent_discord or sent_whatsapp
+    return _send_discord(records)
+
+
+def _send_twilio(text: str) -> bool:
+    account_sid = os.environ.get("TWILIO_ACCOUNT_SID")
+    auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
+    from_number = os.environ.get("TWILIO_FROM_NUMBER")
+    to_number = os.environ.get("WHATSAPP_PHONE")
+    
+    if not all([account_sid, auth_token, from_number, to_number]):
+        return False
+        
+    api_url = f"https://api.twilio.com/2010-04-01/Accounts/{account_sid}/Messages.json"
+    data = {
+        "From": f"whatsapp:{from_number}",
+        "To": f"whatsapp:{to_number}",
+        "Body": text
+    }
+    
+    try:
+        httpx.post(api_url, auth=(account_sid, auth_token), data=data, timeout=10).raise_for_status()
+        return True
+    except Exception:
+        return False
+
+
+def send_whatsapp_digest(fresh: list[dict]) -> bool:
+    """Send a daily digest of new roles via Twilio WhatsApp."""
+    if not fresh:
+        return False
+    text = f"*{len(fresh)} new internship{'s' if len(fresh) != 1 else ''} spotted today!*\n\n"
+    for r in fresh[:_MAX_EMBEDS]:
+        title = f"{r.get('company', '')} — {r.get('title', '')}"
+        url = r.get("url") or ""
+        text += f"🏢 {title}\n🔗 {url}\n\n"
+        
+    extra = len(fresh) - _MAX_EMBEDS
+    if extra > 0:
+        text += f"(+{extra} more on the dashboard)\n"
+        
+    return _send_twilio(text)
+
+
+def check_sandbox_reminder() -> None:
+    """Send a reminder to keep the Twilio sandbox alive every 65 hours."""
+    import json
+    from datetime import UTC, datetime, timedelta
+    
+    try:
+        with open(paths.WHATSAPP_STATE_PATH, encoding="utf-8") as f:
+            state = json.load(f)
+    except (OSError, ValueError):
+        state = {}
+        
+    now = datetime.now(UTC)
+    last_str = state.get("last_reminder_at")
+    
+    if last_str:
+        try:
+            last = datetime.strptime(last_str[:19], "%Y-%m-%dT%H:%M:%S").replace(tzinfo=UTC)
+            if now - last < timedelta(hours=65):
+                return
+        except ValueError:
+            pass
+            
+    text = "⚠️ Twilio Sandbox Reminder: Please reply with 'join type-against' to keep this connection alive for another 72 hours!"
+    if _send_twilio(text):
+        state["last_reminder_at"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+        with open(paths.WHATSAPP_STATE_PATH, "w", encoding="utf-8") as f:
+            json.dump(state, f, indent=2)
