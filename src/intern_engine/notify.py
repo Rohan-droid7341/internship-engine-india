@@ -41,15 +41,37 @@ def _embed(record: dict, colors: dict[str, int]) -> dict:
     }
 
 
-def send_new_roles(store_data: dict, new_ids: list[str]) -> bool:
-    """Post this run's new roles to Discord. Returns True when a message went out."""
-    webhook = os.environ.get("DISCORD_WEBHOOK_URL")
-    if not webhook or not new_ids:
+def _send_whatsapp(records: list[dict]) -> bool:
+    phone = os.environ.get("WHATSAPP_PHONE")
+    apikey = os.environ.get("WHATSAPP_API_KEY")
+    if not phone or not apikey:
+        return False
+        
+    import urllib.parse
+    
+    text = f"*{len(records)} new internship{'s' if len(records) != 1 else ''} spotted!*\n\n"
+    for r in records[:_MAX_EMBEDS]:
+        title = f"{r.get('company', '')} — {r.get('title', '')}"
+        url = r.get("url") or ""
+        text += f"🏢 {title}\n🔗 {url}\n\n"
+        
+    extra = len(records) - _MAX_EMBEDS
+    if extra > 0:
+        text += f"(+{extra} more on the dashboard)\n"
+        
+    encoded_text = urllib.parse.quote_plus(text)
+    api_url = f"https://api.callmebot.com/whatsapp.php?phone={phone}&text={encoded_text}&apikey={apikey}"
+    
+    try:
+        httpx.get(api_url, timeout=10).raise_for_status()
+        return True
+    except Exception:
         return False
 
-    records = [store_data[jid] for jid in new_ids if jid in store_data]
-    records = [r for r in records if r.get("is_open")]
-    if not records:
+
+def _send_discord(records: list[dict]) -> bool:
+    webhook = os.environ.get("DISCORD_WEBHOOK_URL")
+    if not webhook:
         return False
 
     extra = len(records) - _MAX_EMBEDS
@@ -67,3 +89,18 @@ def send_new_roles(store_data: dict, new_ids: list[str]) -> bool:
         return True
     except Exception:  # noqa: BLE001 — alerting is a side channel, never fatal
         return False
+
+
+def send_new_roles(store_data: dict, new_ids: list[str]) -> bool:
+    """Post this run's new roles to Discord and WhatsApp. Returns True if any sent."""
+    if not new_ids:
+        return False
+
+    records = [store_data[jid] for jid in new_ids if jid in store_data]
+    records = [r for r in records if r.get("is_open")]
+    if not records:
+        return False
+
+    sent_discord = _send_discord(records)
+    sent_whatsapp = _send_whatsapp(records)
+    return sent_discord or sent_whatsapp
