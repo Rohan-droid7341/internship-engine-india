@@ -179,9 +179,6 @@ def send_digest(store_data: dict) -> int:
 
     if not should_send(state, len(fresh)):
         return 0
-        
-    # Send WhatsApp daily digest
-    notify.send_whatsapp_digest(fresh)
 
     try:
         subscribers = _subscribers(base_url, service_key)

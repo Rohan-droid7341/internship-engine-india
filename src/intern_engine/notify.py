@@ -73,7 +73,9 @@ def send_new_roles(store_data: dict, new_ids: list[str]) -> bool:
     if not records:
         return False
 
-    return _send_discord(records)
+    sent_discord = _send_discord(records)
+    sent_whatsapp = send_whatsapp_digest(records)
+    return sent_discord or sent_whatsapp
 
 
 def _send_twilio(text: str) -> bool:
