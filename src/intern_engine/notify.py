@@ -42,14 +42,13 @@ def _embed(record: dict, colors: dict[str, int]) -> dict:
 
 
 def _send_whatsapp(records: list[dict]) -> bool:
-    account_sid = os.environ.get("TWILIO_ACCOUNT_SID")
-    auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
-    from_number = os.environ.get("TWILIO_FROM_NUMBER")
-    to_number = os.environ.get("WHATSAPP_PHONE")
-    
-    if not all([account_sid, auth_token, from_number, to_number]):
+    phone = os.environ.get("WHATSAPP_PHONE")
+    apikey = os.environ.get("WHATSAPP_API_KEY")
+    if not phone or not apikey:
         return False
         
+    import urllib.parse
+    
     text = f"*{len(records)} new internship{'s' if len(records) != 1 else ''} spotted!*\n\n"
     for r in records[:_MAX_EMBEDS]:
         title = f"{r.get('company', '')} — {r.get('title', '')}"
@@ -60,15 +59,11 @@ def _send_whatsapp(records: list[dict]) -> bool:
     if extra > 0:
         text += f"(+{extra} more on the dashboard)\n"
         
-    api_url = f"https://api.twilio.com/2010-04-01/Accounts/{account_sid}/Messages.json"
-    data = {
-        "From": f"whatsapp:{from_number}",
-        "To": f"whatsapp:{to_number}",
-        "Body": text
-    }
+    encoded_text = urllib.parse.quote_plus(text)
+    api_url = f"https://api.callmebot.com/whatsapp.php?phone={phone}&text={encoded_text}&apikey={apikey}"
     
     try:
-        httpx.post(api_url, auth=(account_sid, auth_token), data=data, timeout=10).raise_for_status()
+        httpx.get(api_url, timeout=10).raise_for_status()
         return True
     except Exception:
         return False
