@@ -80,7 +80,6 @@ def test_digest_html_lists_roles_and_unsub_slot():
     html = mailer.build_digest_html(fresh)
     assert "Stripe" in html and "Backend Intern" in html
     assert "$55/hr" in html
-    assert "\U0001f6c2" in html  # 🛂 flag carried into the email
     assert "{{UNSUB_URL}}" in html  # per-recipient link slot survives
 
 

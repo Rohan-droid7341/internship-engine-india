@@ -13,7 +13,7 @@ from __future__ import annotations
 import asyncio
 import re
 
-from . import filters, skills, sponsorship
+from . import filters, skills
 from .models import Job
 from .net import Net
 
@@ -113,7 +113,7 @@ _FETCHERS = {
 
 
 async def enrich_jobs(jobs: list[Job], existing: dict, net: Net) -> tuple[set[str], int]:
-    """Classify sponsorship for every kept job, fetching text only when needed.
+    """Enrich every kept job, fetching text only when needed.
 
     Returns (ids classified from fresh text this run, detail requests made).
     Jobs whose stored record already carries a verdict inherit it without any
@@ -125,9 +125,8 @@ async def enrich_jobs(jobs: list[Job], existing: dict, net: Net) -> tuple[set[st
     async def _resolve(job: Job) -> str | None:
         nonlocal fetched
         prior = existing.get(job.id) or {}
-        settled = bool(prior.get("enriched_at") or prior.get("sponsorship", "unknown") != "unknown")
+        settled = bool(prior.get("enriched_at"))
         if settled and prior.get("skills") is not None:
-            job.sponsorship = prior.get("sponsorship", "unknown")
             return None  # already settled on an earlier run
         # (settled but skills missing = record predates skill tags; re-fetch once)
         if job.description is None:
@@ -139,11 +138,8 @@ async def enrich_jobs(jobs: list[Job], existing: dict, net: Net) -> tuple[set[st
                     fetched += 1
                 except Exception:  # noqa: BLE001 — a dead detail page must not kill the run
                     return None  # no enriched_at -> retried on the next run
-        if settled:
-            job.sponsorship = prior.get("sponsorship", "unknown")  # never flip a verdict
-        else:
-            job.sponsorship = sponsorship.classify(job.description)
-        text = sponsorship.strip_html(job.description) if job.description else ""
+        text = job.description if job.description else ""
+        text = re.sub(r'<[^>]+>', ' ', text)
         job.skills = skills.extract(text)
         if not job.salary:
             job.salary = skills.extract_pay(text)

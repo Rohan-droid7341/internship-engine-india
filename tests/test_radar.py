@@ -24,9 +24,9 @@ def _observed(monkeypatch, companies):
 
 
 def _known(monkeypatch, entries):
-    from intern_engine import h1b
+    from intern_engine import radar
 
-    monkeypatch.setattr(radar, "_known_cache", {h1b.normalize(e["name"]): e for e in entries})
+    monkeypatch.setattr(radar, "_known_cache", {radar.normalize(e["name"]): e for e in entries})
 
 
 STORE = {

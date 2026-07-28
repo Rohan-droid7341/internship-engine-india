@@ -20,7 +20,7 @@ CSV_PATH = os.path.join(DATA_DIR, "internships.csv")  # downloadable tracker
 STATS_PATH = os.path.join(DATA_DIR, "stats.json")  # last-run metrics
 HEALTH_PATH = os.path.join(DATA_DIR, "health.json")  # circuit-breaker state
 HISTORY_PATH = os.path.join(DATA_DIR, "history.jsonl")  # one line of metrics per run
-H1B_PATH = os.path.join(DATA_DIR, "h1b.json")  # USCIS employer -> approvals index
+
 MAIL_STATE_PATH = os.path.join(DATA_DIR, "mail_state.json")  # when the last digest went out
 WHATSAPP_STATE_PATH = os.path.join(DATA_DIR, "whatsapp_state.json")  # when the last digest went out
 OBSERVED_PATH = os.path.join(

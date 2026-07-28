@@ -15,7 +15,7 @@ import os
 from datetime import UTC, datetime, timedelta
 from xml.sax.saxutils import escape
 
-from . import config, h1b, paths, radar, sponsorship
+from . import config, paths, radar
 
 _FEED_LIMIT = 50
 
@@ -25,10 +25,7 @@ def _first_seen(record: dict) -> str:
 
 
 def _entry(record: dict, base: str) -> str:
-    flag = sponsorship.flag(record.get("sponsorship"))
     title = f"{record.get('company', '')}: {record.get('title', '')}"
-    if flag:
-        title += f" {flag}"
     summary_bits = [
         record.get("season") or "",
         record.get("category") or "",
@@ -38,14 +35,6 @@ def _entry(record: dict, base: str) -> str:
         summary_bits.append(record["salary"])
     if record.get("skills"):
         summary_bits.append(", ".join(record["skills"][:5]))
-    sponsor = record.get("sponsorship", "unknown")
-    if sponsor != "unknown":
-        summary_bits.append(f"sponsorship: {sponsor}")
-    approvals = h1b.approvals_for(record.get("company") or "")
-    if h1b.badge(approvals):
-        summary_bits.append(
-            f"H-1B track record: ~{h1b.pretty_count(approvals)} approvals ({h1b.window_label()})"
-        )
     summary = " · ".join(b for b in summary_bits if b)
     updated = _first_seen(record) or datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     return (
@@ -146,7 +135,7 @@ def write_radar_ics(store_data: dict, cycle: str | None = None) -> int:
         end = (datetime.strptime(r["expected"], "%Y-%m-%d").date() + timedelta(days=1)).strftime(
             "%Y%m%d"
         )
-        uid = f"radar-{h1b.normalize(r['company']) or r['company']}-{start}@intern-engine"
+        uid = f"radar-{radar.normalize(r['company']) or r['company']}-{start}@intern-engine"
         verified = r["source"] == "engine"
         precise = r["precision"] == "day"
         mark = "🎯 " if verified else ""
@@ -196,7 +185,6 @@ _API_FIELDS = (
     "url",
     "posted_at",
     "first_seen_at",
-    "sponsorship",
     "salary",
     "skills",
     "source",
@@ -210,13 +198,11 @@ def write_api(store_data: dict, stats: dict) -> int:
 
     def _job(r: dict) -> dict:
         row = {k: r.get(k) for k in _API_FIELDS}
-        row["h1b_approvals"] = h1b.approvals_for(r.get("company") or "")
         return row
 
     payload = {
         "generated_at": datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "source": f"https://github.com/{config.repo_slug()}",
-        "h1b_window": h1b.window_label() or None,
         "count": len(open_jobs),
         "jobs": [_job(r) for r in open_jobs],
     }

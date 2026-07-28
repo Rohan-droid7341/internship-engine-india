@@ -43,7 +43,7 @@ def save(path: str, data: dict) -> None:
 # NOTE: posted_at is deliberately NOT here — we freeze the published date the
 # first time we see a role so the "Posted" column never shifts on later runs
 # (the report behaves like a ladder: old roles sink, new ones land on top).
-# sponsorship/salary/enriched_at are handled specially below: a settled verdict
+# salary/enriched_at are handled specially below: a settled verdict
 # must never be clobbered by a run that didn't re-enrich.
 _REFRESH_FIELDS = (
     "title",
@@ -69,8 +69,8 @@ def upsert(
     run. We only mark a job closed if its company was fetched successfully but
     the job wasn't in the results — so a network blip never wrongly closes jobs.
 
-    `enriched_ids` are jobs whose sponsorship verdict came from posting text
-    THIS run; those get an enriched_at stamp so enrichment never repeats.
+    `enriched_ids` are jobs enriched from posting text THIS run;
+    those get an enriched_at stamp so enrichment never repeats.
     """
     ts = now_iso()
     enriched_ids = enriched_ids or set()
@@ -100,8 +100,6 @@ def upsert(
                 record["degree"] = job["degree"]
             if job.get("batch"):
                 record["batch"] = job["batch"]
-            if job.get("sponsorship", "unknown") != "unknown":
-                record["sponsorship"] = job["sponsorship"]
             if record.get("closed_at"):
                 del record["closed_at"]  # the role came back
             record["last_seen_at"] = ts

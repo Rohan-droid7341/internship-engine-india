@@ -31,7 +31,7 @@ from __future__ import annotations
 import json
 from datetime import UTC, datetime
 
-from . import config, h1b, paths
+from . import config, paths, radar
 
 
 def load() -> dict:
@@ -87,7 +87,7 @@ def update_from_store(
         if not cycle or not day or cycle not in tracked:
             continue  # only real, tracked-cycle drops become observations
         name = (record.get("company") or "").strip()
-        key = h1b.normalize(name)
+        key = radar.normalize(name)
         if not key:
             continue
 

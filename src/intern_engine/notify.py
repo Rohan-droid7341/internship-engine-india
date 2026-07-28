@@ -11,7 +11,7 @@ import os
 
 import httpx
 
-from . import config, sponsorship
+from . import config
 
 _MAX_EMBEDS = 10  # Discord's cap per message
 
@@ -26,13 +26,10 @@ def _cycle_colors() -> dict[str, int]:
 
 
 def _embed(record: dict, colors: dict[str, int]) -> dict:
-    flag = sponsorship.flag(record.get("sponsorship"))
     title = f"{record.get('company', '')} — {record.get('title', '')}"
     bits = [record.get("season") or "", record.get("location") or ""]
     if record.get("salary"):
         bits.append(record["salary"])
-    if flag:
-        bits.append(flag)
     return {
         "title": title[:256],
         "url": record.get("url") or None,

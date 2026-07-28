@@ -27,7 +27,6 @@ class Job:
     season_inferred: bool = False  # True when the cycle came from the posting
     # date, not a year stated in the title
     category: str = "Other"
-    sponsorship: str = "unknown"  # citizens-only | no-sponsorship | offers | unknown
     salary: str | None = None  # pay text when the ATS exposes it (Ashby/Lever/Breezy)
     stipend: str | None = None
     experience: str | None = None

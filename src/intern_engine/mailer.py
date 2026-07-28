@@ -25,7 +25,7 @@ from html import escape
 
 import httpx
 
-from . import config, h1b, paths, sponsorship
+from . import config, paths
 
 _MIN_HOURS_BETWEEN = 22  # "daily", tolerant of cron jitter
 _NEW_WINDOW_HOURS = 26  # a role counts as news if first seen in this window
@@ -87,14 +87,11 @@ def should_send(state: dict, fresh_count: int, now: datetime | None = None) -> b
 
 
 def _role_row(r: dict) -> str:
-    flag = sponsorship.flag(r.get("sponsorship"))
-    approvals = h1b.approvals_for(r.get("company") or "")
-    check = " ✓" if h1b.badge(approvals) else ""
     bits = [b for b in (r.get("season"), r.get("location"), r.get("salary")) if b]
     return (
         '<tr><td style="padding:10px 0;border-bottom:1px solid #eee">'
-        f"<strong>{escape(r.get('company') or '')}{check}</strong> — "
-        f'<a href="{escape(r.get("url") or "")}">{escape(r.get("title") or "")}</a> {flag}'
+        f"<strong>{escape(r.get('company') or '')}</strong> — "
+        f'<a href="{escape(r.get("url") or "")}">{escape(r.get("title") or "")}</a>'
         f'<br><span style="color:#666;font-size:13px">{escape(" · ".join(bits))}</span>'
         "</td></tr>"
     )
@@ -121,9 +118,7 @@ def build_digest_html(fresh: list[dict]) -> str:
         'max-width:640px;margin:0 auto;color:#1a1a1a">'
         f'<h2 style="font-size:18px">{len(fresh)} new internship'
         f"{'s' if len(fresh) != 1 else ''} spotted</h2>"
-        '<p style="color:#666;font-size:13px">✓ = the employer has a real H-1B '
-        "track record (USCIS data) · 🇺🇸 = citizens only · 🛂 = no visa "
-        "sponsorship — auto-detected, verify on the posting.</p>"
+        '<p style="color:#666;font-size:13px">Automatically discovered from the company careers page.</p>'
         f'<table style="width:100%;border-collapse:collapse">{rows}</table>'
         f'<p style="margin-top:18px"><a href="https://github.com/{escape(repo)}">'
         "Full list & tracker on GitHub</a> · "

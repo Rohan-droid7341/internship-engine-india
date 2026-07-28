@@ -54,7 +54,7 @@ class TestFeed:
         entries = tree.getroot().findall("a:entry", ns)
         assert len(entries) == 1
         title = entries[0].find("a:title", ns).text
-        assert "Stripe" in title and "🛂" in title
+        assert "Stripe" in title
 
 
 class TestApi:
@@ -67,5 +67,4 @@ class TestApi:
         assert payload["count"] == 1
         job = payload["jobs"][0]
         assert job["company"] == "Stripe"
-        assert job["sponsorship"] == "no-sponsorship"
         assert "is_open" not in job  # only open roles ship, flag is redundant

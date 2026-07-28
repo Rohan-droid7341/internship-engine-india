@@ -29,7 +29,15 @@ from __future__ import annotations
 import json
 from datetime import UTC, date, datetime
 
-from . import h1b, observe, paths
+import re
+from . import observe, paths
+
+def normalize(name: str) -> str:
+    if not name: return ""
+    name = name.lower()
+    for s in (", inc.", " inc.", " inc", ", llc", " llc.", " llc", " corp.", " corp", " ltd.", " ltd"):
+        name = name.replace(s, "")
+    return re.sub(r"[^a-z0-9]", "", name)
 
 _known_cache: dict | None = None
 _observed_cache: dict | None = None
@@ -53,7 +61,7 @@ def _load_known() -> dict:
             raw = {}
         out: dict[str, dict] = {}
         for entry in raw.get("companies") or []:
-            key = h1b.normalize(entry.get("name") or "")
+            key = normalize(entry.get("name") or "")
             if key:
                 out[key] = entry
         _known_cache = out
@@ -103,7 +111,7 @@ def _open_this_cycle(store_data: dict, cycle: str) -> dict[str, dict]:
         if r.get("season_inferred"):
             continue  # a guessed cycle can't confirm a radar drop (see docstring)
         name = r.get("company") or ""
-        key = h1b.normalize(name)
+        key = normalize(name)
         if key and key not in seen:
             seen[key] = {"url": r.get("url") or "", "name": name}
     return seen

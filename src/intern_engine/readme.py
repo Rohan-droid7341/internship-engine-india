@@ -12,7 +12,7 @@ import json
 from datetime import UTC, datetime, timedelta
 from urllib.parse import quote
 
-from . import config, filters, h1b, paths, priority, radar
+from . import config, filters, paths, priority, radar
 
 
 def _engine_metrics() -> str:
@@ -155,7 +155,7 @@ def _header(cfg: dict, total_open: int, companies: int, new_week: int) -> list[s
     repo = config.repo_slug()
     stats_url = quote(f"{pages}/api/stats.json", safe="")
     return [
-        "# Summer 2027 Tech Internships",
+        "# Indian Tech Internships",
         "",
         f"[![CI](https://github.com/{repo}/actions/workflows/ci.yml/badge.svg)]"
         f"(https://github.com/{repo}/actions/workflows/ci.yml) "
@@ -506,8 +506,6 @@ def _write_csv(open_jobs: list[dict]) -> None:
         "season_inferred",
         "category",
         "location",
-        "sponsorship",
-        "h1b_approvals",
         "salary",
         "skills",
         "posted_at",
@@ -519,6 +517,5 @@ def _write_csv(open_jobs: list[dict]) -> None:
         writer.writeheader()
         for r in open_jobs:
             row = {k: r.get(k, "") for k in fields}
-            row["h1b_approvals"] = h1b.approvals_for(r.get("company") or "") or ""
             row["skills"] = "; ".join(r.get("skills") or [])
             writer.writerow(row)

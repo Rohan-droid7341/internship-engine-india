@@ -6,7 +6,7 @@
 
 A dependency-light Python engine that reads public ATS job feeds directly,
 keeps only the internships in scope (configurable cycle / region / role scope),
-classifies visa sponsorship from real posting text, tracks every role's
+tracks every role's
 lifecycle over time, and regenerates the public `README.md`, a CSV, an Atom
 feed, a JSON API, and a live dashboard. GitHub Actions runs it on a schedule
 and commits the refreshed output.
@@ -26,10 +26,10 @@ public datasets + README mines          data/candidates.json (curated slugs)
      data/health.json)                  │  keep: internship? scope?       normalized Job[])
                                         │        target cycle? region?
                                         ▼
-                                    enrich.py ──posting text──► sponsorship.py
-                                        │       (detail fetch only        (citizens-only /
-                                        │        for NEW matched roles)    no-sponsorship /
-                                        ▼                                  offers / unknown)
+                                    enrich.py ──posting text──►
+                                        │       (detail fetch only
+                                        │        for NEW matched roles)
+                                        ▼
                                      store.py ──► data/jobs.json
                                         │         (dedup · first-seen · open/closed
                                         │          · closed_at · retention purge)
@@ -52,8 +52,6 @@ public datasets + README mines          data/candidates.json (curated slugs)
 | `src/intern_engine/net.py` | Async HTTP with retry/backoff + per-host concurrency limits. |
 | `src/intern_engine/connectors/` | One module per ATS: Greenhouse, Lever, Ashby, SmartRecruiters, Workday, Oracle, Amazon, Rippling, Workable, Breezy, Recruitee. |
 | `src/intern_engine/filters.py` | Classification: internship? tech? season/year? US/Canada? category. |
-| `src/intern_engine/sponsorship.py` | Phrase-anchored visa/citizenship classifier + display flags. |
-| `src/intern_engine/h1b.py` | Joins companies against the USCIS H-1B employer index (✓ badge). |
 | `src/intern_engine/enrich.py` | Fetches posting text for new matched roles; backfills exact dates. |
 | `src/intern_engine/trends.py` | Weekly posting-volume chart + median posting-lifetime metric. |
 | `src/intern_engine/radar.py` | Drop Radar: last cycle's first-post dates projected onto this cycle. |
@@ -77,8 +75,6 @@ public datasets + README mines          data/candidates.json (curated slugs)
 | `data/jobs.json` | The persistent job state (source of truth for the README). |
 | `data/health.json` | Circuit-breaker state (auditable in git like everything else). |
 | `data/history.jsonl` | One line of run metrics per run (feeds the dashboard chart). |
-| `data/h1b.json` | Compact USCIS employer→approvals index (built by `tools/build_h1b.py`). |
-| `tools/build_h1b.py` | Offline builder: USCIS Data Hub CSVs → `data/h1b.json` (run yearly). |
 | `tools/audit_seasons.py` | Audit date-inferred cycles against posting text; `--apply` repairs the store. |
 
 ## Configuration (`data/config.json`)
@@ -146,26 +142,7 @@ this automatically.
 - **Frozen posted dates** — a role's published date is recorded once; blanks may
   be backfilled later (better data), but a real date never shifts.
 
-## Sponsorship detection (the F-1 edge)
 
-`sponsorship.py` classifies each posting's text into `citizens-only`
-(citizenship / clearance / ITAR), `no-sponsorship`, `offers`, or `unknown`,
-using phrase-anchored patterns of what employers actually write ("unable to
-sponsor", "must be a U.S. citizen", ...). Precision is deliberately favored
-over recall: EEO boilerplate that merely mentions "citizenship status" does not
-trigger. The README shows 🇺🇸 / 🛂 flags; the CSV, API, feed, and dashboard
-carry the raw value; the dashboard has a one-click "F-1 friendly" filter.
-
-That covers what a posting *says*. `h1b.py` adds what the company has *done*:
-`tools/build_h1b.py` aggregates the official USCIS H-1B Employer Data Hub
-exports (per-employer approval counts) into a compact committed index, and at
-render time each company is matched against it — normalized legal names
-(suffix stripping, DBA handling), a small alias table, then word-boundary
-prefix matching with ambiguity guards (entity resolution, precision-first: a
-single-token name never sums unrelated employer families). A company with 10+
-recent approvals gets a ✓ in every surface plus a "proven H-1B sponsors only"
-dashboard filter. The index ships in the repo, so runs never depend on
-uscis.gov being reachable (it blocks datacenter IPs anyway).
 
 ## Workday (enterprise tier) & the optional proxy
 

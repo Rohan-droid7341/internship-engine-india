@@ -4,7 +4,6 @@ One async pass per run: quarantine-check every tracked company (circuit
 breaker), fetch the healthy ones concurrently (global + per-host concurrency
 caps), normalize into one shape, keep the roles that match the configured
 scope, de-duplicate across sources, enrich the keepers with posting text
-(sponsorship classification + date backfill), merge into the store (detecting
 what's new and what closed), and record run metrics + a history line.
 """
 
@@ -63,10 +62,10 @@ CONNECTORS = {
     "unstop": unstop.fetch,
     "internshala": internshala.fetch,
     "instahyre": instahyre.fetch,
-    "linkedin": linkedin.fetch,
+    # "linkedin": linkedin.fetch,  # disabled: frequently blocking/rate-limited
     "naukri": naukri.fetch,
     "custom": custom_careers.fetch,
-    "indeed": indeed.fetch,
+    # "indeed": indeed.fetch,  # disabled: frequently blocking/rate-limited
     "wellfound": wellfound.fetch,
 }
 
@@ -415,7 +414,6 @@ def _build_stats(
                 for j in kept
             )
         ),
-        "sponsorship_counts": dict(Counter(r.get("sponsorship", "unknown") for r in open_records)),
         "posted_date_coverage": round(dated / max(len(open_records), 1), 3),
         "enriched_this_run": enriched,
         "enrichment_detail_fetches": detail_fetches,

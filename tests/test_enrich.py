@@ -43,7 +43,6 @@ class TestEnrich:
         net = FakeNet({})
         job = _job(description="We are unable to sponsor visas for this role.")
         enriched, fetched = _run(enrich.enrich_jobs([job], {}, net))
-        assert job.sponsorship == "no-sponsorship"
         assert enriched == {job.id}
         assert fetched == 0 and net.calls == 0
 
@@ -58,7 +57,6 @@ class TestEnrich:
             }
         }
         enriched, fetched = _run(enrich.enrich_jobs([job], existing, net))
-        assert job.sponsorship == "citizens-only"
         assert enriched == set() and net.calls == 0
 
     def test_settled_record_without_skills_backfills_once_keeping_verdict(self):
@@ -68,7 +66,6 @@ class TestEnrich:
         job = _job(jid="greenhouse:acme:9", source="greenhouse")
         existing = {"greenhouse:acme:9": {"sponsorship": "citizens-only", "enriched_at": "x"}}
         enriched, fetched = _run(enrich.enrich_jobs([job], existing, net))
-        assert job.sponsorship == "citizens-only"  # verdict kept, not re-classified
         assert job.skills == ["Python"]
         assert enriched == {job.id} and fetched == 1
 
@@ -76,7 +73,6 @@ class TestEnrich:
         net = FakeNet({"content": "U.S. citizenship is required for this position."})
         job = _job(jid="greenhouse:acme:42", source="greenhouse")
         enriched, fetched = _run(enrich.enrich_jobs([job], {}, net))
-        assert job.sponsorship == "citizens-only"
         assert enriched == {job.id} and fetched == 1
 
     def test_workday_detail_backfills_posted_date(self):
@@ -95,7 +91,6 @@ class TestEnrich:
         )
         assert job.posted_at is None
         _run(enrich.enrich_jobs([job], {}, net))
-        assert job.sponsorship == "no-sponsorship"
         assert job.posted_at == "2026-06-20T00:00:00Z"
 
     def test_failed_fetch_stays_unknown_and_retryable(self):
@@ -105,14 +100,12 @@ class TestEnrich:
 
         job = _job(jid="greenhouse:acme:7", source="greenhouse")
         enriched, _fetched = _run(enrich.enrich_jobs([job], {}, ExplodingNet({})))
-        assert job.sponsorship == "unknown"
         assert enriched == set()  # no enriched_at stamp -> retried next run
 
     def test_source_without_fetcher_still_classified(self):
         net = FakeNet({})
         job = _job(jid="rippling:acme:1", source="rippling")
         enriched, _ = _run(enrich.enrich_jobs([job], {}, net))
-        assert job.sponsorship == "unknown"
         assert enriched == {job.id}  # settled: rippling has no text to fetch
         assert net.calls == 0
 

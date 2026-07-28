@@ -22,7 +22,7 @@ from . import paths
 DEFAULTS = {
     "cycles": ["Summer 2027", "Fall 2026"],
     "default_cycle": "Summer 2027",
-    "regions": ["US"],
+    "regions": ["India"],
     "role_scope": "tech",
 }
 
