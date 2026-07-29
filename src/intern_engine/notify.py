@@ -121,6 +121,7 @@ def check_sandbox_reminder() -> None:
     from datetime import UTC, datetime, timedelta
     
     try:
+        from . import paths
         with open(paths.WHATSAPP_STATE_PATH, encoding="utf-8") as f:
             state = json.load(f)
     except (OSError, ValueError):

@@ -27,13 +27,15 @@ Honesty rules:
 from __future__ import annotations
 
 import json
+import re
 from datetime import UTC, date, datetime
 
-import re
 from . import observe, paths
 
+
 def normalize(name: str) -> str:
-    if not name: return ""
+    if not name:
+        return ""
     name = name.lower()
     for s in (", inc.", " inc.", " inc", ", llc", " llc.", " llc", " corp.", " corp", " ltd.", " ltd"):
         name = name.replace(s, "")

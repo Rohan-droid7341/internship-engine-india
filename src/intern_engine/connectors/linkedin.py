@@ -47,6 +47,7 @@ def _scrape_page(url: str) -> str:
     """Fetch one page using Scrapling's plain Fetcher (fast, low overhead)."""
     try:
         import os
+
         from scrapling.fetchers import Fetcher
 
         proxy = os.environ.get("WORKDAY_PROXY")

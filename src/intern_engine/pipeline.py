@@ -32,7 +32,6 @@ from .connectors import (
     instahyre,
     internshala,
     lever,
-    linkedin,
     naukri,
     oracle,
     recruitee,
@@ -42,7 +41,6 @@ from .connectors import (
     wellfound,
     workable,
     workday,
-    indeed,
 )
 from .net import HostLimiter, Net
 

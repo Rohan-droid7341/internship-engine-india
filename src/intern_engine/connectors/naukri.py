@@ -44,6 +44,7 @@ def _scrape_page(url: str) -> dict:
     """Fetch one page using Scrapling's StealthyFetcher to bypass Cloudflare."""
     try:
         import os
+
         from scrapling.fetchers import StealthyFetcher
 
         proxy = os.environ.get("WORKDAY_PROXY")

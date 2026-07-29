@@ -32,6 +32,7 @@ _NEXT_DATA_RE = re.compile(r'<script id="__NEXT_DATA__" type="application/json">
 def _scrape_page(url: str) -> list[Job]:
     try:
         import os
+
         from scrapling.fetchers import StealthyFetcher
 
         proxy = os.environ.get("WORKDAY_PROXY")

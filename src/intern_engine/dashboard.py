@@ -16,7 +16,7 @@ from html import escape
 from . import config, paths, radar, trends
 
 
-def _cards(stats: dict, proven_roles: int) -> str:
+def _cards(stats: dict) -> str:
     latency = stats.get("detection_latency") or {}
     lat = (
         f"{latency['median_minutes']:.0f} min"
@@ -102,7 +102,6 @@ def _sparkline(points: list[dict]) -> str:
 
 
 def _rows(open_jobs: list[dict]) -> str:
-    window = h1b.window_label()
     rows = []
     for r in open_jobs:
         posted = (r.get("posted_at") or "")[:10] or "—"
@@ -280,7 +279,6 @@ def generate(store_data: dict, stats: dict) -> None:
     cycles = sorted({r.get("season", "") for r in open_jobs if r.get("season")})
     categories = sorted({r.get("category", "") for r in open_jobs if r.get("category")})
     repo = config.repo_slug()
-    proven_roles = sum(1 for r in open_jobs if h1b.badge(h1b.approvals_for(r.get("company") or "")))
     by_category: dict[str, int] = {}
     for r in open_jobs:
         cat = r.get("category") or "Other"
@@ -375,8 +373,9 @@ def generate(store_data: dict, stats: dict) -> None:
   <p class="sub">{region} tech internships, refreshed automatically. Updated {escape(updated)}.
   <a href="feed.xml">RSS feed</a> · <a href="api/jobs.json">JSON API</a> ·
   <a href="https://github.com/{escape(repo)}">GitHub</a></p>
-  <div class="grid">{_cards(stats, proven_roles)}</div>
-  {_sparkline(_history_points())}
+  <div class="metrics">
+  <div class="grid">{_cards(stats)}</div>
+  </div>{_sparkline(_history_points())}
   {_signup_section(cfg)}
   <h2>Internships posted per week</h2>
   <p class="muted" style="margin:0 0 8px">Real published dates across every role the
