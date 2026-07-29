@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**11 open roles · 11 new this week · 4,533 companies tracked · updated Jul 29, 2026 at 07:43 UTC**
+**12 open roles · 12 new this week · 4,533 companies tracked · updated Jul 29, 2026 at 10:38 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,10 +13,11 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (11 open)
+## Summer 2027 (International)  (12 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
+| Ralliant | DevOps - Intern ~ 🆕 | Software | — | Ahmedabad, Gujarat, India | Jul 29, 2026 | [Apply](https://ibwujb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/10013) |
 | GE Healthcare | Research Intern - AI ~ | Data & ML/AI | PhD | IND19-01-Bengaluru-EPIP 122 (Phase II) | Jul 27, 2026 | [Apply](https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND19-01-Bengaluru-EPIP-122-Phase-II/Research-Intern---AI_R4043882-1) |
 | Criteo | Data Analyst- Intern ~ | Data & ML/AI | B.Tech/BS | Gurgaon | Jul 24, 2026 | [Apply](https://criteo.wd3.myworkdayjobs.com/Criteo_Career_Site/job/Gurgaon/Data-Analyst--Intern_r20878) |
 | Scopely | Intern - Gen. AI Art ~ | Data & ML/AI | — | IN - Bangalore, India | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5341537008?gh_jid=5341537008) |
@@ -29,7 +30,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | GlobalFoundries | Intern - Compact Modeling Flow using AI/ML/Automation ~ | Data & ML/AI | B.Tech/BS | IND - Karnataka - Bengaluru - North | May 07, 2026 | [Apply](https://globalfoundries.wd1.myworkdayjobs.com/External/job/IND---Karnataka---Bengaluru---North/Intern---SOI-LDMOS-Compact--SPICE--Modeling_JR-2501258) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (10 of 11)._
+_~ = the title doesn't state a year; bucketed here from its posting date (11 of 12)._
 
 ## What this is
 
@@ -161,7 +162,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,533 companies across 20 ATS platforms · 99% fetch success · completed in 256.4s · median detection latency 388 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,533 companies across 20 ATS platforms · 99% fetch success · completed in 297.9s · median detection latency 513 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
