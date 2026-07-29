@@ -62,6 +62,7 @@ def cmd_update() -> None:
         print("  synced to Postgres   yes")
     if notify.send_new_roles(store_data, new_ids):
         print(f"  Discord alert        {len(new_ids)} new roles")
+    notify.check_sandbox_reminder()
     sent = mailer.send_digest(store_data)
     if sent:
         print(f"  email digest         sent to {sent} subscribers")

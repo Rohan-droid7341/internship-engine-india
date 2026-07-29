@@ -133,7 +133,7 @@ def check_sandbox_reminder() -> None:
     if last_str:
         try:
             last = datetime.strptime(last_str[:19], "%Y-%m-%dT%H:%M:%S").replace(tzinfo=UTC)
-            if now - last < timedelta(hours=65):
+            if now - last < timedelta(hours=62):
                 return
         except ValueError:
             pass
