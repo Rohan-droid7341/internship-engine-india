@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**12 open roles · 12 new this week · 4,540 companies tracked · updated Jul 29, 2026 at 15:13 UTC**
+**12 open roles · 12 new this week · 4,540 companies tracked · updated Jul 29, 2026 at 17:14 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -108,7 +108,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _59 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **24** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 32 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 31 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -143,7 +143,6 @@ _59 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | NVIDIA | Performance Engineer Intern, Systems Software-  Fall 2026 | Fall 2026 | 2026-07-23 |
 | Tencent | Research Intern – Video World Models (Research & ML Systems) | Summer 2027 | 2026-07-23 |
 | Intel | AI Software Engineering Intern | Summer 2027 | 2026-07-23 |
-| Uber Freight | Data Scientist Intern - Fall 2026 | Fall 2026 | 2026-07-15 |
 
 </details>
 
@@ -162,7 +161,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,540 companies across 20 ATS platforms · 99% fetch success · completed in 295.1s · median detection latency 513 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,540 companies across 20 ATS platforms · 99% fetch success · completed in 331.7s · median detection latency 513 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
