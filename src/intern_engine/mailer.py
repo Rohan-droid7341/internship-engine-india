@@ -167,10 +167,6 @@ def send_digest(store_data: dict) -> int:
 
     state = _load_state()
     fresh = new_roles(store_data)
-    
-    # Check if we should send Twilio sandbox reminder
-    from . import notify
-    notify.check_sandbox_reminder()
 
     if not should_send(state, len(fresh)):
         return 0
