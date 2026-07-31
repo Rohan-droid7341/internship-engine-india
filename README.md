@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**13 open roles · 13 new this week · 4,556 companies tracked · updated Jul 30, 2026 at 23:05 UTC**
+**13 open roles · 10 new this week · 4,556 companies tracked · updated Jul 31, 2026 at 00:10 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -75,29 +75,29 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 
 | Company | Typical opening | Expected this cycle | Status |
 |---|---|---|---|
-| Citadel | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| Citadel Securities | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| Databricks | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| DoorDash | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| DRW | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| Google | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| Jane Street | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| Meta | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| Optiver | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| Pinterest | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| Salesforce | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| SIG | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| Snowflake | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| Uber | ~Aug | ~Aug · in ~2d | ⏳ waiting |
-| Adobe | ~Sep | ~Sep · in ~33d | ⏳ waiting |
-| Airbnb | ~Sep | ~Sep · in ~33d | ⏳ waiting |
-| Bloomberg | ~Sep | ~Sep · in ~33d | ⏳ waiting |
-| Dropbox | ~Sep | ~Sep · in ~33d | ⏳ waiting |
-| Plaid | ~Sep | ~Sep · in ~33d | ⏳ waiting |
-| Point72 | ~Sep | ~Sep · in ~33d | ⏳ waiting |
-| Robinhood | ~Sep | ~Sep · in ~33d | ⏳ waiting |
-| Roblox | ~Sep | ~Sep · in ~33d | ⏳ waiting |
-| Stripe | ~Sep | ~Sep · in ~33d | ⏳ waiting |
+| Citadel | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| Citadel Securities | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| Databricks | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| DoorDash | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| DRW | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| Google | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| Jane Street | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| Meta | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| Optiver | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| Pinterest | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| Salesforce | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| SIG | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| Snowflake | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| Uber | ~Aug | ~Aug · in ~1d | ⏳ waiting |
+| Adobe | ~Sep | ~Sep · in ~32d | ⏳ waiting |
+| Airbnb | ~Sep | ~Sep · in ~32d | ⏳ waiting |
+| Bloomberg | ~Sep | ~Sep · in ~32d | ⏳ waiting |
+| Dropbox | ~Sep | ~Sep · in ~32d | ⏳ waiting |
+| Plaid | ~Sep | ~Sep · in ~32d | ⏳ waiting |
+| Point72 | ~Sep | ~Sep · in ~32d | ⏳ waiting |
+| Robinhood | ~Sep | ~Sep · in ~32d | ⏳ waiting |
+| Roblox | ~Sep | ~Sep · in ~32d | ⏳ waiting |
+| Stripe | ~Sep | ~Sep · in ~32d | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct | ⏳ waiting |
 | Coinbase | ~Dec | ~Dec | ⏳ waiting |
 | Ramp | ~Dec | ~Dec | ⏳ waiting |
@@ -162,7 +162,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,556 companies across 20 ATS platforms · 98% fetch success · completed in 391.0s · median detection latency 639 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,556 companies across 20 ATS platforms · 100% fetch success · completed in 281.6s · median detection latency 639 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
