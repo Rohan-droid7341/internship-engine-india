@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**13 open roles · 7 new this week · 4,584 companies tracked · updated Aug 01, 2026 at 23:57 UTC**
+**12 open roles · 7 new this week · 4,584 companies tracked · updated Aug 02, 2026 at 02:12 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,7 +13,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (13 open)
+## Summer 2027 (International)  (12 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
@@ -25,13 +25,12 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Stripe | Software Engineer, Intern ~ | Software | — | Bengaluru | Jul 10, 2026 | [Apply](https://stripe.com/jobs/search?gh_jid=8031833) |
 | IMC Trading | 2027 - Software Engineering Intern - BITS Pilani | Software | — | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4917549101) |
 | Epifi | Ai Engg Intern ~ | Data & ML/AI | — | Bangalore | Jul 03, 2026 | [Apply](https://jobs.lever.co/epifi/08c743e8-2b29-4f78-827e-5bd90476ed86) |
-| Epifi | DS/ML Intern ~ | Data & ML/AI | — | Bangalore | Jul 02, 2026 | [Apply](https://jobs.lever.co/epifi/08fc1577-4593-4b94-b66b-08e638d29f37) |
 | Ancestry | Data Science - AI Document Understanding, Co-op ~ | Data & ML/AI | B.Tech/BS | Remote | Jun 30, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Data-Science---AI-Document-Understanding--Co-op_R003371) |
 | Ancestry | Machine Learning Engineer, Co-op ~ | Data & ML/AI | B.Tech/BS | Remote | Jun 08, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Machine-Learning-Engineer--Co-op_R003378) |
 | GlobalFoundries | Intern - Compact Modeling Flow using AI/ML/Automation ~ | Data & ML/AI | B.Tech/BS | IND - Karnataka - Bengaluru - North | May 07, 2026 | [Apply](https://globalfoundries.wd1.myworkdayjobs.com/External/job/IND---Karnataka---Bengaluru---North/Intern---SOI-LDMOS-Compact--SPICE--Modeling_JR-2501258) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (12 of 13)._
+_~ = the title doesn't state a year; bucketed here from its posting date (11 of 12)._
 
 ## What this is
 
@@ -89,15 +88,15 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | SIG | ~Aug | ~Aug · any day now | ⏳ waiting |
 | Snowflake | ~Aug | ~Aug · any day now | ⏳ waiting |
 | Uber | ~Aug | ~Aug · any day now | ⏳ waiting |
-| Adobe | ~Sep | ~Sep · in ~31d | ⏳ waiting |
-| Airbnb | ~Sep | ~Sep · in ~31d | ⏳ waiting |
-| Bloomberg | ~Sep | ~Sep · in ~31d | ⏳ waiting |
-| Dropbox | ~Sep | ~Sep · in ~31d | ⏳ waiting |
-| Plaid | ~Sep | ~Sep · in ~31d | ⏳ waiting |
-| Point72 | ~Sep | ~Sep · in ~31d | ⏳ waiting |
-| Robinhood | ~Sep | ~Sep · in ~31d | ⏳ waiting |
-| Roblox | ~Sep | ~Sep · in ~31d | ⏳ waiting |
-| Stripe | ~Sep | ~Sep · in ~31d | ⏳ waiting |
+| Adobe | ~Sep | ~Sep · in ~30d | ⏳ waiting |
+| Airbnb | ~Sep | ~Sep · in ~30d | ⏳ waiting |
+| Bloomberg | ~Sep | ~Sep · in ~30d | ⏳ waiting |
+| Dropbox | ~Sep | ~Sep · in ~30d | ⏳ waiting |
+| Plaid | ~Sep | ~Sep · in ~30d | ⏳ waiting |
+| Point72 | ~Sep | ~Sep · in ~30d | ⏳ waiting |
+| Robinhood | ~Sep | ~Sep · in ~30d | ⏳ waiting |
+| Roblox | ~Sep | ~Sep · in ~30d | ⏳ waiting |
+| Stripe | ~Sep | ~Sep · in ~30d | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct | ⏳ waiting |
 | Coinbase | ~Dec | ~Dec | ⏳ waiting |
 | Ramp | ~Dec | ~Dec | ⏳ waiting |
@@ -109,10 +108,11 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _59 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **24** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 33 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 34 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Epifi | DS/ML Intern | Summer 2027 | 2026-08-02 |
 | eBay | Software Engineer Intern | Summer 2027 | 2026-08-01 |
 | Philips | Software Development Engineer- intern | Summer 2027 | 2026-08-01 |
 | GE Healthcare | Research Intern - AI | Summer 2027 | 2026-07-31 |
@@ -164,7 +164,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,584 companies across 20 ATS platforms · 99% fetch success · completed in 295.0s · median detection latency 634 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,584 companies across 20 ATS platforms · 97% fetch success · completed in 270.3s · median detection latency 634 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
