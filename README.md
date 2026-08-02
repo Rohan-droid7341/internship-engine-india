@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**12 open roles · 7 new this week · 4,602 companies tracked · updated Aug 02, 2026 at 12:02 UTC**
+**12 open roles · 7 new this week · 4,602 companies tracked · updated Aug 02, 2026 at 13:22 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -20,17 +20,17 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Unisys | AI Engineering Intern ~ | Data & ML/AI | M.Tech/MS | Bangalore, KA, India | Jul 31, 2026 | [Apply](https://unisys.wd5.myworkdayjobs.com/External/job/Bangalore-KA-India/AI-Engineering-Intern_REQ574283) |
 | Epicor | Interns - Content Developer /Technical Writing/ Instructional Designer ~ | Software | 0-1 Yr<br>B.Tech/BS | India, Bangalore | Jul 30, 2026 | [Apply](https://epicorsoftware.wd5.myworkdayjobs.com/epicorjobs/job/India-Bangalore/Interns---Content-Developer--Technical-Writing--Instructional-Designer_JR105255) |
 | Ralliant | DevOps - Intern ~ | Software | — | Ahmedabad, Gujarat, India | Jul 29, 2026 | [Apply](https://ibwujb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/10013) |
+| eBay | Software Engineer Intern ~ | Software | B.Tech/BS | Bengaluru, India | Jul 25, 2026 | [Apply](https://ebay.wd5.myworkdayjobs.com/apply/job/Bengaluru-India/Software-Engineer-Intern_R0069699) |
 | Criteo | Data Analyst- Intern ~ | Data & ML/AI | B.Tech/BS | Gurgaon | Jul 24, 2026 | [Apply](https://criteo.wd3.myworkdayjobs.com/Criteo_Career_Site/job/Gurgaon/Data-Analyst--Intern_r20878) |
 | Scopely | Intern - Gen. AI Art ~ | Data & ML/AI | — | IN - Bangalore, India | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5341537008?gh_jid=5341537008) |
 | Stripe | Software Engineer, Intern ~ | Software | — | Bengaluru | Jul 10, 2026 | [Apply](https://stripe.com/jobs/search?gh_jid=8031833) |
-| IMC Trading | 2027 - Software Engineering Intern - BITS Pilani | Software | — | Mumbai, India | Jul 06, 2026 | [Apply](https://job-boards.eu.greenhouse.io/imc/jobs/4917549101) |
 | Epifi | Ai Engg Intern ~ | Data & ML/AI | — | Bangalore | Jul 03, 2026 | [Apply](https://jobs.lever.co/epifi/08c743e8-2b29-4f78-827e-5bd90476ed86) |
 | Ancestry | Data Science - AI Document Understanding, Co-op ~ | Data & ML/AI | B.Tech/BS | Remote | Jun 30, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Data-Science---AI-Document-Understanding--Co-op_R003371) |
 | Ancestry | Machine Learning Engineer, Co-op ~ | Data & ML/AI | B.Tech/BS | Remote | Jun 08, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Machine-Learning-Engineer--Co-op_R003378) |
 | GlobalFoundries | Intern - Compact Modeling Flow using AI/ML/Automation ~ | Data & ML/AI | B.Tech/BS | IND - Karnataka - Bengaluru - North | May 07, 2026 | [Apply](https://globalfoundries.wd1.myworkdayjobs.com/External/job/IND---Karnataka---Bengaluru---North/Intern---SOI-LDMOS-Compact--SPICE--Modeling_JR-2501258) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (11 of 12)._
+_~ = the title doesn't state a year; bucketed here from its posting date (12 of 12)._
 
 ## What this is
 
@@ -112,7 +112,7 @@ _59 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
-| eBay | Software Engineer Intern | Summer 2027 | 2026-08-02 |
+| IMC Trading | 2027 - Software Engineering Intern - BITS Pilani | Summer 2027 | 2026-08-02 |
 | Epifi | DS/ML Intern | Summer 2027 | 2026-08-02 |
 | Philips | Software Development Engineer- intern | Summer 2027 | 2026-08-01 |
 | GE Healthcare | Research Intern - AI | Summer 2027 | 2026-07-31 |
@@ -164,7 +164,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,602 companies across 20 ATS platforms · 99% fetch success · completed in 303.7s · median detection latency 634 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,602 companies across 20 ATS platforms · 99% fetch success · completed in 294.9s · median detection latency 634 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
