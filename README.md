@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**9 open roles · 3 new this week · 4,621 companies tracked · updated Aug 04, 2026 at 07:37 UTC**
+**10 open roles · 4 new this week · 4,621 companies tracked · updated Aug 04, 2026 at 10:36 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -28,6 +28,12 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
 _~ = the title doesn't state a year; bucketed here from its posting date (9 of 9)._
+
+## Fall 2026 (International)  (1 open)
+
+| Company | Role | Category | Pay & Specs | Location | Posted | Apply |
+|---|---|---|---|---|---|---|
+| GE Aerospace | Applied AI Engineering Intern (m/f/d) 🆕 | Data & ML/AI | B.Tech/BS | Remote | Aug 04, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Remote/Applied-AI-Engineering-Intern--m-f-d-_R5033549-1) |
 
 ## What this is
 
@@ -164,7 +170,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,621 companies across 24 ATS platforms · 98% fetch success · completed in 288.6s · median detection latency 634 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,621 companies across 24 ATS platforms · 99% fetch success · completed in 299.4s · median detection latency 635 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
