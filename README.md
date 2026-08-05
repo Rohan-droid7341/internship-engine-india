@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**8 open roles · 2 new this week · 4,641 companies tracked · updated Aug 05, 2026 at 08:31 UTC**
+**7 open roles · 1 new this week · 4,651 companies tracked · updated Aug 05, 2026 at 11:19 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -26,12 +26,6 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
 _~ = the title doesn't state a year; bucketed here from its posting date (7 of 7)._
-
-## Fall 2026 (International)  (1 open)
-
-| Company | Role | Category | Pay & Specs | Location | Posted | Apply |
-|---|---|---|---|---|---|---|
-| GE Aerospace | Applied AI Engineering Intern (m/f/d) 🆕 | Data & ML/AI | B.Tech/BS | Remote | Aug 04, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Remote/Applied-AI-Engineering-Intern--m-f-d-_R5033549-1) |
 
 ## What this is
 
@@ -113,6 +107,7 @@ _59 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| GE Aerospace | Applied AI Engineering Intern (m/f/d) | Fall 2026 | 2026-08-05 |
 | Unisys | AI Engineering Intern | Summer 2027 | 2026-08-04 |
 | Ralliant | DevOps - Intern | Summer 2027 | 2026-08-04 |
 | Unisys | AI Engineering Intern | Summer 2027 | 2026-08-04 |
@@ -152,7 +147,6 @@ _59 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | NVIDIA | Applied Research Intern, NLP - Fall 2026 | Fall 2026 | 2026-07-23 |
 | NVIDIA | Performance Engineer Intern, Systems Software-  Fall 2026 | Fall 2026 | 2026-07-23 |
 | Tencent | Research Intern – Video World Models (Research & ML Systems) | Summer 2027 | 2026-07-23 |
-| Intel | AI Software Engineering Intern | Summer 2027 | 2026-07-23 |
 
 </details>
 
@@ -171,7 +165,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,641 companies across 24 ATS platforms · 99% fetch success · completed in 315.5s · median detection latency 636 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,651 companies across 24 ATS platforms · 99% fetch success · completed in 239.7s · median detection latency 636 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
