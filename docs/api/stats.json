@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-08-05T21:06:20Z",
- "duration_seconds": 300.4,
+ "generated_at": "2026-08-05T22:57:27Z",
+ "duration_seconds": 288.6,
  "companies_total": 4651,
  "companies_by_source": {
   "greenhouse": 1037,
@@ -28,12 +28,11 @@
   "unstop": 5,
   "wellfound": 1
  },
- "quarantined": 267,
- "fetched_ok": 4359,
- "fetch_errors": 25,
+ "quarantined": 271,
+ "fetched_ok": 4354,
+ "fetch_errors": 26,
  "errors_by_source": {
-  "ashby": 3,
-  "workday": 21,
+  "workday": 25,
   "greenhouse": 1
  },
  "fetch_success_rate": 0.994,
