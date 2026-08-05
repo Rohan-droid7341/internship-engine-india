@@ -245,18 +245,18 @@
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/whatnot?includeCompensation=true'\nFor more information check: https://developer.mozilla.org/en-US/d"
   },
   "bloomberg:bloomberg": {
-    "consecutive_failures": 5,
-    "last_attempt_at": "2026-08-04T00:07:45Z",
+    "consecutive_failures": 6,
+    "last_attempt_at": "2026-08-05T02:54:14Z",
     "last_error": "no connector for bloomberg"
   },
   "bytedance:bytedance": {
-    "consecutive_failures": 5,
-    "last_attempt_at": "2026-08-04T00:07:45Z",
+    "consecutive_failures": 6,
+    "last_attempt_at": "2026-08-05T02:54:14Z",
     "last_error": "no connector for bytedance"
   },
   "google:google": {
-    "consecutive_failures": 5,
-    "last_attempt_at": "2026-08-04T00:07:45Z",
+    "consecutive_failures": 6,
+    "last_attempt_at": "2026-08-05T02:54:14Z",
     "last_error": "no connector for google"
   },
   "greenhouse:agilespaceindustries": {
@@ -1180,8 +1180,8 @@
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://api.rippling.com/platform/api/ats/v1/board/en-gb/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Stat"
   },
   "uber:uber": {
-    "consecutive_failures": 5,
-    "last_attempt_at": "2026-08-04T00:07:45Z",
+    "consecutive_failures": 6,
+    "last_attempt_at": "2026-08-05T02:54:14Z",
     "last_error": "no connector for uber"
   },
   "wellfound:wellfound-india": {
@@ -1278,16 +1278,6 @@
     "consecutive_failures": 9,
     "last_attempt_at": "2026-08-04T10:36:12Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://convatec.wd1.myworkdayjobs.com/wday/cxs/convatec/convatec/jobs'\nFor more information check: https://developer.mozilla.org/en-US/d"
-  },
-  "workday:cornell": {
-    "consecutive_failures": 3,
-    "last_attempt_at": "2026-08-04T19:28:47Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://cornell.wd1.myworkdayjobs.com/wday/cxs/cornell/cornellpositions/jobs'\nFor more information check: https://developer.mozilla.org/e"
-  },
-  "workday:creationtech": {
-    "consecutive_failures": 3,
-    "last_attempt_at": "2026-08-04T19:28:47Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://creationtech.wd1.myworkdayjobs.com/wday/cxs/creationtech/Creation/jobs'\nFor more information check: https://developer.mozilla.org"
   },
   "workday:crosscountrymortgage": {
     "consecutive_failures": 4,
