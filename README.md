@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**7 open roles · 2 new this week · 4,663 companies tracked · updated Aug 06, 2026 at 13:54 UTC**
+**6 open roles · 0 new this week · 4,663 companies tracked · updated Aug 07, 2026 at 00:43 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,11 +13,10 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (7 open)
+## Summer 2027 (International)  (6 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Epicor | AI QA Developer Intern ~ 🆕 | Data & ML/AI | — | India, Bangalore | Aug 05, 2026 | [Apply](https://epicorsoftware.wd5.myworkdayjobs.com/epicorjobs/job/India-Bangalore/AI-QA-Developer-Intern_JR105294-1) |
 | Epicor | Interns - Content Developer /Technical Writing/ Instructional Designer ~ | Software | 0-1 Yr<br>B.Tech/BS | India, Bangalore | Jul 30, 2026 | [Apply](https://epicorsoftware.wd5.myworkdayjobs.com/epicorjobs/job/India-Bangalore/Interns---Content-Developer--Technical-Writing--Instructional-Designer_JR105255) |
 | Scopely | Intern - Gen. AI Art ~ | Data & ML/AI | — | IN - Bangalore, India | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5341537008?gh_jid=5341537008) |
 | Stripe | Software Engineer, Intern ~ | Software | — | Bengaluru | Jul 10, 2026 | [Apply](https://stripe.com/jobs/search?gh_jid=8031833) |
@@ -25,7 +24,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Ancestry | Machine Learning Engineer, Co-op ~ | Data & ML/AI | B.Tech/BS | Remote | Jun 08, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Machine-Learning-Engineer--Co-op_R003378) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (7 of 7)._
+_~ = the title doesn't state a year; bucketed here from its posting date (6 of 6)._
 
 ## What this is
 
@@ -83,15 +82,15 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | SIG | ~Aug | ~Aug · any day now | ⏳ waiting |
 | Snowflake | ~Aug | ~Aug · any day now | ⏳ waiting |
 | Uber | ~Aug | ~Aug · any day now | ⏳ waiting |
-| Adobe | ~Sep | ~Sep · in ~26d | ⏳ waiting |
-| Airbnb | ~Sep | ~Sep · in ~26d | ⏳ waiting |
-| Bloomberg | ~Sep | ~Sep · in ~26d | ⏳ waiting |
-| Dropbox | ~Sep | ~Sep · in ~26d | ⏳ waiting |
-| Plaid | ~Sep | ~Sep · in ~26d | ⏳ waiting |
-| Point72 | ~Sep | ~Sep · in ~26d | ⏳ waiting |
-| Robinhood | ~Sep | ~Sep · in ~26d | ⏳ waiting |
-| Roblox | ~Sep | ~Sep · in ~26d | ⏳ waiting |
-| Stripe | ~Sep | ~Sep · in ~26d | ⏳ waiting |
+| Adobe | ~Sep | ~Sep · in ~25d | ⏳ waiting |
+| Airbnb | ~Sep | ~Sep · in ~25d | ⏳ waiting |
+| Bloomberg | ~Sep | ~Sep · in ~25d | ⏳ waiting |
+| Dropbox | ~Sep | ~Sep · in ~25d | ⏳ waiting |
+| Plaid | ~Sep | ~Sep · in ~25d | ⏳ waiting |
+| Point72 | ~Sep | ~Sep · in ~25d | ⏳ waiting |
+| Robinhood | ~Sep | ~Sep · in ~25d | ⏳ waiting |
+| Roblox | ~Sep | ~Sep · in ~25d | ⏳ waiting |
+| Stripe | ~Sep | ~Sep · in ~25d | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct | ⏳ waiting |
 | Coinbase | ~Dec | ~Dec | ⏳ waiting |
 | Ramp | ~Dec | ~Dec | ⏳ waiting |
@@ -103,10 +102,11 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _59 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **24** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 40 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 17 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Epicor | AI QA Developer Intern | Summer 2027 | 2026-08-07 |
 | GlobalFoundries | Intern - Compact Modeling Flow using AI/ML/Automation | Summer 2027 | 2026-08-06 |
 | GE Aerospace | Applied AI Engineering Intern (m/f/d) | Fall 2026 | 2026-08-05 |
 | Unisys | AI Engineering Intern | Summer 2027 | 2026-08-04 |
@@ -123,30 +123,6 @@ _59 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Boston Medical Center | Cybersecurity & AI/Data Governance Intern | Summer 2027 | 2026-07-26 |
 | Member Solutions | Cybersecurity GRC Intern | Summer 2027 | 2026-07-26 |
 | IMC Trading | 2027 - Software Engineering Intern - IIT Bombay | Summer 2027 | 2026-07-26 |
-| Amazon | Software Development Engineer Intern, AWS Data Services - Fall 2026 (US) | Fall 2026 | 2026-07-23 |
-| Amazon | Software Development Engineer Internship - Fall 2026 (US) | Fall 2026 | 2026-07-23 |
-| Amazon | Amazon Industrial Robotics - Applied Scientist II Intern / Co-op - 2026, Amazon Industrial Robotics | Fall 2026 | 2026-07-23 |
-| Amazon | Robotics - Software Development Engineer Intern/Co-op - 2026 | Fall 2026 | 2026-07-23 |
-| Notion | Software Engineer Intern (Fall 2026) | Fall 2026 | 2026-07-23 |
-| Akuna Capital | Software Engineer Intern - C++, Summer 2027 | Summer 2027 | 2026-07-23 |
-| Akuna Capital | Software Engineer Intern - Python, Summer 2027 | Summer 2027 | 2026-07-23 |
-| Akuna Capital | Platform Engineer Intern, Summer 2027 | Summer 2027 | 2026-07-23 |
-| Akuna Capital | Software Engineer Intern - C# .NET Desktop, Summer 2027 | Summer 2027 | 2026-07-23 |
-| Akuna Capital | Software Engineer Intern - Full Stack Web, Summer 2027 | Summer 2027 | 2026-07-23 |
-| Five Rings | Summer Intern 2027 - Software Developer | Summer 2027 | 2026-07-23 |
-| IMC Trading | Software Engineer Intern - Summer 2027 | Summer 2027 | 2026-07-23 |
-| IMC Trading | Machine Learning Research Intern - Summer 2027 - Chicago | Summer 2027 | 2026-07-23 |
-| Jump Trading | Campus AI Research Engineer (Intern) | Summer 2027 | 2026-07-23 |
-| Jump Trading | Campus AI Research Engineer - Deep Learning (Intern) | Summer 2027 | 2026-07-23 |
-| Jump Trading | Campus AI Research Engineer – Research Automation (Intern) | Summer 2027 | 2026-07-23 |
-| Tower Research Capital | Quantitative Developer Intern - Summer 2027 | Summer 2027 | 2026-07-23 |
-| Hudson River Trading | Software Engineering Internship (C++ or Python) – Summer 2027 | Summer 2027 | 2026-07-23 |
-| Palantir | Forward Deployed Infrastructure Engineer, Internship - US Government | Summer 2027 | 2026-07-23 |
-| Palantir | Year at Palantir - Forward Deployed Software Engineer, Internship - Commercial | Summer 2027 | 2026-07-23 |
-| Palantir | Forward Deployed Software Engineer, Internship - Intel | Summer 2027 | 2026-07-23 |
-| Palantir | Forward Deployed Software Engineer, Internship - Commercial | Summer 2027 | 2026-07-23 |
-| NVIDIA | Applied Research Intern, NLP - Fall 2026 | Fall 2026 | 2026-07-23 |
-| NVIDIA | Performance Engineer Intern, Systems Software-  Fall 2026 | Fall 2026 | 2026-07-23 |
 
 </details>
 
@@ -165,7 +141,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,663 companies across 24 ATS platforms · 98% fetch success · completed in 291.6s · median detection latency 637 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,663 companies across 24 ATS platforms · 95% fetch success · completed in 320.1s · median detection latency 637 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
