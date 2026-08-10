@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**5 open roles · 0 new this week · 4,714 companies tracked · updated Aug 10, 2026 at 09:18 UTC**
+**6 open roles · 1 new this week · 4,716 companies tracked · updated Aug 10, 2026 at 11:07 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -24,6 +24,12 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
 _~ = the title doesn't state a year; bucketed here from its posting date (5 of 5)._
+
+## Fall 2026 (International)  (1 open)
+
+| Company | Role | Category | Pay & Specs | Location | Posted | Apply |
+|---|---|---|---|---|---|---|
+| NatWest Group | AI ML Intern (2026 Graduates, 6-Month Internship) 🆕 | Data & ML/AI | B.Tech/BS | Bengaluru | Aug 10, 2026 | [Apply](https://rbs.wd3.myworkdayjobs.com/rbs/job/Bengaluru/AI-ML-Intern--2026-Graduates--6-Month-Internship-_R-00283302-1) |
 
 ## What this is
 
@@ -138,7 +144,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,714 companies across 24 ATS platforms · 99% fetch success · completed in 338.5s · median detection latency 637 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,716 companies across 24 ATS platforms · 99% fetch success · completed in 319.8s · median detection latency 639 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
