@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-11T12:56:05Z",
-  "duration_seconds": 373.3,
+  "generated_at": "2026-08-11T14:22:08Z",
+  "duration_seconds": 365.7,
   "companies_total": 4752,
   "companies_by_source": {
     "greenhouse": 1048,
@@ -28,14 +28,15 @@
     "unstop": 5,
     "wellfound": 1
   },
-  "quarantined": 301,
+  "quarantined": 303,
   "fetched_ok": 4386,
-  "fetch_errors": 65,
+  "fetch_errors": 63,
   "errors_by_source": {
-    "workday": 52,
-    "workable": 13
+    "greenhouse": 1,
+    "workday": 51,
+    "workable": 11
   },
-  "fetch_success_rate": 0.985,
+  "fetch_success_rate": 0.986,
   "roles_matched": 5,
   "roles_cycle_inferred": 5,
   "dropped_no_year_in_title": 248,
