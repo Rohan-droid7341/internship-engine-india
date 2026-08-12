@@ -1254,11 +1254,6 @@
     "last_attempt_at": "2026-07-23T23:21:05Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/mlabs/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Stat"
   },
-  "workable:thorlabs": {
-    "consecutive_failures": 2,
-    "last_attempt_at": "2026-08-12T15:59:49Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/thorlabs/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/S"
-  },
   "workable:tmeic-corporation-americas": {
     "consecutive_failures": 3,
     "last_attempt_at": "2026-08-12T11:48:22Z",
@@ -1549,6 +1544,11 @@
     "last_attempt_at": "2026-08-10T01:19:49Z",
     "last_error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://fugro.wd3.myworkdayjobs.com/wday/cxs/fugro/broadbean_external/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/"
   },
+  "workday:gilead": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-08-12T16:56:29Z",
+    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gilead.wd1.myworkdayjobs.com/wday/cxs/gilead/gileadcareers/jobs'\nFor more information check: https://developer.mozilla.org/en-US/"
+  },
   "workday:goldmansachs": {
     "consecutive_failures": 12,
     "last_attempt_at": "2026-08-12T15:59:49Z",
@@ -1558,6 +1558,11 @@
     "consecutive_failures": 13,
     "last_attempt_at": "2026-08-11T21:44:03Z",
     "last_error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://gtsgbu.wd3.myworkdayjobs.com/wday/cxs/gtsgbu/Careers/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/"
+  },
+  "workday:hbpublishing": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-08-12T16:56:29Z",
+    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hbpublishing.wd1.myworkdayjobs.com/wday/cxs/hbpublishing/Careers/jobs'\nFor more information check: https://developer.mozilla.org/"
   },
   "workday:hcltech": {
     "consecutive_failures": 12,
