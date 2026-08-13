@@ -1299,6 +1299,11 @@
     "last_attempt_at": "2026-08-13T11:59:21Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/vanguard-ems-inc/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/We"
   },
+  "workable:vectoratomic": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-08-13T22:40:05Z",
+    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/vectoratomic/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HT"
+  },
   "workable:viewline-ventures": {
     "consecutive_failures": 6,
     "last_attempt_at": "2026-08-13T11:59:21Z",
