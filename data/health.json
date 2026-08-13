@@ -1259,6 +1259,11 @@
     "last_attempt_at": "2026-08-13T08:22:12Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/tmeic-corporation-americas/jobs'\nFor more information check: https://developer.mozilla.org/en-"
   },
+  "workable:tokamak-energy": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-08-13T13:01:41Z",
+    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/tokamak-energy/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/"
+  },
   "workable:tp-link-usa-corp": {
     "consecutive_failures": 6,
     "last_attempt_at": "2026-08-13T11:59:21Z",
@@ -1300,8 +1305,8 @@
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/vanguard-ems-inc/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/We"
   },
   "workable:vectoratomic": {
-    "consecutive_failures": 2,
-    "last_attempt_at": "2026-08-13T11:59:21Z",
+    "consecutive_failures": 3,
+    "last_attempt_at": "2026-08-13T13:01:41Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/vectoratomic/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HT"
   },
   "workable:viewline-ventures": {
@@ -1343,11 +1348,6 @@
     "consecutive_failures": 17,
     "last_attempt_at": "2026-08-10T14:22:53Z",
     "last_error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://amplify.wd1.myworkdayjobs.com/wday/cxs/amplify/Amplify_Careers/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs"
-  },
-  "workday:caa": {
-    "consecutive_failures": 1,
-    "last_attempt_at": "2026-08-13T11:59:21Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://caa.wd1.myworkdayjobs.com/wday/cxs/caa/Careers/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTT"
   },
   "workday:cambiahealth": {
     "consecutive_failures": 19,
@@ -1399,25 +1399,10 @@
     "last_attempt_at": "2026-08-13T06:17:23Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://cornell.wd1.myworkdayjobs.com/wday/cxs/cornell/cornellpositions/jobs'\nFor more information check: https://developer.mozilla.org/e"
   },
-  "workday:creationtech": {
-    "consecutive_failures": 1,
-    "last_attempt_at": "2026-08-13T11:59:21Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://creationtech.wd1.myworkdayjobs.com/wday/cxs/creationtech/Creation/jobs'\nFor more information check: https://developer.mozilla.org"
-  },
   "workday:csl": {
     "consecutive_failures": 5,
     "last_attempt_at": "2026-08-13T06:17:23Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://csl.wd1.myworkdayjobs.com/wday/cxs/csl/CSL_External/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/We"
-  },
-  "workday:cubic": {
-    "consecutive_failures": 1,
-    "last_attempt_at": "2026-08-13T11:59:21Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://cubic.wd1.myworkdayjobs.com/wday/cxs/cubic/cubic_USA_careers/jobs'\nFor more information check: https://developer.mozilla.org/en-U"
-  },
-  "workday:curtisswright": {
-    "consecutive_failures": 1,
-    "last_attempt_at": "2026-08-13T11:59:21Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://curtisswright.wd1.myworkdayjobs.com/wday/cxs/curtisswright/cw_external_career_site/jobs'\nFor more information check: https://deve"
   },
   "workday:cvshealth": {
     "consecutive_failures": 3,
@@ -1439,25 +1424,10 @@
     "last_attempt_at": "2026-08-13T11:06:00Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://daikinapplied.wd1.myworkdayjobs.com/wday/cxs/daikinapplied/Daikin-Careers/jobs'\nFor more information check: https://developer.moz"
   },
-  "workday:datasite": {
-    "consecutive_failures": 1,
-    "last_attempt_at": "2026-08-13T11:59:21Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://datasite.wd1.myworkdayjobs.com/wday/cxs/datasite/datasite/jobs'\nFor more information check: https://developer.mozilla.org/en-US/d"
-  },
   "workday:davita": {
     "consecutive_failures": 7,
     "last_attempt_at": "2026-08-11T18:58:46Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://davita.wd1.myworkdayjobs.com/wday/cxs/davita/DKC_External/jobs'\nFor more information check: https://developer.mozilla.org/en-US/d"
-  },
-  "workday:dell": {
-    "consecutive_failures": 1,
-    "last_attempt_at": "2026-08-13T11:59:21Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://dell.wd1.myworkdayjobs.com/wday/cxs/dell/External/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/"
-  },
-  "workday:denver": {
-    "consecutive_failures": 1,
-    "last_attempt_at": "2026-08-13T11:59:21Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://denver.wd1.myworkdayjobs.com/wday/cxs/denver/CCD-denver-denvergov-CSC_Jobs-Civil_service_jobs-Police_Jobs-Fire_Jobs/jobs'\nFor mor"
   },
   "workday:dlapiper": {
     "consecutive_failures": 7,
@@ -1468,11 +1438,6 @@
     "consecutive_failures": 19,
     "last_attempt_at": "2026-08-13T01:27:47Z",
     "last_error": "HTTPStatusError: Client error '422 Unprocessable Entity' for url 'https://donaldson.wd5.myworkdayjobs.com/wday/cxs/donaldson/donaldsoncareers/jobs'\nFor more information check: https://developer.mozill"
-  },
-  "workday:drivetime": {
-    "consecutive_failures": 1,
-    "last_attempt_at": "2026-08-13T11:59:21Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://drivetime.wd1.myworkdayjobs.com/wday/cxs/drivetime/drivetime/jobs'\nFor more information check: https://developer.mozilla.org/en-U"
   },
   "workday:dxctechnology": {
     "consecutive_failures": 8,
