@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-13T15:58:33Z",
+ "generated_at": "2026-08-13T16:55:16Z",
  "cycle": "Summer 2027",
  "source": "https://github.com/Rohan-droid7341/internship-engine-india",
  "companies": [
@@ -603,7 +603,7 @@
    "days_until": -43,
    "status": "dropped",
    "url": "",
-   "note": "posts early, rolling"
+   "note": ""
   },
   {
    "company": "IMC Trading",
@@ -617,7 +617,7 @@
    "days_until": -43,
    "status": "dropped",
    "url": "",
-   "note": ""
+   "note": "posts early, rolling"
   },
   {
    "company": "Tower Research Capital",
@@ -701,7 +701,7 @@
    "days_until": -31,
    "status": "dropped",
    "url": "",
-   "note": "opens fall, closes early Feb"
+   "note": ""
   },
   {
    "company": "Hudson River Trading",
@@ -713,6 +713,20 @@
    "source": "engine",
    "expected": "2026-07-13",
    "days_until": -31,
+   "status": "dropped",
+   "url": "",
+   "note": "opens fall, closes early Feb"
+  },
+  {
+   "company": "Five Rings",
+   "last_cycle_posted": "",
+   "posted_on": "2026-07-14",
+   "precision": "day",
+   "rolling": false,
+   "confidence": "verified",
+   "source": "engine",
+   "expected": "2026-07-14",
+   "days_until": -30,
    "status": "dropped",
    "url": "",
    "note": ""
@@ -730,20 +744,6 @@
    "status": "dropped",
    "url": "",
    "note": "opens ~Aug, very early"
-  },
-  {
-   "company": "Five Rings",
-   "last_cycle_posted": "",
-   "posted_on": "2026-07-14",
-   "precision": "day",
-   "rolling": false,
-   "confidence": "verified",
-   "source": "engine",
-   "expected": "2026-07-14",
-   "days_until": -30,
-   "status": "dropped",
-   "url": "",
-   "note": ""
   },
   {
    "company": "The Trade Desk",
