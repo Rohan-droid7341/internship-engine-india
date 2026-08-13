@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**8 open roles · 5 new this week · 4,796 companies tracked · updated Aug 13, 2026 at 22:40 UTC**
+**8 open roles · 5 new this week · 4,796 companies tracked · updated Aug 13, 2026 at 23:39 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -19,7 +19,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 |---|---|---|---|---|---|---|
 | Unisys | AI Engineering Intern ~ 🆕 | Data & ML/AI | M.Tech/MS | Bangalore, KA, India | Aug 13, 2026 | [Apply](https://unisys.wd5.myworkdayjobs.com/External/job/Bangalore-KA-India/AI-Engineering-Intern_REQ574279) |
 | GSK | Intern Bios Programming ~ 🆕 | Software | B.Tech/BS | Bengaluru Luxor North Tower | Aug 13, 2026 | [Apply](https://gsk.wd5.myworkdayjobs.com/GSKCareers/job/Bengaluru-Luxor-North-Tower/Intern-Bios-Programming_446343) |
-| Ancestry | Machine Learning Engineer, Co-op ~ 🆕 | Data & ML/AI | B.Tech/BS | Remote | Aug 11, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Machine-Learning-Engineer--Co-op_R003377) |
+| Ancestry | Machine Learning Engineer, Co-op ~ | Data & ML/AI | B.Tech/BS | Remote | Aug 11, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Machine-Learning-Engineer--Co-op_R003377) |
 | Cambium Learning Group | Machine Learning Intern ~ | Data & ML/AI | PhD | Remote | Aug 11, 2026 | [Apply](https://cambiumlearning.wd1.myworkdayjobs.com/camb/job/Remote/Machine-Learning-Intern_REQ-4561) |
 | RRS Group | 2027 Software Engineer Intern - Placement Year 🆕 | Software | B.Tech/BS | San Francisco, XX (Remote) | Aug 09, 2026 | [Apply](https://jobs.smartrecruiters.com/RRSGroup/744000142513209) |
 | Epicor | Interns - Content Developer /Technical Writing/ Instructional Designer ~ | Software | 0-1 Yr<br>B.Tech/BS | India, Bangalore | Jul 30, 2026 | [Apply](https://epicorsoftware.wd5.myworkdayjobs.com/epicorjobs/job/India-Bangalore/Interns---Content-Developer--Technical-Writing--Instructional-Designer_JR105255) |
@@ -143,7 +143,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,796 companies across 24 ATS platforms · 100% fetch success · completed in 337.6s · median detection latency 724 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,796 companies across 24 ATS platforms · 99% fetch success · completed in 289.7s · median detection latency 724 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
