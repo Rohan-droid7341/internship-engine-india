@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**11 open roles · 9 new this week · 4,805 companies tracked · updated Aug 14, 2026 at 10:01 UTC**
+**11 open roles · 9 new this week · 4,805 companies tracked · updated Aug 14, 2026 at 10:58 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -17,8 +17,8 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Unisys | AI Use Case Prototyping Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bangalore, KA, India | Aug 14, 2026 | [Apply](https://unisys.wd5.myworkdayjobs.com/External/job/Bangalore-KA-India/AI-Use-Case-Prototyping-Intern_REQ574595) |
 | Unisys | AI Strategy Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bangalore, KA, India | Aug 14, 2026 | [Apply](https://unisys.wd5.myworkdayjobs.com/External/job/Bangalore-KA-India/AI-Strategy-Intern_REQ574630) |
+| Unisys | AI Use Case Prototyping Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bangalore, KA, India | Aug 14, 2026 | [Apply](https://unisys.wd5.myworkdayjobs.com/External/job/Bangalore-KA-India/AI-Use-Case-Prototyping-Intern_REQ574595) |
 | Novartis | Intern AI & DS Engineering ~ 🆕 | Data & ML/AI | — | Hyderabad (Office) | Aug 14, 2026 | [Apply](https://novartis.wd3.myworkdayjobs.com/Novartis_Careers/job/Hyderabad-Office/Intern-AI---DS-Engineering_REQ-10085515) |
 | Novartis | Intern QMS AI & Automation ~ 🆕 | Data & ML/AI | — | Hyderabad (Office) | Aug 14, 2026 | [Apply](https://novartis.wd3.myworkdayjobs.com/Novartis_Careers/job/Hyderabad-Office/Intern-QMS-AI---Automation_REQ-10085416-1) |
 | Unisys | AI Engineering Intern ~ 🆕 | Data & ML/AI | M.Tech/MS | Bangalore, KA, India | Aug 13, 2026 | [Apply](https://unisys.wd5.myworkdayjobs.com/External/job/Bangalore-KA-India/AI-Engineering-Intern_REQ574279) |
@@ -147,7 +147,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,805 companies across 24 ATS platforms · 98% fetch success · completed in 324.9s · median detection latency 637 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,805 companies across 24 ATS platforms · 98% fetch success · completed in 327.0s · median detection latency 637 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
