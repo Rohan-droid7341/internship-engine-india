@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**8 open roles · 5 new this week · 4,796 companies tracked · updated Aug 13, 2026 at 23:39 UTC**
+**7 open roles · 5 new this week · 4,796 companies tracked · updated Aug 14, 2026 at 01:26 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,7 +13,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (8 open)
+## Summer 2027 (International)  (7 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
@@ -23,10 +23,9 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Cambium Learning Group | Machine Learning Intern ~ | Data & ML/AI | PhD | Remote | Aug 11, 2026 | [Apply](https://cambiumlearning.wd1.myworkdayjobs.com/camb/job/Remote/Machine-Learning-Intern_REQ-4561) |
 | RRS Group | 2027 Software Engineer Intern - Placement Year 🆕 | Software | B.Tech/BS | San Francisco, XX (Remote) | Aug 09, 2026 | [Apply](https://jobs.smartrecruiters.com/RRSGroup/744000142513209) |
 | Epicor | Interns - Content Developer /Technical Writing/ Instructional Designer ~ | Software | 0-1 Yr<br>B.Tech/BS | India, Bangalore | Jul 30, 2026 | [Apply](https://epicorsoftware.wd5.myworkdayjobs.com/epicorjobs/job/India-Bangalore/Interns---Content-Developer--Technical-Writing--Instructional-Designer_JR105255) |
-| Scopely | Intern - Gen. AI Art ~ | Data & ML/AI | — | IN - Bangalore, India | Jul 14, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5341537008?gh_jid=5341537008) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (7 of 8)._
+_~ = the title doesn't state a year; bucketed here from its posting date (6 of 7)._
 
 ## What this is
 
@@ -84,15 +83,15 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | SIG | ~Aug | ~Aug · any day now | ⏳ waiting |
 | Snowflake | ~Aug | ~Aug · any day now | ⏳ waiting |
 | Uber | ~Aug | ~Aug · any day now | ⏳ waiting |
-| Adobe | ~Sep | ~Sep · in ~19d | ⏳ waiting |
-| Airbnb | ~Sep | ~Sep · in ~19d | ⏳ waiting |
-| Bloomberg | ~Sep | ~Sep · in ~19d | ⏳ waiting |
-| Dropbox | ~Sep | ~Sep · in ~19d | ⏳ waiting |
-| Plaid | ~Sep | ~Sep · in ~19d | ⏳ waiting |
-| Point72 | ~Sep | ~Sep · in ~19d | ⏳ waiting |
-| Robinhood | ~Sep | ~Sep · in ~19d | ⏳ waiting |
-| Roblox | ~Sep | ~Sep · in ~19d | ⏳ waiting |
-| Stripe | ~Sep | ~Sep · in ~19d | ⏳ waiting |
+| Adobe | ~Sep | ~Sep · in ~18d | ⏳ waiting |
+| Airbnb | ~Sep | ~Sep · in ~18d | ⏳ waiting |
+| Bloomberg | ~Sep | ~Sep · in ~18d | ⏳ waiting |
+| Dropbox | ~Sep | ~Sep · in ~18d | ⏳ waiting |
+| Plaid | ~Sep | ~Sep · in ~18d | ⏳ waiting |
+| Point72 | ~Sep | ~Sep · in ~18d | ⏳ waiting |
+| Robinhood | ~Sep | ~Sep · in ~18d | ⏳ waiting |
+| Roblox | ~Sep | ~Sep · in ~18d | ⏳ waiting |
+| Stripe | ~Sep | ~Sep · in ~18d | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct | ⏳ waiting |
 | Coinbase | ~Dec | ~Dec | ⏳ waiting |
 | Ramp | ~Dec | ~Dec | ⏳ waiting |
@@ -104,10 +103,11 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _60 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **25** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 17 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 18 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Scopely | Intern - Gen. AI Art | Summer 2027 | 2026-08-14 |
 | eBay | Software Engineer Intern | Summer 2027 | 2026-08-13 |
 | Ancestry | Data Science - AI Document Understanding, Co-op | Summer 2027 | 2026-08-11 |
 | Ancestry | Machine Learning Engineer, Co-op | Summer 2027 | 2026-08-11 |
@@ -143,7 +143,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,796 companies across 24 ATS platforms · 99% fetch success · completed in 289.7s · median detection latency 724 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,796 companies across 24 ATS platforms · 99% fetch success · completed in 336.3s · median detection latency 724 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
