@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**6 open roles · 4 new this week · 4,805 companies tracked · updated Aug 15, 2026 at 08:25 UTC**
+**5 open roles · 3 new this week · 4,817 companies tracked · updated Aug 15, 2026 at 09:26 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,18 +13,17 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (6 open)
+## Summer 2027 (International)  (5 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Unisys | AI Engineering Intern ~ 🆕 | Data & ML/AI | M.Tech/MS | Bangalore, KA, India | Aug 13, 2026 | [Apply](https://unisys.wd5.myworkdayjobs.com/External/job/Bangalore-KA-India/AI-Engineering-Intern_REQ574279) |
 | Ancestry | Machine Learning Engineer, Co-op ~ | Data & ML/AI | B.Tech/BS | Remote | Aug 11, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Machine-Learning-Engineer--Co-op_R003377) |
 | Cambium Learning Group | Machine Learning Intern ~ | Data & ML/AI | PhD | Remote | Aug 11, 2026 | [Apply](https://cambiumlearning.wd1.myworkdayjobs.com/camb/job/Remote/Machine-Learning-Intern_REQ-4561) |
 | RRS Group | 2027 Software Engineer Intern - Placement Year 🆕 | Software | B.Tech/BS | San Francisco, XX (Remote) | Aug 09, 2026 | [Apply](https://jobs.smartrecruiters.com/RRSGroup/744000142513209) |
 | Epicor | Interns - Content Developer /Technical Writing/ Instructional Designer ~ | Software | 0-1 Yr<br>B.Tech/BS | India, Bangalore | Jul 30, 2026 | [Apply](https://epicorsoftware.wd5.myworkdayjobs.com/epicorjobs/job/India-Bangalore/Interns---Content-Developer--Technical-Writing--Instructional-Designer_JR105255) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (5 of 6)._
+_~ = the title doesn't state a year; bucketed here from its posting date (4 of 5)._
 
 ## What this is
 
@@ -102,10 +101,11 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _60 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **25** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 22 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 23 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Unisys | AI Engineering Intern | Summer 2027 | 2026-08-15 |
 | GSK | Intern Bios Programming | Summer 2027 | 2026-08-14 |
 | Novartis | Intern AI & DS Engineering | Summer 2027 | 2026-08-14 |
 | Novartis | Intern QMS AI & Automation | Summer 2027 | 2026-08-14 |
@@ -146,7 +146,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,805 companies across 24 ATS platforms · 99% fetch success · completed in 326.3s · median detection latency 637 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,817 companies across 24 ATS platforms · 98% fetch success · completed in 369.5s · median detection latency 637 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
