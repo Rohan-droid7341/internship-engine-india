@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**5 open roles · 3 new this week · 4,862 companies tracked · updated Aug 18, 2026 at 14:32 UTC**
+**4 open roles · 1 new this week · 4,862 companies tracked · updated Aug 18, 2026 at 21:30 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,17 +13,16 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (5 open)
+## Summer 2027 (International)  (4 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Ancestry | Machine Learning Engineer, Co-op ~ | Data & ML/AI | B.Tech/BS | Remote | Aug 11, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Machine-Learning-Engineer--Co-op_R003377) |
 | Cambium Learning Group | Machine Learning Intern ~ | Data & ML/AI | PhD | Remote | Aug 11, 2026 | [Apply](https://cambiumlearning.wd1.myworkdayjobs.com/camb/job/Remote/Machine-Learning-Intern_REQ-4561) |
 | RRS Group | 2027 Software Engineer Intern - Placement Year | Software | B.Tech/BS | San Francisco, XX (Remote) | Aug 09, 2026 | [Apply](https://jobs.smartrecruiters.com/RRSGroup/744000142513209) |
 | Epicor | Interns - Content Developer /Technical Writing/ Instructional Designer ~ | Software | 0-1 Yr<br>B.Tech/BS | India, Bangalore | Jul 30, 2026 | [Apply](https://epicorsoftware.wd5.myworkdayjobs.com/epicorjobs/job/India-Bangalore/Interns---Content-Developer--Technical-Writing--Instructional-Designer_JR105255) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (4 of 5)._
+_~ = the title doesn't state a year; bucketed here from its posting date (3 of 4)._
 
 ## What this is
 
@@ -105,6 +104,7 @@ _60 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Ancestry | Machine Learning Engineer, Co-op | Summer 2027 | 2026-08-18 |
 | Novartis | Intern AI & DS Engineering | Summer 2027 | 2026-08-17 |
 | Novartis | Intern Data Analyst | Summer 2027 | 2026-08-17 |
 | Unisys | AI Engineering Intern | Summer 2027 | 2026-08-15 |
@@ -121,7 +121,6 @@ _60 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Epicor | AI QA Developer Intern | Summer 2027 | 2026-08-07 |
 | GlobalFoundries | Intern - Compact Modeling Flow using AI/ML/Automation | Summer 2027 | 2026-08-06 |
 | GE Aerospace | Applied AI Engineering Intern (m/f/d) | Fall 2026 | 2026-08-05 |
-| Unisys | AI Engineering Intern | Summer 2027 | 2026-08-04 |
 
 </details>
 
@@ -140,7 +139,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,862 companies across 24 ATS platforms · 100% fetch success · completed in 323.3s · median detection latency 636 min · real posted dates on 100% of open roles._
+_Engine (last run): 4,862 companies across 24 ATS platforms · 98% fetch success · completed in 313.6s · median detection latency 636 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
