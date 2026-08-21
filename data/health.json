@@ -25,8 +25,8 @@
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/checkout?includeCompensation=true'\nFor more information check: https://developer.mozilla.org/en-US/"
   },
   "ashby:circle": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/circle?includeCompensation=true'\nFor more information check: https://developer.mozilla.org/en-US/do"
   },
   "ashby:conductorone": {
@@ -293,6 +293,11 @@
     "consecutive_failures": 15,
     "last_attempt_at": "2026-08-21T07:43:32Z",
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/amagi/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+  },
+  "greenhouse:andurilindustries": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
+    "last_error": "ReadTimeout: "
   },
   "greenhouse:apna": {
     "consecutive_failures": 15,
@@ -755,48 +760,48 @@
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/zeta/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
   },
   "indeed:ai+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for indeed"
   },
   "indeed:backend+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for indeed"
   },
   "indeed:devops+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for indeed"
   },
   "indeed:frontend+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for indeed"
   },
   "indeed:java+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for indeed"
   },
   "indeed:python+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for indeed"
   },
   "indeed:react+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for indeed"
   },
   "indeed:sde+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for indeed"
   },
   "indeed:software+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for indeed"
   },
   "lever:acko": {
@@ -1125,113 +1130,113 @@
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://api.lever.co/v0/postings/zomato?mode=json'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
   },
   "linkedin:ai+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for linkedin"
   },
   "linkedin:backend+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for linkedin"
   },
   "linkedin:data+science+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for linkedin"
   },
   "linkedin:devops+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for linkedin"
   },
   "linkedin:frontend+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for linkedin"
   },
   "linkedin:java+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for linkedin"
   },
   "linkedin:machine+learning+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for linkedin"
   },
   "linkedin:python+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for linkedin"
   },
   "linkedin:react+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for linkedin"
   },
   "linkedin:sde+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for linkedin"
   },
   "linkedin:software+engineer+intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for linkedin"
   },
   "linkedin:swe+intern+india": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "no connector for linkedin"
   },
   "naukri:ai-intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "RuntimeError: Naukri rate limited or returned 0 jobs on page 1"
   },
   "naukri:backend-developer-internship": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "RuntimeError: Naukri rate limited or returned 0 jobs on page 1"
   },
   "naukri:backend-intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "RuntimeError: Naukri rate limited or returned 0 jobs on page 1"
   },
   "naukri:devops-intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "RuntimeError: Naukri rate limited or returned 0 jobs on page 1"
   },
   "naukri:frontend-intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "RuntimeError: Naukri rate limited or returned 0 jobs on page 1"
   },
   "naukri:java-intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "RuntimeError: Naukri rate limited or returned 0 jobs on page 1"
   },
   "naukri:python-intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "RuntimeError: Naukri rate limited or returned 0 jobs on page 1"
   },
   "naukri:react-intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "RuntimeError: Naukri rate limited or returned 0 jobs on page 1"
   },
   "naukri:sde-intern": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "RuntimeError: Naukri rate limited or returned 0 jobs on page 1"
   },
   "naukri:software-internship": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "RuntimeError: Naukri rate limited or returned 0 jobs on page 1"
   },
   "rippling:en-gb": {
@@ -1245,8 +1250,8 @@
     "last_error": "no connector for uber"
   },
   "wellfound:wellfound-india": {
-    "consecutive_failures": 13,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 14,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "RuntimeError: Wellfound rate limited or returned 0 jobs"
   },
   "workable:advantmed": {
@@ -1278,6 +1283,11 @@
     "consecutive_failures": 1,
     "last_attempt_at": "2026-07-23T23:21:05Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/mlabs/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Stat"
+  },
+  "workable:teserac-inc": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
+    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/teserac-inc/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTT"
   },
   "workable:texas-sports-academy-main": {
     "consecutive_failures": 3,
@@ -1315,33 +1325,33 @@
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/tokamak-energy/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/"
   },
   "workable:tp-link-usa-corp": {
-    "consecutive_failures": 8,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 9,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/tp-link-usa-corp/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/We"
   },
   "workable:trexquant": {
-    "consecutive_failures": 8,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 9,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/trexquant/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/"
   },
   "workable:turabify-co": {
-    "consecutive_failures": 8,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 9,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/turabify-co/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTT"
   },
   "workable:twgai": {
-    "consecutive_failures": 8,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 9,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/twgai/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Stat"
   },
   "workable:twocircles": {
-    "consecutive_failures": 8,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 9,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/twocircles/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP"
   },
   "workable:ubds": {
-    "consecutive_failures": 8,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 9,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/ubds/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Statu"
   },
   "workable:validus-risk-management": {
@@ -1350,13 +1360,13 @@
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/validus-risk-management/jobs'\nFor more information check: https://developer.mozilla.org/en-US/"
   },
   "workable:valsoft-corp": {
-    "consecutive_failures": 8,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 9,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/valsoft-corp/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HT"
   },
   "workable:vanguard-ems-inc": {
-    "consecutive_failures": 8,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 9,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/vanguard-ems-inc/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/We"
   },
   "workable:vectoratomic": {
@@ -1365,8 +1375,8 @@
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/vectoratomic/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HT"
   },
   "workable:viewline-ventures": {
-    "consecutive_failures": 8,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 9,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/viewline-ventures/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/W"
   },
   "workable:vortexa": {
@@ -1375,13 +1385,13 @@
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/vortexa/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St"
   },
   "workable:wallstreetquants": {
-    "consecutive_failures": 8,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 9,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/wallstreetquants/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/We"
   },
   "workable:we-are-social-1": {
-    "consecutive_failures": 8,
-    "last_attempt_at": "2026-08-18T12:38:44Z",
+    "consecutive_failures": 9,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/we-are-social-1/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web"
   },
   "workable:western-magnetics": {
@@ -1453,6 +1463,11 @@
     "consecutive_failures": 21,
     "last_attempt_at": "2026-08-19T14:36:46Z",
     "last_error": "HTTPStatusError: Client error '422 Unprocessable Entity' for url 'https://cliftonlarsonallen.wd1.myworkdayjobs.com/wday/cxs/cliftonlarsonallen/CLA/jobs'\nFor more information check: https://developer.m"
+  },
+  "workday:cloudera": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-08-21T13:45:42Z",
+    "last_error": "HTTPStatusError: Server error '520 <none>' for url 'https://cloudera.wd5.myworkdayjobs.com/wday/cxs/cloudera/external_career/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/"
   },
   "workday:conagrabrands": {
     "consecutive_failures": 7,
