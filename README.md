@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**7 open roles · 4 new this week · 4,897 companies tracked · updated Aug 21, 2026 at 11:26 UTC**
+**8 open roles · 5 new this week · 4,897 companies tracked · updated Aug 21, 2026 at 12:38 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,10 +13,11 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (7 open)
+## Summer 2027 (International)  (8 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
+| Honeywell | Intern Masters Embedded Eng ~ 🆕 | Software | B.Tech/BS | Bengaluru, Karnataka, India | Aug 21, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/156362) |
 | Workday | Software Development Engineer - Intern ~ 🆕 | Software | B.Tech/BS | IND.Chennai | Aug 21, 2026 | [Apply](https://workday.wd5.myworkdayjobs.com/Workday_Early_Career/job/INDChennai/Software-Development-Engineer---Intern_JR-0109537) |
 | Honeywell | Intern Masters Software Eng ~ 🆕 | Software | B.Tech/BS | Bengaluru, Karnataka, India | Aug 21, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/156359) |
 | Cisco | Software Engineer – Network/Embedded/Application Development (Summer Internship) - India EG Requisition ~ 🆕 | Software | B.Tech/BS | Bangalore, India | Aug 21, 2026 | [Apply](https://cisco.wd5.myworkdayjobs.com/cisco_careers/job/Bangalore-India/Software-Engineer---Network-Embedded-Application-Development--Summer-Internship----India-EG-Requisition_2021284-1) |
@@ -25,7 +26,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 | Oneture Technologies | AI / ML Intern ~ 🆕 | Data & ML/AI | — | Mumbai | — | [Apply](https://www.instahyre.com/job-390123-ai-ml-intern-at-oneture-technologies-mumbai/) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (6 of 7)._
+_~ = the title doesn't state a year; bucketed here from its posting date (7 of 8)._
 
 ## What this is
 
@@ -140,7 +141,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,897 companies across 24 ATS platforms · 99% fetch success · completed in 376.0s · median detection latency 634 min · real posted dates on 85% of open roles._
+_Engine (last run): 4,897 companies across 24 ATS platforms · 100% fetch success · completed in 300.7s · median detection latency 635 min · real posted dates on 87% of open roles._
 
 ## Platforms Scraped
 
