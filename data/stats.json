@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-25T08:40:18Z",
-  "duration_seconds": 339.2,
-  "companies_total": 4908,
+  "generated_at": "2026-08-25T09:34:43Z",
+  "duration_seconds": 360.6,
+  "companies_total": 4921,
   "companies_by_source": {
-    "greenhouse": 1055,
-    "lever": 398,
-    "smartrecruiters": 804,
-    "workable": 127,
-    "ashby": 667,
+    "greenhouse": 1057,
+    "lever": 401,
+    "smartrecruiters": 805,
+    "workable": 130,
+    "ashby": 668,
     "recruitee": 9,
-    "workday": 1495,
+    "workday": 1498,
     "oracle": 145,
     "rippling": 140,
     "amazon": 1,
@@ -28,37 +28,39 @@
     "unstop": 5,
     "wellfound": 1
   },
-  "quarantined": 338,
-  "fetched_ok": 4555,
-  "fetch_errors": 15,
+  "quarantined": 339,
+  "fetched_ok": 4575,
+  "fetch_errors": 7,
   "errors_by_source": {
-    "workday": 15
+    "workday": 3,
+    "lever": 1,
+    "workable": 3
   },
-  "fetch_success_rate": 0.997,
-  "roles_matched": 5,
-  "roles_cycle_inferred": 4,
+  "fetch_success_rate": 0.998,
+  "roles_matched": 7,
+  "roles_cycle_inferred": 6,
   "dropped_no_year_in_title": 254,
   "dropped_offcycle_by_text": 49,
   "roles_by_source": {
-    "workday": 4,
-    "smartrecruiters": 1
+    "workday": 5,
+    "smartrecruiters": 2
   },
   "roles_by_cycle": {
-    "Summer 2027": 5
+    "Summer 2027": 7
   },
   "roles_by_region": {
-    "India": 4,
-    "Remote": 1
+    "India": 5,
+    "Remote": 2
   },
-  "posted_date_coverage": 0.714,
-  "enriched_this_run": 0,
-  "enrichment_detail_fetches": 0,
+  "posted_date_coverage": 0.778,
+  "enriched_this_run": 2,
+  "enrichment_detail_fetches": 2,
   "purged_this_run": 0,
-  "new_this_run": 0,
-  "open_total": 7,
+  "new_this_run": 2,
+  "open_total": 9,
   "detection_latency": {
-    "median_minutes": 635.1,
-    "sample_size": 48,
+    "median_minutes": 631.3,
+    "sample_size": 50,
     "window_days": 7
   },
   "posting_lifetime": {
