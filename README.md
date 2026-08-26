@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**10 open roles · 7 new this week · 4,928 companies tracked · updated Aug 26, 2026 at 12:43 UTC**
+**9 open roles · 6 new this week · 4,928 companies tracked · updated Aug 26, 2026 at 13:54 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,12 +13,11 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (9 open)
+## Summer 2027 (International)  (8 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
 | Philips | Intern - Embedded System ~ 🆕 | Software | B.Tech/BS | Pune | Aug 26, 2026 | [Apply](https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Pune/Intern---Embedded-System_588498) |
-| Gevernova | Grid Automation & Software Intern ~ 🆕 | Software | B.Tech/BS | Remote | Aug 25, 2026 | [Apply](https://gevernova.wd5.myworkdayjobs.com/only_confidential_executive_recruiting/job/Remote/Grid-Automation---Software-Intern_R5049276-1) |
 | Barry-Wehmiller | AI Intern ~ 🆕 | Data & ML/AI | — | Chennai, India | Aug 25, 2026 | [Apply](https://barrywehmiller.wd1.myworkdayjobs.com/BWCareers/job/Chennai-India/AI-Intern_R022521) |
 | Cisco | Software Engineer – Network/Embedded/Application Development (Summer Internship) - India EG Requisition ~ | Software | B.Tech/BS | Bangalore, India | Aug 21, 2026 | [Apply](https://cisco.wd5.myworkdayjobs.com/cisco_careers/job/Bangalore-India/Software-Engineer---Network-Embedded-Application-Development--Summer-Internship----India-EG-Requisition_2021284-1) |
 | RRS Group | 2027 Software Engineer Intern - Placement Year | Software | B.Tech/BS | San Francisco, XX (Remote) | Aug 09, 2026 | [Apply](https://jobs.smartrecruiters.com/RRSGroup/744000142513209) |
@@ -27,7 +26,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | PagarBook | Full Stack Development Intern ~ | Software | — | Bangalore | — | [Apply](https://www.instahyre.com/job-439220-full-stack-development-intern-internship-at-pagarbook-bangalore/) |
 | Oneture Technologies | AI / ML Intern ~ | Data & ML/AI | — | Mumbai | — | [Apply](https://www.instahyre.com/job-390123-ai-ml-intern-at-oneture-technologies-mumbai/) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (8 of 9)._
+_~ = the title doesn't state a year; bucketed here from its posting date (7 of 8)._
 
 ## Fall 2026 (International)  (1 open)
 
@@ -111,10 +110,11 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _60 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **25** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 16 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 17 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Gevernova | Grid Automation & Software Intern | Summer 2027 | 2026-08-26 |
 | Revvity | AI Intern | Summer 2027 | 2026-08-26 |
 | LinkedIn | Software Engineering Intern | Summer 2027 | 2026-08-25 |
 | Workday | Software Development Engineer - Intern | Summer 2027 | 2026-08-21 |
@@ -149,7 +149,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,928 companies across 24 ATS platforms · 99% fetch success · completed in 299.5s · median detection latency 628 min · real posted dates on 80% of open roles._
+_Engine (last run): 4,928 companies across 24 ATS platforms · 99% fetch success · completed in 335.8s · median detection latency 628 min · real posted dates on 77% of open roles._
 
 ## Platforms Scraped
 
