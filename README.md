@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**9 open roles · 6 new this week · 4,952 companies tracked · updated Aug 27, 2026 at 23:34 UTC**
+**9 open roles · 6 new this week · 4,952 companies tracked · updated Aug 28, 2026 at 08:34 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -90,16 +90,16 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | SIG | ~Aug | ~Aug · any day now | ⏳ waiting |
 | Snowflake | ~Aug | ~Aug · any day now | ⏳ waiting |
 | Uber | ~Aug | ~Aug · any day now | ⏳ waiting |
-| Adobe | ~Sep | ~Sep · in ~5d | ⏳ waiting |
-| Airbnb | ~Sep | ~Sep · in ~5d | ⏳ waiting |
-| Bloomberg | ~Sep | ~Sep · in ~5d | ⏳ waiting |
-| Dropbox | ~Sep | ~Sep · in ~5d | ⏳ waiting |
-| Plaid | ~Sep | ~Sep · in ~5d | ⏳ waiting |
-| Point72 | ~Sep | ~Sep · in ~5d | ⏳ waiting |
-| Robinhood | ~Sep | ~Sep · in ~5d | ⏳ waiting |
-| Roblox | ~Sep | ~Sep · in ~5d | ⏳ waiting |
-| Stripe | ~Sep | ~Sep · in ~5d | ⏳ waiting |
-| D.E. Shaw | ~Oct | ~Oct · in ~35d | ⏳ waiting |
+| Adobe | ~Sep | ~Sep · in ~4d | ⏳ waiting |
+| Airbnb | ~Sep | ~Sep · in ~4d | ⏳ waiting |
+| Bloomberg | ~Sep | ~Sep · in ~4d | ⏳ waiting |
+| Dropbox | ~Sep | ~Sep · in ~4d | ⏳ waiting |
+| Plaid | ~Sep | ~Sep · in ~4d | ⏳ waiting |
+| Point72 | ~Sep | ~Sep · in ~4d | ⏳ waiting |
+| Robinhood | ~Sep | ~Sep · in ~4d | ⏳ waiting |
+| Roblox | ~Sep | ~Sep · in ~4d | ⏳ waiting |
+| Stripe | ~Sep | ~Sep · in ~4d | ⏳ waiting |
+| D.E. Shaw | ~Oct | ~Oct · in ~34d | ⏳ waiting |
 | Coinbase | ~Dec | ~Dec | ⏳ waiting |
 | Ramp | ~Dec | ~Dec | ⏳ waiting |
 | Two Sigma | ~Dec | ~Dec | ⏳ waiting |
@@ -110,7 +110,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _60 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **25** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 20 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 19 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -133,7 +133,6 @@ _60 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Unisys | AI Use Case Prototyping Intern | Summer 2027 | 2026-08-14 |
 | Unisys | AI Strategy Intern | Summer 2027 | 2026-08-14 |
 | eBay | Software Engineer Intern | Summer 2027 | 2026-08-14 |
-| Scopely | Intern - Gen. AI Art | Summer 2027 | 2026-08-14 |
 
 </details>
 
@@ -152,7 +151,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,952 companies across 24 ATS platforms · 97% fetch success · completed in 405.9s · median detection latency 616 min · real posted dates on 77% of open roles._
+_Engine (last run): 4,952 companies across 24 ATS platforms · 99% fetch success · completed in 368.6s · median detection latency 616 min · real posted dates on 77% of open roles._
 
 ## Platforms Scraped
 
