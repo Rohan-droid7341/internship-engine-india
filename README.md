@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**10 open roles · 6 new this week · 4,959 companies tracked · updated Aug 28, 2026 at 20:41 UTC**
+**9 open roles · 5 new this week · 4,959 companies tracked · updated Aug 29, 2026 at 03:05 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -28,12 +28,6 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Oneture Technologies | AI / ML Intern ~ | Data & ML/AI | — | Mumbai | — | [Apply](https://www.instahyre.com/job-390123-ai-ml-intern-at-oneture-technologies-mumbai/) |
 
 _~ = the title doesn't state a year; bucketed here from its posting date (8 of 9)._
-
-## Fall 2026 (International)  (1 open)
-
-| Company | Role | Category | Pay & Specs | Location | Posted | Apply |
-|---|---|---|---|---|---|---|
-| Concentric | Internship, AI Workflow Optimization, Fall 2026 (Remote) | Data & ML/AI | B.Tech/BS | Remote | Aug 10, 2026 | [Apply](https://job-boards.greenhouse.io/concentric/jobs/4703940006) |
 
 ## What this is
 
@@ -91,16 +85,16 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | SIG | ~Aug | ~Aug · any day now | ⏳ waiting |
 | Snowflake | ~Aug | ~Aug · any day now | ⏳ waiting |
 | Uber | ~Aug | ~Aug · any day now | ⏳ waiting |
-| Adobe | ~Sep | ~Sep · in ~4d | ⏳ waiting |
-| Airbnb | ~Sep | ~Sep · in ~4d | ⏳ waiting |
-| Bloomberg | ~Sep | ~Sep · in ~4d | ⏳ waiting |
-| Dropbox | ~Sep | ~Sep · in ~4d | ⏳ waiting |
-| Plaid | ~Sep | ~Sep · in ~4d | ⏳ waiting |
-| Point72 | ~Sep | ~Sep · in ~4d | ⏳ waiting |
-| Robinhood | ~Sep | ~Sep · in ~4d | ⏳ waiting |
-| Roblox | ~Sep | ~Sep · in ~4d | ⏳ waiting |
-| Stripe | ~Sep | ~Sep · in ~4d | ⏳ waiting |
-| D.E. Shaw | ~Oct | ~Oct · in ~34d | ⏳ waiting |
+| Adobe | ~Sep | ~Sep · in ~3d | ⏳ waiting |
+| Airbnb | ~Sep | ~Sep · in ~3d | ⏳ waiting |
+| Bloomberg | ~Sep | ~Sep · in ~3d | ⏳ waiting |
+| Dropbox | ~Sep | ~Sep · in ~3d | ⏳ waiting |
+| Plaid | ~Sep | ~Sep · in ~3d | ⏳ waiting |
+| Point72 | ~Sep | ~Sep · in ~3d | ⏳ waiting |
+| Robinhood | ~Sep | ~Sep · in ~3d | ⏳ waiting |
+| Roblox | ~Sep | ~Sep · in ~3d | ⏳ waiting |
+| Stripe | ~Sep | ~Sep · in ~3d | ⏳ waiting |
+| D.E. Shaw | ~Oct | ~Oct · in ~33d | ⏳ waiting |
 | Coinbase | ~Dec | ~Dec | ⏳ waiting |
 | Ramp | ~Dec | ~Dec | ⏳ waiting |
 | Two Sigma | ~Dec | ~Dec | ⏳ waiting |
@@ -111,10 +105,11 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _60 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **25** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 14 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 15 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Concentric | Internship, AI Workflow Optimization, Fall 2026 (Remote) | Fall 2026 | 2026-08-29 |
 | Cisco | Software Engineer – Network/Embedded/Application Development (Summer Internship) - India EG Requisition | Summer 2027 | 2026-08-27 |
 | Philips | Intern - Embedded System | Summer 2027 | 2026-08-27 |
 | Ancestry | Software Engineer – Observability, Co-op | Summer 2027 | 2026-08-27 |
@@ -147,7 +142,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,959 companies across 24 ATS platforms · 96% fetch success · completed in 390.5s · median detection latency 628 min · real posted dates on 80% of open roles._
+_Engine (last run): 4,959 companies across 24 ATS platforms · 99% fetch success · completed in 333.4s · median detection latency 628 min · real posted dates on 77% of open roles._
 
 ## Platforms Scraped
 
