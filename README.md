@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**8 open roles · 5 new this week · 4,966 companies tracked · updated Aug 30, 2026 at 21:53 UTC**
+**8 open roles · 5 new this week · 4,966 companies tracked · updated Aug 31, 2026 at 00:13 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -84,16 +84,16 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | SIG | ~Aug | ~Aug · any day now | ⏳ waiting |
 | Snowflake | ~Aug | ~Aug · any day now | ⏳ waiting |
 | Uber | ~Aug | ~Aug · any day now | ⏳ waiting |
-| Adobe | ~Sep | ~Sep · in ~2d | ⏳ waiting |
-| Airbnb | ~Sep | ~Sep · in ~2d | ⏳ waiting |
-| Bloomberg | ~Sep | ~Sep · in ~2d | ⏳ waiting |
-| Dropbox | ~Sep | ~Sep · in ~2d | ⏳ waiting |
-| Plaid | ~Sep | ~Sep · in ~2d | ⏳ waiting |
-| Point72 | ~Sep | ~Sep · in ~2d | ⏳ waiting |
-| Robinhood | ~Sep | ~Sep · in ~2d | ⏳ waiting |
-| Roblox | ~Sep | ~Sep · in ~2d | ⏳ waiting |
-| Stripe | ~Sep | ~Sep · in ~2d | ⏳ waiting |
-| D.E. Shaw | ~Oct | ~Oct · in ~32d | ⏳ waiting |
+| Adobe | ~Sep | ~Sep · in ~1d | ⏳ waiting |
+| Airbnb | ~Sep | ~Sep · in ~1d | ⏳ waiting |
+| Bloomberg | ~Sep | ~Sep · in ~1d | ⏳ waiting |
+| Dropbox | ~Sep | ~Sep · in ~1d | ⏳ waiting |
+| Plaid | ~Sep | ~Sep · in ~1d | ⏳ waiting |
+| Point72 | ~Sep | ~Sep · in ~1d | ⏳ waiting |
+| Robinhood | ~Sep | ~Sep · in ~1d | ⏳ waiting |
+| Roblox | ~Sep | ~Sep · in ~1d | ⏳ waiting |
+| Stripe | ~Sep | ~Sep · in ~1d | ⏳ waiting |
+| D.E. Shaw | ~Oct | ~Oct · in ~31d | ⏳ waiting |
 | Coinbase | ~Dec | ~Dec | ⏳ waiting |
 | Ramp | ~Dec | ~Dec | ⏳ waiting |
 | Two Sigma | ~Dec | ~Dec | ⏳ waiting |
@@ -141,7 +141,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 4,966 companies across 24 ATS platforms · 98% fetch success · completed in 349.7s · median detection latency 604 min · real posted dates on 75% of open roles._
+_Engine (last run): 4,966 companies across 24 ATS platforms · 97% fetch success · completed in 322.7s · median detection latency 604 min · real posted dates on 75% of open roles._
 
 ## Platforms Scraped
 
