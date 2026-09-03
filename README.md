@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**10 open roles · 5 new this week · 5,055 companies tracked · updated Sep 03, 2026 at 16:56 UTC**
+**11 open roles · 6 new this week · 5,055 companies tracked · updated Sep 03, 2026 at 19:38 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,10 +13,11 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (8 open)
+## Summer 2027 (International)  (9 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
+| Ancestry | Applied AI Science Co-op - Embedding models and Personalization ~ 🆕 | Data & ML/AI | B.Tech/BS | Remote | Sep 03, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Applied-AI-Science-Co-op---Embedding-models-and-Personalization_R003442) |
 | GE Aerospace | Data Science Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 03, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science-Intern_R5039463) |
 | TWG Global | AI Data Science Intern (UK) ~ 🆕 | Data & ML/AI | B.Tech/BS | London, England, United Kingdom (Remote) | Sep 01, 2026 | [Apply](https://apply.workable.com/twgai/j/1206BF981C/) |
 | Arista Networks | Intern Software Engineers - C/C++ ~ | Software | — | Poland - Remote, PL (Remote) | Aug 27, 2026 | [Apply](https://jobs.smartrecruiters.com/AristaNetworks/744000145998379) |
@@ -26,7 +27,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | PagarBook | Full Stack Development Intern ~ | Software | — | Bangalore | — | [Apply](https://www.instahyre.com/job-439220-full-stack-development-intern-internship-at-pagarbook-bangalore/) |
 | Oneture Technologies | AI / ML Intern ~ | Data & ML/AI | — | Mumbai | — | [Apply](https://www.instahyre.com/job-390123-ai-ml-intern-at-oneture-technologies-mumbai/) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (8 of 8)._
+_~ = the title doesn't state a year; bucketed here from its posting date (9 of 9)._
 
 ## Fall 2026 (International)  (2 open)
 
@@ -149,7 +150,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,055 companies across 24 ATS platforms · 99% fetch success · completed in 380.6s · median detection latency 634 min · real posted dates on 80% of open roles._
+_Engine (last run): 5,055 companies across 24 ATS platforms · 98% fetch success · completed in 264.0s · median detection latency 635 min · real posted dates on 81% of open roles._
 
 ## Platforms Scraped
 
