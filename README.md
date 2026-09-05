@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**13 open roles · 6 new this week · 5,105 companies tracked · updated Sep 05, 2026 at 05:16 UTC**
+**13 open roles · 6 new this week · 5,105 companies tracked · updated Sep 05, 2026 at 09:53 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -19,7 +19,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 |---|---|---|---|---|---|---|
 | Pearson | Associate, AI & Machine Learning Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bangalore, Karnataka, India | Sep 04, 2026 | [Apply](https://hccz.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/25878) |
 | Ancestry | Applied AI Science Co-op - Embedding models and Personalization ~ 🆕 | Data & ML/AI | B.Tech/BS | Remote | Sep 03, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Applied-AI-Science-Co-op---Embedding-models-and-Personalization_R003442) |
-| GE Aerospace | Data Science Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 03, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science-Intern_R5039463) |
+| GE Aerospace | Data Science Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 03, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science-Intern_R5039463) |
 | TWG Global | AI Data Science Intern (UK) ~ | Data & ML/AI | B.Tech/BS | London, England, United Kingdom (Remote) | Sep 01, 2026 | [Apply](https://apply.workable.com/twgai/j/1206BF981C/) |
 | Arista Networks | Intern Software Engineers - C/C++ ~ | Software | — | Poland - Remote, PL (Remote) | Aug 27, 2026 | [Apply](https://jobs.smartrecruiters.com/AristaNetworks/744000145998379) |
 | Realm | Software Engineer - Intern ~ | Software | B.Tech/BS | Remote | Aug 26, 2026 | [Apply](https://jobs.ashbyhq.com/realmalliance/a8a2f78e-1c28-4b52-a77a-c2b2ad9b7a8a) |
@@ -149,7 +149,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,105 companies across 24 ATS platforms · 98% fetch success · completed in 382.0s · median detection latency 636 min · real posted dates on 84% of open roles._
+_Engine (last run): 5,105 companies across 24 ATS platforms · 97% fetch success · completed in 308.7s · median detection latency 636 min · real posted dates on 84% of open roles._
 
 ## Platforms Scraped
 
