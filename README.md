@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**12 open roles · 6 new this week · 5,119 companies tracked · updated Sep 05, 2026 at 16:34 UTC**
+**12 open roles · 6 new this week · 5,119 companies tracked · updated Sep 05, 2026 at 18:51 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -34,8 +34,8 @@ _~ = the title doesn't state a year; bucketed here from its posting date (10 of 
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Qualified Health | Clinical AI Evaluation Intern 🆕 | Data & ML/AI | $40/hr<br>B.Tech/BS | Palo Alto - Hybrid | Aug 28, 2026 | [Apply](https://jobs.ashbyhq.com/qualified-health-pbc/6cae1651-ea0d-4779-bf8c-778be1ac8789) |
-| Qualified Health | Medical Scribe Intern, Clinical AI Safety & Evaluation 🆕 | Data & ML/AI | $40/hr<br>B.Tech/BS | Palo Alto - Hybrid | Aug 27, 2026 | [Apply](https://jobs.ashbyhq.com/qualified-health-pbc/4964d004-a597-4013-aea7-8dece8035f10) |
+| Qualified Health | Clinical AI Evaluation Intern | Data & ML/AI | $40/hr<br>B.Tech/BS | Palo Alto - Hybrid | Aug 28, 2026 | [Apply](https://jobs.ashbyhq.com/qualified-health-pbc/6cae1651-ea0d-4779-bf8c-778be1ac8789) |
+| Qualified Health | Medical Scribe Intern, Clinical AI Safety & Evaluation | Data & ML/AI | $40/hr<br>B.Tech/BS | Palo Alto - Hybrid | Aug 27, 2026 | [Apply](https://jobs.ashbyhq.com/qualified-health-pbc/4964d004-a597-4013-aea7-8dece8035f10) |
 
 ## What this is
 
@@ -149,7 +149,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,119 companies across 24 ATS platforms · 98% fetch success · completed in 395.4s · median detection latency 636 min · real posted dates on 83% of open roles._
+_Engine (last run): 5,119 companies across 24 ATS platforms · 99% fetch success · completed in 420.8s · median detection latency 636 min · real posted dates on 83% of open roles._
 
 ## Platforms Scraped
 
