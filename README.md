@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**15 open roles · 10 new this week · 5,121 companies tracked · updated Sep 08, 2026 at 07:47 UTC**
+**15 open roles · 10 new this week · 5,121 companies tracked · updated Sep 08, 2026 at 12:35 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -17,10 +17,10 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Honeywell | Intern Bachelors AI ~ 🆕 | Data & ML/AI | B.Tech/BS | Bengaluru, Karnataka, India | Sep 08, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/157433) |
 | Honeywell | Intern Masters Embedded Eng ~ 🆕 | Software | B.Tech/BS | Hyderabad, Telangana, India | Sep 08, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/157407) |
+| Honeywell | Intern Bachelors AI ~ 🆕 | Data & ML/AI | B.Tech/BS | Bengaluru, Karnataka, India | Sep 08, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/157433) |
 | LinkedIn | Artificial Intelligence / Machine Learning Engineering Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bengaluru, KA, India | Sep 08, 2026 | [Apply](https://jobs.smartrecruiters.com/LinkedIn3/744000148146490) |
-| GoTo Group | DevOps Intern ~ 🆕 | Software | B.Tech/BS | Remote (Hungary) | Sep 07, 2026 | [Apply](https://goto.wd5.myworkdayjobs.com/GoToCareers/job/Remote-Hungary/DevOps-Intern_R26-2270-1) |
+| GoTo Group | DevOps Intern (fixed term, 8 months) ~ 🆕 | Software | B.Tech/BS | Remote (Hungary) | Sep 07, 2026 | [Apply](https://goto.wd5.myworkdayjobs.com/GoToCareers/job/Remote-Hungary/DevOps-Intern_R26-2270-1) |
 | Pearson | Associate, AI & Machine Learning Intern ~ | Data & ML/AI | B.Tech/BS | Bangalore, Karnataka, India | Sep 04, 2026 | [Apply](https://hccz.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/25878) |
 | Ancestry | Applied AI Science Co-op - Embedding models and Personalization ~ | Data & ML/AI | B.Tech/BS | Remote | Sep 03, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Applied-AI-Science-Co-op---Embedding-models-and-Personalization_R003442) |
 | GE Aerospace | Data Science Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 03, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science-Intern_R5039463) |
@@ -153,7 +153,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,121 companies across 24 ATS platforms · 98% fetch success · completed in 383.0s · median detection latency 634 min · real posted dates on 86% of open roles._
+_Engine (last run): 5,121 companies across 24 ATS platforms · 99% fetch success · completed in 333.7s · median detection latency 634 min · real posted dates on 86% of open roles._
 
 ## Platforms Scraped
 
