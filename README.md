@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**17 open roles · 12 new this week · 5,125 companies tracked · updated Sep 08, 2026 at 17:06 UTC**
+**14 open roles · 9 new this week · 5,125 companies tracked · updated Sep 08, 2026 at 19:54 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,17 +13,14 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (15 open)
+## Summer 2027 (International)  (12 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Cambium Learning Group | Software Engineer Intern – AI Applications ~ 🆕 | Data & ML/AI | — | Remote | Sep 08, 2026 | [Apply](https://cambiumlearning.wd1.myworkdayjobs.com/camb/job/Remote/Software-Engineer-Intern---AI-Applications_REQ-4610) |
-| LinkedIn | Software Engineering Intern ~ 🆕 | Software | B.Tech/BS | Bengaluru, KA, India | Sep 08, 2026 | [Apply](https://jobs.smartrecruiters.com/LinkedIn3/744000148299359) |
 | Vercel | Software Engineering Intern - Summer '27 🆕 | Software | B.Tech/BS | Hybrid - San Francisco | Sep 08, 2026 | [Apply](https://job-boards.greenhouse.io/vercel/jobs/6181759004) |
-| Honeywell | Intern Masters Embedded Eng ~ 🆕 | Software | B.Tech/BS | Hyderabad, Telangana, India | Sep 08, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/157407) |
-| Honeywell | Intern Bachelors AI ~ 🆕 | Data & ML/AI | B.Tech/BS | Bengaluru, Karnataka, India | Sep 08, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/157433) |
+| LinkedIn | Software Engineering Intern ~ 🆕 | Software | B.Tech/BS | Bengaluru, KA, India | Sep 08, 2026 | [Apply](https://jobs.smartrecruiters.com/LinkedIn3/744000148299359) |
+| Cambium Learning Group | Software Engineer Intern – AI Applications ~ 🆕 | Data & ML/AI | — | Remote | Sep 08, 2026 | [Apply](https://cambiumlearning.wd1.myworkdayjobs.com/camb/job/Remote/Software-Engineer-Intern---AI-Applications_REQ-4610) |
 | GoTo Group | DevOps Intern (fixed term, 8 months) ~ 🆕 | Software | B.Tech/BS | Remote (Hungary) | Sep 07, 2026 | [Apply](https://goto.wd5.myworkdayjobs.com/GoToCareers/job/Remote-Hungary/DevOps-Intern_R26-2270-1) |
-| Pearson | Associate, AI & Machine Learning Intern ~ | Data & ML/AI | B.Tech/BS | Bangalore, Karnataka, India | Sep 04, 2026 | [Apply](https://hccz.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/25878) |
 | Ancestry | Applied AI Science Co-op - Embedding models and Personalization ~ | Data & ML/AI | B.Tech/BS | Remote | Sep 03, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Applied-AI-Science-Co-op---Embedding-models-and-Personalization_R003442) |
 | GE Aerospace | Data Science Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 03, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science-Intern_R5039463) |
 | TWG Global | AI Data Science Intern (UK) ~ | Data & ML/AI | B.Tech/BS | London, England, United Kingdom (Remote) | Sep 01, 2026 | [Apply](https://apply.workable.com/twgai/j/1206BF981C/) |
@@ -33,7 +30,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | PagarBook | Full Stack Development Intern ~ | Software | — | Bangalore | — | [Apply](https://www.instahyre.com/job-439220-full-stack-development-intern-internship-at-pagarbook-bangalore/) |
 | Oneture Technologies | AI / ML Intern ~ | Data & ML/AI | — | Mumbai | — | [Apply](https://www.instahyre.com/job-390123-ai-ml-intern-at-oneture-technologies-mumbai/) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (14 of 15)._
+_~ = the title doesn't state a year; bucketed here from its posting date (11 of 12)._
 
 ## Fall 2026 (International)  (2 open)
 
@@ -118,10 +115,13 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _61 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **26** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 15 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 18 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Pearson | Associate, AI & Machine Learning Intern | Summer 2027 | 2026-09-08 |
+| Honeywell | Intern Masters Embedded Eng | Summer 2027 | 2026-09-08 |
+| Honeywell | Intern Bachelors AI | Summer 2027 | 2026-09-08 |
 | LinkedIn | Artificial Intelligence / Machine Learning Engineering Intern | Summer 2027 | 2026-09-08 |
 | Epicor | Interns - Content Developer /Technical Writing/ Instructional Designer | Summer 2027 | 2026-09-06 |
 | eBay | Software Engineer Intern | Summer 2027 | 2026-09-05 |
@@ -155,7 +155,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,125 companies across 24 ATS platforms · 99% fetch success · completed in 428.7s · median detection latency 631 min · real posted dates on 88% of open roles._
+_Engine (last run): 5,125 companies across 24 ATS platforms · 99% fetch success · completed in 421.2s · median detection latency 631 min · real posted dates on 85% of open roles._
 
 ## Platforms Scraped
 
