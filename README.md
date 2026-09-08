@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**12 open roles · 7 new this week · 5,121 companies tracked · updated Sep 08, 2026 at 02:37 UTC**
+**15 open roles · 10 new this week · 5,121 companies tracked · updated Sep 08, 2026 at 07:47 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,10 +13,13 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (10 open)
+## Summer 2027 (International)  (13 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
+| Honeywell | Intern Bachelors AI ~ 🆕 | Data & ML/AI | B.Tech/BS | Bengaluru, Karnataka, India | Sep 08, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/157433) |
+| Honeywell | Intern Masters Embedded Eng ~ 🆕 | Software | B.Tech/BS | Hyderabad, Telangana, India | Sep 08, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/157407) |
+| LinkedIn | Artificial Intelligence / Machine Learning Engineering Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bengaluru, KA, India | Sep 08, 2026 | [Apply](https://jobs.smartrecruiters.com/LinkedIn3/744000148146490) |
 | GoTo Group | DevOps Intern ~ 🆕 | Software | B.Tech/BS | Remote (Hungary) | Sep 07, 2026 | [Apply](https://goto.wd5.myworkdayjobs.com/GoToCareers/job/Remote-Hungary/DevOps-Intern_R26-2270-1) |
 | Pearson | Associate, AI & Machine Learning Intern ~ | Data & ML/AI | B.Tech/BS | Bangalore, Karnataka, India | Sep 04, 2026 | [Apply](https://hccz.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/25878) |
 | Ancestry | Applied AI Science Co-op - Embedding models and Personalization ~ | Data & ML/AI | B.Tech/BS | Remote | Sep 03, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Applied-AI-Science-Co-op---Embedding-models-and-Personalization_R003442) |
@@ -28,7 +31,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | PagarBook | Full Stack Development Intern ~ | Software | — | Bangalore | — | [Apply](https://www.instahyre.com/job-439220-full-stack-development-intern-internship-at-pagarbook-bangalore/) |
 | Oneture Technologies | AI / ML Intern ~ | Data & ML/AI | — | Mumbai | — | [Apply](https://www.instahyre.com/job-390123-ai-ml-intern-at-oneture-technologies-mumbai/) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (10 of 10)._
+_~ = the title doesn't state a year; bucketed here from its posting date (13 of 13)._
 
 ## Fall 2026 (International)  (2 open)
 
@@ -150,7 +153,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,121 companies across 24 ATS platforms · 99% fetch success · completed in 325.9s · median detection latency 637 min · real posted dates on 83% of open roles._
+_Engine (last run): 5,121 companies across 24 ATS platforms · 98% fetch success · completed in 383.0s · median detection latency 634 min · real posted dates on 86% of open roles._
 
 ## Platforms Scraped
 
