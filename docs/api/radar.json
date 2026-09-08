@@ -1,8 +1,22 @@
 {
- "generated_at": "2026-09-08T12:35:51Z",
+ "generated_at": "2026-09-08T17:06:44Z",
  "cycle": "Summer 2027",
  "source": "https://github.com/Rohan-droid7341/internship-engine-india",
  "companies": [
+  {
+   "company": "Vercel",
+   "last_cycle_posted": "",
+   "posted_on": "2026-09-08",
+   "precision": "day",
+   "rolling": false,
+   "confidence": "verified",
+   "source": "engine",
+   "expected": "2026-09-08",
+   "days_until": 0,
+   "status": "open",
+   "url": "https://job-boards.greenhouse.io/vercel/jobs/6181759004",
+   "note": ""
+  },
   {
    "company": "Citadel",
    "last_cycle_posted": "",
@@ -589,7 +603,7 @@
    "days_until": -69,
    "status": "dropped",
    "url": "",
-   "note": ""
+   "note": "posts early, rolling"
   },
   {
    "company": "IMC Trading",
@@ -601,20 +615,6 @@
    "source": "engine",
    "expected": "2026-07-01",
    "days_until": -69,
-   "status": "dropped",
-   "url": "",
-   "note": "posts early, rolling"
-  },
-  {
-   "company": "Tower Research Capital",
-   "last_cycle_posted": "",
-   "posted_on": "2026-07-05",
-   "precision": "day",
-   "rolling": false,
-   "confidence": "verified",
-   "source": "engine",
-   "expected": "2026-07-05",
-   "days_until": -65,
    "status": "dropped",
    "url": "",
    "note": ""
@@ -632,6 +632,20 @@
    "status": "dropped",
    "url": "",
    "note": "opens ~Aug-Sep"
+  },
+  {
+   "company": "Tower Research Capital",
+   "last_cycle_posted": "",
+   "posted_on": "2026-07-05",
+   "precision": "day",
+   "rolling": false,
+   "confidence": "verified",
+   "source": "engine",
+   "expected": "2026-07-05",
+   "days_until": -65,
+   "status": "dropped",
+   "url": "",
+   "note": ""
   },
   {
    "company": "Northrop Grumman",
@@ -844,5 +858,5 @@
    "note": ""
   }
  ],
- "count": 60
+ "count": 61
 }
