@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**14 open roles · 8 new this week · 5,125 companies tracked · updated Sep 09, 2026 at 01:02 UTC**
+**14 open roles · 8 new this week · 5,125 companies tracked · updated Sep 09, 2026 at 05:51 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -21,7 +21,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | LinkedIn | Software Engineering Intern ~ 🆕 | Software | B.Tech/BS | Bengaluru, KA, India | Sep 08, 2026 | [Apply](https://jobs.smartrecruiters.com/LinkedIn3/744000148299359) |
 | Cambium Learning Group | Software Engineer Intern – AI Applications ~ 🆕 | Data & ML/AI | — | Remote | Sep 08, 2026 | [Apply](https://cambiumlearning.wd1.myworkdayjobs.com/camb/job/Remote/Software-Engineer-Intern---AI-Applications_REQ-4610) |
 | GoTo Group | DevOps Intern (fixed term, 8 months) ~ 🆕 | Software | B.Tech/BS | Remote (Hungary) | Sep 07, 2026 | [Apply](https://goto.wd5.myworkdayjobs.com/GoToCareers/job/Remote-Hungary/DevOps-Intern_R26-2270-1) |
-| Ancestry | Applied AI Science Co-op - Embedding models and Personalization ~ | Data & ML/AI | B.Tech/BS | Remote | Sep 03, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Applied-AI-Science-Co-op---Embedding-models-and-Personalization_R003442) |
+| Ancestry | AI Discovery Co-Op - Agentic Personalization ~ | Data & ML/AI | B.Tech/BS | Remote | Sep 03, 2026 | [Apply](https://ancestry.wd501.myworkdayjobs.com/Careers/job/Remote/Applied-AI-Science-Co-op---Embedding-models-and-Personalization_R003442) |
 | GE Aerospace | Data Science Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 03, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science-Intern_R5039463) |
 | TWG Global | AI Data Science Intern (UK) ~ | Data & ML/AI | B.Tech/BS | London, England, United Kingdom (Remote) | Sep 01, 2026 | [Apply](https://apply.workable.com/twgai/j/1206BF981C/) |
 | Arista Networks | Intern Software Engineers - C/C++ ~ | Software | — | Poland - Remote, PL (Remote) | Aug 27, 2026 | [Apply](https://jobs.smartrecruiters.com/AristaNetworks/744000145998379) |
@@ -155,7 +155,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,125 companies across 24 ATS platforms · 98% fetch success · completed in 295.1s · median detection latency 634 min · real posted dates on 85% of open roles._
+_Engine (last run): 5,125 companies across 24 ATS platforms · 98% fetch success · completed in 429.6s · median detection latency 634 min · real posted dates on 85% of open roles._
 
 ## Platforms Scraped
 
