@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**15 open roles · 9 new this week · 5,125 companies tracked · updated Sep 09, 2026 at 10:41 UTC**
+**15 open roles · 9 new this week · 5,142 companies tracked · updated Sep 09, 2026 at 15:05 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -116,7 +116,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _61 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **26** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 17 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 16 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -136,7 +136,6 @@ _61 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Cisco | Software Engineer – Network/Embedded/Application Development (Summer Internship) - India EG Requisition | Summer 2027 | 2026-08-27 |
 | Philips | Intern - Embedded System | Summer 2027 | 2026-08-27 |
 | Ancestry | Software Engineer – Observability, Co-op | Summer 2027 | 2026-08-27 |
-| Gevernova | Grid Automation & Software Intern | Summer 2027 | 2026-08-26 |
 
 </details>
 
@@ -155,7 +154,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,125 companies across 24 ATS platforms · 99% fetch success · completed in 388.0s · median detection latency 635 min · real posted dates on 86% of open roles._
+_Engine (last run): 5,142 companies across 24 ATS platforms · 99% fetch success · completed in 423.3s · median detection latency 635 min · real posted dates on 86% of open roles._
 
 ## Platforms Scraped
 
