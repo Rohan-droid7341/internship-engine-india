@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**14 open roles · 8 new this week · 5,125 companies tracked · updated Sep 09, 2026 at 05:51 UTC**
+**15 open roles · 9 new this week · 5,125 companies tracked · updated Sep 09, 2026 at 10:41 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,10 +13,11 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (12 open)
+## Summer 2027 (International)  (13 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
+| Gevernova | Grid Automation & Software Intern ~ 🆕 | Software | B.Tech/BS | Remote | Sep 09, 2026 | [Apply](https://gevernova.wd5.myworkdayjobs.com/only_confidential_executive_recruiting/job/Remote/Grid-Automation---Software-Intern_R5052362) |
 | Vercel | Software Engineering Intern - Summer '27 🆕 | Software | B.Tech/BS | Hybrid - San Francisco | Sep 08, 2026 | [Apply](https://job-boards.greenhouse.io/vercel/jobs/6181759004) |
 | LinkedIn | Software Engineering Intern ~ 🆕 | Software | B.Tech/BS | Bengaluru, KA, India | Sep 08, 2026 | [Apply](https://jobs.smartrecruiters.com/LinkedIn3/744000148299359) |
 | Cambium Learning Group | Software Engineer Intern – AI Applications ~ 🆕 | Data & ML/AI | — | Remote | Sep 08, 2026 | [Apply](https://cambiumlearning.wd1.myworkdayjobs.com/camb/job/Remote/Software-Engineer-Intern---AI-Applications_REQ-4610) |
@@ -30,7 +31,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | PagarBook | Full Stack Development Intern ~ | Software | — | Bangalore | — | [Apply](https://www.instahyre.com/job-439220-full-stack-development-intern-internship-at-pagarbook-bangalore/) |
 | Oneture Technologies | AI / ML Intern ~ | Data & ML/AI | — | Mumbai | — | [Apply](https://www.instahyre.com/job-390123-ai-ml-intern-at-oneture-technologies-mumbai/) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (11 of 12)._
+_~ = the title doesn't state a year; bucketed here from its posting date (12 of 13)._
 
 ## Fall 2026 (International)  (2 open)
 
@@ -115,7 +116,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _61 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **26** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 18 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 17 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -136,7 +137,6 @@ _61 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Philips | Intern - Embedded System | Summer 2027 | 2026-08-27 |
 | Ancestry | Software Engineer – Observability, Co-op | Summer 2027 | 2026-08-27 |
 | Gevernova | Grid Automation & Software Intern | Summer 2027 | 2026-08-26 |
-| Revvity | AI Intern | Summer 2027 | 2026-08-26 |
 
 </details>
 
@@ -155,7 +155,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,125 companies across 24 ATS platforms · 98% fetch success · completed in 429.6s · median detection latency 634 min · real posted dates on 85% of open roles._
+_Engine (last run): 5,125 companies across 24 ATS platforms · 99% fetch success · completed in 388.0s · median detection latency 635 min · real posted dates on 86% of open roles._
 
 ## Platforms Scraped
 
