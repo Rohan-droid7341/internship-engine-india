@@ -1,8 +1,26 @@
 {
- "generated_at": "2026-09-10T16:55:39Z",
+ "generated_at": "2026-09-10T19:31:43Z",
  "source": "https://github.com/Rohan-droid7341/internship-engine-india",
- "count": 16,
+ "count": 15,
  "jobs": [
+  {
+   "id": "oracle:ibqbjb.fa.ocs.oraclecloud.com:157576",
+   "company": "Honeywell",
+   "title": "Intern Masters Data Science",
+   "season": "Summer 2027",
+   "season_inferred": true,
+   "category": "Data & ML/AI",
+   "location": "Bengaluru, Karnataka, India",
+   "url": "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/157576",
+   "posted_at": "2026-09-10",
+   "first_seen_at": "2026-09-10T19:31:43Z",
+   "salary": null,
+   "skills": [
+    "Python",
+    "Tableau"
+   ],
+   "source": "oracle"
+  },
   {
    "id": "workday:novartis:/job/Hyderabad-Office/Intern-Data-Science_REQ-10087679-1",
    "company": "Novartis",
@@ -55,25 +73,6 @@
     "JavaScript"
    ],
    "source": "greenhouse"
-  },
-  {
-   "id": "smartrecruiters:LinkedIn3:744000148299359",
-   "company": "LinkedIn",
-   "title": "Software Engineering Intern",
-   "season": "Summer 2027",
-   "season_inferred": true,
-   "category": "Software",
-   "location": "Bengaluru, KA, India",
-   "url": "https://jobs.smartrecruiters.com/LinkedIn3/744000148299359",
-   "posted_at": "2026-09-08T16:44:01.909Z",
-   "first_seen_at": "2026-09-08T17:06:44Z",
-   "salary": null,
-   "skills": [
-    "Java",
-    "C++",
-    "C#"
-   ],
-   "source": "smartrecruiters"
   },
   {
    "id": "workday:cambiumlearning:/job/Remote/Software-Engineer-Intern---AI-Applications_REQ-4610",
@@ -136,24 +135,6 @@
     "TensorFlow",
     "LLMs",
     "AWS"
-   ],
-   "source": "workday"
-  },
-  {
-   "id": "workday:geaerospace:/job/Bengaluru/Data-Science-Intern_R5039463",
-   "company": "GE Aerospace",
-   "title": "Data Science Intern",
-   "season": "Summer 2027",
-   "season_inferred": true,
-   "category": "Data & ML/AI",
-   "location": "Bengaluru",
-   "url": "https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science-Intern_R5039463",
-   "posted_at": "2026-09-03T00:00:00Z",
-   "first_seen_at": "2026-09-03T07:46:40Z",
-   "salary": null,
-   "skills": [
-    "Python",
-    "LLMs"
    ],
    "source": "workday"
   },
