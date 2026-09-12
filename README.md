@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**16 open roles · 8 new this week · 5,190 companies tracked · updated Sep 12, 2026 at 14:54 UTC**
+**16 open roles · 8 new this week · 5,190 companies tracked · updated Sep 12, 2026 at 17:42 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -20,7 +20,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Arista Networks | Intern Software Engineer - C/C++ ~ 🆕 | Software | — | Poland - Remote, PL (Remote) | Sep 11, 2026 | [Apply](https://jobs.smartrecruiters.com/AristaNetworks/744000149101159) |
 | Ixigo | Full-Stack Intern - B2B ~ 🆕 | Software | — | Gurugram, HR, India | Sep 11, 2026 | [Apply](https://jobs.smartrecruiters.com/ixigo/744000148960832) |
 | Swarm Aero | Software Engineer Intern (Summer 2027) 🆕 | Software | $35 per hour<br>B.Tech/BS | Remote | Sep 10, 2026 | [Apply](https://jobs.ashbyhq.com/swarmaero/04cff1f6-c790-4773-8568-e487a03626f6) |
-| Barnes & Thornburg | 2027 BT RISE Internship - Information Technology AI Intern 🆕 | Data & ML/AI | B.Tech/BS | Indianapolis | Sep 09, 2026 | [Apply](https://jobs.ashbyhq.com/barnes/af9258a6-b6e6-4714-92dc-a9952c0590a7) |
+| Barnes & Thornburg | 2027 BT RISE Internship - Information Technology AI Intern | Data & ML/AI | B.Tech/BS | Indianapolis | Sep 09, 2026 | [Apply](https://jobs.ashbyhq.com/barnes/af9258a6-b6e6-4714-92dc-a9952c0590a7) |
 | Vercel | Software Engineering Intern - Summer '27 | Software | B.Tech/BS | Hybrid - San Francisco | Sep 08, 2026 | [Apply](https://job-boards.greenhouse.io/vercel/jobs/6181759004) |
 | Cambium Learning Group | Software Engineer Intern – AI Applications ~ | Data & ML/AI | — | Remote | Sep 08, 2026 | [Apply](https://cambiumlearning.wd1.myworkdayjobs.com/camb/job/Remote/Software-Engineer-Intern---AI-Applications_REQ-4610) |
 | GoTo Group | DevOps Intern (fixed term, 8 months) ~ | Software | B.Tech/BS | Remote (Hungary) | Sep 07, 2026 | [Apply](https://goto.wd5.myworkdayjobs.com/GoToCareers/job/Remote-Hungary/DevOps-Intern_R26-2270-1) |
@@ -158,7 +158,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,190 companies across 24 ATS platforms · 99% fetch success · completed in 334.4s · median detection latency 634 min · real posted dates on 81% of open roles._
+_Engine (last run): 5,190 companies across 24 ATS platforms · 99% fetch success · completed in 304.1s · median detection latency 634 min · real posted dates on 81% of open roles._
 
 ## Platforms Scraped
 
