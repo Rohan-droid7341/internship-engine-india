@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**16 open roles · 8 new this week · 5,175 companies tracked · updated Sep 11, 2026 at 23:54 UTC**
+**15 open roles · 7 new this week · 5,175 companies tracked · updated Sep 12, 2026 at 02:43 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,14 +13,13 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027 (International)  (14 open)
+## Summer 2027 (International)  (13 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
 | Arista Networks | Intern Software Engineer - C/C++ ~ 🆕 | Software | — | Poland - Remote, PL (Remote) | Sep 11, 2026 | [Apply](https://jobs.smartrecruiters.com/AristaNetworks/744000149101159) |
 | Ixigo | Full-Stack Intern - B2B ~ 🆕 | Software | — | Gurugram, HR, India | Sep 11, 2026 | [Apply](https://jobs.smartrecruiters.com/ixigo/744000148960832) |
 | Swarm Aero | Software Engineer Intern (Summer 2027) 🆕 | Software | $35 per hour<br>B.Tech/BS | Remote | Sep 10, 2026 | [Apply](https://jobs.ashbyhq.com/swarmaero/04cff1f6-c790-4773-8568-e487a03626f6) |
-| Honeywell | Intern Masters Data Science ~ 🆕 | Data & ML/AI | M.Tech/MS | Bengaluru, Karnataka, India | Sep 10, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/157576) |
 | Barnes & Thornburg | 2027 BT RISE Internship - Information Technology AI Intern 🆕 | Data & ML/AI | B.Tech/BS | Indianapolis | Sep 09, 2026 | [Apply](https://jobs.ashbyhq.com/barnes/af9258a6-b6e6-4714-92dc-a9952c0590a7) |
 | Vercel | Software Engineering Intern - Summer '27 | Software | B.Tech/BS | Hybrid - San Francisco | Sep 08, 2026 | [Apply](https://job-boards.greenhouse.io/vercel/jobs/6181759004) |
 | Cambium Learning Group | Software Engineer Intern – AI Applications ~ | Data & ML/AI | — | Remote | Sep 08, 2026 | [Apply](https://cambiumlearning.wd1.myworkdayjobs.com/camb/job/Remote/Software-Engineer-Intern---AI-Applications_REQ-4610) |
@@ -32,7 +31,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | PagarBook | Full Stack Development Intern ~ | Software | — | Bangalore | — | [Apply](https://www.instahyre.com/job-439220-full-stack-development-intern-internship-at-pagarbook-bangalore/) |
 | Oneture Technologies | AI / ML Intern ~ | Data & ML/AI | — | Mumbai | — | [Apply](https://www.instahyre.com/job-390123-ai-ml-intern-at-oneture-technologies-mumbai/) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (11 of 14)._
+_~ = the title doesn't state a year; bucketed here from its posting date (10 of 13)._
 
 ## Fall 2026 (International)  (2 open)
 
@@ -106,7 +105,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | Robinhood | ~Sep | ~Sep · any day now | ⏳ waiting |
 | Roblox | ~Sep | ~Sep · any day now | ⏳ waiting |
 | Stripe | ~Sep | ~Sep · any day now | ⏳ waiting |
-| D.E. Shaw | ~Oct | ~Oct · in ~20d | ⏳ waiting |
+| D.E. Shaw | ~Oct | ~Oct · in ~19d | ⏳ waiting |
 | Coinbase | ~Dec | ~Dec | ⏳ waiting |
 | Ramp | ~Dec | ~Dec | ⏳ waiting |
 | Two Sigma | ~Dec | ~Dec | ⏳ waiting |
@@ -117,10 +116,11 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _63 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **28** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 19 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 20 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Honeywell | Intern Masters Data Science | Summer 2027 | 2026-09-12 |
 | Arista Networks | Intern Software Engineers - C/C++ | Summer 2027 | 2026-09-11 |
 | GE Healthcare | Intern Firmware | Summer 2027 | 2026-09-11 |
 | Novartis | Intern Data Science | Summer 2027 | 2026-09-11 |
@@ -158,7 +158,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,175 companies across 24 ATS platforms · 99% fetch success · completed in 455.1s · median detection latency 634 min · real posted dates on 87% of open roles._
+_Engine (last run): 5,175 companies across 24 ATS platforms · 98% fetch success · completed in 403.0s · median detection latency 634 min · real posted dates on 86% of open roles._
 
 ## Platforms Scraped
 
