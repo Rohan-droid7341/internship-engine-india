@@ -187,6 +187,14 @@ def _keep_matching(results, cfg, blocklist, existing=None) -> tuple[list, set[st
                 continue
             season = filters.detect_season(job.title, cycles)
             inferred = False
+
+            # If no season in title, look for the year in the description!
+            if season is None and job.description:
+                desc_season = filters.detect_season_from_description(job.description, cycles)
+                if desc_season in cycles:
+                    season = desc_season
+                    inferred = False
+
             if season is None:
                 if filters.states_explicit_year(job.title):
                     # The title names a year we don't track ("Summer 2026
@@ -216,7 +224,7 @@ def _keep_matching(results, cfg, blocklist, existing=None) -> tuple[list, set[st
                 dropped_no_year += 1
                 continue
             in_region = filters.region_ok(
-                job.location, wants_us, wants_canada, wants_india, wants_remote
+                job.location, wants_us, wants_canada, wants_india, wants_remote, source=job.source
             )
             if restrict and not in_region and not include_intl:
                 continue

@@ -276,3 +276,57 @@ class TestSeasonFromText:
 
     def test_implausible_year_ignored(self):
         assert self._stated("Our internship program has run every summer since May 2019.") is None
+
+
+class TestRegionOptionA:
+    def test_rejects_foreign_countries_even_if_remote(self):
+        # Must drop Poland - Remote, UK Remote, Remote (Hungary), etc.
+        assert not filters.region_ok("Poland - Remote, PL (Remote)", want_us=False, want_canada=False, want_india=True, want_remote=True)
+        assert not filters.region_ok("London, England, United Kingdom (Remote)", want_us=False, want_canada=False, want_india=True, want_remote=True)
+        assert not filters.region_ok("Remote (Hungary)", want_us=False, want_canada=False, want_india=True, want_remote=True)
+
+    def test_rejects_us_cities_leaking_as_remote(self):
+        # Major US cities must be caught as US even if they have "Hybrid" or no state
+        assert not filters.region_ok("Palo Alto - Hybrid", want_us=False, want_canada=False, want_india=True, want_remote=True)
+        assert not filters.region_ok("Hybrid - San Francisco", want_us=False, want_canada=False, want_india=True, want_remote=True)
+        assert not filters.region_ok("Indianapolis", want_us=False, want_canada=False, want_india=True, want_remote=True)
+
+    def test_accepts_india_locations(self):
+        assert filters.region_ok("Bengaluru, Karnataka, India", want_us=False, want_canada=False, want_india=True, want_remote=True)
+        assert filters.region_ok("Gurugram, HR, India", want_us=False, want_canada=False, want_india=True, want_remote=True)
+        assert filters.region_ok("Bhubaneswar, India", want_us=False, want_canada=False, want_india=True, want_remote=True)
+        assert filters.region_ok("Bengaluru, KA, IND", want_us=False, want_canada=False, want_india=True, want_remote=True)
+
+    def test_accepts_verified_remote_or_indian_company(self):
+        assert filters.region_ok("India (Remote)", want_us=False, want_canada=False, want_india=True, want_remote=True)
+        assert filters.region_ok("Remote - India", want_us=False, want_canada=False, want_india=True, want_remote=True)
+        assert filters.region_ok("Worldwide Remote", want_us=False, want_canada=False, want_india=True, want_remote=True)
+        # Bare Remote from Indian platform is accepted
+        assert filters.region_ok("Remote", want_us=False, want_canada=False, want_india=True, want_remote=True, source="instahyre")
+        # Bare Remote from foreign company without India context is rejected
+        assert not filters.region_ok("Remote", want_us=False, want_canada=False, want_india=True, want_remote=True, source="workday")
+
+
+class TestTechIndianMarket:
+    def test_allows_mca_and_sdet_and_cyber(self):
+        assert filters.is_tech("SDE Intern")
+        assert filters.is_tech("SDET Intern")
+        assert filters.is_tech("Software Developer Intern - MCA Graduate")
+        assert filters.is_tech("Cybersecurity Intern")
+        assert filters.is_tech("Cloud & DevOps Intern")
+
+    def test_rejects_indian_non_tech_spam(self):
+        assert not filters.is_tech("Campus Ambassador Intern")
+        assert not filters.is_tech("Content Writer Intern")
+        assert not filters.is_tech("SEO & Digital Marketing Intern")
+        assert not filters.is_tech("Business Development Associate Intern")
+
+
+class TestSeasonFromDescription:
+    def test_finds_season_in_description(self):
+        desc = "We are seeking talented students for our Summer 2027 internship cohort in Bangalore."
+        assert filters.detect_season_from_description(desc, CYCLES) == "Summer 2027"
+
+        desc2 = "2027 software engineering internship program. Candidates should know Python."
+        assert filters.detect_season_from_description(desc2, CYCLES) == "Summer 2027"
+

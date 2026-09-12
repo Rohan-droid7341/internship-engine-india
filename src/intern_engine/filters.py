@@ -10,7 +10,10 @@ import re
 from datetime import UTC, datetime
 
 # --- internship detection (whole words, never substrings) --------------------
-_INTERN_RE = re.compile(r"\b(intern|interns|internship|co[\s-]?op)\b", re.IGNORECASE)
+_INTERN_RE = re.compile(
+    r"\b(intern|interns|internship|co[\s-]?op|trainee|apprentice|fellow|fellowship)\b",
+    re.IGNORECASE,
+)
 _SENIOR_RE = re.compile(
     r"\b(senior|sr|staff|principal|manager|director|\blead\b|vp|head)\b",
     re.IGNORECASE,
@@ -24,14 +27,17 @@ _SENIOR_RE = re.compile(
 # treat a bare "engineer" as tech — that word alone lets in mech/aero/civil.
 _INCLUDE_RE = re.compile(
     r"\b("
-    r"software|developer|swe|full[\s-]?stack|front[\s-]?end|back[\s-]?end|"
+    r"software|developer|swe|sde|sdet|full[\s-]?stack|front[\s-]?end|back[\s-]?end|"
     r"web developer|web engineer|mobile|ios|android|devops|sre|site reliability|"
     r"infrastructure|platform engineer|platform engineering|distributed systems|"
-    r"operating system|compiler|embedded|firmware|"
+    r"operating system|compiler|embedded|firmware|cloud|cloud engineer|cloud intern|"
+    r"qa|qa engineer|qa intern|quality assurance|automation engineer|automation tester|"
     r"data science|data scientist|data engineer|data analyst|analytics engineer|"
     r"machine learning|ml|deep learning|ai|artificial intelligence|nlp|computer vision|"
     r"research scientist|applied scientist|research engineer|ml engineer|ai engineer|"
-    r"quantitative developer|quant developer|computer science|programming"
+    r"genai|generative ai|llm|quantitative developer|quant developer|"
+    r"cyber|cybersecurity|appsec|application security|information security|infosec|"
+    r"security engineer|security intern|devsecops|computer science|programming"
     r")\b",
     re.IGNORECASE,
 )
@@ -44,12 +50,12 @@ _EXCLUDE_RE = re.compile(
     r"hardware|physical design|silicon|semiconductor|vlsi|rtl|"
     r"recruit|recruiting|recruiter|sales|account executive|account manager|"
     r"account management|marketing|marketer|unpaid|"
+    r"campus ambassador|content writer|content writing|seo|digital marketing|telecaller|"
+    r"subject matter expert|sme|business development|bda|lead generation|"
     r"legal|counsel|accounting|human resources|people operations|people team|talent|"
-    r"communications|supply chain|business development|product design|product designer|"
+    r"communications|supply chain|product design|product designer|"
     r"product manager|product management|ux design|graphic design|industrial design|"
-    r"cyber|cybersecurity|appsec|application security|information security|infosec|"
-    r"security|security engineer|"
-    r"phd|ph\.d|doctoral|mba|bba|bcom|b\.com|mca|chartered accountant|ca"
+    r"phd|ph\.d|doctoral|mba|bba|bcom|b\.com|chartered accountant|ca"
     r")\b",
     re.IGNORECASE,
 )
@@ -318,6 +324,33 @@ def season_from_text(text: str, near: int = 90, now: datetime | None = None) -> 
     return labels.pop() if len(labels) == 1 else None
 
 
+def detect_season_from_description(
+    text: str, cycles=("Summer 2027", "Fall 2026"), now: datetime | None = None
+) -> str | None:
+    """Extract explicit season/cycle from job description when missing in title."""
+    if not text:
+        return None
+    # 1. Try strict season_from_text (matches "<term> <year>" or "<month> <year>")
+    season = season_from_text(text, now=now)
+    if season and season in cycles:
+        return season
+
+    # 2. Check for explicit cycle mentions (e.g. "Summer 2027", "Fall 2026", "2027 Intern")
+    text_clean = _TITLE_GRAD_RE.sub(" ", text)  # drop "graduating in 2027"
+    for label in cycles:
+        if re.search(r"\b" + re.escape(label) + r"\b", text_clean, re.I):
+            return label
+        m = _CYCLE_RE.match(label.strip())
+        if m:
+            cyear = m.group(2)
+            # Year near intern/internship
+            if re.search(r"\b" + cyear + r"\b.{0,40}\b(intern|internship|co-op)\b", text_clean, re.I):
+                return label
+            if re.search(r"\b(intern|internship|co-op)\b.{0,40}\b" + cyear + r"\b", text_clean, re.I):
+                return label
+    return None
+
+
 # --- location: US / Canada detection -----------------------------------------
 # Full state/province names are matched case-insensitively; the 2-letter codes
 # are matched case-SENSITIVELY (uppercase) so "OR"/"IN" don't match the words
@@ -522,8 +555,28 @@ _NON_US_COUNTRIES = (
     "sri lanka",
     "australia",
     "new zealand",
+    "uk",
+    "england",
+    "scotland",
+    "wales",
 )
 _NON_US_RE = re.compile(r"\b(" + "|".join(re.escape(c) for c in _NON_US_COUNTRIES) + r")\b")
+
+_FOREIGN_COUNTRIES_LIST = [
+    c for c in _NON_US_COUNTRIES if c not in ("india", "bharat")
+] + ["uk", "england", "scotland", "wales", "canada", "canadian"]
+_FOREIGN_COUNTRY_RE = re.compile(r"\b(" + "|".join(re.escape(c) for c in _FOREIGN_COUNTRIES_LIST) + r")\b", re.IGNORECASE)
+
+_US_MAJOR_CITIES = [
+    "san francisco", "palo alto", "mountain view", "sunnyvale", "san jose",
+    "santa clara", "cupertino", "redwood city", "fremont", "oakland", "berkeley",
+    "seattle", "bellevue", "redmond", "new york", "nyc", "manhattan", "brooklyn",
+    "boston", "cambridge", "chicago", "austin", "dallas", "houston", "los angeles",
+    "san diego", "denver", "boulder", "atlanta", "pittsburgh", "philadelphia",
+    "indianapolis", "minneapolis", "raleigh", "charlotte", "durham", "portland",
+    "salt lake city", "phoenix", "tempe", "detroit", "columbus", "washington dc",
+]
+_US_CITY_RE = re.compile(r"\b(" + "|".join(re.escape(c) for c in _US_MAJOR_CITIES) + r")\b", re.IGNORECASE)
 
 _US_NAME_RE = re.compile(
     r"\b(" + "|".join(re.escape(n) for n in _US_STATES) + r")\b", re.IGNORECASE
@@ -546,6 +599,8 @@ def is_united_states(location: str) -> bool:
         return True
     if _NON_US_RE.search(low):
         return False  # a named foreign country outranks state-name/code guesses
+    if _US_CITY_RE.search(low):
+        return True  # major US tech cities: San Francisco, Palo Alto, etc.
     if _US_NAME_RE.search(low):
         return True  # full state names first: "Ontario, California" IS the US
     if any(token in low for token in _CA_COUNTRY) or _CA_NAME_RE.search(low):
@@ -555,6 +610,16 @@ def is_united_states(location: str) -> bool:
     if _US_CODE_RE.search(location):
         return True
     return False
+
+
+def is_foreign_country(location: str) -> bool:
+    """True when location mentions a specific foreign country (not India)."""
+    if not location:
+        return False
+    low = location.lower()
+    if is_india(low):
+        return False
+    return bool(_FOREIGN_COUNTRY_RE.search(low))
 
 
 def is_canada(location: str) -> bool:
@@ -656,6 +721,12 @@ _INDIA_STATE_RE = re.compile(
 )
 
 
+_INDIA_STATE_CODE_RE = re.compile(
+    r"\b(KA|MH|TS|TN|DL|HR|GJ|UP|WB|AP|PB|KL|RJ|MP|OD|JH|UT|GA|AS|CH)\s*,\s*(IN|India|IND)\b",
+    re.IGNORECASE,
+)
+
+
 def is_india(location: str) -> bool:
     """True when the location string points to India."""
     if not location:
@@ -666,6 +737,8 @@ def is_india(location: str) -> bool:
     if _INDIA_CITY_RE.search(low):
         return True
     if _INDIA_STATE_RE.search(low):
+        return True
+    if _INDIA_STATE_CODE_RE.search(location):
         return True
     return False
 
@@ -679,6 +752,14 @@ _HYBRID_RE = re.compile(
     r"\b(hybrid|flexible\s+location|partly\s+remote)\b",
     re.IGNORECASE,
 )
+_GLOBAL_REMOTE_RE = re.compile(
+    r"\b(worldwide|anywhere|global\s+remote|remote\s*-\s*apac|apac\s+remote)\b", re.IGNORECASE
+)
+_INDIA_REMOTE_RE = re.compile(
+    r"\b(india\s*\(remote\)|remote\s*-\s*india|remote\s*,\s*india|remote\s*,\s*in\b|remote\s+in\s+india)\b",
+    re.IGNORECASE,
+)
+_INDIAN_SOURCES = {"instahyre", "unstop", "internshala", "naukri", "custom"}
 
 
 def is_remote_or_hybrid(location: str) -> bool:
@@ -694,17 +775,24 @@ def region_ok(
     want_canada: bool,
     want_india: bool = False,
     want_remote: bool = False,
+    source: str | None = None,
 ) -> bool:
-    """True if the location matches one of the wanted regions.
+    """True if the location matches one of the wanted regions (Option A)."""
+    if not location:
+        return False
+    low = location.lower().strip()
 
-    Conservative: a bare "Remote" with no country mentioned matches only when
-    want_remote is True.
-    """
-    # If the user strictly doesn't want US/Canada, reject jobs localized there.
-    # This prevents "Remote - US" jobs from leaking into the Indian job market.
+    # If user strictly doesn't want US/Canada, reject jobs localized there.
+    # Checks full states, abbreviations, and major US tech cities.
     if not want_us and is_united_states(location):
         return False
     if not want_canada and is_canada(location):
+        return False
+
+    # Option A: Strict foreign country veto.
+    # If location is in a specific foreign country (Poland, UK, Hungary, etc.),
+    # reject even if it says "Remote".
+    if not want_us and not want_canada and is_foreign_country(location):
         return False
 
     if want_us and is_united_states(location):
@@ -713,8 +801,16 @@ def region_ok(
         return True
     if want_india and is_india(location):
         return True
-    if want_remote and is_remote_or_hybrid(location):
-        return True
+
+    # Option A for Remote:
+    # Accept Remote only if verified India Remote, Global/Worldwide Remote,
+    # or bare Remote from verified Indian companies/aggregators.
+    if want_remote:
+        if _INDIA_REMOTE_RE.search(low) or _GLOBAL_REMOTE_RE.search(low):
+            return True
+        if source in _INDIAN_SOURCES and is_remote_or_hybrid(location):
+            return True
+
     return False
 
 
