@@ -40,6 +40,10 @@ def _count(ats: str, payload) -> int:
         return 0
     if ats == "recruitee":
         return len(payload.get("offers", [])) if isinstance(payload, dict) else 0
+    if ats == "workable":
+        if isinstance(payload, dict):
+            return payload.get("total", len(payload.get("results", [])))
+        return 0
     return len(payload.get("jobs", [])) if isinstance(payload, dict) else 0
 
 
@@ -52,6 +56,16 @@ def detect(candidate: dict, session: requests.Session) -> dict | None:
                 return {"name": candidate["name"], "slug": slug, "ats": ats}
         except (requests.RequestException, ValueError):
             continue
+
+    # Probe Workable (requires POST request)
+    try:
+        w_url = f"https://apply.workable.com/api/v3/accounts/{slug}/jobs"
+        resp = session.post(w_url, json={"query": ""}, timeout=12)
+        if resp.status_code == 200 and _count("workable", resp.json()) > 0:
+            return {"name": candidate["name"], "slug": slug, "ats": "workable"}
+    except (requests.RequestException, ValueError):
+        pass
+
     return None
 
 
