@@ -1,6 +1,6 @@
 # Architecture
 
-[![CI](https://github.com/zshah101/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/actions/workflows/ci.yml/badge.svg)](https://github.com/zshah101/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships/actions/workflows/ci.yml)
+[![CI](https://github.com/Rohan-droid7341/internship-engine-india/actions/workflows/ci.yml/badge.svg)](https://github.com/Rohan-droid7341/internship-engine-india/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 ![async](https://img.shields.io/badge/I%2FO-async%20httpx-success)
 
@@ -22,7 +22,7 @@ public datasets + README mines          data/candidates.json (curated slugs)
                                         │  python run.py update
                                         ▼
     health.py ──skips quarantined──►  pipeline.py ──concurrent fetch──►  connectors/*.py
-    (circuit breaker,                   │                                (11 sources, one
+    (circuit breaker,                   │                                (17 sources, one
      data/health.json)                  │  keep: internship? scope?       normalized Job[])
                                         │        target cycle? region?
                                         ▼
@@ -50,14 +50,14 @@ public datasets + README mines          data/candidates.json (curated slugs)
 | `src/intern_engine/paths.py` | All file paths, computed from the repo root (CI-safe). |
 | `src/intern_engine/config.py` | Loads `data/config.json`; derives the repo/Pages URLs. |
 | `src/intern_engine/net.py` | Async HTTP with retry/backoff + per-host concurrency limits. |
-| `src/intern_engine/connectors/` | One module per ATS: Greenhouse, Lever, Ashby, SmartRecruiters, Workday, Oracle, Amazon, Rippling, Workable, Breezy, Recruitee. |
-| `src/intern_engine/filters.py` | Classification: internship? tech? season/year? US/Canada? category. |
+| `src/intern_engine/connectors/` | Connectors for ATS feeds & job platforms: Greenhouse, Lever, Ashby, SmartRecruiters, Workday, Oracle, Amazon, Rippling, Workable, Breezy, Recruitee, Eightfold, Unstop, Internshala, Instahyre, Naukri, Wellfound, Custom Careers. |
+| `src/intern_engine/filters.py` | Classification: internship? tech? season/year? India/Remote? category. |
 | `src/intern_engine/enrich.py` | Fetches posting text for new matched roles; backfills exact dates. |
 | `src/intern_engine/trends.py` | Weekly posting-volume chart + median posting-lifetime metric. |
 | `src/intern_engine/radar.py` | Drop Radar: last cycle's first-post dates projected onto this cycle. |
 | `src/intern_engine/mailer.py` | Daily email digests to our own subscriber list (Brevo, opt-in). |
 | `src/intern_engine/health.py` | Circuit breaker: quarantines repeatedly-failing boards, self-heals. |
-| `src/intern_engine/harvester.py` | Probes candidate slugs across 7 ATS, merges hits into the registry. |
+| `src/intern_engine/harvester.py` | Probes candidate slugs across 8 ATS, merges hits into the registry. |
 | `src/intern_engine/discover.py` | Mines public datasets/READMEs for ATS tokens at scale. |
 | `src/intern_engine/quality.py` | Company quality gate: blocklist + optional allowlist-only mode. |
 | `src/intern_engine/priority.py` | Company prestige ranking for capped sections. |
@@ -82,21 +82,22 @@ public datasets + README mines          data/candidates.json (curated slugs)
 ```json
 {
   "cycles": ["Summer 2027", "Fall 2026"],
-  "regions": ["US"],
+  "regions": ["India", "Remote"],
   "role_scope": "tech",
-  "max_age_days": 270,
-  "max_per_company": 3,
+  "max_age_days": 30,
+  "max_per_company": 5,
   "allowlist_only": false,
   "infer_undated": true,
-  "infer_max_age_days": 45,
+  "infer_max_age_days": 30,
   "section_limits": { "Summer 2027": 300, "Fall 2026": 150 }
 }
 ```
 
 Sources: Greenhouse, Lever, Ashby, SmartRecruiters, Workday, Oracle Recruiting
-Cloud, Amazon, Rippling, Workable, Breezy, and Recruitee. A company-level
-quality gate (`data/blocklist.json` plus the optional `allowlist_only` mode)
-keeps the list free of junk/no-name companies.
+Cloud, Amazon (India Jobs), Rippling, Workable, Breezy, Recruitee, Eightfold,
+Unstop (₹50k+/mo), Internshala, Instahyre, Naukri, Wellfound, and Custom Career Scrapers.
+A company-level quality gate (`data/blocklist.json` plus the optional `allowlist_only` mode)
+keeps the list free of spam.
 
 - `cycles` — the exact cycles to show; these become the section headings, in order.
   A year stated in the title always wins (e.g. "2027", "Fall 2026", "Summer '27"

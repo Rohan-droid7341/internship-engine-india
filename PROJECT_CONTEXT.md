@@ -18,7 +18,7 @@ This document provides a concise, single-source-of-truth reference for AI assist
 internship-engine-india/
 ├── data/
 │   ├── config.json          # Active cycles, regions (["India", "Remote"]), scope rules
-│   ├── companies.json       # Validated company ATS slugs (~4,400+ companies)
+│   ├── companies.json       # Validated company ATS slugs (~5,217+ companies)
 │   ├── jobs.json            # Persistent job store (deduped, open/closed tracking)
 │   ├── health.json          # Circuit breaker quarantine state
 │   └── history.jsonl        # Per-run stats time-series for dashboard
@@ -36,7 +36,7 @@ internship-engine-india/
 │   ├── harvester.py         # Probes ATS slugs for candidate companies
 │   └── observe.py / radar.py# Drop Radar & cycle tracking
 ├── docs/                    # GitHub Pages build targets (index.html, feed.xml, api/)
-├── tests/                   # Pytest test suite (155+ passing unit tests)
+├── tests/                   # Pytest test suite (163+ passing unit tests)
 ├── run.py                   # CLI entrypoint (update, discover, harvest, all)
 └── ARCHITECTURE.md          # Technical architectural design document
 ```
@@ -47,6 +47,9 @@ internship-engine-india/
 
 1. **Connector Isolation & Unstable Feed Disabling**:
    - Connector fetch functions are registered in `CONNECTORS` inside `src/intern_engine/pipeline.py`.
+   - Direct ATS: Greenhouse, Lever, Ashby, SmartRecruiters, Workable, Workday, Breezy, Recruitee, Rippling, Eightfold, Oracle.
+   - Direct Tech Portals: Amazon (India jobs), Custom Playwright Scrapers for Indian unicorns (Flipkart, Swiggy, Razorpay, CRED, etc.).
+   - India Portals: Unstop (filtered for ₹50k+/month stipend), Internshala, Instahyre, Naukri, Wellfound.
    - Aggressive anti-bot / rate-limiting connectors (such as `linkedin` and `indeed`) are commented out in `pipeline.py`'s `CONNECTORS` map to prevent execution hangs while retaining their modules in `src/intern_engine/connectors/`.
    - Never add blocking network calls to main loops. One failing company feed must never crash the run (wrap in isolated error handlers).
 
@@ -55,8 +58,8 @@ internship-engine-india/
    - Primary deduplication is handled by `_dedup()` in `pipeline.py` using `(company, normalized_title)`.
 
 3. **Regional & Cycle Filtering**:
-   - Configured via `data/config.json`. Region matching uses `filters.region_ok()` for `"India"` and `"Remote"`.
-   - Explicit seasons in job titles (e.g. "Summer 2027") override inferred seasons. Inferred seasons from posting dates are sticky once recorded.
+   - Configured via `data/config.json`. Region matching uses `filters.region_ok()` with strict Option A logic: accepts physical India locations, verified India/Global remote roles, and Indian platform postings, while strictly rejecting foreign remote roles (e.g. Poland, UK, Hungary, US major cities).
+   - Explicit seasons in job titles or descriptions (e.g. "Summer 2027") override inferred seasons. Inferred seasons from posting dates are sticky once recorded.
 
 4. **Testing Before Committing**:
    - Always run `python -m pytest` to verify all unit tests pass before completing changes.

@@ -59,7 +59,9 @@ def main() -> None:
             flag(r, "off-cycle-year-in-title")
         if config.restrict_region(cfg) and not config.include_international(cfg) and \
                 not filters.region_ok(r.get("location") or "",
-                                      config.want_us(cfg), config.want_canada(cfg)):
+                                      want_us=config.want_us(cfg), want_canada=config.want_canada(cfg),
+                                      want_india=config.want_india(cfg), want_remote=config.want_remote(cfg),
+                                      source=r.get("source", "")):
             flag(r, "out-of-region")
         if not filters.is_internship(title):
             flag(r, "not-an-internship-title")
@@ -68,7 +70,7 @@ def main() -> None:
         posted = (r.get("posted_at") or "")[:10]
         if cutoff and posted and posted < cutoff:
             flag(r, "older-than-max-age")
-        if r.get("season_inferred") and not posted:
+        if r.get("season_inferred") and not posted and not config.infer_undated(cfg):
             flag(r, "inferred-without-posted-date")
         if quality.is_blocked(r.get("company") or "", blocklist):
             flag(r, "blocklisted-company")

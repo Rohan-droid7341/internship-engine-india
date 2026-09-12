@@ -121,11 +121,16 @@ def _region_label(cfg: dict) -> str:
     if not config.restrict_region(cfg):
         return "Worldwide"
     parts = []
+    if config.want_india(cfg):
+        parts.append("India")
+    if config.want_remote(cfg):
+        parts.append("Verified Remote")
     if config.want_us(cfg):
         parts.append("United States")
     if config.want_canada(cfg):
         parts.append("Canada")
-    return " & ".join(parts) if parts else "United States"
+    return " & ".join(parts) if parts else "India & Verified Remote"
+
 
 
 def _company_count() -> int:
@@ -282,8 +287,9 @@ def _footer() -> list[str]:
         "## Platforms Scraped",
         "",
         "The engine currently extracts live data from the following platforms:",
-        "- **Direct ATS (Applicant Tracking Systems):** Greenhouse, Lever, Ashby, SmartRecruiters, Workable",
-        "- **Aggregators:** Instahyre",
+        "- **Direct ATS (Applicant Tracking Systems):** Greenhouse, Lever, Ashby, SmartRecruiters, Workable, Workday, Breezy, Recruitee, Rippling, Eightfold, Oracle",
+        "- **Direct Enterprise & Custom Scrapers:** Amazon (India Jobs), Custom Playwright Scrapers (Flipkart, Swiggy, Razorpay, CRED, InMobi, Rapido, Blinkit, Groww, CARS24, Urban Company, Delhivery)",
+        "- **Indian Job Portals & Aggregators:** Unstop (₹50k+/month stipend filter), Internshala, Instahyre, Naukri, Wellfound",
         "",
         "## Contributing",
         "",
@@ -327,7 +333,10 @@ def _select(rows: list[dict], limit, per_company) -> list[dict]:
 
 
 def _region_of(record: dict) -> str:
-    return "US" if filters.is_united_states(record.get("location") or "") else "International"
+    loc = record.get("location") or ""
+    if filters.is_india(loc) or (filters.is_remote_or_hybrid(loc) and not filters.is_foreign(loc)):
+        return "Primary"
+    return "International"
 
 
 def _new_this_week(open_jobs: list[dict]) -> int:
@@ -450,7 +459,10 @@ def generate(store_data: dict) -> dict:
 
     sections: list[tuple[str, list[dict]]] = []
     displayed: list[dict] = []
-    for region in ("US", "International"):
+    regions = ["Primary"]
+    if config.include_international(cfg):
+        regions.append("International")
+    for region in regions:
         for cycle in cycles:
             rows = _select(
                 groups.get((region, cycle)) or [],
@@ -458,7 +470,7 @@ def generate(store_data: dict) -> dict:
                 per_company,
             )
             if rows:
-                heading = cycle if region == "US" else f"{cycle} (International)"
+                heading = cycle if region == "Primary" else f"{cycle} (International)"
                 sections.append((heading, rows))
                 displayed.extend(rows)
 
@@ -507,6 +519,7 @@ def _write_csv(open_jobs: list[dict]) -> None:
         "category",
         "location",
         "salary",
+        "stipend",
         "skills",
         "posted_at",
         "first_seen_at",

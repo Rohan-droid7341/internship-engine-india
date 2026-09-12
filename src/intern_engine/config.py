@@ -26,7 +26,7 @@ DEFAULTS = {
     "role_scope": "tech",
 }
 
-_FALLBACK_REPO = "zshah101/Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships"
+_FALLBACK_REPO = "Rohan-droid7341/internship-engine-india"
 
 
 def repo_slug() -> str:
@@ -36,7 +36,16 @@ def repo_slug() -> str:
         return env
     try:
         with open(os.path.join(paths.ROOT, ".git", "config"), encoding="utf-8") as f:
-            m = re.search(r"github\.com[:/]([\w.-]+/[\w.-]+?)(?:\.git)?\s", f.read())
+            content = f.read()
+            # Prioritize remote "origin" over "upstream"
+            m = re.search(
+                r'\[remote "(?:origin)"\][^\[]*?url\s*=\s*.*?github\.com[:/]([\w.-]+/[\w.-]+?)(?:\.git)?\s',
+                content,
+                re.DOTALL,
+            )
+            if m:
+                return m.group(1)
+            m = re.search(r"github\.com[:/]([\w.-]+/[\w.-]+?)(?:\.git)?\s", content)
             if m:
                 return m.group(1)
     except OSError:

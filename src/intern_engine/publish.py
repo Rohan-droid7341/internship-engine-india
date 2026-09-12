@@ -31,7 +31,9 @@ def _entry(record: dict, base: str) -> str:
         record.get("category") or "",
         record.get("location") or "",
     ]
-    if record.get("salary"):
+    if record.get("stipend"):
+        summary_bits.append(record["stipend"])
+    elif record.get("salary"):
         summary_bits.append(record["salary"])
     if record.get("skills"):
         summary_bits.append(", ".join(record["skills"][:5]))
@@ -186,6 +188,7 @@ _API_FIELDS = (
     "posted_at",
     "first_seen_at",
     "salary",
+    "stipend",
     "skills",
     "source",
 )

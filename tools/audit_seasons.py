@@ -31,7 +31,7 @@ import httpx
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src"))
 
-from intern_engine import config, enrich, filters, paths, sponsorship, store  # noqa: E402
+from intern_engine import config, enrich, filters, paths, store  # noqa: E402
 from intern_engine.models import Job  # noqa: E402
 from intern_engine.net import HostLimiter, Net  # noqa: E402
 from intern_engine.pipeline import CONNECTORS, USER_AGENT  # noqa: E402
