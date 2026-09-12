@@ -17,6 +17,7 @@ from intern_engine.connectors import (
     recruitee,
     rippling,
     smartrecruiters,
+    unstop,
     workable,
     workday,
 )
@@ -335,3 +336,62 @@ def test_eightfold_no_positions():
     }
     jobs = _run(eightfold.fetch(company, FakeNet({"count": 0, "positions": []})))
     assert jobs == []
+
+
+def test_unstop_stipend_filter():
+    # Only internships with stipend >= 50k should be returned
+    payload = {
+        "data": {
+            "current_page": 1,
+            "last_page": 1,
+            "data": [
+                {
+                    "id": 101,
+                    "title": "High Paying SDE Intern",
+                    "organisation": {"name": "Tech Corp"},
+                    "city": ["Bengaluru"],
+                    "seo_url": "internships/sde-101",
+                    "start_date": "2026-06-01",
+                    "jobDetail": {
+                        "paid_unpaid": "paid",
+                        "min_salary": 60000,
+                        "max_salary": 75000,
+                        "pay_in": "monthly",
+                    },
+                },
+                {
+                    "id": 102,
+                    "title": "Low Paying Intern",
+                    "organisation": {"name": "Cheap Corp"},
+                    "city": ["Delhi"],
+                    "seo_url": "internships/cheap-102",
+                    "start_date": "2026-06-01",
+                    "jobDetail": {
+                        "paid_unpaid": "paid",
+                        "min_salary": 10000,
+                        "max_salary": 15000,
+                        "pay_in": "monthly",
+                    },
+                },
+                {
+                    "id": 103,
+                    "title": "Unpaid Intern",
+                    "organisation": {"name": "Free Corp"},
+                    "city": ["Remote"],
+                    "seo_url": "internships/free-103",
+                    "start_date": "2026-06-01",
+                    "jobDetail": {
+                        "paid_unpaid": "unpaid",
+                        "min_salary": None,
+                        "max_salary": None,
+                    },
+                },
+            ],
+        }
+    }
+    jobs = _run(unstop.fetch({"name": "Unstop", "slug": "software"}, FakeNet(payload)))
+    assert len(jobs) == 1
+    assert jobs[0].id == "unstop:software:101"
+    assert jobs[0].title == "High Paying SDE Intern"
+    assert "₹75,000/monthly" in jobs[0].stipend
+
