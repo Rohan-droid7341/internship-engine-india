@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**15 open roles · 7 new this week · 5,175 companies tracked · updated Sep 12, 2026 at 02:43 UTC**
+**15 open roles · 7 new this week · 5,175 companies tracked · updated Sep 12, 2026 at 07:39 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -116,7 +116,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _63 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **28** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 20 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 19 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -139,7 +139,6 @@ _63 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Unisys | AI Engineering Intern | Summer 2027 | 2026-09-02 |
 | Barry-Wehmiller | AI Intern | Summer 2027 | 2026-09-01 |
 | RRS Group | 2027 Software Engineer Intern - Placement Year | Summer 2027 | 2026-08-31 |
-| Concentric | Internship, AI Workflow Optimization, Fall 2026 (Remote) | Fall 2026 | 2026-08-29 |
 
 </details>
 
@@ -158,7 +157,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,175 companies across 24 ATS platforms · 98% fetch success · completed in 403.0s · median detection latency 634 min · real posted dates on 86% of open roles._
+_Engine (last run): 5,175 companies across 24 ATS platforms · 89% fetch success · completed in 326.7s · median detection latency 634 min · real posted dates on 86% of open roles._
 
 ## Platforms Scraped
 
