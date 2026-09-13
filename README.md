@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**9 open roles · 5 new this week · 5,217 companies tracked · updated Sep 12, 2026 at 22:11 UTC**
+**9 open roles · 5 new this week · 5,217 companies tracked · updated Sep 13, 2026 at 00:39 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -21,8 +21,8 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 | induslabs | Machine Learning Internship ~ 🆕 | Data & ML/AI | ₹60,000/monthly | Noida | — | [Apply](https://unstop.com/internships/machine-learning-internship-induslabs-1619940) |
-| Caspian | Software Engineering Internship ~ 🆕 | Software | ₹100,000/monthly | India | — | [Apply](https://unstop.com/internships/software-engineering-internship-caspian-1724547) |
 | Other organization not listed here | Software Engineering Internship ~ 🆕 | Software | ₹50,000/annually | India | — | [Apply](https://unstop.com/internships/software-engineering-internship-branch-international-1144712) |
+| Caspian | Software Engineering Internship ~ 🆕 | Software | ₹100,000/monthly | India | — | [Apply](https://unstop.com/internships/software-engineering-internship-caspian-1724547) |
 | Aitainment | Data Analyst - Intern ~ 🆕 | Data & ML/AI | — | Bangalore | — | [Apply](https://www.instahyre.com/job-442949-data-analyst-intern-internship-at-aitainment-bangalore/) |
 | PagarBook | Full Stack Development Intern ~ | Software | — | Bangalore | — | [Apply](https://www.instahyre.com/job-439220-full-stack-development-intern-internship-at-pagarbook-bangalore/) |
 | Oneture Technologies | AI / ML Intern ~ | Data & ML/AI | — | Mumbai | — | [Apply](https://www.instahyre.com/job-390123-ai-ml-intern-at-oneture-technologies-mumbai/) |
@@ -94,7 +94,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | Robinhood | ~Sep | ~Sep · any day now | ⏳ waiting |
 | Roblox | ~Sep | ~Sep · any day now | ⏳ waiting |
 | Stripe | ~Sep | ~Sep · any day now | ⏳ waiting |
-| D.E. Shaw | ~Oct | ~Oct · in ~19d | ⏳ waiting |
+| D.E. Shaw | ~Oct | ~Oct · in ~18d | ⏳ waiting |
 | Coinbase | ~Dec | ~Dec | ⏳ waiting |
 | Ramp | ~Dec | ~Dec | ⏳ waiting |
 | Two Sigma | ~Dec | ~Dec | ⏳ waiting |
@@ -157,7 +157,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,217 companies across 20 ATS platforms · 99% fetch success · completed in 242.5s · median detection latency 634 min · real posted dates on 33% of open roles._
+_Engine (last run): 5,217 companies across 20 ATS platforms · 99% fetch success · completed in 433.7s · median detection latency 634 min · real posted dates on 33% of open roles._
 
 ## Platforms Scraped
 
