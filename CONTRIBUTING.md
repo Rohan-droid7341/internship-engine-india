@@ -43,5 +43,5 @@ improve precision/recall against real titles are very welcome.
 
 ## Improving Location and Stipend Filters
 
-Region classification (India locations, Indian states/cities, and verified global remote) and stipend parsing live in [`src/intern_engine/filters.py`](src/intern_engine/filters.py) and connector modules like [`src/intern_engine/connectors/unstop.py`](src/intern_engine/connectors/unstop.py). PRs with accompanying unit tests in `tests/test_filters.py` are welcome!
+Region classification (India locations, Indian states/cities, and verified global remote) and stipend parsing live in [`src/intern_engine/filters.py`](src/intern_engine/filters.py). PRs with accompanying unit tests in `tests/test_filters.py` are welcome!
 

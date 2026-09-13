@@ -50,7 +50,7 @@ public datasets + README mines          data/candidates.json (curated slugs)
 | `src/intern_engine/paths.py` | All file paths, computed from the repo root (CI-safe). |
 | `src/intern_engine/config.py` | Loads `data/config.json`; derives the repo/Pages URLs. |
 | `src/intern_engine/net.py` | Async HTTP with retry/backoff + per-host concurrency limits. |
-| `src/intern_engine/connectors/` | Connectors for ATS feeds & job platforms: Greenhouse, Lever, Ashby, SmartRecruiters, Workday, Oracle, Amazon, Rippling, Workable, Breezy, Recruitee, Eightfold, Unstop, Internshala, Instahyre, Naukri, Wellfound, Custom Careers. |
+| `src/intern_engine/connectors/` | Connectors for ATS feeds & job platforms: Greenhouse, Lever, Ashby, SmartRecruiters, Workday, Oracle, Amazon, Rippling, Workable, Breezy, Recruitee, Eightfold, Internshala, Naukri, Wellfound, Custom Careers. |
 | `src/intern_engine/filters.py` | Classification: internship? tech? season/year? India/Remote? category. |
 | `src/intern_engine/enrich.py` | Fetches posting text for new matched roles; backfills exact dates. |
 | `src/intern_engine/trends.py` | Weekly posting-volume chart + median posting-lifetime metric. |
@@ -95,7 +95,7 @@ public datasets + README mines          data/candidates.json (curated slugs)
 
 Sources: Greenhouse, Lever, Ashby, SmartRecruiters, Workday, Oracle Recruiting
 Cloud, Amazon (India Jobs), Rippling, Workable, Breezy, Recruitee, Eightfold,
-Unstop (₹50k+/mo), Internshala, Instahyre, Naukri, Wellfound, and Custom Career Scrapers.
+Internshala, Naukri, Wellfound, and Custom Career Scrapers.
 A company-level quality gate (`data/blocklist.json` plus the optional `allowlist_only` mode)
 keeps the list free of spam.
 

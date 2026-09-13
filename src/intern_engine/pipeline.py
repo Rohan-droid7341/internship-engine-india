@@ -57,9 +57,9 @@ CONNECTORS = {
     "breezy": breezy.fetch,
     "recruitee": recruitee.fetch,
     "eightfold": eightfold.fetch,
-    "unstop": unstop.fetch,
+    # "unstop": unstop.fetch,  # disabled/removed from flow
     "internshala": internshala.fetch,
-    "instahyre": instahyre.fetch,
+    # "instahyre": instahyre.fetch,  # disabled/removed from flow
     # "linkedin": linkedin.fetch,  # disabled: frequently blocking/rate-limited
     "naukri": naukri.fetch,
     "custom": custom_careers.fetch,

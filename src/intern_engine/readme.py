@@ -289,7 +289,7 @@ def _footer() -> list[str]:
         "The engine currently extracts live data from the following platforms:",
         "- **Direct ATS (Applicant Tracking Systems):** Greenhouse, Lever, Ashby, SmartRecruiters, Workable, Workday, Breezy, Recruitee, Rippling, Eightfold, Oracle",
         "- **Direct Enterprise & Custom Scrapers:** Amazon (India Jobs), Custom Playwright Scrapers (Flipkart, Swiggy, Razorpay, CRED, InMobi, Rapido, Blinkit, Groww, CARS24, Urban Company, Delhivery)",
-        "- **Indian Job Portals & Aggregators:** Unstop (₹50k+/month stipend filter), Internshala, Instahyre, Naukri, Wellfound",
+        "- **Indian Job Portals & Aggregators:** Internshala, Naukri, Wellfound",
         "",
         "## Contributing",
         "",

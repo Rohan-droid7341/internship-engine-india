@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**9 open roles · 5 new this week · 5,217 companies tracked · updated Sep 13, 2026 at 05:40 UTC**
+**1 open roles · 1 new this week · 5,211 companies tracked · updated Sep 13, 2026 at 08:43 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,21 +13,13 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027  (9 open)
+## Summer 2027  (1 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
 | Ixigo | Full-Stack Intern - B2B ~ 🆕 | Software | — | Gurugram, HR, India | Sep 11, 2026 | [Apply](https://jobs.smartrecruiters.com/ixigo/744000148960832) |
-| Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
-| Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
-| induslabs | Machine Learning Internship ~ 🆕 | Data & ML/AI | ₹60,000/monthly | Noida | — | [Apply](https://unstop.com/internships/machine-learning-internship-induslabs-1619940) |
-| Other organization not listed here | Software Engineering Internship ~ 🆕 | Software | ₹50,000/annually | India | — | [Apply](https://unstop.com/internships/software-engineering-internship-branch-international-1144712) |
-| Caspian | Software Engineering Internship ~ 🆕 | Software | ₹100,000/monthly | India | — | [Apply](https://unstop.com/internships/software-engineering-internship-caspian-1724547) |
-| Aitainment | Data Analyst - Intern ~ 🆕 | Data & ML/AI | — | Bangalore | — | [Apply](https://www.instahyre.com/job-442949-data-analyst-intern-internship-at-aitainment-bangalore/) |
-| PagarBook | Full Stack Development Intern ~ | Software | — | Bangalore | — | [Apply](https://www.instahyre.com/job-439220-full-stack-development-intern-internship-at-pagarbook-bangalore/) |
-| Oneture Technologies | AI / ML Intern ~ | Data & ML/AI | — | Mumbai | — | [Apply](https://www.instahyre.com/job-390123-ai-ml-intern-at-oneture-technologies-mumbai/) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (9 of 9)._
+_~ = the title doesn't state a year; bucketed here from its posting date (1 of 1)._
 
 ## What this is
 
@@ -105,10 +97,17 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _63 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **28** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 30 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 38 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Aitainment | Data Analyst - Intern | Summer 2027 | 2026-09-13 |
+| Oneture Technologies | AI / ML Intern | Summer 2027 | 2026-09-13 |
+| PagarBook | Full Stack Development Intern | Summer 2027 | 2026-09-13 |
+| induslabs | Machine Learning Internship | Summer 2027 | 2026-09-13 |
+| Other organization not listed here | Software Engineering Internship | Summer 2027 | 2026-09-13 |
+| Caspian | Software Engineering Internship | Summer 2027 | 2026-09-13 |
+| Member Solutions | Cybersecurity GRC Intern | Summer 2027 | 2026-09-13 |
 | Barnes & Thornburg | 2027 BT RISE Internship - Information Technology AI Intern | Summer 2027 | 2026-09-12 |
 | Qualified Health | Medical Scribe Intern, Clinical AI Safety & Evaluation | Fall 2026 | 2026-09-12 |
 | Qualified Health | Clinical AI Evaluation Intern | Fall 2026 | 2026-09-12 |
@@ -120,6 +119,7 @@ _63 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Ancestry | AI Discovery Co-Op - Agentic Personalization | Summer 2027 | 2026-09-12 |
 | Cambium Learning Group | Software Engineer Intern – AI Applications | Summer 2027 | 2026-09-12 |
 | GoTo Group | DevOps Intern (fixed term, 8 months) | Summer 2027 | 2026-09-12 |
+| Valeo | Intern - AI | Summer 2027 | 2026-09-12 |
 | Honeywell | Intern Masters Data Science | Summer 2027 | 2026-09-12 |
 | Arista Networks | Intern Software Engineers - C/C++ | Summer 2027 | 2026-09-11 |
 | GE Healthcare | Intern Firmware | Summer 2027 | 2026-09-11 |
@@ -164,7 +164,7 @@ _Engine (last run): 5,217 companies across 20 ATS platforms · 99% fetch success
 The engine currently extracts live data from the following platforms:
 - **Direct ATS (Applicant Tracking Systems):** Greenhouse, Lever, Ashby, SmartRecruiters, Workable, Workday, Breezy, Recruitee, Rippling, Eightfold, Oracle
 - **Direct Enterprise & Custom Scrapers:** Amazon (India Jobs), Custom Playwright Scrapers (Flipkart, Swiggy, Razorpay, CRED, InMobi, Rapido, Blinkit, Groww, CARS24, Urban Company, Delhivery)
-- **Indian Job Portals & Aggregators:** Unstop (₹50k+/month stipend filter), Internshala, Instahyre, Naukri, Wellfound
+- **Indian Job Portals & Aggregators:** Internshala, Naukri, Wellfound
 
 ## Contributing
 

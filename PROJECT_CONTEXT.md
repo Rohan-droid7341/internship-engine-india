@@ -7,7 +7,7 @@ This document provides a concise, single-source-of-truth reference for AI assist
 ## 1. Project Purpose & Scope
 
 - **Primary Goal**: Automatically aggregate, filter, enrich, and publish tech internship listings for **India** (plus Remote) for target hiring cycles (e.g. Summer 2027, Fall 2026).
-- **Core Strategy**: Read public ATS job feeds directly (Greenhouse, Lever, Ashby, Workday, SmartRecruiters, Unstop, Internshala, Instahyre, Naukri, etc.), normalize jobs to a unified `Job` schema, deduplicate, enrich posting text, and generate output formats via GitHub Actions on a schedule.
+- **Core Strategy**: Read public ATS job feeds directly (Greenhouse, Lever, Ashby, Workday, SmartRecruiters, Internshala, Naukri, etc.), normalize jobs to a unified `Job` schema, deduplicate, enrich posting text, and generate output formats via GitHub Actions on a schedule.
 - **De-Americanized Scope**: All legacy US visa/H-1B/F-1 sponsorship tracking files (`h1b.py`, `sponsorship.py`, `build_h1b.py`, `data/h1b.json`) have been removed. Do **not** re-introduce US-specific visa/sponsorship logic.
 
 ---
@@ -18,7 +18,7 @@ This document provides a concise, single-source-of-truth reference for AI assist
 internship-engine-india/
 ├── data/
 │   ├── config.json          # Active cycles, regions (["India", "Remote"]), scope rules
-│   ├── companies.json       # Validated company ATS slugs (~5,217+ companies)
+│   ├── companies.json       # Validated company ATS slugs (~5,211+ companies)
 │   ├── jobs.json            # Persistent job store (deduped, open/closed tracking)
 │   ├── health.json          # Circuit breaker quarantine state
 │   └── history.jsonl        # Per-run stats time-series for dashboard
@@ -49,8 +49,7 @@ internship-engine-india/
    - Connector fetch functions are registered in `CONNECTORS` inside `src/intern_engine/pipeline.py`.
    - Direct ATS: Greenhouse, Lever, Ashby, SmartRecruiters, Workable, Workday, Breezy, Recruitee, Rippling, Eightfold, Oracle.
    - Direct Tech Portals: Amazon (India jobs), Custom Playwright Scrapers for Indian unicorns (Flipkart, Swiggy, Razorpay, CRED, etc.).
-   - India Portals: Unstop (filtered for ₹50k+/month stipend), Internshala, Instahyre, Naukri, Wellfound.
-   - Aggressive anti-bot / rate-limiting connectors (such as `linkedin` and `indeed`) are commented out in `pipeline.py`'s `CONNECTORS` map to prevent execution hangs while retaining their modules in `src/intern_engine/connectors/`.
+   - India Portals: Internshala, Naukri, Wellfound. Unstable or unwanted aggregators (Unstop, Instahyre, LinkedIn, Indeed) are disabled from `pipeline.py`'s `CONNECTORS` map.
    - Never add blocking network calls to main loops. One failing company feed must never crash the run (wrap in isolated error handlers).
 
 2. **Deduplication & ID Structure**:
