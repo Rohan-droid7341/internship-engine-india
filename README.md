@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**3 open roles · 1 new this week · 5,212 companies tracked · updated Sep 14, 2026 at 11:35 UTC**
+**4 open roles · 2 new this week · 5,213 companies tracked · updated Sep 14, 2026 at 17:30 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,15 +13,16 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027  (3 open)
+## Summer 2027  (4 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
 | Ixigo | Full-Stack Intern - B2B ~ | Software | — | Gurugram, HR, India | Sep 11, 2026 | [Apply](https://jobs.smartrecruiters.com/ixigo/744000148960832) |
+| Novartis | Intern Data Science ~ | Data & ML/AI | — | Hyderabad (Office) | Sep 10, 2026 | [Apply](https://novartis.wd3.myworkdayjobs.com/Novartis_Careers/job/Hyderabad-Office/Intern-Data-Science_REQ-10087679-1) |
 | Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (3 of 3)._
+_~ = the title doesn't state a year; bucketed here from its posting date (4 of 4)._
 
 ## What this is
 
@@ -99,7 +100,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _63 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **28** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 36 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 34 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -123,7 +124,6 @@ _63 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Honeywell | Intern Masters Data Science | Summer 2027 | 2026-09-12 |
 | Arista Networks | Intern Software Engineers - C/C++ | Summer 2027 | 2026-09-11 |
 | GE Healthcare | Intern Firmware | Summer 2027 | 2026-09-11 |
-| Novartis | Intern Data Science | Summer 2027 | 2026-09-11 |
 | LinkedIn | Software Engineering Intern | Summer 2027 | 2026-09-10 |
 | GE Aerospace | Data Science Intern | Summer 2027 | 2026-09-10 |
 | Gevernova | Grid Automation & Software Intern | Summer 2027 | 2026-09-09 |
@@ -138,7 +138,6 @@ _63 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Honeywell | Intern Masters Embedded Eng | Summer 2027 | 2026-09-02 |
 | Unisys | AI Engineering Intern | Summer 2027 | 2026-09-02 |
 | Barry-Wehmiller | AI Intern | Summer 2027 | 2026-09-01 |
-| RRS Group | 2027 Software Engineer Intern - Placement Year | Summer 2027 | 2026-08-31 |
 
 </details>
 
@@ -157,7 +156,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,212 companies across 18 ATS platforms · 98% fetch success · completed in 446.5s · median detection latency 635 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,213 companies across 18 ATS platforms · 99% fetch success · completed in 347.1s · median detection latency 635 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
