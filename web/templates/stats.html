@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% set active = "stats" %}
+
+{% block title %}Stats · Internship Engine India{% endblock %}
+
+{% block content %}
+<h1>Engine Stats</h1>
+<p class="subtitle">Pipeline metrics and run history</p>
+
+<!-- Latest run cards -->
+{% if stats %}
+<div class="cards">
+  <div class="card"><div class="num">{{ stats.get('open_total', stats.get('open', 0)) }}</div><div class="lbl">Open Roles</div></div>
+  <div class="card"><div class="num">{{ stats.get('new_this_run', stats.get('new', 0)) }}</div><div class="lbl">New This Run</div></div>
+  <div class="card"><div class="num">{{ "{:,}".format(stats.get('companies_total', stats.get('companies', 0))) }}</div><div class="lbl">Companies</div></div>
+  <div class="card"><div class="num">{{ (stats.get('fetch_success_rate', stats.get('ok_rate', 0)) * 100)|int }}%</div><div class="lbl">Fetch Success</div></div>
+  <div class="card"><div class="num">{{ stats.get('quarantined', 0) }}</div><div class="lbl">Quarantined</div></div>
+  <div class="card"><div class="num">{{ stats.get('duration_seconds', stats.get('secs', 0)) }}s</div><div class="lbl">Run Duration</div></div>
+  <div class="card"><div class="num">{{ stats.get('fetch_errors', 0) }}</div><div class="lbl">Fetch Errors</div></div>
+  <div class="card"><div class="num">{{ stats.get('roles_matched', 0) }}</div><div class="lbl">Roles Matched</div></div>
+</div>
+
+{% if stats.get('roles_by_source') %}
+<h2 style="margin: 24px 0 12px; font-size: 16px;">Roles by Source</h2>
+<div class="cards">
+  {% for src, count in (stats.get('roles_by_source') or {}).items() %}
+  <div class="card"><div class="num">{{ count }}</div><div class="lbl">{{ src }}</div></div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if stats.get('roles_by_cycle') %}
+<h2 style="margin: 24px 0 12px; font-size: 16px;">Roles by Cycle</h2>
+<div class="cards">
+  {% for cyc, count in (stats.get('roles_by_cycle') or {}).items() %}
+  <div class="card"><div class="num">{{ count }}</div><div class="lbl">{{ cyc }}</div></div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if stats.get('detection_latency') %}
+{% set lat = stats.get('detection_latency') or {} %}
+<h2 style="margin: 24px 0 12px; font-size: 16px;">Detection Performance</h2>
+<div class="cards">
+  <div class="card">
+    <div class="num">{% if lat.get('median_minutes') is not none %}{{ "%.0f"|format(lat.median_minutes) }} min{% else %}—{% endif %}</div>
+    <div class="lbl">Median Detection Latency ({{ lat.get('sample_size', 0) }} samples)</div>
+  </div>
+  {% set life = stats.get('posting_lifetime') or {} %}
+  <div class="card">
+    <div class="num">{% if life.get('median_days') is not none %}{{ "%.1f"|format(life.median_days) }} days{% else %}—{% endif %}</div>
+    <div class="lbl">Median Posting Lifetime ({{ life.get('sample_size', 0) }} samples)</div>
+  </div>
+</div>
+{% endif %}
+{% endif %}
+
+<!-- Run history chart -->
+{% if history %}
+<h2 style="margin: 24px 0 12px; font-size: 16px;">Run History (last {{ history|length }} runs)</h2>
+<canvas id="historyChart" style="width:100%; height:300px; background:var(--surface); border-radius:8px; border:1px solid var(--border);"></canvas>
+
+<!-- History table -->
+<div style="max-height: 400px; overflow-y: auto; margin-top: 16px; border: 1px solid var(--border); border-radius: 8px;">
+<table>
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Open</th>
+      <th>New</th>
+      <th>Companies</th>
+      <th>Success Rate</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for run in history|reverse %}
+    <tr>
+      <td>{{ fmt_date(run.get('generated_at', run.get('ts', ''))) }}</td>
+      <td>{{ run.get('open_total', run.get('open', 0)) }}</td>
+      <td>{{ run.get('new_this_run', run.get('new', 0)) }}</td>
+      <td>{{ run.get('companies_total', run.get('companies', 0)) }}</td>
+      <td>{{ ((run.get('fetch_success_rate', run.get('ok_rate', 0)) or 0) * 100)|int }}%</td>
+      <td>{{ run.get('duration_seconds', run.get('secs', 0)) }}s</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block extra_scripts %}
+{% if history %}
+<script>
+// Simple canvas chart for open roles over time
+(function() {
+  const canvas = document.getElementById('historyChart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = 300 * dpr;
+  ctx.scale(dpr, dpr);
+  const W = rect.width, H = 300;
+  const pad = {top: 30, right: 20, bottom: 30, left: 50};
+
+  const data = {{ history | tojson }};
+  const values = data.map(d => d.open_total || d.open || 0);
+  const maxV = Math.max(...values, 1);
+  const minV = Math.min(...values, 0);
+  const range = maxV - minV || 1;
+
+  // Grid
+  ctx.strokeStyle = '#30363d';
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= 4; i++) {
+    const y = pad.top + (H - pad.top - pad.bottom) * (1 - i / 4);
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(W - pad.right, y); ctx.stroke();
+    ctx.fillStyle = '#8b949e'; ctx.font = '11px sans-serif'; ctx.textAlign = 'right';
+    ctx.fillText(Math.round(minV + range * i / 4), pad.left - 8, y + 4);
+  }
+
+  // Line
+  ctx.strokeStyle = '#58a6ff';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  values.forEach((v, i) => {
+    const x = pad.left + (W - pad.left - pad.right) * i / Math.max(values.length - 1, 1);
+    const y = pad.top + (H - pad.top - pad.bottom) * (1 - (v - minV) / range);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  // Title
+  ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 13px sans-serif'; ctx.textAlign = 'left';
+  ctx.fillText('Open Roles Over Time', pad.left, 18);
+})();
+</script>
+{% endif %}
+{% endblock %}

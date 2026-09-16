@@ -3,3 +3,6 @@ requests==2.34.2
 supabase==2.31.0
 scrapling>=0.2.9
 playwright>=1.44.0
+fastapi>=0.115.0
+jinja2>=3.1.4
+uvicorn>=0.30.0

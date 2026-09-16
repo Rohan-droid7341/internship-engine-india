@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% set active = "companies" %}
+
+{% block title %}Companies · Internship Engine India{% endblock %}
+
+{% block content %}
+<h1>Tracked Companies</h1>
+<p class="subtitle">{{ total }} companies across {{ by_ats|length }} ATS platforms</p>
+
+<div class="search-bar">
+  <input type="text" id="companySearch" placeholder="Search companies…" oninput="filterCompanies()">
+  <select id="atsFilter" onchange="filterCompanies()">
+    <option value="">All Platforms</option>
+    {% for ats in by_ats %}
+    <option value="{{ ats }}">{{ ats }} ({{ by_ats[ats]|length }})</option>
+    {% endfor %}
+  </select>
+</div>
+
+<!-- Summary cards -->
+<div class="cards">
+  {% for ats, items in by_ats.items() %}
+  <div class="card"><div class="num">{{ items|length }}</div><div class="lbl">{{ ats }}</div></div>
+  {% endfor %}
+</div>
+
+<!-- Companies table -->
+<table id="companiesTable">
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Platform (ATS)</th>
+      <th>Board Slug</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for company in companies %}
+    <tr data-name="{{ company.get('name', '')|lower }}" data-ats="{{ company.get('ats', '') }}">
+      <td><strong>{{ company.get('name', '') }}</strong></td>
+      <td><span class="tag">{{ company.get('ats', '—') }}</span></td>
+      <td style="color:var(--muted); font-family: monospace; font-size: 13px;">{{ company.get('slug', '') }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+function filterCompanies() {
+  const q = document.getElementById('companySearch').value.toLowerCase();
+  const ats = document.getElementById('atsFilter').value;
+  document.querySelectorAll('#companiesTable tbody tr').forEach(row => {
+    const matchName = !q || row.dataset.name.includes(q);
+    const matchAts = !ats || row.dataset.ats === ats;
+    row.style.display = (matchName && matchAts) ? '' : 'none';
+  });
+}
+</script>
+{% endblock %}

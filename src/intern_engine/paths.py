@@ -30,6 +30,7 @@ KNOWN_WINDOWS_PATH = os.path.join(
     DATA_DIR, "known_windows.json"
 )  # hand-verified typical opening months for marquee names
 
+SCHEMA_PATH = os.path.join(ROOT, "schema.sql")  # Postgres DDL (version-controlled)
 README_PATH = os.path.join(ROOT, "README.md")
 DOCS_DIR = os.path.join(ROOT, "docs")
 DASHBOARD_PATH = os.path.join(DOCS_DIR, "index.html")  # GitHub Pages dashboard

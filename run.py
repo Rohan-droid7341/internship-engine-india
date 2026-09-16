@@ -17,8 +17,10 @@ from intern_engine import (  # noqa: E402
     db,
     discover,
     harvester,
+    health,
     mailer,
     notify,
+    observe,
     pipeline,
     publish,
     readme,
@@ -58,7 +60,12 @@ def cmd_update() -> None:
     feed_entries = publish.write_feed(store_data)
     publish.write_api(store_data, stats)
     ics_events = publish.write_radar_ics(store_data)
-    if db.sync(store_data, stats):
+    if db.full_sync(
+        store_data=store_data,
+        stats=stats,
+        health_data=health.load(),
+        observed=observe.load(),
+    ):
         print("  synced to Postgres   yes")
     if notify.send_new_roles(store_data, new_ids):
         print(f"  Discord alert        {len(new_ids)} new roles")

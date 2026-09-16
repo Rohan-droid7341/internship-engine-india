@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% set active = "jobs" %}
+
+{% block title %}
+{% if show_closed %}All Jobs{% else %}Open Internships{% endif %} · Internship Engine India
+{% endblock %}
+
+{% block content %}
+<h1>{% if show_closed %}All Internships{% else %}Open Internships{% endif %}</h1>
+<p class="subtitle">
+  {% if show_closed %}
+    Showing {{ jobs|length }} roles (open + closed) ·
+    <a href="/">show open only</a>
+  {% else %}
+    {{ jobs|length }} open roles across India &amp; Remote ·
+    <a href="/all">show all (incl. closed)</a>
+  {% endif %}
+  {% if stats %}
+   · Last updated {{ time_ago(stats.get('generated_at', '')) }}
+  {% endif %}
+</p>
+
+<!-- Metric cards -->
+{% if stats %}
+<div class="cards">
+  <div class="card"><div class="num">{{ stats.get('open_total', 0) }}</div><div class="lbl">Open Roles</div></div>
+  <div class="card"><div class="num">{{ "{:,}".format(stats.get('companies_total', 0)) }}</div><div class="lbl">Companies Tracked</div></div>
+  <div class="card"><div class="num">{{ stats.get('new_this_run', 0) }}</div><div class="lbl">New This Run</div></div>
+  <div class="card"><div class="num">{{ (stats.get('fetch_success_rate', 0) * 100)|int }}%</div><div class="lbl">Fetch Success</div></div>
+</div>
+{% endif %}
+
+<!-- Search & filters -->
+<div class="search-bar">
+  <input type="text" id="search" placeholder="Search company, title, skills…" oninput="filterTable()">
+  <select id="seasonFilter" onchange="filterTable()">
+    <option value="">All Seasons</option>
+  </select>
+  <select id="categoryFilter" onchange="filterTable()">
+    <option value="">All Categories</option>
+  </select>
+</div>
+
+<!-- Jobs table -->
+<table id="jobsTable">
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Title</th>
+      <th>Season</th>
+      <th class="hide-mobile">Location</th>
+      <th class="hide-mobile">Category</th>
+      <th class="hide-mobile">Skills</th>
+      <th class="hide-mobile">Stipend</th>
+      <th>Posted</th>
+      {% if show_closed %}<th>Status</th>{% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for job in jobs %}
+    <tr data-search="{{ (job.get('company', '') ~ ' ' ~ job.get('title', '') ~ ' ' ~ (job.get('skills', []) or [])|join(' ') ~ ' ' ~ job.get('location', '') ~ ' ' ~ job.get('category', ''))|lower }}"
+        data-season="{{ job.get('season', '') }}"
+        data-category="{{ job.get('category', '') }}">
+      <td><strong>{{ job.get('company', '') }}</strong></td>
+      <td>
+        <a href="{{ job.get('url', '#') }}" target="_blank" rel="noopener">
+          {{ job.get('title', '') }}
+        </a>
+        {% if job.get('season_inferred') %}<span title="Season inferred from posting date">~</span>{% endif %}
+      </td>
+      <td><span class="tag {% if 'Summer' in job.get('season', '') %}green{% elif 'Fall' in job.get('season', '') %}orange{% endif %}">{{ job.get('season', '—') }}</span></td>
+      <td class="hide-mobile">{{ job.get('location', '—') }}</td>
+      <td class="hide-mobile"><span class="tag">{{ job.get('category', '—') }}</span></td>
+      <td class="hide-mobile">
+        {% for skill in (job.get('skills') or [])[:5] %}
+          <span class="tag">{{ skill }}</span>
+        {% endfor %}
+        {% if (job.get('skills') or [])|length > 5 %}
+          <span class="tag">+{{ (job.get('skills') or [])|length - 5 }}</span>
+        {% endif %}
+      </td>
+      <td class="hide-mobile">{{ job.get('stipend') or job.get('salary') or '—' }}</td>
+      <td>{{ fmt_date(job.get('posted_at')) }}</td>
+      {% if show_closed %}
+      <td>
+        {% if job.get('is_open') %}
+          <span class="badge-open">● Open</span>
+        {% else %}
+          <span class="badge-closed">● Closed</span>
+        {% endif %}
+      </td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if not jobs %}
+<p style="text-align:center; color:var(--muted); padding:40px;">
+  No internships found. The engine runs every hour — check back soon.
+</p>
+{% endif %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// Populate filter dropdowns from the data
+(function() {
+  const rows = document.querySelectorAll('#jobsTable tbody tr');
+  const seasons = new Set(), categories = new Set();
+  rows.forEach(r => {
+    if (r.dataset.season) seasons.add(r.dataset.season);
+    if (r.dataset.category) categories.add(r.dataset.category);
+  });
+  const sSel = document.getElementById('seasonFilter');
+  [...seasons].sort().forEach(s => {
+    const o = document.createElement('option'); o.value = s; o.textContent = s; sSel.appendChild(o);
+  });
+  const cSel = document.getElementById('categoryFilter');
+  [...categories].sort().forEach(c => {
+    const o = document.createElement('option'); o.value = c; o.textContent = c; cSel.appendChild(o);
+  });
+})();
+
+function filterTable() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const season = document.getElementById('seasonFilter').value;
+  const category = document.getElementById('categoryFilter').value;
+  document.querySelectorAll('#jobsTable tbody tr').forEach(row => {
+    const matchText = !q || row.dataset.search.includes(q);
+    const matchSeason = !season || row.dataset.season === season;
+    const matchCat = !category || row.dataset.category === category;
+    row.style.display = (matchText && matchSeason && matchCat) ? '' : 'none';
+  });
+}
+</script>
+{% endblock %}
