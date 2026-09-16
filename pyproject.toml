@@ -1,3 +1,17 @@
+[project]
+name = "internship-engine-india"
+version = "0.1.0"
+description = "Automated tech internship engine for India"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "jinja2>=3.1.4",
+    "supabase>=2.31.0",
+    "httpx>=0.28.1",
+    "requests>=2.31.0",
+]
+
 [tool.ruff]
 line-length = 100
 target-version = "py311"

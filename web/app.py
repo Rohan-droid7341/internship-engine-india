@@ -38,6 +38,14 @@ app = FastAPI(
 )
 
 
+@app.middleware("http")
+async def vercel_path_rewrite_middleware(request: Request, call_next):
+    matched_path = request.headers.get("x-matched-path")
+    if matched_path and not matched_path.startswith("/api/index"):
+        request.scope["path"] = matched_path
+    return await call_next(request)
+
+
 # ---------------------------------------------------------------------------
 # Data layer: Supabase or local JSON fallback
 # ---------------------------------------------------------------------------
