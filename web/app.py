@@ -38,13 +38,6 @@ app = FastAPI(
 )
 
 
-@app.middleware("http")
-async def vercel_path_rewrite_middleware(request: Request, call_next):
-    matched_path = request.headers.get("x-matched-path")
-    if matched_path and not matched_path.startswith("/api/index"):
-        request.scope["path"] = matched_path
-    return await call_next(request)
-
 
 # ---------------------------------------------------------------------------
 # Data layer: Supabase or local JSON fallback
@@ -247,6 +240,9 @@ app.state.time_ago = _time_ago
 # ---------------------------------------------------------------------------
 
 @app.get("/", response_class=HTMLResponse)
+@app.get("/api", response_class=HTMLResponse)
+@app.get("/api/index", response_class=HTMLResponse)
+@app.get("/api/index.py", response_class=HTMLResponse)
 async def homepage(request: Request):
     """Open internships table — same data as the README."""
     jobs = get_open_jobs()

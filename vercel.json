@@ -1,14 +1,18 @@
 {
   "version": 2,
-  "functions": {
-    "api/index.py": {
-      "includeFiles": "web/**,data/**"
-    }
-  },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/api/index.py"
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": {
+        "includeFiles": ["web/**", "data/**"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.py"
     }
   ]
 }
