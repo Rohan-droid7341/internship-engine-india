@@ -1,8 +1,24 @@
 {
- "generated_at": "2026-09-16T15:23:10Z",
+ "generated_at": "2026-09-16T19:23:22Z",
  "source": "https://github.com/Rohan-droid7341/internship-engine-india",
- "count": 9,
+ "count": 8,
  "jobs": [
+  {
+   "id": "greenhouse:twilio:8190889",
+   "company": "Twilio",
+   "title": "Software Engineer Intern (January 12th start, 23 weeks)",
+   "season": "Summer 2027",
+   "season_inferred": true,
+   "category": "Software",
+   "location": "Remote - India",
+   "url": "https://job-boards.greenhouse.io/twilio/jobs/8190889",
+   "posted_at": "2026-09-16T14:54:18-04:00",
+   "first_seen_at": "2026-09-16T19:23:22Z",
+   "salary": null,
+   "stipend": null,
+   "skills": null,
+   "source": "greenhouse"
+  },
   {
    "id": "workday:geaerospace:/job/Bengaluru/Data-Science-Intern_R5040035-1",
    "company": "GE Aerospace",
@@ -20,22 +36,6 @@
     "Python",
     "LLMs"
    ],
-   "source": "workday"
-  },
-  {
-   "id": "workday:pfizer:/job/India---Mumbai/Intern---Data-Science---AI_4963079",
-   "company": "Pfizer",
-   "title": "Intern - Data Science & AI",
-   "season": "Summer 2027",
-   "season_inferred": true,
-   "category": "Data & ML/AI",
-   "location": "India - Mumbai",
-   "url": "https://pfizer.wd1.myworkdayjobs.com/PfizerCareers/job/India---Mumbai/Intern---Data-Science---AI_4963079",
-   "posted_at": "2026-09-16T00:00:00Z",
-   "first_seen_at": "2026-09-16T10:46:43Z",
-   "salary": null,
-   "stipend": null,
-   "skills": [],
    "source": "workday"
   },
   {
@@ -128,25 +128,6 @@
     "Docker"
    ],
    "source": "smartrecruiters"
-  },
-  {
-   "id": "workday:workday:/job/INDChennai/Software-Development-Engineer---Intern_JR-0109537",
-   "company": "Workday",
-   "title": "Software Development Engineer - Intern",
-   "season": "Summer 2027",
-   "season_inferred": true,
-   "category": "Software",
-   "location": "IND.Chennai",
-   "url": "https://workday.wd5.myworkdayjobs.com/Workday_Early_Career/job/INDChennai/Software-Development-Engineer---Intern_JR-0109537",
-   "posted_at": "2026-08-21T00:00:00Z",
-   "first_seen_at": "2026-08-21T11:26:07Z",
-   "salary": null,
-   "stipend": null,
-   "skills": [
-    "Java",
-    "C#"
-   ],
-   "source": "workday"
   },
   {
    "id": "workday:talentmanagementsolution:/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560",
