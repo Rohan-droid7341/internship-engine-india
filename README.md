@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**6 open roles · 4 new this week · 5,223 companies tracked · updated Sep 16, 2026 at 05:44 UTC**
+**8 open roles · 6 new this week · 5,223 companies tracked · updated Sep 16, 2026 at 10:46 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,10 +13,12 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027  (6 open)
+## Summer 2027  (8 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
+| GE Aerospace | Data Science Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 16, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science-Intern_R5040035-1) |
+| Pfizer | Intern - Data Science & AI ~ 🆕 | Data & ML/AI | B.Tech/BS | India - Mumbai | Sep 16, 2026 | [Apply](https://pfizer.wd1.myworkdayjobs.com/PfizerCareers/job/India---Mumbai/Intern---Data-Science---AI_4963079) |
 | Marvell | Intern, Software Engineer ~ 🆕 | Software | B.Tech/BS | Hyderabad | Sep 15, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-Engineer_2604241) |
 | Marvell | Solutions Research Intern — Physical AI ~ 🆕 | Data & ML/AI | B.Tech/BS | Hyderabad | Sep 15, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Solutions-Research-Intern---Physical-AI_2604239) |
 | Marvell | Generative AI Forward Deployed Engineer Intern-Enterprise Applications ~ 🆕 | Data & ML/AI | B.Tech/BS | Bangalore | Sep 15, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Generative-AI-Forward-Deployed-Engineer-Intern-Enterprise-Applications_2604227) |
@@ -24,7 +26,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (6 of 6)._
+_~ = the title doesn't state a year; bucketed here from its posting date (8 of 8)._
 
 ## What this is
 
@@ -158,7 +160,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,223 companies across 18 ATS platforms · 91% fetch success · completed in 326.9s · median detection latency 639 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,223 companies across 18 ATS platforms · 98% fetch success · completed in 470.2s · median detection latency 641 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
