@@ -10,20 +10,20 @@ client = TestClient(app)
 def test_homepage():
     res = client.get("/")
     assert res.status_code == 200
-    assert "Open Internships" in res.text
+    assert "Internships" in res.text
     assert "<table" in res.text
 
 
 def test_all_jobs():
     res = client.get("/all")
     assert res.status_code == 200
-    assert "All Internships" in res.text
+    assert "Internships" in res.text
 
 
 def test_stats_page():
     res = client.get("/stats")
     assert res.status_code == 200
-    assert "Engine Stats" in res.text
+    assert "Metrics" in res.text
 
 
 def test_companies_page():

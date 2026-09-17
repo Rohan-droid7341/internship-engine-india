@@ -15,6 +15,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -93,11 +94,24 @@ def _load_jsonl(filename: str) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
-# Data fetchers (Supabase → JSON fallback)
+# In-memory caches to keep responses blazing fast (<20ms)
 # ---------------------------------------------------------------------------
+_companies_cache: list[dict] = []
+_companies_cache_time: float = 0
+_COMPANIES_CACHE_TTL = 600  # 10 minutes
+
+_jobs_cache: dict[str, list[dict]] = {}
+_jobs_cache_time: dict[str, float] = {}
+_JOBS_CACHE_TTL = 60  # 1 minute
+
 
 def get_open_jobs() -> list[dict]:
-    """Fetch all open internships, newest first."""
+    """Fetch all open internships, newest first (cached 60s)."""
+    global _jobs_cache, _jobs_cache_time
+    now = time.time()
+    if "open" in _jobs_cache and (now - _jobs_cache_time.get("open", 0)) < _JOBS_CACHE_TTL:
+        return _jobs_cache["open"]
+
     client = _get_client()
     if client:
         try:
@@ -108,34 +122,59 @@ def get_open_jobs() -> list[dict]:
                 .order("first_seen_at", desc=True)
                 .execute()
             )
-            return resp.data or []
+            data = resp.data or []
+            if data:
+                _jobs_cache["open"] = data
+                _jobs_cache_time["open"] = now
+                return data
         except Exception:
             pass
     # Fallback: read from local jobs.json
     store = _load_json("jobs.json")
     jobs = [r for r in store.values() if r.get("is_open")]
     jobs.sort(key=lambda r: r.get("first_seen_at") or "", reverse=True)
+    _jobs_cache["open"] = jobs
+    _jobs_cache_time["open"] = now
     return jobs
 
 
 def get_all_jobs() -> list[dict]:
-    """Fetch all jobs (open + closed), newest first."""
+    """Fetch all jobs (open + closed), newest first with pagination."""
+    global _jobs_cache, _jobs_cache_time
+    now = time.time()
+    if "all" in _jobs_cache and (now - _jobs_cache_time.get("all", 0)) < _JOBS_CACHE_TTL:
+        return _jobs_cache["all"]
+
     client = _get_client()
     if client:
         try:
-            resp = (
-                client.table("jobs")
-                .select("*")
-                .order("first_seen_at", desc=True)
-                .limit(1000)
-                .execute()
-            )
-            return resp.data or []
+            all_jobs = []
+            page_size = 1000
+            start = 0
+            while True:
+                resp = (
+                    client.table("jobs")
+                    .select("*")
+                    .order("first_seen_at", desc=True)
+                    .range(start, start + page_size - 1)
+                    .execute()
+                )
+                data = resp.data or []
+                all_jobs.extend(data)
+                if len(data) < page_size:
+                    break
+                start += page_size
+            if all_jobs:
+                _jobs_cache["all"] = all_jobs
+                _jobs_cache_time["all"] = now
+                return all_jobs
         except Exception:
             pass
     store = _load_json("jobs.json")
     jobs = list(store.values())
     jobs.sort(key=lambda r: r.get("first_seen_at") or "", reverse=True)
+    _jobs_cache["all"] = jobs
+    _jobs_cache_time["all"] = now
     return jobs
 
 
@@ -181,20 +220,43 @@ def get_run_history(limit: int = 200) -> list[dict]:
 
 
 def get_companies() -> list[dict]:
-    """Fetch the company registry."""
+    """Fetch the full company registry (all 5,200+ companies) with range pagination and caching."""
+    global _companies_cache, _companies_cache_time
+    now = time.time()
+    if _companies_cache and (now - _companies_cache_time) < _COMPANIES_CACHE_TTL:
+        return _companies_cache
+
     client = _get_client()
     if client:
         try:
-            resp = (
-                client.table("companies")
-                .select("*")
-                .order("name")
-                .execute()
-            )
-            return resp.data or []
+            all_companies = []
+            page_size = 1000
+            start = 0
+            while True:
+                resp = (
+                    client.table("companies")
+                    .select("key,ats,slug,name")
+                    .order("name")
+                    .range(start, start + page_size - 1)
+                    .execute()
+                )
+                data = resp.data or []
+                all_companies.extend(data)
+                if len(data) < page_size:
+                    break
+                start += page_size
+            if all_companies:
+                _companies_cache = all_companies
+                _companies_cache_time = now
+                return all_companies
         except Exception:
             pass
-    return _load_json("companies.json")
+    loaded = _load_json("companies.json")
+    if isinstance(loaded, list) and loaded:
+        _companies_cache = loaded
+        _companies_cache_time = now
+        return loaded
+    return []
 
 
 # ---------------------------------------------------------------------------

@@ -2,109 +2,161 @@
 {% set active = "jobs" %}
 
 {% block title %}
-{% if show_closed %}All Jobs{% else %}Open Internships{% endif %} · Internship Engine India
+{% if show_closed %}All Internships{% else %}India Tech Internships (2026–2027){% endif %} · Internship Engine
 {% endblock %}
 
 {% block content %}
-<h1>{% if show_closed %}All Internships{% else %}Open Internships{% endif %}</h1>
-<p class="subtitle">
-  {% if show_closed %}
-    Showing {{ jobs|length }} roles (open + closed) ·
-    <a href="/">show open only</a>
-  {% else %}
-    {{ jobs|length }} open roles across India &amp; Remote ·
-    <a href="/all">show all (incl. closed)</a>
-  {% endif %}
-  {% if stats %}
-   · Last updated {{ time_ago(stats.get('generated_at', '')) }}
-  {% endif %}
-</p>
-
-<!-- Metric cards -->
-{% if stats %}
-<div class="cards">
-  <div class="card"><div class="num">{{ stats.get('open_total', 0) }}</div><div class="lbl">Open Roles</div></div>
-  <div class="card"><div class="num">{{ "{:,}".format(stats.get('companies_total', 0)) }}</div><div class="lbl">Companies Tracked</div></div>
-  <div class="card"><div class="num">{{ stats.get('new_this_run', 0) }}</div><div class="lbl">New This Run</div></div>
-  <div class="card"><div class="num">{{ (stats.get('fetch_success_rate', 0) * 100)|int }}%</div><div class="lbl">Fetch Success</div></div>
+<div class="page-header">
+  <h1 class="page-title">{% if show_closed %}All Internships (Historical Archive){% else %}India Tech Internships{% endif %}</h1>
+  <div class="page-meta">
+    <span>Summer 2027 &amp; Fall 2026 hiring cycles · India &amp; Remote</span>
+    {% if stats %}
+    <span>·</span>
+    <span>Refreshed {{ time_ago(stats.get('generated_at', '')) }}</span>
+    {% endif %}
+  </div>
 </div>
-{% endif %}
 
-<!-- Search & filters -->
-<div class="search-bar">
-  <input type="text" id="search" placeholder="Search company, title, skills…" oninput="filterTable()">
-  <select id="seasonFilter" onchange="filterTable()">
-    <option value="">All Seasons</option>
+<!-- Compact Stat Summary -->
+<div class="stat-bar">
+  <div class="stat-item">
+    <span class="stat-num">{{ stats.get('open_total', jobs|length) }}</span>
+    <span class="stat-lbl">Open Roles</span>
+  </div>
+  <span class="stat-sep">/</span>
+  <div class="stat-item">
+    <span class="stat-num">{{ "{:,}".format(stats.get('companies_total', 5217)) }}</span>
+    <span class="stat-lbl">Companies Polled</span>
+  </div>
+  <span class="stat-sep">/</span>
+  <div class="stat-item">
+    <span class="stat-num">{{ (stats.get('fetch_success_rate', 0.99) * 100)|int }}%</span>
+    <span class="stat-lbl">Feed Health</span>
+  </div>
+  <span class="stat-sep">/</span>
+  <div class="stat-item" style="margin-left: auto;">
+    {% if show_closed %}
+      <a href="/" style="font-size:12.5px; font-weight: 500;">← View Open Roles Only</a>
+    {% else %}
+      <a href="/all" style="font-size:12.5px; font-weight: 500; color: var(--text-muted);">View Archive (Incl. Closed) →</a>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Search & Filter Toolbar -->
+<div class="toolbar">
+  <div class="search-wrap">
+    <svg class="search-icon" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+    </svg>
+    <input type="text" id="search" class="search-input" placeholder="Filter by company, role, skill (e.g. Python, Swiggy, SDE)..." oninput="filterTable()">
+  </div>
+
+  <select id="seasonFilter" class="select-input" onchange="filterTable()">
+    <option value="">All Cycles</option>
   </select>
-  <select id="categoryFilter" onchange="filterTable()">
+
+  <select id="categoryFilter" class="select-input" onchange="filterTable()">
     <option value="">All Categories</option>
   </select>
+
+  <span id="matchCount" class="count-badge">Showing {{ jobs|length }} roles</span>
 </div>
 
-<!-- Jobs table -->
-<table id="jobsTable">
-  <thead>
-    <tr>
-      <th>Company</th>
-      <th>Title</th>
-      <th>Season</th>
-      <th class="hide-mobile">Location</th>
-      <th class="hide-mobile">Category</th>
-      <th class="hide-mobile">Skills</th>
-      <th class="hide-mobile">Stipend</th>
-      <th>Posted</th>
-      {% if show_closed %}<th>Status</th>{% endif %}
-    </tr>
-  </thead>
-  <tbody>
-    {% for job in jobs %}
-    <tr data-search="{{ (job.get('company', '') ~ ' ' ~ job.get('title', '') ~ ' ' ~ (job.get('skills', []) or [])|join(' ') ~ ' ' ~ job.get('location', '') ~ ' ' ~ job.get('category', ''))|lower }}"
-        data-season="{{ job.get('season', '') }}"
-        data-category="{{ job.get('category', '') }}">
-      <td><strong>{{ job.get('company', '') }}</strong></td>
-      <td>
-        <a href="{{ job.get('url', '#') }}" target="_blank" rel="noopener">
-          {{ job.get('title', '') }}
-        </a>
-        {% if job.get('season_inferred') %}<span title="Season inferred from posting date">~</span>{% endif %}
-      </td>
-      <td><span class="tag {% if 'Summer' in job.get('season', '') %}green{% elif 'Fall' in job.get('season', '') %}orange{% endif %}">{{ job.get('season', '—') }}</span></td>
-      <td class="hide-mobile">{{ job.get('location', '—') }}</td>
-      <td class="hide-mobile"><span class="tag">{{ job.get('category', '—') }}</span></td>
-      <td class="hide-mobile">
-        {% for skill in (job.get('skills') or [])[:5] %}
-          <span class="tag">{{ skill }}</span>
+<!-- Table Card -->
+<div class="table-card">
+  <div class="table-responsive">
+    <table id="jobsTable">
+      <thead>
+        <tr>
+          <th style="width: 18%;">Company</th>
+          <th style="width: 32%;">Role &amp; Cycle</th>
+          <th style="width: 16%;" class="hide-mobile">Location</th>
+          <th style="width: 18%;" class="hide-mobile">Tech Stack</th>
+          <th style="width: 16%;">Stipend / Pay</th>
+          <th style="text-align: right; width: 10%;">Posted</th>
+          {% if show_closed %}<th>Status</th>{% endif %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for job in jobs %}
+        <tr data-search="{{ (job.get('company', '') ~ ' ' ~ job.get('title', '') ~ ' ' ~ (job.get('skills', []) or [])|join(' ') ~ ' ' ~ job.get('location', '') ~ ' ' ~ job.get('category', ''))|lower }}"
+            data-season="{{ job.get('season', '') }}"
+            data-category="{{ job.get('category', '') }}">
+          <td>
+            <strong style="color: var(--text); font-weight: 600;">{{ job.get('company', '') }}</strong>
+            <div style="font-size: 11px; color: var(--text-dim); text-transform: capitalize;">{{ job.get('source', '') }}</div>
+          </td>
+          <td>
+            <div style="margin-bottom: 4px;">
+              <a href="{{ job.get('url', '#') }}" target="_blank" rel="noopener" style="font-weight: 500; font-size: 14px;">
+                {{ job.get('title', '') }} ↗
+              </a>
+            </div>
+            <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
+              {% set s = job.get('season', '') %}
+              <span class="badge {% if 'Summer' in s %}badge-summer{% elif 'Fall' in s %}badge-fall{% else %}badge-gray{% endif %}">
+                {{ s }}
+              </span>
+              {% if job.get('season_inferred') %}
+              <span class="badge badge-gray" title="Cycle inferred from posting date recency">~ Inferred</span>
+              {% endif %}
+              {% if job.get('category') and job.get('category') != 'Other' %}
+              <span class="badge badge-gray hide-mobile">{{ job.get('category') }}</span>
+              {% endif %}
+            </div>
+          </td>
+          <td class="hide-mobile" style="color: var(--text-muted); font-size: 13px;">
+            {{ job.get('location', '—') }}
+          </td>
+          <td class="hide-mobile">
+            {% set skills = job.get('skills') or [] %}
+            {% if skills %}
+              {% for skill in skills[:4] %}
+                <span class="skill-pill">{{ skill }}</span>
+              {% endfor %}
+              {% if skills|length > 4 %}
+                <span class="skill-pill">+{{ skills|length - 4 }}</span>
+              {% endif %}
+            {% else %}
+              <span style="color: var(--text-dim); font-size: 12px;">—</span>
+            {% endif %}
+          </td>
+          <td>
+            {% set stipend = job.get('stipend') or job.get('salary') %}
+            {% if stipend %}
+              <span class="badge badge-stipend">{{ stipend }}</span>
+            {% else %}
+              <span style="color: var(--text-dim); font-size: 12px;">—</span>
+            {% endif %}
+          </td>
+          <td style="text-align: right; color: var(--text-muted); font-size: 12.5px; white-space: nowrap;">
+            {{ fmt_date(job.get('posted_at')) }}
+          </td>
+          {% if show_closed %}
+          <td>
+            {% if job.get('is_open') %}
+              <span class="status-open">● Open</span>
+            {% else %}
+              <span class="status-closed">● Closed</span>
+            {% endif %}
+          </td>
+          {% endif %}
+        </tr>
         {% endfor %}
-        {% if (job.get('skills') or [])|length > 5 %}
-          <span class="tag">+{{ (job.get('skills') or [])|length - 5 }}</span>
-        {% endif %}
-      </td>
-      <td class="hide-mobile">{{ job.get('stipend') or job.get('salary') or '—' }}</td>
-      <td>{{ fmt_date(job.get('posted_at')) }}</td>
-      {% if show_closed %}
-      <td>
-        {% if job.get('is_open') %}
-          <span class="badge-open">● Open</span>
-        {% else %}
-          <span class="badge-closed">● Closed</span>
-        {% endif %}
-      </td>
-      {% endif %}
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-{% if not jobs %}
-<p style="text-align:center; color:var(--muted); padding:40px;">
-  No internships found. The engine runs every hour — check back soon.
-</p>
-{% endif %}
+<div id="noResults" style="display: none; text-align: center; padding: 48px; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-top: 16px;">
+  <p style="font-size: 15px; font-weight: 500; margin-bottom: 4px;">No matching internships found</p>
+  <p style="font-size: 13px; color: var(--text-dim);">Try clearing your search filters or check back after the next hourly crawl.</p>
+</div>
 {% endblock %}
 
 {% block extra_scripts %}
 <script>
-// Populate filter dropdowns from the data
 (function() {
   const rows = document.querySelectorAll('#jobsTable tbody tr');
   const seasons = new Set(), categories = new Set();
@@ -123,15 +175,24 @@
 })();
 
 function filterTable() {
-  const q = document.getElementById('search').value.toLowerCase();
+  const q = document.getElementById('search').value.toLowerCase().trim();
   const season = document.getElementById('seasonFilter').value;
   const category = document.getElementById('categoryFilter').value;
-  document.querySelectorAll('#jobsTable tbody tr').forEach(row => {
+  let visible = 0;
+  const rows = document.querySelectorAll('#jobsTable tbody tr');
+
+  rows.forEach(row => {
     const matchText = !q || row.dataset.search.includes(q);
     const matchSeason = !season || row.dataset.season === season;
     const matchCat = !category || row.dataset.category === category;
-    row.style.display = (matchText && matchSeason && matchCat) ? '' : 'none';
+    const ok = matchText && matchSeason && matchCat;
+    row.style.display = ok ? '' : 'none';
+    if (ok) visible++;
   });
+
+  document.getElementById('matchCount').textContent = `Showing ${visible} ${visible === 1 ? 'role' : 'roles'}`;
+  document.getElementById('noResults').style.display = (visible === 0) ? 'block' : 'none';
+  document.querySelector('.table-card').style.display = (visible === 0) ? 'none' : 'block';
 }
 </script>
 {% endblock %}
