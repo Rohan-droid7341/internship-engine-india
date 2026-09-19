@@ -89,11 +89,6 @@
     "last_attempt_at": "2026-09-16T15:23:10Z",
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/heidihealth?includeCompensation=true'\nFor more information check: https://developer.mozilla.org/en-"
   },
-  "ashby:hex": {
-    "consecutive_failures": 4,
-    "last_attempt_at": "2026-09-18T16:58:24Z",
-    "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/hex?includeCompensation=true'\nFor more information check: https://developer.mozilla.org/en-US/docs/"
-  },
   "ashby:hippocratic": {
     "consecutive_failures": 30,
     "last_attempt_at": "2026-09-16T15:23:10Z",
@@ -280,8 +275,8 @@
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/tuesday-lab?includeCompensation=true'\nFor more information check: https://developer.mozilla.org/en-"
   },
   "ashby:veeda-labs": {
-    "consecutive_failures": 10,
-    "last_attempt_at": "2026-09-16T01:03:10Z",
+    "consecutive_failures": 11,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://api.ashbyhq.com/posting-api/job-board/veeda-labs?includeCompensation=true'\nFor more information check: https://developer.mozilla.org/en-U"
   },
   "ashby:verne": {
@@ -405,8 +400,8 @@
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/browserstack/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Statu"
   },
   "greenhouse:buyersedgeplatformrecruiting": {
-    "consecutive_failures": 1,
-    "last_attempt_at": "2026-09-19T00:56:12Z",
+    "consecutive_failures": 2,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/buyersedgeplatformrecruiting/jobs'\nFor more information check: https://developer.mozilla.org/en-US/doc"
   },
   "greenhouse:byjus": {
@@ -685,8 +680,8 @@
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/phonepe/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
   },
   "greenhouse:postman": {
-    "consecutive_failures": 5,
-    "last_attempt_at": "2026-09-18T02:45:40Z",
+    "consecutive_failures": 6,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
     "last_error": "HTTPStatusError: Client error '404 Not Found' for url 'https://boards-api.greenhouse.io/v1/boards/postman/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
   },
   "greenhouse:qualifiedhealth": {
@@ -1359,10 +1354,115 @@
     "last_attempt_at": "2026-09-18T12:40:26Z",
     "last_error": "RuntimeError: Naukri rate limited or returned 0 jobs on page 1"
   },
-  "oracle:ehtv.fa.em2.oraclecloud.com": {
+  "oracle:ebxs.fa.us2.oraclecloud.com": {
     "consecutive_failures": 1,
-    "last_attempt_at": "2026-09-19T00:56:12Z",
-    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://ehtv.fa.em2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.second"
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://ebxs.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.second"
+  },
+  "oracle:egua.fa.us2.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://egua.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.second"
+  },
+  "oracle:elrj.fa.us2.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Redirect response '302 Moved Temporarily' for url 'https://elrj.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.sec"
+  },
+  "oracle:elvp.fa.us2.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://elvp.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.second"
+  },
+  "oracle:emqz.fa.us2.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Redirect response '302 Moved Temporarily' for url 'https://emqz.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.sec"
+  },
+  "oracle:epyc.fa.us2.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://epyc.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.second"
+  },
+  "oracle:erhk.fa.us2.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://erhk.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.second"
+  },
+  "oracle:ertd.fa.us2.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Redirect response '302 Moved Temporarily' for url 'https://ertd.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.sec"
+  },
+  "oracle:fa-eqsg-saasfaprod1.fa.ocs.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://fa-eqsg-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisi"
+  },
+  "oracle:fa-eqto-saasfaprod1.fa.ocs.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://fa-eqto-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisi"
+  },
+  "oracle:fa-etyr-saasfaprod1.fa.ocs.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://fa-etyr-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisi"
+  },
+  "oracle:fa-evdq-saasfaprod1.fa.ocs.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://fa-evdq-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisi"
+  },
+  "oracle:fa-evfm-saasfaprod1.fa.ocs.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Redirect response '302 Moved Temporarily' for url 'https://fa-evfm-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ"
+  },
+  "oracle:fa-ewca-saasfaprod1.fa.ocs.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://fa-ewca-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisi"
+  },
+  "oracle:fa-ewub-saasfaprod1.fa.ocs.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://fa-ewub-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisi"
+  },
+  "oracle:fa-exkk-saasfaprod1.fa.ocs.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://fa-exkk-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisi"
+  },
+  "oracle:fa-extu-saasfaprod1.fa.ocs.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://fa-extu-saasfaprod1.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisi"
+  },
+  "oracle:hcal.fa.us2.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Redirect response '302 Moved Temporarily' for url 'https://hcal.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.sec"
+  },
+  "oracle:hcqq.fa.us2.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://hcqq.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.second"
+  },
+  "oracle:hcwp.fa.us2.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://hcwp.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.second"
+  },
+  "oracle:hdid.fa.us2.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://hdid.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.second"
+  },
+  "oracle:ibqbjb.fa.ocs.oraclecloud.com": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'https://ibqbjb.fa.ocs.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.seco"
   },
   "rippling:acretrader-jobs": {
     "consecutive_failures": 13,
@@ -1413,26 +1513,6 @@
     "consecutive_failures": 1,
     "last_attempt_at": "2026-07-23T23:21:05Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/mlabs/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Stat"
-  },
-  "workable:pony-dot-ai": {
-    "consecutive_failures": 3,
-    "last_attempt_at": "2026-09-18T22:19:07Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/pony-dot-ai/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTT"
-  },
-  "workable:praytell": {
-    "consecutive_failures": 3,
-    "last_attempt_at": "2026-09-18T22:19:07Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/praytell/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/S"
-  },
-  "workable:premium-merchant-funding-3": {
-    "consecutive_failures": 3,
-    "last_attempt_at": "2026-09-18T22:19:07Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/premium-merchant-funding-3/jobs'\nFor more information check: https://developer.mozilla.org/en-"
-  },
-  "workable:pronexus-1": {
-    "consecutive_failures": 3,
-    "last_attempt_at": "2026-09-18T19:27:41Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/pronexus-1/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP"
   },
   "workable:q5-partners": {
     "consecutive_failures": 6,
@@ -1563,11 +1643,6 @@
     "consecutive_failures": 10,
     "last_attempt_at": "2026-09-17T12:38:53Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/sorting-robotics/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/We"
-  },
-  "workable:staffordgray": {
-    "consecutive_failures": 3,
-    "last_attempt_at": "2026-09-18T22:19:07Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v3/accounts/staffordgray/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HT"
   },
   "workable:starling-bank": {
     "consecutive_failures": 5,
@@ -1764,25 +1839,95 @@
     "last_attempt_at": "2026-09-16T15:23:10Z",
     "last_error": "HTTPStatusError: Client error '422 Unprocessable Entity' for url 'https://activision.wd1.myworkdayjobs.com/wday/cxs/activision/Blizzard_External_Careers/jobs'\nFor more information check: https://devel"
   },
+  "workday:acushnetgolf": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://acushnetgolf.wd12.myworkdayjobs.com/wday/cxs/acushnetgolf/ACU/jobs'\nFor more information check: https://developer.mozilla.org"
+  },
   "workday:aegion": {
     "consecutive_failures": 30,
     "last_attempt_at": "2026-09-16T15:23:10Z",
     "last_error": "HTTPStatusError: Client error '422 Unprocessable Entity' for url 'https://aegion.wd501.myworkdayjobs.com/wday/cxs/aegion/Aegion_Careers/jobs'\nFor more information check: https://developer.mozilla.org/"
+  },
+  "workday:alkami": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://alkami.wd12.myworkdayjobs.com/wday/cxs/alkami/alkami/jobs'\nFor more information check: https://developer.mozilla.org/en-US/do"
+  },
+  "workday:amainc": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://amainc.wd12.myworkdayjobs.com/wday/cxs/amainc/ama_careers/jobs'\nFor more information check: https://developer.mozilla.org/en-"
+  },
+  "workday:amesconstruction": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://amesconstruction.wd12.myworkdayjobs.com/wday/cxs/amesconstruction/ames/jobs'\nFor more information check: https://developer.mo"
+  },
+  "workday:amh": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://amh.wd12.myworkdayjobs.com/wday/cxs/amh/External_Careers/jobs'\nFor more information check: https://developer.mozilla.org/en-U"
   },
   "workday:amplify": {
     "consecutive_failures": 29,
     "last_attempt_at": "2026-09-16T22:40:02Z",
     "last_error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://amplify.wd1.myworkdayjobs.com/wday/cxs/amplify/Amplify_Careers/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs"
   },
-  "workday:atcllc": {
+  "workday:andersen": {
     "consecutive_failures": 1,
-    "last_attempt_at": "2026-09-19T00:56:12Z",
-    "last_error": "ReadTimeout: "
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://andersen.wd12.myworkdayjobs.com/wday/cxs/andersen/Andersen_External_Career_Site/jobs'\nFor more information check: https://dev"
+  },
+  "workday:arlo": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://arlo.wd12.myworkdayjobs.com/wday/cxs/arlo/external_careers/jobs'\nFor more information check: https://developer.mozilla.org/en"
+  },
+  "workday:ashland": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://ashland.wd12.myworkdayjobs.com/wday/cxs/ashland/AshlandCareers1/jobs'\nFor more information check: https://developer.mozilla.o"
+  },
+  "workday:askbio": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://askbio.wd12.myworkdayjobs.com/wday/cxs/askbio/AskBio/jobs'\nFor more information check: https://developer.mozilla.org/en-US/do"
+  },
+  "workday:baystatehealth": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://baystatehealth.wd12.myworkdayjobs.com/wday/cxs/baystatehealth/External_Careers/jobs'\nFor more information check: https://deve"
+  },
+  "workday:biamp": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://biamp.wd12.myworkdayjobs.com/wday/cxs/biamp/Biamp/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/"
+  },
+  "workday:bigcommerce": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://bigcommerce.wd12.myworkdayjobs.com/wday/cxs/bigcommerce/Commerce/jobs'\nFor more information check: https://developer.mozilla."
   },
   "workday:boarshead": {
     "consecutive_failures": 16,
     "last_attempt_at": "2026-09-17T20:56:46Z",
     "last_error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://boarshead.wd1.myworkdayjobs.com/wday/cxs/boarshead/BHC/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTT"
+  },
+  "workday:boydcorp": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://boydcorp.wd12.myworkdayjobs.com/wday/cxs/boydcorp/Boyd_Careers/jobs'\nFor more information check: https://developer.mozilla.or"
+  },
+  "workday:brownhealth": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://brownhealth.wd12.myworkdayjobs.com/wday/cxs/brownhealth/External_Careers/jobs'\nFor more information check: https://developer."
+  },
+  "workday:btisolutions": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://btisolutions.wd12.myworkdayjobs.com/wday/cxs/btisolutions/external/jobs'\nFor more information check: https://developer.mozill"
   },
   "workday:caa": {
     "consecutive_failures": 7,
@@ -1794,15 +1939,35 @@
     "last_attempt_at": "2026-09-16T15:23:10Z",
     "last_error": "HTTPStatusError: Client error '422 Unprocessable Entity' for url 'https://cambiahealth.wd1.myworkdayjobs.com/wday/cxs/cambiahealth/External/jobs'\nFor more information check: https://developer.mozilla."
   },
+  "workday:capitalone": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://capitalone.wd12.myworkdayjobs.com/wday/cxs/capitalone/Capital_One/jobs'\nFor more information check: https://developer.mozilla"
+  },
+  "workday:carislifesciences": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://wd12.myworkdaysite.com/wday/cxs/carislifesciences/CLS/jobs'\nFor more information check: https://developer.mozilla.org/en-US/d"
+  },
   "workday:cbrlgroup": {
     "consecutive_failures": 30,
     "last_attempt_at": "2026-09-16T15:23:10Z",
     "last_error": "HTTPStatusError: Client error '422 Unprocessable Entity' for url 'https://cbrlgroup.wd5.myworkdayjobs.com/wday/cxs/cbrlgroup/CrackerBarrelExternal/jobs'\nFor more information check: https://developer.m"
   },
+  "workday:ceritypartners": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://ceritypartners.wd12.myworkdayjobs.com/wday/cxs/ceritypartners/ceritypartnerscareers/jobs'\nFor more information check: https:/"
+  },
   "workday:cff": {
     "consecutive_failures": 30,
     "last_attempt_at": "2026-09-16T15:23:10Z",
     "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://cff.wd1.myworkdayjobs.com/wday/cxs/cff/explore-career-opportunities/jobs'\nFor more information check: https://developer.mozilla.o"
+  },
+  "workday:charlottenc": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://charlottenc.wd12.myworkdayjobs.com/wday/cxs/charlottenc/citgov/jobs'\nFor more information check: https://developer.mozilla.or"
   },
   "workday:chop": {
     "consecutive_failures": 30,
@@ -1869,6 +2034,11 @@
     "last_attempt_at": "2026-09-19T00:56:12Z",
     "last_error": "HTTPStatusError: Client error '422 Unprocessable Entity' for url 'https://dell.wd1.myworkdayjobs.com/wday/cxs/dell/External/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/W"
   },
+  "workday:directsupply": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://directsupply.wd501.myworkdayjobs.com/wday/cxs/directsupply/direct-supply-careers/jobs'\nFor more information check: https://de"
+  },
   "workday:dlapiper": {
     "consecutive_failures": 7,
     "last_attempt_at": "2026-07-22T23:01:40Z",
@@ -1884,15 +2054,15 @@
     "last_attempt_at": "2026-09-19T00:56:12Z",
     "last_error": "HTTPStatusError: Client error '401 Unauthorized' for url 'https://dssmith.wd3.myworkdayjobs.com/wday/cxs/dssmith/dss_internal/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs"
   },
-  "workday:dukeenergy": {
-    "consecutive_failures": 5,
-    "last_attempt_at": "2026-09-18T02:45:40Z",
-    "last_error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://dukeenergy.wd1.myworkdayjobs.com/wday/cxs/dukeenergy/search/jobs'\nFor more information check: https://developer.mozilla.org/en-US"
-  },
   "workday:evrazna": {
     "consecutive_failures": 30,
     "last_attempt_at": "2026-09-16T15:23:10Z",
     "last_error": "HTTPStatusError: Client error '422 Unprocessable Entity' for url 'https://evrazna.wd5.myworkdayjobs.com/wday/cxs/evrazna/EVRAZ/jobs'\nFor more information check: https://developer.mozilla.org/en-US/doc"
+  },
+  "workday:fnbcorp": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://fnbcorp.wd501.myworkdayjobs.com/wday/cxs/fnbcorp/FNBCORP/jobs'\nFor more information check: https://developer.mozilla.org/en-U"
   },
   "workday:fragomen": {
     "consecutive_failures": 30,
@@ -1918,6 +2088,11 @@
     "consecutive_failures": 24,
     "last_attempt_at": "2026-09-18T12:40:26Z",
     "last_error": "KeyError: 'wd'"
+  },
+  "workday:huntelec": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://huntelec.wd501.myworkdayjobs.com/wday/cxs/huntelec/HuntElectric_Careers/jobs'\nFor more information check: https://developer.m"
   },
   "workday:idexx": {
     "consecutive_failures": 19,
@@ -1983,6 +2158,11 @@
     "consecutive_failures": 24,
     "last_attempt_at": "2026-09-18T12:40:26Z",
     "last_error": "KeyError: 'wd'"
+  },
+  "workday:my7elevenhr": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://my7elevenhr.wd12.myworkdayjobs.com/wday/cxs/my7elevenhr/Careers/jobs'\nFor more information check: https://developer.mozilla.o"
   },
   "workday:netflix": {
     "consecutive_failures": 29,
@@ -2055,8 +2235,8 @@
     "last_error": "KeyError: 'wd'"
   },
   "workday:pennant": {
-    "consecutive_failures": 3,
-    "last_attempt_at": "2026-09-18T22:19:07Z",
+    "consecutive_failures": 4,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
     "last_error": "HTTPStatusError: Client error '401 Unauthorized' for url 'https://pennant.wd1.myworkdayjobs.com/wday/cxs/pennant/PennantServicesCareerSite/jobs'\nFor more information check: https://developer.mozilla.o"
   },
   "workday:plexus": {
@@ -2108,6 +2288,11 @@
     "consecutive_failures": 12,
     "last_attempt_at": "2026-09-18T12:40:26Z",
     "last_error": "HTTPStatusError: Client error '422 Unprocessable Entity' for url 'https://ssmh.wd5.myworkdayjobs.com/wday/cxs/ssmh/ssmhealth/jobs'\nFor more information check: https://developer.mozilla.org/en-US/docs/"
+  },
+  "workday:standoutforgood": {
+    "consecutive_failures": 1,
+    "last_attempt_at": "2026-09-19T05:28:11Z",
+    "last_error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'https://standoutforgood.wd12.myworkdayjobs.com/wday/cxs/standoutforgood/StandOutForGood/jobs'\nFor more information check: https://dev"
   },
   "workday:stanfordhealthcare": {
     "consecutive_failures": 30,
