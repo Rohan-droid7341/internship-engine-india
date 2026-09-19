@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**6 open roles · 3 new this week · 5,262 companies tracked · updated Sep 19, 2026 at 10:14 UTC**
+**6 open roles · 3 new this week · 5,270 companies tracked · updated Sep 19, 2026 at 14:13 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -18,7 +18,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
 | Altera Corporation | AI Automation Intern ~ 🆕 | Data & ML/AI | — | Bengaluru, Karnataka, India | Sep 18, 2026 | [Apply](https://altera.wd1.myworkdayjobs.com/altera/job/Bengaluru-Karnataka-India/AI-Automation-Intern_R03117) |
-| Thoughtworks | Developer (Vapasi) - Intern ~ 🆕 | Software | B.Tech/BS | Bangalore, India | Sep 17, 2026 | [Apply](https://www.thoughtworks.com/careers/jobs/8210384?gh_jid=8210384) |
+| Thoughtworks | Developer (Vapasi) - Intern ~ | Software | B.Tech/BS | Bangalore, India | Sep 17, 2026 | [Apply](https://www.thoughtworks.com/careers/jobs/8210384?gh_jid=8210384) |
 | GE Aerospace | Data Science Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 16, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science-Intern_R5040035-1) |
 | Ixigo | Full-Stack Intern - B2B ~ | Software | — | Gurugram, HR, India | Sep 11, 2026 | [Apply](https://jobs.smartrecruiters.com/ixigo/744000148960832) |
 | Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
@@ -102,7 +102,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _63 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **28** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 35 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 34 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -140,7 +140,6 @@ _63 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Honeywell | Intern Bachelors AI | Summer 2027 | 2026-09-08 |
 | LinkedIn | Artificial Intelligence / Machine Learning Engineering Intern | Summer 2027 | 2026-09-08 |
 | Epicor | Interns - Content Developer /Technical Writing/ Instructional Designer | Summer 2027 | 2026-09-06 |
-| eBay | Software Engineer Intern | Summer 2027 | 2026-09-05 |
 
 </details>
 
@@ -159,7 +158,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,262 companies across 18 ATS platforms · 98% fetch success · completed in 437.3s · median detection latency 640 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,270 companies across 18 ATS platforms · 98% fetch success · completed in 449.6s · median detection latency 640 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
