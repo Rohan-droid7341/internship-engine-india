@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**8 open roles · 5 new this week · 5,279 companies tracked · updated Sep 22, 2026 at 15:27 UTC**
+**7 open roles · 4 new this week · 5,279 companies tracked · updated Sep 22, 2026 at 19:36 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,12 +13,11 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027  (8 open)
+## Summer 2027  (7 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Sprinklr | ML Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | India - Haryana - Gurgaon | Sep 22, 2026 | [Apply](https://sprinklr.wd1.myworkdayjobs.com/careers/job/India---Haryana---Gurgaon/ML-Intern_113518-JOB) |
-| Philips | Intern – Data Science and AI Engineering ~ 🆕 | Data & ML/AI | B.Tech/BS | Bangalore | Sep 22, 2026 | [Apply](https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Bangalore/Intern---Data-Science-and-AI-Engineering_587413) |
+| Pearson | Apprentice, Software Engineer ~ 🆕 | Software | 2+ Yrs<br>B.Tech/BS | Bangalore, Karnataka, India | Sep 22, 2026 | [Apply](https://hccz.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/25453) |
 | Altera Corporation | AI Automation Intern ~ | Data & ML/AI | — | Bengaluru, Karnataka, India | Sep 18, 2026 | [Apply](https://altera.wd1.myworkdayjobs.com/altera/job/Bengaluru-Karnataka-India/AI-Automation-Intern_R03117) |
 | Thoughtworks | Developer (Vapasi) - Intern ~ | Software | B.Tech/BS | Bangalore, India | Sep 17, 2026 | [Apply](https://www.thoughtworks.com/careers/jobs/8210384?gh_jid=8210384) |
 | GE Aerospace | Data Science Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 16, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science-Intern_R5040035-1) |
@@ -26,7 +25,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (8 of 8)._
+_~ = the title doesn't state a year; bucketed here from its posting date (7 of 7)._
 
 ## What this is
 
@@ -104,10 +103,12 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _63 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **28** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 33 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 34 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Philips | Intern – Data Science and AI Engineering | Summer 2027 | 2026-09-22 |
+| Sprinklr | ML Intern | Summer 2027 | 2026-09-22 |
 | Marvell | Intern, Software Engineer | Summer 2027 | 2026-09-18 |
 | Marvell | Solutions Research Intern — Physical AI | Summer 2027 | 2026-09-18 |
 | Marvell | Generative AI Forward Deployed Engineer Intern-Enterprise Applications | Summer 2027 | 2026-09-17 |
@@ -140,7 +141,6 @@ _63 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Pearson | Associate, AI & Machine Learning Intern | Summer 2027 | 2026-09-08 |
 | Honeywell | Intern Masters Embedded Eng | Summer 2027 | 2026-09-08 |
 | Honeywell | Intern Bachelors AI | Summer 2027 | 2026-09-08 |
-| LinkedIn | Artificial Intelligence / Machine Learning Engineering Intern | Summer 2027 | 2026-09-08 |
 
 </details>
 
@@ -159,7 +159,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,279 companies across 18 ATS platforms · 99% fetch success · completed in 435.7s · median detection latency 653 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,279 companies across 18 ATS platforms · 96% fetch success · completed in 448.1s · median detection latency 655 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
