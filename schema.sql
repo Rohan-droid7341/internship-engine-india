@@ -127,6 +127,41 @@ CREATE TABLE IF NOT EXISTS app_state (
 );
 
 -- ============================================================
+-- 8. email_subscribers — daily digest subscriber list
+-- ============================================================
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS email_subscribers (
+    id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email       TEXT UNIQUE NOT NULL,
+    unsub_token UUID NOT NULL DEFAULT gen_random_uuid(),
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- RLS: Public can sign up (INSERT), but cannot read or dump the email list
+ALTER TABLE email_subscribers ENABLE ROW LEVEL SECURITY;
+
+DO $$ BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_policies WHERE tablename = 'email_subscribers' AND policyname = 'Anyone can subscribe'
+    ) THEN
+        CREATE POLICY "Anyone can subscribe" ON email_subscribers FOR INSERT WITH CHECK (true);
+    END IF;
+END $$;
+
+-- 1-click unsubscribe function using the secret UUID token
+CREATE OR REPLACE FUNCTION unsubscribe_email(token UUID)
+RETURNS BOOLEAN
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+BEGIN
+    DELETE FROM email_subscribers WHERE unsub_token = token;
+    RETURN FOUND;
+END;
+$$;
+
+-- ============================================================
 -- Views
 -- ============================================================
 

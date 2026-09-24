@@ -52,3 +52,10 @@ def test_api_history():
     assert res.status_code == 200
     data = res.json()
     assert isinstance(data, list)
+
+
+def test_api_subscribe_invalid():
+    res = client.post("/api/subscribe", json={"email": "notanemail"})
+    assert res.status_code == 400
+    assert "valid email" in res.json()["message"]
+

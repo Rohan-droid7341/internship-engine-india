@@ -396,3 +396,39 @@ async def api_stats():
 @app.get("/api/history")
 async def api_history():
     return JSONResponse(get_run_history())
+
+
+@app.post("/api/subscribe")
+async def api_subscribe(request: Request):
+    """Subscribe an email address to daily internship alerts."""
+    try:
+        data = await request.json()
+    except Exception:
+        return JSONResponse({"status": "error", "message": "Invalid JSON body."}, status_code=400)
+
+    email = (data.get("email") or "").strip().lower()
+    if not email or "@" not in email or "." not in email:
+        return JSONResponse({"status": "error", "message": "Please enter a valid email address."}, status_code=400)
+
+    client = _get_client()
+    if not client:
+        return JSONResponse({"status": "error", "message": "Database not configured."}, status_code=503)
+
+    try:
+        # Check if already subscribed
+        existing = client.table("email_subscribers").select("id").eq("email", email).execute()
+        if existing.data:
+            return JSONResponse({"status": "exists", "message": "This email is already subscribed!"})
+
+        # Insert new subscriber
+        client.table("email_subscribers").insert({"email": email}).execute()
+        return JSONResponse({
+            "status": "success",
+            "message": "You're in! You'll receive a daily digest whenever new internships are spotted.",
+        })
+    except Exception as exc:
+        err_msg = str(exc)
+        if "duplicate" in err_msg or "23505" in err_msg:
+            return JSONResponse({"status": "exists", "message": "This email is already subscribed!"})
+        return JSONResponse({"status": "error", "message": "Failed to subscribe. Please try again."}, status_code=500)
+

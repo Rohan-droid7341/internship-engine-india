@@ -43,6 +43,22 @@
   </div>
 </div>
 
+<!-- Daily Email Digest Signup -->
+<div class="newsletter-card">
+  <div class="newsletter-info">
+    <div class="newsletter-icon">📬</div>
+    <div>
+      <div class="newsletter-title">Daily Internship Alerts</div>
+      <div class="newsletter-desc">One email every morning, only when new internships actually drop. 1-click unsubscribe anytime.</div>
+    </div>
+  </div>
+  <form id="subscribeForm" class="newsletter-form" onsubmit="handleSubscribe(event)">
+    <input type="email" id="subscribeEmail" required placeholder="Enter your email (you@college.edu or gmail)" class="newsletter-input">
+    <button type="submit" id="subscribeBtn" class="newsletter-btn">Get Alerts</button>
+  </form>
+</div>
+<div id="subscribeStatus" style="display:none; font-size: 13px; margin: -10px 0 16px; padding: 10px 14px; border-radius: 6px;"></div>
+
 <!-- Search & Filter Toolbar -->
 <div class="toolbar">
   <div class="search-wrap">
@@ -193,6 +209,56 @@ function filterTable() {
   document.getElementById('matchCount').textContent = `Showing ${visible} ${visible === 1 ? 'role' : 'roles'}`;
   document.getElementById('noResults').style.display = (visible === 0) ? 'block' : 'none';
   document.querySelector('.table-card').style.display = (visible === 0) ? 'none' : 'block';
+}
+
+function handleSubscribe(e) {
+  e.preventDefault();
+  const input = document.getElementById('subscribeEmail');
+  const btn = document.getElementById('subscribeBtn');
+  const status = document.getElementById('subscribeStatus');
+  const email = input.value.trim().toLowerCase();
+
+  btn.disabled = true;
+  btn.textContent = 'Subscribing…';
+  status.style.display = 'none';
+
+  fetch('/api/subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email })
+  })
+  .then(r => r.json())
+  .then(data => {
+    status.style.display = 'block';
+    if (data.status === 'success') {
+      status.style.background = 'var(--green-dim)';
+      status.style.border = '1px solid rgba(34, 197, 94, 0.3)';
+      status.style.color = '#4ade80';
+      status.textContent = data.message;
+      input.value = '';
+    } else if (data.status === 'exists') {
+      status.style.background = 'var(--amber-dim)';
+      status.style.border = '1px solid rgba(245, 158, 11, 0.3)';
+      status.style.color = '#fbbf24';
+      status.textContent = data.message;
+    } else {
+      status.style.background = 'var(--red-dim)';
+      status.style.border = '1px solid rgba(239, 68, 68, 0.3)';
+      status.style.color = '#f87171';
+      status.textContent = data.message || 'Subscription failed. Please try again.';
+    }
+  })
+  .catch(() => {
+    status.style.display = 'block';
+    status.style.background = 'var(--red-dim)';
+    status.style.border = '1px solid rgba(239, 68, 68, 0.3)';
+    status.style.color = '#f87171';
+    status.textContent = 'Network error. Please try again in a moment.';
+  })
+  .finally(() => {
+    btn.disabled = false;
+    btn.textContent = 'Get Alerts';
+  });
 }
 </script>
 {% endblock %}
