@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**5 open roles · 3 new this week · 5,284 companies tracked · updated Sep 24, 2026 at 05:51 UTC**
+**9 open roles · 7 new this week · 5,284 companies tracked · updated Sep 24, 2026 at 11:02 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,17 +13,21 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027  (5 open)
+## Summer 2027  (9 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
+| AbhiBus | AI-Native Full Stack Developer Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Hyderabad, TS, India | Sep 24, 2026 | [Apply](https://jobs.smartrecruiters.com/abhibus/744000151541999) |
+| Marvell | AI Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bangalore | Sep 24, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/AI-Intern_2603878) |
+| Marvell | Intern, Software Engineer ~ 🆕 | Software | B.Tech/BS | Hyderabad | Sep 24, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-Engineer_2603879) |
+| Thoughtworks | Software Procurement Intern ~ 🆕 | Software | 0-1 Yr<br>B.Tech/BS | Gurgaon, India | Sep 23, 2026 | [Apply](https://job-boards.greenhouse.io/thoughtworksreferral/jobs/8225630) |
 | Pearson | Apprentice, Software Engineer ~ 🆕 | Software | 2+ Yrs<br>B.Tech/BS | Bangalore, Karnataka, India | Sep 22, 2026 | [Apply](https://hccz.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/25453) |
 | Altera Corporation | AI Automation Intern ~ | Data & ML/AI | — | Bengaluru, Karnataka, India | Sep 18, 2026 | [Apply](https://altera.wd1.myworkdayjobs.com/altera/job/Bengaluru-Karnataka-India/AI-Automation-Intern_R03117) |
 | Thoughtworks | Developer (Vapasi) - Intern ~ | Software | B.Tech/BS | Bangalore, India | Sep 17, 2026 | [Apply](https://www.thoughtworks.com/careers/jobs/8210384?gh_jid=8210384) |
 | Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (5 of 5)._
+_~ = the title doesn't state a year; bucketed here from its posting date (9 of 9)._
 
 ## What this is
 
@@ -156,7 +160,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,284 companies across 18 ATS platforms · 97% fetch success · completed in 382.5s · median detection latency 653 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,284 companies across 18 ATS platforms · 97% fetch success · completed in 414.9s · median detection latency 659 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
