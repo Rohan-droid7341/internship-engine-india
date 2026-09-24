@@ -87,7 +87,7 @@ def should_send(state: dict, fresh_count: int, now: datetime | None = None) -> b
 
 
 def _role_row(r: dict) -> str:
-    bits = [b for b in (r.get("season"), r.get("location"), r.get("salary")) if b]
+    bits = [b for b in (r.get("season"), r.get("location"), r.get("stipend") or r.get("salary")) if b]
     return (
         '<tr><td style="padding:10px 0;border-bottom:1px solid #eee">'
         f"<strong>{escape(r.get('company') or '')}</strong> — "
