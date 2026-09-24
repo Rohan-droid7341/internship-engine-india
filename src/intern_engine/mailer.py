@@ -74,10 +74,19 @@ def new_roles(store_data: dict, now: datetime | None = None) -> list[dict]:
     return fresh
 
 
-def should_send(state: dict, fresh_count: int, now: datetime | None = None) -> bool:
-    """At most one digest a day, and never an empty one."""
+def should_send(
+    state: dict,
+    fresh_count: int,
+    now: datetime | None = None,
+    new_ids: list[str] | set[str] | None = None,
+) -> bool:
+    """Send when there is news to deliver. Never send an empty email."""
     if fresh_count == 0:
         return False
+    # If new_ids was explicitly passed (e.g. from pipeline run), send immediately!
+    if new_ids is not None:
+        return len(new_ids) > 0
+    # Fallback when run manually without new_ids: at most daily
     now = now or datetime.now(UTC)
     last = _parse_ts(state.get("last_digest_at"))
     return last is None or (now - last) >= timedelta(hours=_MIN_HOURS_BETWEEN)
@@ -156,8 +165,16 @@ def _subscribers(base_url: str, service_key: str) -> list[dict]:
 # --- sending -------------------------------------------------------------------
 
 
-def send_digest(store_data: dict) -> int:
-    """Send today's digest if due. Returns how many emails went out."""
+def send_digest(store_data: dict, new_ids: list[str] | set[str] | None = None) -> int:
+    """Send email alerts to subscribers.
+
+    When new_ids is provided: sends immediately whenever this run found new roles.
+    When new_ids is None: checks store_data for fresh roles.
+    Returns how many emails went out.
+    """
+    if new_ids is not None and not new_ids:
+        return 0
+
     api_key = os.environ.get("BREVO_API_KEY")
     base_url = (os.environ.get("SUPABASE_URL") or "").rstrip("/")
     service_key = os.environ.get("SUPABASE_SERVICE_KEY")
@@ -165,10 +182,18 @@ def send_digest(store_data: dict) -> int:
     if not api_key or not base_url or not service_key or not sender:
         return 0
 
-    state = _load_state()
-    fresh = new_roles(store_data)
+    if new_ids is not None:
+        fresh = [
+            store_data[jid]
+            for jid in new_ids
+            if jid in store_data and store_data[jid].get("is_open")
+        ]
+        fresh.sort(key=lambda r: r.get("first_seen_at") or "", reverse=True)
+    else:
+        fresh = new_roles(store_data)
 
-    if not should_send(state, len(fresh)):
+    state = _load_state()
+    if not should_send(state, len(fresh), new_ids=new_ids):
         return 0
 
     try:
@@ -179,7 +204,13 @@ def send_digest(store_data: dict) -> int:
         return 0
 
     today = datetime.now(UTC).strftime("%b %d")
-    subject = f"{len(fresh)} new internship{'s' if len(fresh) != 1 else ''} · {today}"
+    if len(fresh) == 1:
+        cname = fresh[0].get("company") or "Company"
+        title = fresh[0].get("title") or "Internship"
+        subject = f"🎯 New Opening: {cname} — {title}"
+    else:
+        subject = f"🚨 {len(fresh)} New Internship Openings Spotted · {today}"
+
     body = build_digest_html(fresh)
     unsub_base = f"{config.pages_base()}/unsubscribe.html"
 

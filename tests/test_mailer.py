@@ -69,6 +69,14 @@ def test_should_send_at_most_daily():
     assert mailer.should_send({"last_digest_at": old}, 5) is True
 
 
+def test_should_send_immediate_on_new_ids():
+    now = datetime.now(UTC)
+    recent = (now - timedelta(minutes=5)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    assert mailer.should_send({"last_digest_at": recent}, fresh_count=2, new_ids=["job1", "job2"]) is True
+    assert mailer.should_send({}, fresh_count=0, new_ids=[]) is False
+
+
+
 # --- composition ---------------------------------------------------------------
 
 

@@ -70,9 +70,9 @@ def cmd_update() -> None:
     if notify.send_new_roles(store_data, new_ids):
         print(f"  Discord alert        {len(new_ids)} new roles")
     notify.check_sandbox_reminder()
-    sent = mailer.send_digest(store_data)
+    sent = mailer.send_digest(store_data, new_ids)
     if sent:
-        print(f"  email digest         sent to {sent} subscribers")
+        print(f"  email alert          sent to {sent} subscribers ({len(new_ids)} new roles)")
     print("Update complete:")
     for k, v in stats.items():
         print(f"  {k:<24} {v}")
