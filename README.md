@@ -4,13 +4,13 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**7 open roles · 4 new this week · 5,293 companies tracked · updated Sep 25, 2026 at 07:05 UTC**
+**7 open roles · 4 new this week · 5,293 companies tracked · updated Sep 25, 2026 at 12:42 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
+**Live:** [dashboard](https://rohan-droid7341.github.io/internship-engine-india/) · [RSS feed](https://rohan-droid7341.github.io/internship-engine-india/feed.xml) (instant alerts in any RSS app) · [JSON API](https://rohan-droid7341.github.io/internship-engine-india/api/jobs.json)
 
-
-
+**🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
 ## Summer 2027  (7 open)
@@ -59,6 +59,48 @@ I built this engine to automate tracking for top-tier tech internships across In
 
 ---
 
+<a id="drop-radar"></a>
+
+## 📅 Drop Radar — when companies usually post for Summer 2027
+
+Stop refreshing career pages. Every date here is **real or verified** — no third-party list. 🎯 = the engine **saw the drop itself** from the company's own careers API; the rest are hand-checked typical opening windows for marquee names. ✅ = already live in the list above.
+
+> **Heads up:** companies trend *earlier* every cycle, and "~Aug" is a month, not a day. Treat "expected" as when to **start watching**, and "rolling" companies as worth checking year-round.
+
+| Company | Typical opening | Expected this cycle | Status |
+|---|---|---|---|
+| Citadel | ~Aug | ~Aug · any day now | ⏳ waiting |
+| Citadel Securities | ~Aug | ~Aug · any day now | ⏳ waiting |
+| Databricks | ~Aug | ~Aug · any day now | ⏳ waiting |
+| DoorDash | ~Aug | ~Aug · any day now | ⏳ waiting |
+| DRW | ~Aug | ~Aug · any day now | ⏳ waiting |
+| Google | ~Aug | ~Aug · any day now | ⏳ waiting |
+| Jane Street | ~Aug | ~Aug · any day now | ⏳ waiting |
+| Meta | ~Aug | ~Aug · any day now | ⏳ waiting |
+| Optiver | ~Aug | ~Aug · any day now | ⏳ waiting |
+| Pinterest | ~Aug | ~Aug · any day now | ⏳ waiting |
+| Salesforce | ~Aug | ~Aug · any day now | ⏳ waiting |
+| SIG | ~Aug | ~Aug · any day now | ⏳ waiting |
+| Snowflake | ~Aug | ~Aug · any day now | ⏳ waiting |
+| Uber | ~Aug | ~Aug · any day now | ⏳ waiting |
+| Adobe | ~Sep | ~Sep · any day now | ⏳ waiting |
+| Airbnb | ~Sep | ~Sep · any day now | ⏳ waiting |
+| Bloomberg | ~Sep | ~Sep · any day now | ⏳ waiting |
+| Dropbox | ~Sep | ~Sep · any day now | ⏳ waiting |
+| Plaid | ~Sep | ~Sep · any day now | ⏳ waiting |
+| Point72 | ~Sep | ~Sep · any day now | ⏳ waiting |
+| Robinhood | ~Sep | ~Sep · any day now | ⏳ waiting |
+| Roblox | ~Sep | ~Sep · any day now | ⏳ waiting |
+| Stripe | ~Sep | ~Sep · any day now | ⏳ waiting |
+| D.E. Shaw | ~Oct | ~Oct · in ~6d | ⏳ waiting |
+| Coinbase | ~Dec | ~Dec | ⏳ waiting |
+| Ramp | ~Dec | ~Dec | ⏳ waiting |
+| Two Sigma | ~Dec | ~Dec | ⏳ waiting |
+| Apple | rolling | year-round | ⏳ waiting |
+| Datadog | rolling | year-round | ⏳ waiting |
+| Jump Trading | rolling | year-round | ⏳ waiting |
+
+_63 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **28** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
 <summary><strong>Recently closed</strong> — 33 roles taken down in the last 14 days</summary>
@@ -116,7 +158,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,293 companies across 18 ATS platforms · 98% fetch success · completed in 392.0s · median detection latency 655 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,293 companies across 18 ATS platforms · 98% fetch success · completed in 346.9s · median detection latency 655 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
