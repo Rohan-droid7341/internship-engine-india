@@ -3,14 +3,11 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Unsubscribe - Internship Engine</title>
 <style>
-  body { margin:0; background:#090d16; color:#f8fafc;
-          font:15px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif; }
-  .box { max-width:480px; margin:20vh auto 0; padding:36px 28px; background:#0f1523;
-          border:1px solid #1e293b; border-radius:12px; text-align:center; }
-  h1 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-  p { color: #94a3b8; font-size: 14px; }
-  a { color:#38bdf8; text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  body { margin:0; background:#0d1117; color:#e6edf3;
+          font:16px/1.6 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+  .box { max-width:520px; margin:18vh auto 0; padding:32px 24px; background:#161b22;
+          border:1px solid #30363d; border-radius:12px; text-align:center; }
+  a { color:#2f81f7; }
 </style></head><body>
 <div class="box"><h1 id="h">Unsubscribing…</h1><p id="p">One moment.</p></div>
 <script>
@@ -19,12 +16,9 @@
   var token = new URLSearchParams(location.search).get('t');
   if (!token) { h.textContent = 'Missing link token'; p.textContent =
     'Use the unsubscribe link from one of our emails.'; return; }
-  fetch("https://zvanrgppleycfqwfpxjd.supabase.co/rest/v1/rpc/unsubscribe_email", {
+  fetch("https://zvanrgppleycfqwfpxjd.supabase.co" + '/rest/v1/rpc/unsubscribe_email', {
     method: 'POST',
-    headers: {
-      'apikey': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp2YW5yZ3BwbGV5Y2Zxd2ZweGpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk1ODAwMjcsImV4cCI6MjEwNTE1NjAyN30.hWMKytXN4VI_TAfnFzjp8ezkjM6nNShXlTgpMGoKVbc",
-      'Content-Type': 'application/json'
-    },
+    headers: { 'apikey': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp2YW5yZ3BwbGV5Y2Zxd2ZweGpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk1ODAwMjcsImV4cCI6MjEwNTE1NjAyN30.hWMKytXN4VI_TAfnFzjp8ezkjM6nNShXlTgpMGoKVbc", 'Content-Type': 'application/json' },
     body: JSON.stringify({ token: token })
   }).then(function (r) {
     if (r.ok) { h.textContent = "You're unsubscribed"; p.textContent =
