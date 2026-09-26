@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**6 open roles · 2 new this week · 5,304 companies tracked · updated Sep 26, 2026 at 08:32 UTC**
+**6 open roles · 2 new this week · 5,312 companies tracked · updated Sep 26, 2026 at 13:41 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -17,8 +17,8 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| AbhiBus | AI-Native Full Stack Developer Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Hyderabad, TS, India | Sep 24, 2026 | [Apply](https://jobs.smartrecruiters.com/abhibus/744000151541999) |
-| Thoughtworks | Software Procurement Intern ~ 🆕 | Software | 0-1 Yr<br>B.Tech/BS | Gurgaon, India | Sep 23, 2026 | [Apply](https://job-boards.greenhouse.io/thoughtworksreferral/jobs/8225630) |
+| AbhiBus | AI-Native Full Stack Developer Intern ~ | Data & ML/AI | B.Tech/BS | Hyderabad, TS, India | Sep 24, 2026 | [Apply](https://jobs.smartrecruiters.com/abhibus/744000151541999) |
+| Thoughtworks | Software Procurement Intern ~ | Software | 0-1 Yr<br>B.Tech/BS | Gurgaon, India | Sep 23, 2026 | [Apply](https://job-boards.greenhouse.io/thoughtworksreferral/jobs/8225630) |
 | Altera Corporation | AI Automation Intern ~ | Data & ML/AI | — | Bengaluru, Karnataka, India | Sep 18, 2026 | [Apply](https://altera.wd1.myworkdayjobs.com/altera/job/Bengaluru-Karnataka-India/AI-Automation-Intern_R03117) |
 | Thoughtworks | Developer (Vapasi) - Intern ~ | Software | B.Tech/BS | Bangalore, India | Sep 17, 2026 | [Apply](https://www.thoughtworks.com/careers/jobs/8210384?gh_jid=8210384) |
 | Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
@@ -156,7 +156,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,304 companies across 18 ATS platforms · 97% fetch success · completed in 421.1s · median detection latency 653 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,312 companies across 18 ATS platforms · 98% fetch success · completed in 410.7s · median detection latency 653 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
