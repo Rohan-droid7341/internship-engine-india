@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**10 open roles · 5 new this week · 5,326 companies tracked · updated Oct 01, 2026 at 15:06 UTC**
+**10 open roles · 5 new this week · 5,331 companies tracked · updated Oct 01, 2026 at 20:23 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -17,8 +17,8 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| AbhiBus | AI-Native Full Stack Developer Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Hyderabad, TS, India | Oct 01, 2026 | [Apply](https://jobs.smartrecruiters.com/abhibus/744000152892832) |
 | HackerRank | Software Development Engineer Intern 🆕 | Software | B.Tech/BS | Onsite in Bangalore | Oct 01, 2026 | [Apply](https://job-boards.greenhouse.io/hackerrank/jobs/8229735) |
+| AbhiBus | AI-Native Full Stack Developer Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Hyderabad, TS, India | Oct 01, 2026 | [Apply](https://jobs.smartrecruiters.com/abhibus/744000152892832) |
 | Marvell | Intern, Software QA Engineer ~ 🆕 | Software | B.Tech/BS | Bangalore | Oct 01, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Intern--Software-QA-Engineer_2604244) |
 | Marvell | AI Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bangalore | Sep 30, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/AI-Intern_2604445) |
 | GE Aerospace | Data Science -Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 28, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science--Intern_R5040692-1) |
@@ -141,7 +141,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,326 companies across 18 ATS platforms · 98% fetch success · completed in 413.8s · median detection latency 659 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,331 companies across 18 ATS platforms · 98% fetch success · completed in 389.8s · median detection latency 659 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
