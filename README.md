@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**10 open roles · 5 new this week · 5,331 companies tracked · updated Oct 02, 2026 at 06:40 UTC**
+**10 open roles · 6 new this week · 5,331 companies tracked · updated Oct 02, 2026 at 13:33 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -21,8 +21,8 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | AbhiBus | AI-Native Full Stack Developer Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Hyderabad, TS, India | Oct 01, 2026 | [Apply](https://jobs.smartrecruiters.com/abhibus/744000152892832) |
 | Marvell | Intern, Software QA Engineer ~ 🆕 | Software | B.Tech/BS | Bangalore | Oct 01, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Intern--Software-QA-Engineer_2604244) |
 | Marvell | AI Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bangalore | Sep 30, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/AI-Intern_2604445) |
+| Marvell | Software QA Automation Intern ~ 🆕 | Software | B.Tech/BS | Hyderabad | Sep 30, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-QA-Engineer_2604247) |
 | GE Aerospace | Data Science -Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 28, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science--Intern_R5040692-1) |
-| Marvell | Intern, Software Engineer ~ | Software | B.Tech/BS | Hyderabad | Sep 24, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-Engineer_2603879) |
 | Altera Corporation | AI Automation Intern ~ | Data & ML/AI | — | Bengaluru, Karnataka, India | Sep 18, 2026 | [Apply](https://altera.wd1.myworkdayjobs.com/altera/job/Bengaluru-Karnataka-India/AI-Automation-Intern_R03117) |
 | Thoughtworks | Developer (Vapasi) - Intern ~ | Software | B.Tech/BS | Bangalore, India | Sep 17, 2026 | [Apply](https://www.thoughtworks.com/careers/jobs/8210384?gh_jid=8210384) |
 | Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
@@ -106,12 +106,12 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _64 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **29** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 12 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 10 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Marvell | Intern, Software Engineer | Summer 2027 | 2026-10-02 |
 | Thoughtworks | Software Procurement Intern | Summer 2027 | 2026-10-01 |
-| Marvell | Intern, Software QA Engineer | Summer 2027 | 2026-10-01 |
 | AbhiBus | AI-Native Full Stack Developer Intern | Summer 2027 | 2026-09-28 |
 | Sprinklr | ML Intern | Summer 2027 | 2026-09-25 |
 | Marvell | AI Intern | Summer 2027 | 2026-09-24 |
@@ -120,8 +120,6 @@ _64 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | GE Aerospace | Data Science Intern | Summer 2027 | 2026-09-23 |
 | Ixigo | Full-Stack Intern - B2B | Summer 2027 | 2026-09-23 |
 | Philips | Intern – Data Science and AI Engineering | Summer 2027 | 2026-09-22 |
-| Marvell | Intern, Software Engineer | Summer 2027 | 2026-09-18 |
-| Marvell | Solutions Research Intern — Physical AI | Summer 2027 | 2026-09-18 |
 
 </details>
 
@@ -140,7 +138,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,331 companies across 18 ATS platforms · 96% fetch success · completed in 431.6s · median detection latency 659 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,331 companies across 18 ATS platforms · 98% fetch success · completed in 405.1s · median detection latency 655 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
