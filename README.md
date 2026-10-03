@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**20 open roles · 16 new this week · 5,355 companies tracked · updated Oct 03, 2026 at 21:00 UTC**
+**10 open roles · 6 new this week · 5,355 companies tracked · updated Oct 03, 2026 at 21:11 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,32 +13,22 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027  (20 open)
+## Summer 2027  (10 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
 | HackerRank | Software Development Engineer Intern | Software | B.Tech/BS | Onsite in Bangalore | Oct 01, 2026 | [Apply](https://job-boards.greenhouse.io/hackerrank/jobs/8229735) |
 | AbhiBus | AI-Native Full Stack Developer Intern ~ | Data & ML/AI | B.Tech/BS | Hyderabad, TS, India | Oct 01, 2026 | [Apply](https://jobs.smartrecruiters.com/abhibus/744000152892832) |
 | Marvell | Intern, Software QA Engineer ~ | Software | B.Tech/BS | Bangalore | Oct 01, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Intern--Software-QA-Engineer_2604244) |
-| Deutsche Bank | Apprentice Hiring for 2026- 2027 🆕 | Other | B.Tech/BS | Mumbai, Hazarimal Somani Marg | Sep 30, 2026 | [Apply](https://db.wd3.myworkdayjobs.com/DBWebsite/job/Mumbai-Hazarimal-Somani-Marg/Apprentice-Hiring-for-2026--2027_R0445347) |
 | Marvell | AI Intern ~ | Data & ML/AI | B.Tech/BS | Bangalore | Sep 30, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/AI-Intern_2604445) |
 | Marvell | Software QA Automation Intern ~ | Software | B.Tech/BS | Hyderabad | Sep 30, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-QA-Engineer_2604247) |
-| Wabtec | Technician Apprentice ~ 🆕 | Other | B.Tech/BS | Marhowra, BR, India | Sep 29, 2026 | [Apply](https://jobs.smartrecruiters.com/Wabtec/3743990015755665) |
 | GE Aerospace | Data Science -Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 28, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science--Intern_R5040692-1) |
 | Altera Corporation | AI Automation Intern ~ | Data & ML/AI | — | Bengaluru, Karnataka, India | Sep 18, 2026 | [Apply](https://altera.wd1.myworkdayjobs.com/altera/job/Bengaluru-Karnataka-India/AI-Automation-Intern_R03117) |
 | Thoughtworks | Developer (Vapasi) - Intern ~ | Software | B.Tech/BS | Bangalore, India | Sep 17, 2026 | [Apply](https://www.thoughtworks.com/careers/jobs/8210384?gh_jid=8210384) |
-| Itron | Apprentice ~ 🆕 | Other | B.Tech/BS | India, Bangalore | Sep 16, 2026 | [Apply](https://itron.wd5.myworkdayjobs.com/Early_Careers/job/India-Bangalore/Apprentice_JR102702-2) |
-| Cushman & Wakefield | Apprentice ~ 🆕 | Other | — | Bengaluru, India | Sep 14, 2026 | [Apply](https://cw.wd1.myworkdayjobs.com/external/job/Bengaluru-India/Apprentice_R323129) |
-| Deutsche Bank | HR Apprentice ~ 🆕 | Other | 0-1 Yr | Bangalore, Velankani Tech Park | Sep 10, 2026 | [Apply](https://db.wd3.myworkdayjobs.com/DBWebsite/job/Bangalore-Velankani-Tech-Park/HR-Apprentice_R0441934) |
-| Deutsche Bank | Apprentice Role for Non-Technology hiring, NCT ~ 🆕 | Other | B.Tech/BS | Pune - Business Bay | Sep 07, 2026 | [Apply](https://db.wd3.myworkdayjobs.com/DBWebsite/job/Pune---Business-Bay/Apprentice-Role-for-Non-Technology-hiring--NCT_R0449404) |
-| Cushman & Wakefield | EIC Apprentice - Valuations and Advisory_Ahmedabad ~ 🆕 | Other | B.Tech/BS | CW Site - IND - Ahmedabad - B Wings +2 more | Sep 04, 2026 | [Apply](https://cw.wd1.myworkdayjobs.com/external/job/CW-Site---IND---Ahmedabad---B-Wings-601-Mondeal-Heights-Nr-Novotel-Hotel-S-G-Highway/EIC-Apprentice---Valuations-and-Advisory-Ahmedabad_R331135) |
-| Cushman & Wakefield | EIC Apprentice ~ 🆕 | Other | — | Hyderabad, India | Sep 04, 2026 | [Apply](https://cw.wd1.myworkdayjobs.com/external/job/Hyderabad-India/EIC-Apprentice_R-INDINT-010) |
-| Cushman & Wakefield | EIC Apprentice- Project & Development Services ~ 🆕 | Other | B.Tech/BS | Chennai, India | Sep 03, 2026 | [Apply](https://cw.wd1.myworkdayjobs.com/external/job/Chennai-India/EIC-Apprentice--Project---Development-Services_R335332) |
-| Medtronic | Co-op/Apprentice (Non-Tech) ~ 🆕 | Other | B.Tech/BS | Bangalore , Karnataka, India | Jul 22, 2026 | [Apply](https://medtronic.wd1.myworkdayjobs.com/redeploymentmedtroniccareers/job/Bangalore--Karnataka-India/Co-op-Apprentice--Non-Tech-_R66904) |
 | Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
 | Valeo | Intern - AI ~ | Data & ML/AI | — | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (18 of 20)._
+_~ = the title doesn't state a year; bucketed here from its posting date (9 of 10)._
 
 ## What this is
 

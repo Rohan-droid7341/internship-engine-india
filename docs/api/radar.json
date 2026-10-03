@@ -1,22 +1,8 @@
 {
- "generated_at": "2026-10-03T21:00:48Z",
+ "generated_at": "2026-10-03T21:11:39Z",
  "cycle": "Summer 2027",
  "source": "https://github.com/Rohan-droid7341/internship-engine-india",
  "companies": [
-  {
-   "company": "Deutsche Bank",
-   "last_cycle_posted": "",
-   "posted_on": "2026-09-30",
-   "precision": "day",
-   "rolling": false,
-   "confidence": "verified",
-   "source": "engine",
-   "expected": "2026-09-30",
-   "days_until": -3,
-   "status": "open",
-   "url": "https://db.wd3.myworkdayjobs.com/DBWebsite/job/Mumbai-Hazarimal-Somani-Marg/Apprentice-Hiring-for-2026--2027_R0445347",
-   "note": ""
-  },
   {
    "company": "HackerRank",
    "last_cycle_posted": "",
@@ -617,7 +603,7 @@
    "days_until": -94,
    "status": "dropped",
    "url": "",
-   "note": "posts early, rolling"
+   "note": ""
   },
   {
    "company": "IMC Trading",
@@ -629,6 +615,20 @@
    "source": "engine",
    "expected": "2026-07-01",
    "days_until": -94,
+   "status": "dropped",
+   "url": "",
+   "note": "posts early, rolling"
+  },
+  {
+   "company": "Tower Research Capital",
+   "last_cycle_posted": "",
+   "posted_on": "2026-07-05",
+   "precision": "day",
+   "rolling": false,
+   "confidence": "verified",
+   "source": "engine",
+   "expected": "2026-07-05",
+   "days_until": -90,
    "status": "dropped",
    "url": "",
    "note": ""
@@ -646,20 +646,6 @@
    "status": "dropped",
    "url": "",
    "note": "opens ~Aug-Sep"
-  },
-  {
-   "company": "Tower Research Capital",
-   "last_cycle_posted": "",
-   "posted_on": "2026-07-05",
-   "precision": "day",
-   "rolling": false,
-   "confidence": "verified",
-   "source": "engine",
-   "expected": "2026-07-05",
-   "days_until": -90,
-   "status": "dropped",
-   "url": "",
-   "note": ""
   },
   {
    "company": "Northrop Grumman",
@@ -715,7 +701,7 @@
    "days_until": -82,
    "status": "dropped",
    "url": "",
-   "note": "opens fall, closes early Feb"
+   "note": ""
   },
   {
    "company": "Hudson River Trading",
@@ -729,7 +715,7 @@
    "days_until": -82,
    "status": "dropped",
    "url": "",
-   "note": ""
+   "note": "opens fall, closes early Feb"
   },
   {
    "company": "Five Rings",
@@ -909,6 +895,20 @@
    "source": "engine",
    "expected": "2026-09-10",
    "days_until": -23,
+   "status": "dropped",
+   "url": "",
+   "note": ""
+  },
+  {
+   "company": "Deutsche Bank",
+   "last_cycle_posted": "",
+   "posted_on": "2026-09-30",
+   "precision": "day",
+   "rolling": false,
+   "confidence": "verified",
+   "source": "engine",
+   "expected": "2026-09-30",
+   "days_until": -3,
    "status": "dropped",
    "url": "",
    "note": ""
