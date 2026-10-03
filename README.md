@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**10 open roles · 6 new this week · 5,344 companies tracked · updated Oct 03, 2026 at 13:02 UTC**
+**10 open roles · 6 new this week · 5,355 companies tracked · updated Oct 03, 2026 at 17:03 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -17,9 +17,9 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| HackerRank | Software Development Engineer Intern 🆕 | Software | B.Tech/BS | Onsite in Bangalore | Oct 01, 2026 | [Apply](https://job-boards.greenhouse.io/hackerrank/jobs/8229735) |
-| AbhiBus | AI-Native Full Stack Developer Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Hyderabad, TS, India | Oct 01, 2026 | [Apply](https://jobs.smartrecruiters.com/abhibus/744000152892832) |
-| Marvell | Intern, Software QA Engineer ~ 🆕 | Software | B.Tech/BS | Bangalore | Oct 01, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Intern--Software-QA-Engineer_2604244) |
+| HackerRank | Software Development Engineer Intern | Software | B.Tech/BS | Onsite in Bangalore | Oct 01, 2026 | [Apply](https://job-boards.greenhouse.io/hackerrank/jobs/8229735) |
+| AbhiBus | AI-Native Full Stack Developer Intern ~ | Data & ML/AI | B.Tech/BS | Hyderabad, TS, India | Oct 01, 2026 | [Apply](https://jobs.smartrecruiters.com/abhibus/744000152892832) |
+| Marvell | Intern, Software QA Engineer ~ | Software | B.Tech/BS | Bangalore | Oct 01, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Intern--Software-QA-Engineer_2604244) |
 | Marvell | AI Intern ~ | Data & ML/AI | B.Tech/BS | Bangalore | Sep 30, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/AI-Intern_2604445) |
 | Marvell | Software QA Automation Intern ~ | Software | B.Tech/BS | Hyderabad | Sep 30, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-QA-Engineer_2604247) |
 | GE Aerospace | Data Science -Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Sep 28, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science--Intern_R5040692-1) |
@@ -138,7 +138,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,344 companies across 18 ATS platforms · 98% fetch success · completed in 343.6s · median detection latency 662 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,355 companies across 18 ATS platforms · 98% fetch success · completed in 364.0s · median detection latency 659 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
