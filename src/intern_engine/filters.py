@@ -41,78 +41,24 @@ _INCLUDE_RE = re.compile(
     r")\b",
     re.IGNORECASE,
 )
-_NON_TECH_ROLE_RE = re.compile(
-    r"\b("
-    r"recruit|recruiting|recruiter|sales|account executive|account manager|"
-    r"account management|marketing|marketer|unpaid|"
-    r"campus ambassador|content writer|content writing|seo|telecaller|"
-    r"subject matter expert|sme|business development|\bbda\b|lead generation|"
-    r"legal|counsel|accounting|human resources|people operations|people team|talent acquisition|"
-    r"communications|procurement|customer support|customer success|"
-    r"faculty|instructor|trainer|tutor|educator|curriculum|academic mentor|"
-    r"data entry|copy paste|typing job|form filling|telecalling"
-    r")\b",
-    re.IGNORECASE,
-)
-
-_NON_TECH_DISCIPLINE_RE = re.compile(
+_EXCLUDE_RE = re.compile(
     r"\b("
     r"mechanical|aerospace|aeronautical|astrodynamics|aerodynamic|propulsion|avionics|"
     r"guidance|navigation|gnc|naval|civil engineer|chemical|chemistry|chemist|"
     r"biology|biological|materials|structural|thermal|fluid|manufacturing|"
     r"industrial engineer|electrical|fpga|asic|pcb|analog|photonics|optical|"
     r"hardware|physical design|silicon|semiconductor|vlsi|rtl|"
-    r"product manager|product management|product design|product designer|"
-    r"ux design|graphic design|industrial design|"
-    r"phd|ph\.d|doctoral|mba|bba|bcom|b\.com|chartered accountant|\bca\b"
+    r"recruit|recruiting|recruiter|sales|account executive|account manager|"
+    r"account management|marketing|marketer|unpaid|"
+    r"campus ambassador|content writer|content writing|seo|digital marketing|telecaller|"
+    r"subject matter expert|sme|business development|bda|lead generation|"
+    r"legal|counsel|accounting|human resources|people operations|people team|talent|"
+    r"communications|supply chain|product design|product designer|"
+    r"product manager|product management|ux design|graphic design|industrial design|"
+    r"phd|ph\.d|doctoral|mba|bba|bcom|b\.com|chartered accountant|ca"
     r")\b",
     re.IGNORECASE,
 )
-
-_TECH_HEAD_RE = re.compile(
-    r"\b("
-    r"software|developer|dev|swe|sde|sdet|full[\s-]?stack|front[\s-]?end|back[\s-]?end|"
-    r"web developer|web engineer|mobile|ios|android|devops|sre|site reliability|"
-    r"infrastructure|platform engineer|platform engineering|distributed systems|"
-    r"operating system|compiler|embedded|firmware|cloud|cloud engineer|cloud intern|"
-    r"qa|qa engineer|qa intern|quality assurance|automation engineer|automation tester|"
-    r"data science|data scientist|data engineer|data analyst|analytics engineer|"
-    r"machine learning|\bml\b|deep learning|\bai\b|artificial intelligence|nlp|computer vision|"
-    r"research scientist|applied scientist|research engineer|ml engineer|ai engineer|"
-    r"genai|generative ai|llm|quantitative developer|quant developer|"
-    r"cyber|cybersecurity|appsec|application security|information security|infosec|"
-    r"security engineer|security intern|devsecops|computer science|programming|"
-    r"system development engineer|systems development engineer|"
-    r"graduate engineer trainee|engineer trainee|system engineer|technology analyst|"
-    r"programmer analyst trainee|apprentice"
-    r")\b",
-    re.IGNORECASE,
-)
-
-_SENIOR_VETO_RE = re.compile(
-    r"\b("
-    r"senior|sr\.?|lead|principal|staff|distinguished|director|head|vp|vice\s+president|"
-    r"manager|architect|specialist|expert|fellow|"
-    r"ii|iii|iv|\b2\b|\b3\b|\b4\b|\b5\b|"
-    r"sde[\s\-_]?(?:ii|iii|2|3)|swe[\s\-_]?(?:ii|iii|2|3)"
-    r")\b",
-    re.IGNORECASE,
-)
-
-
-def is_internship(title: str) -> bool:
-    return bool(_INTERN_RE.search(title)) and not _SENIOR_VETO_RE.search(title)
-
-
-def is_tech(title: str) -> bool:
-    """Keep software/data/ML/security/trainee roles; reject sales/marketing/hardware/mech."""
-    if _NON_TECH_ROLE_RE.search(title):
-        return False
-    if _NON_TECH_DISCIPLINE_RE.search(title):
-        return False
-    return bool(_TECH_HEAD_RE.search(title))
-
-
 
 # --- season detection --------------------------------------------------------
 _YEAR_RE = re.compile(r"\b(20\d\d)\b")
@@ -124,6 +70,18 @@ _TITLE_GRAD_RE = re.compile(
     r"\b(?:class\s+of|grad(?:uating|uation)?(?:\s+(?:date|year))?:?(?:\s+in)?)\s+['’]?(?:20)?\d{2}\b",
     re.IGNORECASE,
 )
+
+
+def is_internship(title: str) -> bool:
+    return bool(_INTERN_RE.search(title)) and not _SENIOR_RE.search(title)
+
+
+def is_tech(title: str) -> bool:
+    """Keep software/data/ML/security roles; reject hardware/mech/non-tech."""
+    if _EXCLUDE_RE.search(title):
+        return False
+    return bool(_INCLUDE_RE.search(title))
+
 
 _CYCLE_RE = re.compile(r"(Summer|Fall|Spring|Winter)\s+(\d{4})", re.IGNORECASE)
 

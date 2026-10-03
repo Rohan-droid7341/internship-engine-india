@@ -29,6 +29,7 @@ from .connectors import (
     custom_careers,
     eightfold,
     greenhouse,
+    instahyre,
     internshala,
     lever,
     naukri,
@@ -36,6 +37,7 @@ from .connectors import (
     recruitee,
     rippling,
     smartrecruiters,
+    unstop,
     wellfound,
     workable,
     workday,
@@ -179,39 +181,10 @@ def _keep_matching(results, cfg, blocklist, existing=None) -> tuple[list, set[st
         if allowlist_only and not quality.is_recognized(company["name"]):
             continue
         for job in jobs:
-            # ----------------------------------------------------------------
-            # Gate 1 (Fast): Region Filter (India & Verified Remote)
-            # Instantly skips foreign listings with no regex overhead.
-            # ----------------------------------------------------------------
-            in_region = filters.region_ok(
-                job.location, wants_us, wants_canada, wants_india, wants_remote, source=job.source
-            )
-            if restrict and not in_region and not include_intl:
-                continue
-            loc = (job.location or "").strip()
-            if not in_region and (not loc or loc == "—"):
-                continue  # out-of-region roles need a real location
-
-            # ----------------------------------------------------------------
-            # Gate 2 (Fast): Age Filter (60 days max cutoff)
-            # ----------------------------------------------------------------
-            posted_day = (job.posted_at or "")[:10]
-            if cutoff and posted_day and posted_day < cutoff:
-                continue
-
-            # ----------------------------------------------------------------
-            # Gate 3 (Fast): Tech Role Filter
-            # Keeps software/data/ML/security/trainees; drops marketing/sales/mech.
-            # ----------------------------------------------------------------
-            if tech_only and not filters.is_tech(job.title):
-                continue
-
-            # ----------------------------------------------------------------
-            # Gate 4: Internship & Cycle Classification
-            # ----------------------------------------------------------------
             if not filters.is_internship(job.title):
                 continue
-
+            if tech_only and not filters.is_tech(job.title):
+                continue
             season = filters.detect_season(job.title, cycles)
             inferred = False
 
@@ -250,13 +223,22 @@ def _keep_matching(results, cfg, blocklist, existing=None) -> tuple[list, set[st
             if season is None:
                 dropped_no_year += 1
                 continue
-
+            in_region = filters.region_ok(
+                job.location, wants_us, wants_canada, wants_india, wants_remote, source=job.source
+            )
+            if restrict and not in_region and not include_intl:
+                continue
+            loc = (job.location or "").strip()
+            if not in_region and (not loc or loc == "—"):
+                continue  # out-of-region roles need a real location
+            posted_day = (job.posted_at or "")[:10]
+            if cutoff and posted_day and posted_day < cutoff:
+                continue
             job.season = season
             job.season_inferred = inferred
             job.category = filters.categorize(job.title)
             kept.append(job)
     return kept, succeeded, errors, errors_by_ats, dropped_no_year, dropped_offcycle
-
 
 
 def run_update() -> tuple[dict, dict, list[str]]:
