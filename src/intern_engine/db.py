@@ -144,6 +144,9 @@ def _job_rows(store_data: dict, valid_company_keys: set[str] | None = None) -> l
                 # Compensation
                 "salary": r.get("salary"),
                 "stipend": r.get("stipend"),
+                "estimated_stipend": r.get("estimated_stipend"),
+                "estimated_ctc": r.get("estimated_ctc"),
+                "pay_source": r.get("pay_source"),
                 # India enrichment fields
                 "degree": r.get("degree"),
                 "experience": r.get("experience"),

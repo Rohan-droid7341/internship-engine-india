@@ -40,6 +40,9 @@ CREATE TABLE IF NOT EXISTS jobs (
     -- Compensation
     salary          TEXT,                       -- USD: "$45/hr", "$120k/yr"
     stipend         TEXT,                       -- INR: "₹25k/mo", "10 LPA"
+    estimated_stipend TEXT,                     -- Grounded/benchmark: "₹80k-1.1L/mo"
+    estimated_ctc   TEXT,                       -- Grounded/benchmark: "28-44 LPA"
+    pay_source      TEXT,                       -- "AmbitionBox", "Levels.fyi", etc.
     -- India enrichment fields
     degree          TEXT,                       -- "B.Tech/BS", "M.Tech/MS", "PhD"
     experience      TEXT,                       -- "0-1 Yr", "Fresher", "2+ Yrs"

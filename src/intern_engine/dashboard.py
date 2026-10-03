@@ -108,6 +108,12 @@ def _rows(open_jobs: list[dict]) -> str:
         url = r.get("url") or ""
         apply = f'<a href="{escape(url)}" target="_blank" rel="noopener">Apply</a>' if url else "—"
         salary = r.get("stipend") or r.get("salary") or ""
+        if not salary and r.get("estimated_stipend"):
+            salary = f"~{r['estimated_stipend']}"
+            if r.get("estimated_ctc"):
+                salary += f" ({r['estimated_ctc']})"
+        elif not salary and r.get("estimated_ctc"):
+            salary = f"~{r['estimated_ctc']}"
         skills = [s for s in (r.get("skills") or []) if s][:6]
         chips = (
             (
@@ -121,7 +127,18 @@ def _rows(open_jobs: list[dict]) -> str:
         haystack = " ".join(
             [
                 str(r.get(k) or "")
-                for k in ("company", "title", "location", "category", "season", "salary", "stipend")
+                for k in (
+                    "company",
+                    "title",
+                    "location",
+                    "category",
+                    "season",
+                    "salary",
+                    "stipend",
+                    "estimated_stipend",
+                    "estimated_ctc",
+                    "pay_source",
+                )
             ]
             + skills
         ).lower()

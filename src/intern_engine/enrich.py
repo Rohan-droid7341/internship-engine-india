@@ -13,7 +13,7 @@ from __future__ import annotations
 import asyncio
 import re
 
-from . import filters, skills
+from . import compensation, filters, skills
 from .models import Job
 from .net import Net
 
@@ -151,6 +151,27 @@ async def enrich_jobs(jobs: list[Job], existing: dict, net: Net) -> tuple[set[st
             job.experience = skills.extract_experience(text)
         if not job.batch:
             job.batch = skills.extract_batch(text)
+        if not job.stipend and not job.salary:
+            prior_stipend = prior.get("estimated_stipend")
+            prior_ctc = prior.get("estimated_ctc")
+            prior_src = prior.get("pay_source")
+            if prior_stipend or prior_ctc:
+                job.estimated_stipend = prior_stipend
+                job.estimated_ctc = prior_ctc
+                job.pay_source = prior_src
+            else:
+                pay_info = await compensation.lookup_compensation(
+                    company=job.company,
+                    company_slug=job.company_slug,
+                    title=job.title,
+                    category=job.category,
+                    location=job.location,
+                    client=net,
+                )
+                if pay_info:
+                    job.estimated_stipend = pay_info.get("stipend")
+                    job.estimated_ctc = pay_info.get("ctc")
+                    job.pay_source = pay_info.get("source")
         if job.season_inferred:
             # The posting text is ground truth for date-inferred cycles: an
             # explicitly stated term+year replaces the guess (and un-marks the
@@ -163,4 +184,5 @@ async def enrich_jobs(jobs: list[Job], existing: dict, net: Net) -> tuple[set[st
         return job.id
 
     done = await asyncio.gather(*(_resolve(j) for j in jobs))
+    compensation.save_cache()
     return {jid for jid in done if jid}, fetched

@@ -33,4 +33,7 @@ class Job:
     degree: str | None = None
     batch: str | None = None
     skills: list[str] | None = None  # tags extracted from posting text (None = not yet)
+    estimated_stipend: str | None = None  # grounded/benchmark stipend estimate
+    estimated_ctc: str | None = None  # grounded/benchmark full-time CTC estimate
+    pay_source: str | None = None  # source name e.g. "AmbitionBox", "Levels.fyi"
     description: str | None = None  # transient: raw posting text, used for classification

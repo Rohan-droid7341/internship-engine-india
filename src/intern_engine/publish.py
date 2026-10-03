@@ -35,6 +35,11 @@ def _entry(record: dict, base: str) -> str:
         summary_bits.append(record["stipend"])
     elif record.get("salary"):
         summary_bits.append(record["salary"])
+    elif record.get("estimated_stipend"):
+        est = f"~{record['estimated_stipend']}"
+        if record.get("estimated_ctc"):
+            est += f" ({record['estimated_ctc']})"
+        summary_bits.append(est)
     if record.get("skills"):
         summary_bits.append(", ".join(record["skills"][:5]))
     summary = " · ".join(b for b in summary_bits if b)
@@ -189,6 +194,9 @@ _API_FIELDS = (
     "first_seen_at",
     "salary",
     "stipend",
+    "estimated_stipend",
+    "estimated_ctc",
+    "pay_source",
     "skills",
     "source",
 )

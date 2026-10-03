@@ -20,6 +20,7 @@ CSV_PATH = os.path.join(DATA_DIR, "internships.csv")  # downloadable tracker
 STATS_PATH = os.path.join(DATA_DIR, "stats.json")  # last-run metrics
 HEALTH_PATH = os.path.join(DATA_DIR, "health.json")  # circuit-breaker state
 HISTORY_PATH = os.path.join(DATA_DIR, "history.jsonl")  # one line of metrics per run
+COMPENSATION_CACHE_PATH = os.path.join(DATA_DIR, "compensation_cache.json")  # grounded pay estimates cache
 
 MAIL_STATE_PATH = os.path.join(DATA_DIR, "mail_state.json")  # when the last digest went out
 WHATSAPP_STATE_PATH = os.path.join(DATA_DIR, "whatsapp_state.json")  # when the last digest went out

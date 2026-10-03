@@ -103,6 +103,13 @@ def _row(record: dict) -> str:
         specs.append(record.get("stipend"))
     elif record.get("salary"):
         specs.append(record.get("salary"))
+    elif record.get("estimated_stipend"):
+        est = f"~{record['estimated_stipend']}"
+        if record.get("estimated_ctc"):
+            est += f" ({record['estimated_ctc']})"
+        specs.append(est)
+    elif record.get("estimated_ctc"):
+        specs.append(f"~{record['estimated_ctc']}")
     if record.get("experience"):
         specs.append(record.get("experience"))
     if record.get("degree"):
@@ -520,6 +527,9 @@ def _write_csv(open_jobs: list[dict]) -> None:
         "location",
         "salary",
         "stipend",
+        "estimated_stipend",
+        "estimated_ctc",
+        "pay_source",
         "skills",
         "posted_at",
         "first_seen_at",

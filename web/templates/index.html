@@ -96,7 +96,7 @@
       </thead>
       <tbody>
         {% for job in jobs %}
-        <tr data-search="{{ (job.get('company', '') ~ ' ' ~ job.get('title', '') ~ ' ' ~ (job.get('skills', []) or [])|join(' ') ~ ' ' ~ job.get('location', '') ~ ' ' ~ job.get('category', ''))|lower }}"
+        <tr data-search="{{ (job.get('company', '') ~ ' ' ~ job.get('title', '') ~ ' ' ~ (job.get('skills', []) or [])|join(' ') ~ ' ' ~ job.get('location', '') ~ ' ' ~ job.get('category', '') ~ ' ' ~ (job.get('stipend') or '') ~ ' ' ~ (job.get('estimated_stipend') or '') ~ ' ' ~ (job.get('estimated_ctc') or ''))|lower }}"
             data-season="{{ job.get('season', '') }}"
             data-category="{{ job.get('category', '') }}">
           <td>
@@ -141,7 +141,16 @@
           <td>
             {% set stipend = job.get('stipend') or job.get('salary') %}
             {% if stipend %}
-              <span class="badge badge-stipend">{{ stipend }}</span>
+              <span class="badge badge-stipend" title="Stated in posting">{{ stipend }}</span>
+            {% elif job.get('estimated_stipend') %}
+              <span class="badge badge-stipend-est" title="Estimated via {{ job.get('pay_source', 'market benchmarks') }}">
+                ~{{ job.get('estimated_stipend') }}
+                {% if job.get('estimated_ctc') %}<span class="ctc-subtext">{{ job.get('estimated_ctc') }}</span>{% endif %}
+              </span>
+            {% elif job.get('estimated_ctc') %}
+              <span class="badge badge-stipend-est" title="Estimated via {{ job.get('pay_source', 'market benchmarks') }}">
+                ~{{ job.get('estimated_ctc') }}
+              </span>
             {% else %}
               <span style="color: var(--text-dim); font-size: 12px;">—</span>
             {% endif %}

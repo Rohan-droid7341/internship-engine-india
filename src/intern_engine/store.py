@@ -100,6 +100,12 @@ def upsert(
                 record["degree"] = job["degree"]
             if job.get("batch"):
                 record["batch"] = job["batch"]
+            if job.get("estimated_stipend"):
+                record["estimated_stipend"] = job["estimated_stipend"]
+            if job.get("estimated_ctc"):
+                record["estimated_ctc"] = job["estimated_ctc"]
+            if job.get("pay_source"):
+                record["pay_source"] = job["pay_source"]
             if record.get("closed_at"):
                 del record["closed_at"]  # the role came back
             record["last_seen_at"] = ts

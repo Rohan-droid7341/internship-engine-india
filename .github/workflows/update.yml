@@ -49,7 +49,9 @@ jobs:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
           TWILIO_FROM_NUMBER: ${{ secrets.TWILIO_FROM_NUMBER }}
-          WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
+          # Gemini API key for compensation intelligence & search grounding
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: "gemini-3.8-flash"
         run: python run.py update
 
       - name: Commit & push if changed
@@ -59,6 +61,7 @@ jobs:
           git add README.md data/jobs.json data/internships.csv data/stats.json \
                   data/health.json data/history.jsonl data/mail_state.json \
                   data/whatsapp_state.json data/observed.json data/known_windows.json \
+                  data/compensation_cache.json \
                   docs/index.html docs/feed.xml docs/unsubscribe.html \
                   docs/radar.ics docs/trends-light.svg docs/trends-dark.svg \
                   docs/api/jobs.json docs/api/stats.json docs/api/radar.json
