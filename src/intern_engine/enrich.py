@@ -127,6 +127,26 @@ async def enrich_jobs(jobs: list[Job], existing: dict, net: Net) -> tuple[set[st
         prior = existing.get(job.id) or {}
         settled = bool(prior.get("enriched_at"))
         if settled and prior.get("skills") is not None:
+            if prior.get("estimated_stipend"):
+                job.estimated_stipend = prior.get("estimated_stipend")
+                job.estimated_ctc = prior.get("estimated_ctc")
+                job.pay_source = prior.get("pay_source")
+            elif not prior.get("stipend") and not prior.get("salary"):
+                pay_info = await compensation.lookup_compensation(
+                    company=job.company,
+                    company_slug=job.company_slug,
+                    title=job.title,
+                    category=job.category,
+                    location=job.location,
+                    client=net,
+                )
+                if pay_info:
+                    job.estimated_stipend = pay_info.get("stipend")
+                    job.estimated_ctc = pay_info.get("ctc")
+                    job.pay_source = pay_info.get("source")
+                    prior["estimated_stipend"] = job.estimated_stipend
+                    prior["estimated_ctc"] = job.estimated_ctc
+                    prior["pay_source"] = job.pay_source
             return None  # already settled on an earlier run
         # (settled but skills missing = record predates skill tags; re-fetch once)
         if job.description is None:
@@ -140,17 +160,18 @@ async def enrich_jobs(jobs: list[Job], existing: dict, net: Net) -> tuple[set[st
                     return None  # no enriched_at -> retried on the next run
         text = job.description if job.description else ""
         text = re.sub(r'<[^>]+>', ' ', text)
-        job.skills = skills.extract(text)
+        if not job.skills:
+            job.skills = skills.extract(text) if text else prior.get("skills")
         if not job.salary:
-            job.salary = skills.extract_pay(text)
+            job.salary = skills.extract_pay(text) if text else prior.get("salary")
         if not job.stipend:
-            job.stipend = skills.extract_stipend(text)
+            job.stipend = skills.extract_stipend(text) if text else prior.get("stipend")
         if not job.degree:
-            job.degree = skills.extract_degree(text)
+            job.degree = skills.extract_degree(text) if text else prior.get("degree")
         if not job.experience:
-            job.experience = skills.extract_experience(text)
+            job.experience = skills.extract_experience(text) if text else prior.get("experience")
         if not job.batch:
-            job.batch = skills.extract_batch(text)
+            job.batch = skills.extract_batch(text) if text else prior.get("batch")
         if not job.stipend and not job.salary:
             prior_stipend = prior.get("estimated_stipend")
             prior_ctc = prior.get("estimated_ctc")
