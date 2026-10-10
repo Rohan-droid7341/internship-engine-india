@@ -1,9 +1,12 @@
 """Command-line entrypoint.
 
-    python run.py harvest    # probe curated candidates -> data/companies.json
-    python run.py discover   # mine public datasets for company tokens (big scale-up)
-    python run.py update     # fetch -> filter -> enrich -> store -> publish everything
-    python run.py all        # discover + harvest + update
+    python run.py harvest     # probe curated candidates -> data/companies.json
+    python run.py discover    # mine public datasets for company tokens (big scale-up)
+    python run.py update      # fetch -> filter -> enrich -> store -> publish everything
+    python run.py all         # discover + harvest + update
+    python run.py fetch-only  # fetch + enrich ONLY — no README, no website,
+                              # no mailing, no Discord/WhatsApp, no Supabase.
+                              # Safe for test branches to validate fetch logic.
 """
 
 import os
@@ -81,6 +84,33 @@ def cmd_update() -> None:
     print(f"  radar calendar events  {ics_events}")
 
 
+def cmd_fetch_only() -> None:
+    """Fetch + enrich ONLY.
+
+    Intentionally skips every side-effect so new fetch logic can be validated
+    safely on a test branch without touching:
+      - README / website / feed / API / calendar / SVG charts
+      - Supabase / Postgres sync
+      - Email digest (Brevo)
+      - Discord / WhatsApp notifications
+
+    Reads from and writes ONLY to data/jobs.json (raw store).
+    Run with:  python run.py fetch-only
+    """
+    if not os.path.exists(os.path.join("data", "companies.json")):
+        print("No data/companies.json yet — run `python run.py harvest` first.")
+        sys.exit(1)
+
+    print("⚙  fetch-only mode — no README, no website, no mailing, no notifications")
+    stats, store_data, new_ids = pipeline.run_update()
+
+    print("\nFetch complete (raw stats):")
+    for k, v in stats.items():
+        print(f"  {k:<24} {v}")
+    print(f"  new role ids           {len(new_ids)}")
+    print("\n✅  fetch-only run done. Nothing was published or notified.")
+
+
 def main() -> None:
     cmd = sys.argv[1] if len(sys.argv) > 1 else "update"
     if cmd == "harvest":
@@ -89,6 +119,8 @@ def main() -> None:
         cmd_discover()
     elif cmd == "update":
         cmd_update()
+    elif cmd == "fetch-only":
+        cmd_fetch_only()
     elif cmd == "all":
         cmd_discover()
         cmd_harvest()
