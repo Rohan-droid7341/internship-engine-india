@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**10 open roles · 3 new this week · 5,461 companies tracked · updated Oct 17, 2026 at 10:04 UTC**
+**10 open roles · 3 new this week · 5,474 companies tracked · updated Oct 17, 2026 at 13:38 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -18,7 +18,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
 | Novartis | Intern AI & Data Science ~ 🆕 | Data & ML/AI | M.Tech/MS | Hyderabad (Office) | Oct 16, 2026 | [Apply](https://novartis.wd3.myworkdayjobs.com/Novartis_Careers/job/Hyderabad-Office/Intern-AI---Data-Science_REQ-10089924-1) |
-| Marvell | Generative AI Forward Deployed Engineer Intern- Master's Degree ~ 🆕 | Data & ML/AI | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Bangalore | Oct 15, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Generative-AI-Forward-Deployed-Engineer-Intern--Master-s-Degree_2604231) |
+| Marvell | Generative AI Forward Deployed Engineer Intern- Master's Degree ~ | Data & ML/AI | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Bangalore | Oct 15, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Generative-AI-Forward-Deployed-Engineer-Intern--Master-s-Degree_2604231) |
 | Scopely | Intern - QA Engineer - Royal Lounge Casino ~ | Software | B.Tech/BS | IN - Bangalore, India | Oct 13, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5448999008?gh_jid=5448999008) |
 | HackerRank | Software Development Engineer Intern | Software | ~₹40k–60k/mo (16–22 LPA)<br>B.Tech/BS | Onsite in Bangalore | Oct 01, 2026 | [Apply](https://job-boards.greenhouse.io/hackerrank/jobs/8229735) |
 | AbhiBus | AI-Native Full Stack Developer Intern ~ | Data & ML/AI | ~₹20k–30k/mo (6–10 LPA)<br>B.Tech/BS | Hyderabad, TS, India | Oct 01, 2026 | [Apply](https://jobs.smartrecruiters.com/abhibus/744000152892832) |
@@ -147,7 +147,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,461 companies across 18 ATS platforms · 98% fetch success · completed in 319.4s · median detection latency 662 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,474 companies across 18 ATS platforms · 97% fetch success · completed in 372.1s · median detection latency 662 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
