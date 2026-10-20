@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**11 open roles · 5 new this week · 5,477 companies tracked · updated Oct 20, 2026 at 07:06 UTC**
+**10 open roles · 3 new this week · 5,477 companies tracked · updated Oct 20, 2026 at 12:43 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,11 +13,10 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027  (11 open)
+## Summer 2027  (10 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Honeywell | Intern Bachelors Software Eng ~ 🆕 | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Bengaluru, Karnataka, India | Oct 19, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/159854) |
 | Marsh | AI Engineer Intern ~ 🆕 | Data & ML/AI | — | Gurugram - Good Earth | Oct 19, 2026 | [Apply](https://mmc.wd1.myworkdayjobs.com/mmc/job/Gurugram---Good-Earth/AI-Engineer-Intern_R_365556) |
 | AtkinsRéalis | Data Science Intern ~ 🆕 | Data & ML/AI | — | AtkinsRéalis - Corporate Office Bangalo… | Oct 19, 2026 | [Apply](https://slihrms.wd3.myworkdayjobs.com/careers/job/AtkinsRalis---Corporate-Office-Bangalore/Data-Science-Intern_R-165210) |
 | Marvell | Generative AI Forward Deployed Engineer Intern- Master's Degree ~ | Data & ML/AI | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Bangalore | Oct 15, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Generative-AI-Forward-Deployed-Engineer-Intern--Master-s-Degree_2604231) |
@@ -29,7 +28,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
 | Valeo | Intern - AI ~ | Data & ML/AI | ~₹20k–30k/mo (6–9 LPA) | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (10 of 11)._
+_~ = the title doesn't state a year; bucketed here from its posting date (9 of 10)._
 
 ## What this is
 
@@ -111,6 +110,7 @@ _65 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-10-20 |
 | Airbus | Data Science Intern | Summer 2027 | 2026-10-19 |
 | AbhiBus | AI-Native Full Stack Developer Intern | Summer 2027 | 2026-10-19 |
 | Novartis | Intern AI & Data Science | Summer 2027 | 2026-10-17 |
@@ -130,7 +130,6 @@ _65 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Valeo | Intern - Software | Summer 2027 | 2026-10-08 |
 | Philips | Intern – Data Science and AI Engineering | Summer 2027 | 2026-10-08 |
 | GE Healthcare | Intern Data Analyst | Summer 2027 | 2026-10-07 |
-| Marvell | Software QA Automation Intern | Summer 2027 | 2026-10-06 |
 
 </details>
 
@@ -149,7 +148,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,477 companies across 18 ATS platforms · 98% fetch success · completed in 445.1s · median detection latency 662 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,477 companies across 18 ATS platforms · 98% fetch success · completed in 392.1s · median detection latency 662 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
