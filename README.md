@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**11 open roles · 4 new this week · 5,491 companies tracked · updated Oct 21, 2026 at 19:57 UTC**
+**11 open roles · 4 new this week · 5,491 companies tracked · updated Oct 21, 2026 at 23:04 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -107,7 +107,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _65 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **30** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 22 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 21 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -132,7 +132,6 @@ _65 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Thoughtworks | Developer (Vapasi) - Intern | Summer 2027 | 2026-10-12 |
 | Valeo | Intern - Software | Summer 2027 | 2026-10-08 |
 | Philips | Intern – Data Science and AI Engineering | Summer 2027 | 2026-10-08 |
-| GE Healthcare | Intern Data Analyst | Summer 2027 | 2026-10-07 |
 
 </details>
 
@@ -151,7 +150,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,491 companies across 18 ATS platforms · 99% fetch success · completed in 322.8s · median detection latency 667 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,491 companies across 18 ATS platforms · 98% fetch success · completed in 402.1s · median detection latency 667 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
