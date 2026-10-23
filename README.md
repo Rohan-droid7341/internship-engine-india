@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**14 open roles · 7 new this week · 5,500 companies tracked · updated Oct 22, 2026 at 21:22 UTC**
+**14 open roles · 7 new this week · 5,500 companies tracked · updated Oct 23, 2026 at 00:27 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -100,9 +100,9 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | Roblox | ~Sep | ~Sep · any day now | ⏳ waiting |
 | Stripe | ~Sep | ~Sep · any day now | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct · any day now | ⏳ waiting |
-| Coinbase | ~Dec | ~Dec · in ~40d | ⏳ waiting |
-| Ramp | ~Dec | ~Dec · in ~40d | ⏳ waiting |
-| Two Sigma | ~Dec | ~Dec · in ~40d | ⏳ waiting |
+| Coinbase | ~Dec | ~Dec · in ~39d | ⏳ waiting |
+| Ramp | ~Dec | ~Dec · in ~39d | ⏳ waiting |
+| Two Sigma | ~Dec | ~Dec · in ~39d | ⏳ waiting |
 | Apple | rolling | year-round | ⏳ waiting |
 | Datadog | rolling | year-round | ⏳ waiting |
 | Jump Trading | rolling | year-round | ⏳ waiting |
@@ -110,7 +110,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _65 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **30** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 23 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 22 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -136,7 +136,6 @@ _65 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Airbus | Internship - DCC AI and Automation | Summer 2027 | 2026-10-14 |
 | Emerson Electric | Metrology Software Engineering Intern | Summer 2027 | 2026-10-13 |
 | Thoughtworks | Developer (Vapasi) - Intern | Summer 2027 | 2026-10-12 |
-| Valeo | Intern - Software | Summer 2027 | 2026-10-08 |
 
 </details>
 
@@ -155,7 +154,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,500 companies across 18 ATS platforms · 99% fetch success · completed in 325.7s · median detection latency 686 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,500 companies across 18 ATS platforms · 97% fetch success · completed in 407.4s · median detection latency 686 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
