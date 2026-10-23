@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**15 open roles · 10 new this week · 5,500 companies tracked · updated Oct 23, 2026 at 10:59 UTC**
+**15 open roles · 10 new this week · 5,519 companies tracked · updated Oct 23, 2026 at 15:52 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -17,16 +17,16 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Marvell | Intern, Software QA Engineer - Bachelor's Degree ~ 🆕 | Software | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Hyderabad | Oct 23, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-QA-Engineer---Bachelor-s-Degree_2604250) |
 | Marvell | Intern, Software Engineer - Bachelor's Degree ~ 🆕 | Software | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Hyderabad | Oct 23, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-Engineer---Bachelor-s-Degree_2604624) |
+| Marvell | Intern, Software QA Engineer - Bachelor's Degree ~ 🆕 | Software | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Hyderabad | Oct 23, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-QA-Engineer---Bachelor-s-Degree_2604250) |
 | Philips | Apprentice Trainee (Software Developer Level 1) ~ 🆕 | Software | ~₹30k–45k/mo (10–15 LPA)<br>B.Tech/BS | Bangalore | Oct 23, 2026 | [Apply](https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Bangalore/Apprentice-Trainee--Software-Developer-Level-1-_590732) |
 | Valeo | AI - Intern ~ 🆕 | Data & ML/AI | ~₹20k–30k/mo (6–9 LPA)<br>B.Tech/BS | Chennai | Oct 23, 2026 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/AI---Intern_REQ2026080851) |
 | Marvell | Software Engineer Intern - Master's Degree ~ 🆕 | Software | ~₹45k–65k/mo (18–24 LPA)<br>M.Tech/MS | Bangalore | Oct 22, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Software-Engineer-Intern---Master-s-Degree_2603868) |
 | Marvell | Software Validation Intern - Master's Degree ~ 🆕 | Software | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Bangalore | Oct 22, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Software-Validation-Intern---Master-s-Degree_2603870) |
 | Honeywell | Intern Bachelors AI ~ 🆕 | Data & ML/AI | ~₹30k–45k/mo (9–14 LPA) | Bengaluru, Karnataka, India | Oct 22, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/160473) |
 | Honeywell | Intern Bachelors Software Eng ~ 🆕 | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Bengaluru, Karnataka, India | Oct 22, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/160479) |
-| Revvity | AI Applications DevOps Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Mumbai | Oct 21, 2026 | [Apply](https://revvity.wd103.myworkdayjobs.com/External/job/Mumbai/AI-Applications-DevOps-Intern_JR-045766) |
-| Revvity | Full-Stack AI Engineering Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Mumbai | Oct 21, 2026 | [Apply](https://revvity.wd103.myworkdayjobs.com/External/job/Mumbai/Full-Stack-AI-Engineering-Intern_JR-045768) |
+| Revvity | AI Applications DevOps Intern ~ | Data & ML/AI | B.Tech/BS | Mumbai | Oct 21, 2026 | [Apply](https://revvity.wd103.myworkdayjobs.com/External/job/Mumbai/AI-Applications-DevOps-Intern_JR-045766) |
+| Revvity | Full-Stack AI Engineering Intern ~ | Data & ML/AI | B.Tech/BS | Mumbai | Oct 21, 2026 | [Apply](https://revvity.wd103.myworkdayjobs.com/External/job/Mumbai/Full-Stack-AI-Engineering-Intern_JR-045768) |
 | Marvell | Generative AI Forward Deployed Engineer Intern- Master's Degree ~ | Data & ML/AI | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Bangalore | Oct 15, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Generative-AI-Forward-Deployed-Engineer-Intern--Master-s-Degree_2604231) |
 | Scopely | Intern - QA Engineer - Royal Lounge Casino ~ | Software | B.Tech/BS | IN - Bangalore, India | Oct 13, 2026 | [Apply](https://job-boards.greenhouse.io/scopely/jobs/5448999008?gh_jid=5448999008) |
 | HackerRank | Software Development Engineer Intern | Software | ~₹40k–60k/mo (16–22 LPA)<br>B.Tech/BS | Onsite in Bangalore | Oct 01, 2026 | [Apply](https://job-boards.greenhouse.io/hackerrank/jobs/8229735) |
@@ -156,7 +156,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,500 companies across 18 ATS platforms · 98% fetch success · completed in 514.3s · median detection latency 667 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,519 companies across 18 ATS platforms · 99% fetch success · completed in 309.7s · median detection latency 667 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
