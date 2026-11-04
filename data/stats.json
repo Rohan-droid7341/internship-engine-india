@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-31T19:30:42Z",
-  "duration_seconds": 587.7,
+  "generated_at": "2026-11-04T08:36:42Z",
+  "duration_seconds": 613.1,
   "companies_total": 5529,
   "companies_by_source": {
     "greenhouse": 1179,
@@ -23,50 +23,51 @@
     "wellfound": 1
   },
   "quarantined": 0,
-  "fetched_ok": 5006,
-  "fetch_errors": 523,
+  "fetched_ok": 5050,
+  "fetch_errors": 479,
   "errors_by_source": {
     "greenhouse": 96,
     "recruitee": 3,
-    "lever": 73,
-    "rippling": 9,
-    "ashby": 72,
-    "workday": 137,
-    "workable": 101,
+    "lever": 75,
+    "rippling": 10,
+    "ashby": 73,
+    "workday": 88,
+    "workable": 102,
     "indeed": 9,
     "linkedin": 12,
     "naukri": 10,
     "wellfound": 1
   },
-  "fetch_success_rate": 0.905,
-  "roles_matched": 14,
-  "roles_cycle_inferred": 13,
-  "dropped_no_year_in_title": 396,
-  "dropped_offcycle_by_text": 100,
+  "fetch_success_rate": 0.913,
+  "roles_matched": 10,
+  "roles_cycle_inferred": 10,
+  "dropped_no_year_in_title": 394,
+  "dropped_offcycle_by_text": 86,
   "roles_by_source": {
+    "lever": 1,
+    "greenhouse": 1,
     "oracle": 1,
-    "greenhouse": 3,
-    "workday": 10
+    "workday": 7
   },
   "roles_by_cycle": {
-    "Summer 2027": 14
+    "Summer 2027": 10
   },
   "roles_by_region": {
-    "India": 14
+    "India": 10
   },
   "posted_date_coverage": 1.0,
-  "enriched_this_run": 5,
-  "enrichment_detail_fetches": 5,
-  "purged_this_run": 7,
-  "new_this_run": 5,
-  "open_total": 14,
+  "enriched_this_run": 2,
+  "enrichment_detail_fetches": 1,
+  "purged_this_run": 4,
+  "new_this_run": 2,
+  "open_total": 10,
   "detection_latency": {
     "median_minutes": 698.9,
-    "sample_size": 102,
+    "sample_size": 100,
     "window_days": 7
   },
   "posting_lifetime": {
-    "median_days": 2.0,
-    "sample_size": 90
+    "median_days": 2.5,
+    "sample_size": 92
   }
 }
