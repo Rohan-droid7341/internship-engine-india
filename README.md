@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**12 open roles · 7 new this week · 5,718 companies tracked · updated Nov 04, 2026 at 23:13 UTC**
+**12 open roles · 7 new this week · 5,718 companies tracked · updated Nov 05, 2026 at 04:58 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -98,9 +98,9 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | Roblox | ~Sep | ~Sep · any day now | ⏳ waiting |
 | Stripe | ~Sep | ~Sep · any day now | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct · any day now | ⏳ waiting |
-| Coinbase | ~Dec | ~Dec · in ~27d | ⏳ waiting |
-| Ramp | ~Dec | ~Dec · in ~27d | ⏳ waiting |
-| Two Sigma | ~Dec | ~Dec · in ~27d | ⏳ waiting |
+| Coinbase | ~Dec | ~Dec · in ~26d | ⏳ waiting |
+| Ramp | ~Dec | ~Dec · in ~26d | ⏳ waiting |
+| Two Sigma | ~Dec | ~Dec · in ~26d | ⏳ waiting |
 | Apple | rolling | year-round | ⏳ waiting |
 | Datadog | rolling | year-round | ⏳ waiting |
 | Jump Trading | rolling | year-round | ⏳ waiting |
@@ -151,7 +151,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,718 companies across 18 ATS platforms · 99% fetch success · completed in 306.4s · median detection latency 699 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,718 companies across 18 ATS platforms · 99% fetch success · completed in 470.0s · median detection latency 699 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
