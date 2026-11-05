@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-11-05T14:03:20Z",
-  "duration_seconds": 546.1,
-  "companies_total": 5718,
+  "generated_at": "2026-11-05T21:26:30Z",
+  "duration_seconds": 409.6,
+  "companies_total": 5725,
   "companies_by_source": {
-    "greenhouse": 1236,
+    "greenhouse": 1239,
     "lever": 479,
     "smartrecruiters": 849,
     "workable": 230,
-    "ashby": 882,
+    "ashby": 885,
     "recruitee": 10,
-    "workday": 1620,
+    "workday": 1621,
     "rippling": 182,
     "oracle": 154,
     "amazon": 1,
@@ -22,47 +22,45 @@
     "eightfold": 1,
     "wellfound": 1
   },
-  "quarantined": 453,
-  "fetched_ok": 5194,
-  "fetch_errors": 71,
+  "quarantined": 472,
+  "fetched_ok": 5218,
+  "fetch_errors": 35,
   "errors_by_source": {
-    "lever": 6,
-    "ashby": 11,
-    "workday": 29,
-    "rippling": 1,
-    "workable": 24
-  },
-  "fetch_success_rate": 0.987,
-  "roles_matched": 13,
-  "roles_cycle_inferred": 13,
-  "dropped_no_year_in_title": 405,
-  "dropped_offcycle_by_text": 98,
-  "roles_by_source": {
+    "workday": 6,
     "lever": 1,
+    "workable": 27,
+    "ashby": 1
+  },
+  "fetch_success_rate": 0.993,
+  "roles_matched": 10,
+  "roles_cycle_inferred": 10,
+  "dropped_no_year_in_title": 405,
+  "dropped_offcycle_by_text": 93,
+  "roles_by_source": {
     "ashby": 1,
     "greenhouse": 1,
-    "oracle": 2,
-    "workday": 8
+    "oracle": 1,
+    "workday": 7
   },
   "roles_by_cycle": {
-    "Summer 2027": 13
+    "Summer 2027": 10
   },
   "roles_by_region": {
-    "India": 13
+    "India": 10
   },
   "posted_date_coverage": 1.0,
-  "enriched_this_run": 2,
-  "enrichment_detail_fetches": 2,
-  "purged_this_run": 0,
-  "new_this_run": 2,
-  "open_total": 13,
+  "enriched_this_run": 0,
+  "enrichment_detail_fetches": 0,
+  "purged_this_run": 1,
+  "new_this_run": 0,
+  "open_total": 10,
   "detection_latency": {
     "median_minutes": 698.9,
-    "sample_size": 102,
+    "sample_size": 101,
     "window_days": 7
   },
   "posting_lifetime": {
     "median_days": 2.0,
-    "sample_size": 92
+    "sample_size": 94
   }
 }
