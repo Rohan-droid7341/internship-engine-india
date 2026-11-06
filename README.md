@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**10 open roles · 6 new this week · 5,725 companies tracked · updated Nov 06, 2026 at 04:57 UTC**
+**9 open roles · 5 new this week · 5,725 companies tracked · updated Nov 06, 2026 at 13:51 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,7 +13,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027  (10 open)
+## Summer 2027  (9 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
@@ -22,13 +22,12 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Certa | Frontend Engineer - Internship ~ 🆕 | Software | 0-1 Yr | India | Oct 28, 2026 | [Apply](https://jobs.ashbyhq.com/certa/9f7caf0b-46ff-49ab-ae78-62deadec106e) |
 | HackerRank | AI Researcher Intern ~ | Data & ML/AI | ~₹40k–60k/mo (16–22 LPA)<br>B.Tech/BS | Onsite in Bangalore | Oct 28, 2026 | [Apply](https://job-boards.greenhouse.io/hackerrank/jobs/8281055) |
 | Marvell | Intern, Software Engineer ~ | Software | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Hyderabad | Oct 25, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-Engineer_2603885) |
-| Marvell | Software Engineer Intern ~ | Software | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Hyderabad | Oct 25, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Software-Engineer-Intern_2604237) |
 | Marvell | Software Engineer Intern - Master's Degree ~ | Software | ~₹45k–65k/mo (18–24 LPA)<br>M.Tech/MS | Bangalore | Oct 22, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Software-Engineer-Intern---Master-s-Degree_2603868) |
 | Marvell | Software Validation Intern - Master's Degree ~ | Software | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Bangalore | Oct 22, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Software-Validation-Intern---Master-s-Degree_2603870) |
 | Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
 | Valeo | Intern - AI ~ | Data & ML/AI | ~₹20k–30k/mo (6–9 LPA) | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (10 of 10)._
+_~ = the title doesn't state a year; bucketed here from its posting date (9 of 9)._
 
 ## What this is
 
@@ -106,10 +105,11 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _65 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **30** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 22 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 21 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Marvell | Software Engineer Intern | Summer 2027 | 2026-11-06 |
 | Acron Aviation | Software Engineer Intern - India Site | Summer 2027 | 2026-11-05 |
 | Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-11-05 |
 | Marvell | Software Intern | Summer 2027 | 2026-11-05 |
@@ -130,8 +130,6 @@ _65 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Honeywell | Intern Bachelors AI | Summer 2027 | 2026-10-23 |
 | Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-10-23 |
 | Philips | Apprentice Trainee (Software Developer Level 1) | Summer 2027 | 2026-10-23 |
-| Honeywell | Intern Bachelors AI Eng | Summer 2027 | 2026-10-23 |
-| Marvell | Intern, Software Engineer | Summer 2027 | 2026-10-23 |
 
 </details>
 
@@ -150,7 +148,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,725 companies across 18 ATS platforms · 98% fetch success · completed in 455.5s · median detection latency 699 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,725 companies across 18 ATS platforms · 99% fetch success · completed in 406.1s · median detection latency 699 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
