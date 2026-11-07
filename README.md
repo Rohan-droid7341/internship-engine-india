@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**8 open roles · 4 new this week · 5,733 companies tracked · updated Nov 07, 2026 at 09:43 UTC**
+**8 open roles · 4 new this week · 5,747 companies tracked · updated Nov 07, 2026 at 17:25 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -17,7 +17,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Revvity | Intern - Software Developer ~ 🆕 | Software | — | Mumbai | Nov 05, 2026 | [Apply](https://revvity.wd103.myworkdayjobs.com/External/job/Mumbai/Intern---Software-Developer_JR-045916) |
+| Revvity | Intern - Software Developer ~ | Software | — | Mumbai | Nov 05, 2026 | [Apply](https://revvity.wd103.myworkdayjobs.com/External/job/Mumbai/Intern---Software-Developer_JR-045916) |
 | Certa | Frontend Engineer - Internship ~ | Software | 0-1 Yr | India | Oct 28, 2026 | [Apply](https://jobs.ashbyhq.com/certa/9f7caf0b-46ff-49ab-ae78-62deadec106e) |
 | HackerRank | AI Researcher Intern ~ | Data & ML/AI | ~₹40k–60k/mo (16–22 LPA)<br>B.Tech/BS | Onsite in Bangalore | Oct 28, 2026 | [Apply](https://job-boards.greenhouse.io/hackerrank/jobs/8281055) |
 | Marvell | Intern, Software Engineer ~ | Software | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Hyderabad | Oct 25, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-Engineer_2603885) |
@@ -145,7 +145,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,733 companies across 18 ATS platforms · 91% fetch success · completed in 591.0s · median detection latency 699 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,747 companies across 18 ATS platforms · 99% fetch success · completed in 313.3s · median detection latency 699 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
