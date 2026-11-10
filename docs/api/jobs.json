@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-10T14:17:49Z",
+ "generated_at": "2026-11-10T21:19:42Z",
  "source": "https://github.com/Rohan-droid7341/internship-engine-india",
- "count": 11,
+ "count": 12,
  "jobs": [
   {
    "id": "greenhouse:sigmoid:8927991002",
@@ -32,14 +32,14 @@
    "source": "greenhouse"
   },
   {
-   "id": "workday:thales:/job/Bangalore/Software-Intern_R0347867",
+   "id": "workday:thales:/job/Bangalore/Embedded-Software-Intern_R0347902",
    "company": "Thales",
-   "title": "Software Intern",
+   "title": "Embedded Software Intern",
    "season": "Summer 2027",
    "season_inferred": true,
    "category": "Software",
    "location": "Bangalore",
-   "url": "https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Software-Intern_R0347867",
+   "url": "https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Embedded-Software-Intern_R0347902",
    "posted_at": "2026-11-10T00:00:00Z",
    "first_seen_at": "2026-11-10T14:17:48Z",
    "salary": null,
@@ -51,14 +51,14 @@
    "source": "workday"
   },
   {
-   "id": "workday:thales:/job/Bangalore/Embedded-Software-Intern_R0347902",
+   "id": "workday:thales:/job/Bangalore/Software-Intern_R0347867",
    "company": "Thales",
-   "title": "Embedded Software Intern",
+   "title": "Software Intern",
    "season": "Summer 2027",
    "season_inferred": true,
    "category": "Software",
    "location": "Bangalore",
-   "url": "https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Embedded-Software-Intern_R0347902",
+   "url": "https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Software-Intern_R0347867",
    "posted_at": "2026-11-10T00:00:00Z",
    "first_seen_at": "2026-11-10T14:17:48Z",
    "salary": null,
@@ -248,6 +248,25 @@
    "pay_source": "AmbitionBox",
    "skills": [],
    "source": "workday"
+  },
+  {
+   "id": "rippling:sanas:93d0833e-b03b-4d28-8e32-bdaf572105f0",
+   "company": "Sanas",
+   "title": "ML DA Intern",
+   "season": "Summer 2027",
+   "season_inferred": true,
+   "category": "Data & ML/AI",
+   "location": "Bengaluru, India",
+   "url": "https://ats.rippling.com/sanas/jobs/93d0833e-b03b-4d28-8e32-bdaf572105f0",
+   "posted_at": null,
+   "first_seen_at": "2026-11-10T21:19:41Z",
+   "salary": null,
+   "stipend": null,
+   "estimated_stipend": null,
+   "estimated_ctc": null,
+   "pay_source": null,
+   "skills": null,
+   "source": "rippling"
   }
  ]
 }
