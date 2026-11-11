@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**12 open roles · 6 new this week · 5,761 companies tracked · updated Nov 11, 2026 at 04:30 UTC**
+**15 open roles · 9 new this week · 5,761 companies tracked · updated Nov 11, 2026 at 13:37 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,10 +13,14 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://rohan-droid7341.github.io/internship-engine-india/#subscribe) - one email a day, only when new internships actually appeared, one-click unsubscribe. (Prefer RSS-to-email? [Feedrabbit works too](https://feedrabbit.com/subscriptions/new?url=https%3A%2F%2Fraw.githubusercontent.com%2FRohan-droid7341%2Finternship-engine-india%2Fmain%2Fdocs%2Ffeed.xml).)
 ---
 
-## Summer 2027  (11 open)
+## Summer 2027  (15 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
+| GE Healthcare | Software Intern ~ 🆕 | Software | ~₹30k–45k/mo (10–14 LPA) | Bengaluru | Nov 11, 2026 | [Apply](https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/Bengaluru/Software-Intern_R4041235-1) |
+| Honeywell | Intern Bachelors AI ~ 🆕 | Data & ML/AI | ~₹30k–45k/mo (9–14 LPA) | Bengaluru, Karnataka, India | Nov 11, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/161204) |
+| Honeywell | Intern Bachelors Software Eng ~ 🆕 | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Bengaluru, Karnataka, India | Nov 11, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/161207) |
+| Workato | Intern, Automation Engineer ~ 🆕 | Software | B.Tech/BS | Hyderabad, India | Nov 10, 2026 | [Apply](https://www.workato.com/careers?gh_jid=8924723002#open-roles) |
 | Thales | Embedded Software Intern ~ 🆕 | Software | B.Tech/BS | Bangalore | Nov 10, 2026 | [Apply](https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Embedded-Software-Intern_R0347902) |
 | Thales | Software Intern ~ 🆕 | Software | B.Tech/BS | Bangalore | Nov 10, 2026 | [Apply](https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Software-Intern_R0347867) |
 | Revvity | Intern - Software Developer ~ | Software | — | Mumbai | Nov 05, 2026 | [Apply](https://revvity.wd103.myworkdayjobs.com/External/job/Mumbai/Intern---Software-Developer_JR-045916) |
@@ -29,13 +33,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Valeo | Intern - AI ~ | Data & ML/AI | ~₹20k–30k/mo (6–9 LPA) | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
 | Sanas | ML DA Intern ~ 🆕 | Data & ML/AI | — | Bengaluru, India | — | [Apply](https://ats.rippling.com/sanas/jobs/93d0833e-b03b-4d28-8e32-bdaf572105f0) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (11 of 11)._
-
-## Fall 2026  (1 open)
-
-| Company | Role | Category | Pay & Specs | Location | Posted | Apply |
-|---|---|---|---|---|---|---|
-| Sigmoid | DE Intern + SDE Trainee - Off Campus Hiring 2026 🆕 | Other | B.Tech/BS | Bengaluru | Nov 10, 2026 | [Apply](https://job-boards.greenhouse.io/sigmoid/jobs/8927991002) |
+_~ = the title doesn't state a year; bucketed here from its posting date (15 of 15)._
 
 ## What this is
 
@@ -113,10 +111,11 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _65 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **30** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 20 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 21 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Sigmoid | DE Intern + SDE Trainee - Off Campus Hiring 2026 | Fall 2026 | 2026-11-11 |
 | Marvell | Intern, Software QA Engineer Bachelor's Degree | Summer 2027 | 2026-11-09 |
 | Honeywell | Intern Bachelors AI | Summer 2027 | 2026-11-06 |
 | Marvell | Software Engineer Intern | Summer 2027 | 2026-11-06 |
@@ -155,7 +154,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,761 companies across 18 ATS platforms · 98% fetch success · completed in 548.1s · median detection latency 707 min · real posted dates on 91% of open roles._
+_Engine (last run): 5,761 companies across 18 ATS platforms · 97% fetch success · completed in 601.1s · median detection latency 715 min · real posted dates on 93% of open roles._
 
 ## Platforms Scraped
 
