@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**16 open roles · 8 new this week · 5,771 companies tracked · updated Nov 12, 2026 at 05:38 UTC**
+**16 open roles · 6 new this week · 5,771 companies tracked · updated Nov 12, 2026 at 14:40 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -17,22 +17,22 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Honeywell | Intern Bachelors AI ~ 🆕 | Data & ML/AI | ~₹30k–45k/mo (9–14 LPA) | Bengaluru, Karnataka, India | Nov 11, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/161319) |
-| Honeywell | Intern Bachelors Software Eng ~ 🆕 | Software | ~₹30k–45k/mo (9–14 LPA) | Bengaluru, Karnataka, India | Nov 11, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/161318) |
+| Honeywell | Intern Bachelors AI ~ 🆕 | Data & ML/AI | ~₹30k–45k/mo (9–14 LPA) | Bengaluru, Karnataka, India | Nov 12, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/161528) |
 | Assurant | AI & Data Science Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bengaluru | Nov 11, 2026 | [Apply](https://assurant.wd1.myworkdayjobs.com/External_Limited_Posting/job/Bengaluru/AI---Data-Science-Intern_R-116198) |
+| GE Healthcare | Software Intern ~ 🆕 | Software | ~₹30k–45k/mo (10–14 LPA) | Bengaluru | Nov 11, 2026 | [Apply](https://gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/Bengaluru/Software-Intern_R4041235-1) |
 | Workato | Intern, Automation Engineer ~ 🆕 | Software | B.Tech/BS | Hyderabad, India | Nov 10, 2026 | [Apply](https://www.workato.com/careers?gh_jid=8924723002#open-roles) |
-| Thales | Embedded Software Intern ~ 🆕 | Software | B.Tech/BS | Bangalore | Nov 10, 2026 | [Apply](https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Embedded-Software-Intern_R0347902) |
-| Thales | Software Intern ~ 🆕 | Software | B.Tech/BS | Bangalore | Nov 10, 2026 | [Apply](https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Software-Intern_R0347867) |
+| Thales | Embedded Software Intern ~ | Software | B.Tech/BS | Bangalore | Nov 10, 2026 | [Apply](https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Embedded-Software-Intern_R0347902) |
+| Thales | Software Intern ~ | Software | B.Tech/BS | Bangalore | Nov 10, 2026 | [Apply](https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Software-Intern_R0347867) |
 | Revvity | Intern - Software Developer ~ | Software | — | Mumbai | Nov 05, 2026 | [Apply](https://revvity.wd103.myworkdayjobs.com/External/job/Mumbai/Intern---Software-Developer_JR-045916) |
 | Certa | Frontend Engineer - Internship ~ | Software | 0-1 Yr | India | Oct 28, 2026 | [Apply](https://jobs.ashbyhq.com/certa/9f7caf0b-46ff-49ab-ae78-62deadec106e) |
 | HackerRank | AI Researcher Intern ~ | Data & ML/AI | ~₹40k–60k/mo (16–22 LPA)<br>B.Tech/BS | Onsite in Bangalore | Oct 28, 2026 | [Apply](https://job-boards.greenhouse.io/hackerrank/jobs/8281055) |
 | Marvell | Intern, Software Engineer ~ | Software | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Hyderabad | Oct 25, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-Engineer_2603885) |
 | Marvell | Software Engineer Intern - Master's Degree ~ | Software | ~₹45k–65k/mo (18–24 LPA)<br>M.Tech/MS | Bangalore | Oct 22, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Software-Engineer-Intern---Master-s-Degree_2603868) |
 | Marvell | Software Validation Intern - Master's Degree ~ | Software | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Bangalore | Oct 22, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Bangalore/Software-Validation-Intern---Master-s-Degree_2603870) |
+| Marvell | Intern, Software Engineer - Bachelor's Degree ~ | Software | ~₹45k–65k/mo (18–24 LPA)<br>B.Tech/BS | Hyderabad | Sep 24, 2026 | [Apply](https://marvell.wd1.myworkdayjobs.com/MarvellCareers2/job/Hyderabad/Intern--Software-Engineer_2603879) |
 | GE Aerospace | Data Science Intern ~ | Data & ML/AI | ~₹30k–45k/mo (10–14 LPA)<br>B.Tech/BS | Bengaluru | Sep 16, 2026 | [Apply](https://geaerospace.wd5.myworkdayjobs.com/ge_externalsite/job/Bengaluru/Data-Science-Intern_R5040035-1) |
 | Member Solutions | Cybersecurity GRC Intern ~ | Other | B.Tech/BS | India (Jonas Collections and Recovery I… | Dec 22, 2025 | [Apply](https://talentmanagementsolution.wd3.myworkdayjobs.com/JonasSoftwareUSA/job/India-Jonas-Collections-and-Recovery-Inc/Cybersecurity-GRC-Intern_R47560) |
 | Valeo | Intern - AI ~ | Data & ML/AI | ~₹20k–30k/mo (6–9 LPA) | Chennai | Aug 06, 2025 | [Apply](https://valeo.wd3.myworkdayjobs.com/valeo_jobs/job/Chennai/Intern---AI_REQ2025061319) |
-| Sanas | ML DA Intern ~ 🆕 | Data & ML/AI | — | Bengaluru, India | — | [Apply](https://ats.rippling.com/sanas/jobs/93d0833e-b03b-4d28-8e32-bdaf572105f0) |
 
 _~ = the title doesn't state a year; bucketed here from its posting date (16 of 16)._
 
@@ -112,13 +112,15 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _65 companies on the [full radar](https://rohan-droid7341.github.io/internship-engine-india/#radar). **30** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 24 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 25 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-11-12 |
+| Honeywell | Intern Bachelors AI | Summer 2027 | 2026-11-12 |
+| Sanas | ML DA Intern | Summer 2027 | 2026-11-12 |
 | Honeywell | Intern Bachelors AI | Summer 2027 | 2026-11-12 |
 | Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-11-12 |
-| GE Healthcare | Software Intern | Summer 2027 | 2026-11-11 |
 | Sigmoid | DE Intern + SDE Trainee - Off Campus Hiring 2026 | Fall 2026 | 2026-11-11 |
 | Marvell | Intern, Software QA Engineer Bachelor's Degree | Summer 2027 | 2026-11-09 |
 | Honeywell | Intern Bachelors AI | Summer 2027 | 2026-11-06 |
@@ -136,7 +138,6 @@ _65 companies on the [full radar](https://rohan-droid7341.github.io/internship-e
 | Marvell | Intern, Software QA Engineer - Bachelor's Degree | Summer 2027 | 2026-11-04 |
 | Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-10-31 |
 | Marvell | Generative AI Forward Deployed Engineer Intern- Master's Degree | Summer 2027 | 2026-10-31 |
-| Marvell | Intern, Software Engineer | Summer 2027 | 2026-10-31 |
 | Revvity | AI Applications DevOps Intern | Summer 2027 | 2026-10-31 |
 | Revvity | Full-Stack AI Engineering Intern | Summer 2027 | 2026-10-31 |
 | Valeo | AI - Intern | Summer 2027 | 2026-10-31 |
@@ -158,7 +159,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,771 companies across 18 ATS platforms · 98% fetch success · completed in 513.0s · median detection latency 707 min · real posted dates on 93% of open roles._
+_Engine (last run): 5,771 companies across 18 ATS platforms · 98% fetch success · completed in 510.4s · median detection latency 715 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
