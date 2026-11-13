@@ -23,7 +23,7 @@
   <select id="atsFilter" class="select-input" onchange="onFilterChange()">
     <option value="">All ATS Platforms ({{ total }})</option>
     {% for ats, items in by_ats.items() %}
-    <option value="{{ ats }}">{{ ats|capitalize }} ({{ items|length }})</option>
+    <option value="{{ ats }}">{{ ats|capitalize }} ({{ items }})</option>
     {% endfor %}
   </select>
 

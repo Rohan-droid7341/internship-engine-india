@@ -99,3 +99,13 @@ def test_off_tracked_cycle_is_not_recorded():
     out = observe.update_from_store(store, {"companies": {}}, CYCLES)
     assert "oneoff" not in out["companies"]
     assert "tracked" in out["companies"]
+
+
+def test_repeated_runs_do_not_inflate_count():
+    store = {
+        "1": {"company": "NVIDIA", "season": "Summer 2027", "posted_at": "2026-09-03T00:00:00Z"},
+    }
+    out1 = observe.update_from_store(store, {"companies": {}}, CYCLES)
+    assert out1["companies"]["nvidia"]["cycles"]["Summer 2027"]["count"] == 1
+    out2 = observe.update_from_store(store, out1, CYCLES)
+    assert out2["companies"]["nvidia"]["cycles"]["Summer 2027"]["count"] == 1

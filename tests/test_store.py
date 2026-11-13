@@ -83,6 +83,23 @@ class TestUpsert:
         assert existing["a"]["sponsorship"] == "no-sponsorship"
 
 
+    def test_stale_job_auto_closed_after_90_days(self):
+        stale_date = "2026-06-01T00:00:00Z"
+        existing = {
+            "stale_role": {
+                "id": "stale_role",
+                "company": "TestCo",
+                "source": "greenhouse",
+                "company_slug": "testco",
+                "posted_at": stale_date,
+                "is_open": True,
+            }
+        }
+        store.upsert(existing, [], set(), max_age_days=90)
+        assert existing["stale_role"]["is_open"] is False
+        assert existing["stale_role"]["closed_at"]
+
+
 class TestPurge:
     def test_drops_long_closed_keeps_recent_and_open(self):
         existing = {

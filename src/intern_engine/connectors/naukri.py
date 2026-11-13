@@ -9,11 +9,15 @@ from __future__ import annotations
 
 import asyncio
 import json
+import logging
 import re
 from concurrent.futures import ThreadPoolExecutor
+from datetime import UTC, datetime, timedelta
 
 from ..models import Job
 from ..net import Net
+
+logger = logging.getLogger("intern_engine.connectors.naukri")
 
 _EXECUTOR = ThreadPoolExecutor(max_workers=1, thread_name_prefix="naukri")
 
@@ -38,6 +42,35 @@ _HEADERS = {
 }
 
 _MAX_PAGES = 3
+
+_DAYS_AGO = re.compile(r"(\d+)\s*\+?\s*days?\s+ago", re.IGNORECASE)
+_HOURS_AGO = re.compile(r"(\d+)\s*\+?\s*(?:hours?|hrs?)\s+ago", re.IGNORECASE)
+
+
+def _resolve_posted(text: str | None, now: datetime | None = None) -> str | None:
+    if not text:
+        return None
+    lowered = text.lower().strip()
+    now = now or datetime.now(UTC)
+    if "just now" in lowered or "today" in lowered:
+        return now.strftime("%Y-%m-%dT00:00:00Z")
+    if "yesterday" in lowered:
+        return (now - timedelta(days=1)).strftime("%Y-%m-%dT00:00:00Z")
+    if "few days ago" in lowered:
+        return (now - timedelta(days=3)).strftime("%Y-%m-%dT00:00:00Z")
+    if "30+" in lowered:
+        return (now - timedelta(days=30)).strftime("%Y-%m-%dT00:00:00Z")
+    h_match = _HOURS_AGO.search(lowered)
+    if h_match:
+        hours = int(h_match.group(1))
+        return (now - timedelta(hours=hours)).strftime("%Y-%m-%dT%H:00:00Z")
+    d_match = _DAYS_AGO.search(lowered)
+    if d_match:
+        days = int(d_match.group(1))
+        return (now - timedelta(days=days)).strftime("%Y-%m-%dT00:00:00Z")
+    if re.match(r"^\d{4}-\d{2}-\d{2}", lowered):
+        return lowered[:10] + "T00:00:00Z"
+    return None
 
 
 def _scrape_page(url: str) -> dict:
@@ -85,7 +118,7 @@ async def fetch(company: dict, net: Net) -> list[Job]:
         job_list = data.get("jobDetails", [])
         if not job_list:
             if page == 1:
-                raise RuntimeError("Naukri rate limited or returned 0 jobs on page 1")
+                logger.warning("Naukri returned 0 jobs on page 1 (rate limited or empty)")
             break
 
         for item in job_list:
@@ -103,7 +136,7 @@ async def fetch(company: dict, net: Net) -> list[Job]:
                     title=title,
                     location=_location(item),
                     url=jd_url,
-                    posted_at=item.get("footerPlaceholderLabel"),
+                    posted_at=_resolve_posted(item.get("footerPlaceholderLabel")),
                 )
             )
 

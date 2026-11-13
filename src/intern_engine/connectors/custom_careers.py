@@ -18,6 +18,7 @@ Scrapling's adaptive selectors auto-detect job links on the page.
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import re
 from concurrent.futures import ThreadPoolExecutor
 
@@ -122,10 +123,10 @@ async def fetch(company: dict, net: Net) -> list[Job]:
     raw = await loop.run_in_executor(_EXECUTOR, _scrape_careers_page, careers_url, link_pattern)
 
     jobs: list[Job] = []
-    for i, item in enumerate(raw):
+    for item in raw:
         jobs.append(
             Job(
-                id=f"custom:{slug}:{i}:{re.sub(r'[^a-z0-9]', '', item['url'][-30:].lower())}",
+                id=f"custom:{slug}:{hashlib.md5(item['url'].encode()).hexdigest()[:10]}",
                 source="custom",
                 company=company.get("name", slug.title()),
                 company_slug=slug,

@@ -32,7 +32,7 @@ python -m venv .venv
 # Windows:        .\.venv\Scripts\activate
 # macOS / Linux:  source .venv/bin/activate
 pip install -r requirements.txt
-python run.py all      # harvest + update
+python run.py all      # discover + harvest + update
 ```
 
 ## Tuning what counts as an internship

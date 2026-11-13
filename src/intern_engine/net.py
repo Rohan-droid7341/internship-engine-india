@@ -8,7 +8,9 @@ ATS module.
 from __future__ import annotations
 
 import asyncio
+import email.utils
 import random
+from datetime import UTC, datetime
 
 import httpx
 
@@ -24,7 +26,7 @@ class HostLimiter:
     while different hosts still run in parallel.
     """
 
-    def __init__(self, per_host: int = 8) -> None:
+    def __init__(self, per_host: int = 4) -> None:
         self._per_host = per_host
         self._sems: dict[str, asyncio.Semaphore] = {}
         self._lock = asyncio.Lock()
@@ -40,9 +42,19 @@ class HostLimiter:
 
 def _backoff(attempt: int, response: httpx.Response | None = None) -> float:
     if response is not None:
-        retry_after = response.headers.get("Retry-After", "")
-        if retry_after.isdigit():
-            return min(float(retry_after), 30.0)
+        retry_after = response.headers.get("Retry-After", "").strip()
+        if retry_after:
+            if retry_after.isdigit():
+                return min(float(retry_after), 30.0)
+            try:
+                dt = email.utils.parsedate_to_datetime(retry_after)
+                if dt.tzinfo is None:
+                    dt = dt.replace(tzinfo=UTC)
+                delta = (dt - datetime.now(UTC)).total_seconds()
+                if 0 <= delta <= 30.0:
+                    return delta
+            except (ValueError, TypeError):
+                pass
     return min(2**attempt + random.random(), 20.0)
 
 
@@ -75,9 +87,11 @@ class Net:
                 await asyncio.sleep(_backoff(attempt))
                 continue
 
-            if response.status_code in _RETRYABLE and attempt < retries:
-                await asyncio.sleep(_backoff(attempt, response))
-                continue
+            if response.status_code in _RETRYABLE:
+                if attempt < retries:
+                    await asyncio.sleep(_backoff(attempt, response))
+                    continue
+                response.raise_for_status()
 
             response.raise_for_status()
             return response.json()

@@ -52,3 +52,12 @@ class TestBreaker:
         data: dict = {}
         health.record(data, COMPANY, None, now=NOW)
         assert data == {}
+
+    def test_missing_timestamp_stays_quarantined_when_failures_threshold(self):
+        entry = {"consecutive_failures": 4, "last_attempt_at": None}
+        assert health.is_quarantined(entry, NOW) is True
+
+    def test_naive_timestamp_does_not_raise_type_error(self):
+        entry = {"consecutive_failures": 3, "last_attempt_at": "2026-07-01T10:00:00"}
+        # Should compare cleanly without TypeError
+        assert health.is_quarantined(entry, NOW) is True

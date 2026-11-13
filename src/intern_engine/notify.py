@@ -1,19 +1,28 @@
-"""Discord webhook alerts for newly spotted roles (optional, best-effort).
+"""Notification alerts for newly spotted roles (Discord & WhatsApp).
 
 Set the DISCORD_WEBHOOK_URL secret and every run posts the roles it just found
-to that channel. Unset = silent no-op, like every optional integration here.
+to that channel.
+Set TWILIO_* secrets and WHATSAPP_PHONE for WhatsApp alerts.
+Unset = silent no-op, like every optional integration here.
 Failures are swallowed: alerting must never break the data pipeline.
 """
 
 from __future__ import annotations
 
+import json
+import logging
 import os
+from datetime import UTC, datetime, timedelta
 
 import httpx
 
-from . import config
+from . import config, paths
+from .utils import atomic_write_json
 
-_MAX_EMBEDS = 10  # Discord's cap per message
+logger = logging.getLogger("intern_engine.notify")
+
+_MAX_EMBEDS = 10  # Cap per message
+_SANDBOX_REMINDER_HOURS = 65  # Sandbox window is 72h; remind at 65h
 
 # One color per configured cycle, in order (green, orange, purple, blue);
 # anything else gets Discord blurple.
@@ -56,23 +65,9 @@ def _send_discord(records: list[dict]) -> bool:
             timeout=10,
         ).raise_for_status()
         return True
-    except Exception:  # noqa: BLE001 — alerting is a side channel, never fatal
+    except Exception as exc:  # noqa: BLE001 — alerting is a side channel, never fatal
+        logger.warning(f"Discord webhook alert failed: {exc}")
         return False
-
-
-def send_new_roles(store_data: dict, new_ids: list[str]) -> bool:
-    """Post this run's new roles to Discord (hourly). Returns True if sent."""
-    if not new_ids:
-        return False
-
-    records = [store_data[jid] for jid in new_ids if jid in store_data]
-    records = [r for r in records if r.get("is_open")]
-    if not records:
-        return False
-
-    sent_discord = _send_discord(records)
-    sent_whatsapp = send_whatsapp_digest(records)
-    return sent_discord or sent_whatsapp
 
 
 def _send_twilio(text: str) -> bool:
@@ -80,21 +75,22 @@ def _send_twilio(text: str) -> bool:
     auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
     from_number = os.environ.get("TWILIO_FROM_NUMBER")
     to_number = os.environ.get("WHATSAPP_PHONE")
-    
+
     if not all([account_sid, auth_token, from_number, to_number]):
         return False
-        
+
     api_url = f"https://api.twilio.com/2010-04-01/Accounts/{account_sid}/Messages.json"
     data = {
         "From": f"whatsapp:{from_number}",
         "To": f"whatsapp:{to_number}",
-        "Body": text
+        "Body": text,
     }
-    
+
     try:
         httpx.post(api_url, auth=(account_sid, auth_token), data=data, timeout=10).raise_for_status()
         return True
-    except Exception:
+    except Exception as exc:  # noqa: BLE001
+        logger.warning(f"Twilio WhatsApp alert failed: {exc}")
         return False
 
 
@@ -107,39 +103,59 @@ def send_whatsapp_digest(fresh: list[dict]) -> bool:
         title = f"{r.get('company', '')} — {r.get('title', '')}"
         url = r.get("url") or ""
         text += f"🏢 {title}\n🔗 {url}\n\n"
-        
+
     extra = len(fresh) - _MAX_EMBEDS
     if extra > 0:
         text += f"(+{extra} more on the dashboard)\n"
-        
+
     return _send_twilio(text)
+
+
+def send_new_roles(store_data: dict, new_ids: list[str]) -> list[str]:
+    """Post this run's new roles to configured notification channels.
+
+    Returns list of channels alerted (e.g. ['Discord', 'WhatsApp']).
+    """
+    if not new_ids:
+        return []
+
+    records = [store_data[jid] for jid in new_ids if jid in store_data]
+    records = [r for r in records if r.get("is_open")]
+    if not records:
+        return []
+
+    channels = []
+    if _send_discord(records):
+        channels.append("Discord")
+    if send_whatsapp_digest(records):
+        channels.append("WhatsApp")
+    return channels
 
 
 def check_sandbox_reminder() -> None:
     """Send a reminder to keep the Twilio sandbox alive every 65 hours."""
-    import json
-    from datetime import UTC, datetime, timedelta
-    
     try:
-        from . import paths
         with open(paths.WHATSAPP_STATE_PATH, encoding="utf-8") as f:
             state = json.load(f)
     except (OSError, ValueError):
         state = {}
-        
+
     now = datetime.now(UTC)
     last_str = state.get("last_reminder_at")
-    
+
     if last_str:
         try:
             last = datetime.strptime(last_str[:19], "%Y-%m-%dT%H:%M:%S").replace(tzinfo=UTC)
-            if now - last < timedelta(hours=62):
+            if now - last < timedelta(hours=_SANDBOX_REMINDER_HOURS):
                 return
         except ValueError:
             pass
-            
-    text = "⚠️ Twilio Sandbox Reminder: Please reply with 'join type-against' to keep this connection alive for another 72 hours!"
+
+    keyword = os.environ.get("TWILIO_SANDBOX_KEYWORD", "join type-against")
+    text = (
+        f"⚠️ Twilio Sandbox Reminder: Please reply with '{keyword}' to "
+        "keep this connection alive for another 72 hours!"
+    )
     if _send_twilio(text):
         state["last_reminder_at"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
-        with open(paths.WHATSAPP_STATE_PATH, "w", encoding="utf-8") as f:
-            json.dump(state, f, indent=2)
+        atomic_write_json(paths.WHATSAPP_STATE_PATH, state, indent=2)

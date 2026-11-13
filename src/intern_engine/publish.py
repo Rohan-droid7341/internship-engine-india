@@ -15,7 +15,7 @@ import os
 from datetime import UTC, datetime, timedelta
 from xml.sax.saxutils import escape
 
-from . import config, paths, radar
+from . import config, filters, paths, radar
 
 _FEED_LIMIT = 50
 
@@ -60,7 +60,7 @@ def write_feed(store_data: dict) -> int:
     """Atom feed of the most recently spotted open roles."""
     base = config.pages_base()
     cycles_phrase = " & ".join(config.cycles(config.load_config()))
-    open_jobs = [r for r in store_data.values() if r.get("is_open")]
+    open_jobs = [r for r in store_data.values() if r.get("is_open") and not filters.is_stale_job(r)]
     open_jobs.sort(key=_first_seen, reverse=True)
     entries = open_jobs[:_FEED_LIMIT]
     now = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -204,7 +204,7 @@ _API_FIELDS = (
 
 def write_api(store_data: dict, stats: dict) -> int:
     """Static JSON API: every open role + the latest run metrics."""
-    open_jobs = [r for r in store_data.values() if r.get("is_open")]
+    open_jobs = [r for r in store_data.values() if r.get("is_open") and not filters.is_stale_job(r)]
     open_jobs.sort(key=lambda r: ((r.get("posted_at") or "")[:10], _first_seen(r)), reverse=True)
 
     def _job(r: dict) -> dict:

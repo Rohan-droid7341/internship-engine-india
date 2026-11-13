@@ -15,6 +15,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -51,25 +52,31 @@ jobs:
           TWILIO_FROM_NUMBER: ${{ secrets.TWILIO_FROM_NUMBER }}
           # Gemini API key for compensation intelligence & search grounding
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: "gemini-3.8-flash"
         run: python run.py update
 
       - name: Commit & push if changed
         run: |
           git config user.name  "Rohangarg"
           git config user.email "garg20005rohan@gmail.com"
-          git add README.md data/*.json data/*.csv data/*.jsonl \
-                  docs/index.html docs/feed.xml docs/unsubscribe.html \
-                  docs/radar.ics docs/trends-light.svg docs/trends-dark.svg \
-                  docs/api/*.json
+          git add README.md data/*.json data/*.jsonl \
+                  docs/feed.xml docs/radar.ics \
+                  docs/trends-light.svg docs/trends-dark.svg
           if git diff --staged --quiet; then
             echo "No changes."
           else
             git commit -m "chore: update internships ($(date -u +'%Y-%m-%d %H:%M UTC'))"
-            # Hourly cadence can overlap the daily discovery push; rebase onto
+            # 3-hourly cadence can overlap the daily discovery push; rebase onto
             # whatever landed (different files, so this auto-merges) and retry.
+            pushed=false
             for attempt in 1 2 3; do
-              git pull --rebase --autostash origin main && git push && break
+              if git pull --rebase --autostash origin main && git push; then
+                pushed=true
+                break
+              fi
               echo "push race, retrying ($attempt)…"; sleep 5
             done
+            if [ "$pushed" != "true" ]; then
+              echo "Failed to push after 3 attempts"
+              exit 1
+            fi
           fi

@@ -132,7 +132,6 @@ CREATE TABLE IF NOT EXISTS app_state (
 -- ============================================================
 -- 8. email_subscribers — daily digest subscriber list
 -- ============================================================
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE IF NOT EXISTS email_subscribers (
     id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -157,6 +156,7 @@ CREATE OR REPLACE FUNCTION unsubscribe_email(token UUID)
 RETURNS BOOLEAN
 LANGUAGE plpgsql
 SECURITY DEFINER
+SET search_path = pg_catalog, public
 AS $$
 BEGIN
     DELETE FROM email_subscribers WHERE unsub_token = token;
@@ -203,30 +203,3 @@ END $$;
 -- company_health and app_state: NO public access (internal state only).
 -- service_role bypasses RLS so the scraper still reads/writes fine.
 
--- ============================================================
--- Views
--- ============================================================
-
--- Analytics: how long do companies keep postings open?
-CREATE OR REPLACE VIEW company_posting_stats AS
-SELECT
-    company_key,
-    company,
-    COUNT(*)                                                      AS total_jobs,
-    COUNT(*) FILTER (WHERE is_open)                               AS open_jobs,
-    ROUND(AVG(EXTRACT(EPOCH FROM (closed_at - first_seen_at)) / 86400)
-        FILTER (WHERE closed_at IS NOT NULL), 1)                  AS avg_days_open,
-    MAX(first_seen_at)                                            AS last_posting
-FROM jobs
-GROUP BY company_key, company;
-
--- Dashboard: all open roles with every field
-CREATE OR REPLACE VIEW open_internships AS
-SELECT
-    j.id, j.company, j.title, j.location, j.url,
-    j.season, j.season_inferred, j.category, j.region,
-    j.stipend, j.salary, j.degree, j.experience, j.batch,
-    j.skills, j.posted_at, j.first_seen_at, j.enriched_at
-FROM jobs j
-WHERE j.is_open
-ORDER BY j.first_seen_at DESC;

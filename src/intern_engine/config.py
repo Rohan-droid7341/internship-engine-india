@@ -39,13 +39,13 @@ def repo_slug() -> str:
             content = f.read()
             # Prioritize remote "origin" over "upstream"
             m = re.search(
-                r'\[remote "(?:origin)"\][^\[]*?url\s*=\s*.*?github\.com[:/]([\w.-]+/[\w.-]+?)(?:\.git)?\s',
+                r'\[remote "(?:origin)"\][^\[]*?url\s*=\s*.*?github\.com[:/]([\w.-]+/[\w.-]+?)(?:\.git)?(?:\s|$)',
                 content,
                 re.DOTALL,
             )
             if m:
                 return m.group(1)
-            m = re.search(r"github\.com[:/]([\w.-]+/[\w.-]+?)(?:\.git)?\s", content)
+            m = re.search(r"github\.com[:/]([\w.-]+/[\w.-]+?)(?:\.git)?(?:\s|$)", content)
             if m:
                 return m.group(1)
     except OSError:
@@ -54,9 +54,8 @@ def repo_slug() -> str:
 
 
 def pages_base() -> str:
-    """The GitHub Pages base URL serving docs/ (dashboard, feed, JSON API)."""
-    owner, _, name = repo_slug().partition("/")
-    return f"https://{owner.lower()}.github.io/{name}"
+    """The live web application base URL (Vercel)."""
+    return os.environ.get("LIVE_APP_URL", "https://internship-engine-india.vercel.app").rstrip("/")
 
 
 _GLOBAL_TOKENS = {"global", "international", "worldwide", "any", "all"}
@@ -70,14 +69,23 @@ def load_config() -> dict:
     cfg = dict(DEFAULTS)
     try:
         with open(paths.CONFIG_PATH, encoding="utf-8") as f:
-            cfg.update(json.load(f))
+            data = json.load(f)
+            if isinstance(data, dict):
+                cfg.update(data)
     except (OSError, json.JSONDecodeError):
         pass
+    if not isinstance(cfg.get("cycles"), list) or not cfg["cycles"]:
+        cfg["cycles"] = list(DEFAULTS["cycles"])
+    if not isinstance(cfg.get("regions"), list):
+        cfg["regions"] = list(DEFAULTS["regions"])
     return cfg
 
 
 def cycles(cfg: dict) -> list[str]:
-    return list(cfg.get("cycles") or DEFAULTS["cycles"])
+    raw = cfg.get("cycles")
+    if isinstance(raw, list) and raw:
+        return [str(c) for c in raw]
+    return list(DEFAULTS["cycles"])
 
 
 def restrict_region(cfg: dict) -> bool:
@@ -148,6 +156,6 @@ def signup_endpoint(cfg: dict) -> tuple[str, str] | None:
     These are PUBLIC values by design (the key is Supabase's client-side
     "publishable" key; row-level security is what protects the data).
     """
-    url = (cfg.get("supabase_url") or "").rstrip("/")
-    key = cfg.get("supabase_publishable_key") or ""
+    url = (os.environ.get("SUPABASE_URL") or cfg.get("supabase_url") or "").rstrip("/")
+    key = os.environ.get("SUPABASE_ANON_KEY") or cfg.get("supabase_publishable_key") or ""
     return (url, key) if url and key else None

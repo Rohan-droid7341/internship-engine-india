@@ -1,5 +1,6 @@
 import os
 import sys
+
 import httpx
 
 account_sid = os.environ.get("TWILIO_ACCOUNT_SID")
@@ -10,8 +11,8 @@ to_number = os.environ.get("WHATSAPP_PHONE")
 print("--- TWILIO DIAGNOSTIC CHECK ---")
 print(f"TWILIO_ACCOUNT_SID present: {bool(account_sid)}")
 print(f"TWILIO_AUTH_TOKEN present: {bool(auth_token)}")
-print(f"TWILIO_FROM_NUMBER present: {bool(from_number)} (Value: {from_number})")
-print(f"WHATSAPP_PHONE present: {bool(to_number)} (Value: {to_number})")
+print(f"TWILIO_FROM_NUMBER present: {bool(from_number)}")
+print(f"WHATSAPP_PHONE present: {bool(to_number)}")
 
 if not all([account_sid, auth_token, from_number, to_number]):
     print("❌ FAILED: One or more Twilio secrets are missing from GitHub Repository Secrets!")

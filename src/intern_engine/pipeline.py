@@ -29,15 +29,12 @@ from .connectors import (
     custom_careers,
     eightfold,
     greenhouse,
-    instahyre,
     internshala,
     lever,
-    naukri,
     oracle,
     recruitee,
     rippling,
     smartrecruiters,
-    unstop,
     wellfound,
     workable,
     workday,
@@ -61,7 +58,7 @@ CONNECTORS = {
     "internshala": internshala.fetch,
     # "instahyre": instahyre.fetch,  # disabled/removed from flow
     # "linkedin": linkedin.fetch,  # disabled: frequently blocking/rate-limited
-    "naukri": naukri.fetch,
+    # "naukri": naukri.fetch,  # disabled
     "custom": custom_careers.fetch,
     # "indeed": indeed.fetch,  # disabled: frequently blocking/rate-limited
     "wellfound": wellfound.fetch,
@@ -127,7 +124,7 @@ def _dedup(jobs: list) -> list:
     Keyed by company + normalized title; a posting that carries a real date wins
     over one that doesn't.
     """
-    jobs = sorted(jobs, key=lambda j: (j.posted_at is None,))
+    jobs = sorted(jobs, key=lambda j: (j.posted_at is None, j.id or ""))
     seen: set[tuple[str, str]] = set()
     unique = []
     for job in jobs:
@@ -231,8 +228,15 @@ def _keep_matching(results, cfg, blocklist, existing=None) -> tuple[list, set[st
             loc = (job.location or "").strip()
             if not in_region and (not loc or loc == "—"):
                 continue  # out-of-region roles need a real location
-            posted_day = (job.posted_at or "")[:10]
+            prior_record = existing.get(job.id) if existing else None
+            posted_day = (job.posted_at or (prior_record.get("posted_at") if prior_record else None) or (prior_record.get("first_seen_at") if prior_record else None) or "")[:10]
             if cutoff and posted_day and posted_day < cutoff:
+                continue
+            if filters.is_stale(
+                job.posted_at,
+                prior_record.get("first_seen_at") if prior_record else None,
+                max_days=90,
+            ):
                 continue
             job.season = season
             job.season_inferred = inferred
@@ -307,7 +311,7 @@ def run_update() -> tuple[dict, dict, list[str]]:
             row.pop(field, None)
         rows.append(row)
 
-    new_ids = store.upsert(existing, rows, succeeded, enriched_ids)
+    new_ids = store.upsert(existing, rows, succeeded, enriched_ids, max_age_days=config.max_age_days(cfg))
     purged = store.purge(existing)
     store.save(paths.JOBS_PATH, existing)
 

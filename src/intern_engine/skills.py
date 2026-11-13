@@ -1,6 +1,6 @@
 """Skill tags + pay extraction from posting text (runs inside enrichment).
 
-Same philosophy as sponsorship.py: precision over recall. The vocabulary is a
+Philosophy: precision over recall. The vocabulary is a
 curated list of technologies students actually filter by — whole-word matches
 only, so "Go" needs the word Go (not "goal") and bare "C"/"R" are excluded as
 too noisy. Pay is extracted only from explicit money-with-period phrases

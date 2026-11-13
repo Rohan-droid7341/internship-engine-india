@@ -1,14 +1,15 @@
 """Apply RLS policies to all pipeline tables in Supabase.
 
 Requires:
-    SUPABASE_URL        https://zvanrgppleycfqwfpxjd.supabase.co
+    SUPABASE_URL        https://<project-ref>.supabase.co
     SUPABASE_SERVICE_KEY  <service_role_key>
 
 Run:
     python scripts/apply_rls.py
 """
 
-import os, sys
+import os
+import sys
 
 try:
     from supabase import create_client
@@ -58,7 +59,7 @@ STATEMENTS = [
 
 def main() -> None:
     print(f"Connecting to {SUPABASE_URL}")
-    client = create_client(SUPABASE_URL, SERVICE_KEY)
+    _client = create_client(SUPABASE_URL, SERVICE_KEY)
 
     # supabase-py doesn't expose raw SQL, but we can call the Postgres REST API
     # via httpx using the service key which has access to the SQL endpoint.
@@ -86,7 +87,7 @@ def main() -> None:
             # (available when the service key has permissions)
             resp2 = httpx.post(
                 # SQL editor endpoint (project-level API, not PostgREST)
-                f"https://api.supabase.com/v1/projects/zvanrgppleycfqwfpxjd/database/query",
+                f"https://api.supabase.com/v1/projects/{SUPABASE_URL.split('//')[-1].split('.')[0]}/database/query",
                 headers={
                     "Authorization": f"Bearer {SERVICE_KEY}",
                     "Content-Type": "application/json",

@@ -32,6 +32,7 @@ import json
 from datetime import UTC, datetime
 
 from . import config, paths, radar
+from .utils import atomic_write_json
 
 
 def load() -> dict:
@@ -79,7 +80,7 @@ def update_from_store(
     companies = observed.setdefault("companies", {})
     tracked = set(cycles if cycles is not None else config.cycles(config.load_config()))
 
-    for record in store_data.values():
+    for record_key, record in store_data.items():
         if record.get("season_inferred"):
             continue  # a guessed cycle is not a real observation (see docstring)
         cycle = record.get("season")
@@ -95,10 +96,18 @@ def update_from_store(
         if name and (entry.get("name") in (None, "", key)):
             entry["name"] = name
         cyc = entry["cycles"].get(cycle)
+        job_id = record.get("id") or str(record_key)
         if cyc is None:
-            entry["cycles"][cycle] = {"first_posted": day, "count": 1}
+            entry["cycles"][cycle] = {
+                "first_posted": day,
+                "count": 1,
+                "role_ids": [job_id],
+            }
         else:
-            cyc["count"] = cyc.get("count", 0) + 1
+            role_ids = cyc.setdefault("role_ids", [])
+            if job_id not in role_ids:
+                role_ids.append(job_id)
+                cyc["count"] = max(cyc.get("count", 0), len(role_ids))
             if day < cyc["first_posted"]:
                 cyc["first_posted"] = day
 
@@ -108,8 +117,7 @@ def update_from_store(
 
 
 def save(observed: dict) -> None:
-    with open(paths.OBSERVED_PATH, "w", encoding="utf-8") as f:
-        json.dump(observed, f, ensure_ascii=False, indent=1, sort_keys=False)
+    atomic_write_json(paths.OBSERVED_PATH, observed, indent=1, ensure_ascii=False, sort_keys=False)
 
 
 def record_run(store_data: dict) -> int:

@@ -17,6 +17,7 @@ Env: BREVO_API_KEY, MAIL_FROM (verified sender, "Name <addr>" or bare),
 from __future__ import annotations
 
 import json
+import logging
 import os
 import re
 import time
@@ -26,6 +27,9 @@ from html import escape
 import httpx
 
 from . import config, paths
+from .utils import atomic_write_json
+
+logger = logging.getLogger("intern_engine.mailer")
 
 _MIN_HOURS_BETWEEN = 22  # "daily", tolerant of cron jitter
 _NEW_WINDOW_HOURS = 26  # a role counts as news if first seen in this window
@@ -46,8 +50,7 @@ def _load_state() -> dict:
 
 
 def _save_state(state: dict) -> None:
-    with open(paths.MAIL_STATE_PATH, "w", encoding="utf-8") as f:
-        json.dump(state, f, indent=2)
+    atomic_write_json(paths.MAIL_STATE_PATH, state, indent=2)
 
 
 def _parse_ts(value: str | None) -> datetime | None:
@@ -80,13 +83,9 @@ def should_send(
     now: datetime | None = None,
     new_ids: list[str] | set[str] | None = None,
 ) -> bool:
-    """Send when there is news to deliver. Never send an empty email."""
+    """Send when there is news to deliver. Never send an empty email. Enforce daily throttle."""
     if fresh_count == 0:
         return False
-    # If new_ids was explicitly passed (e.g. from pipeline run), send immediately!
-    if new_ids is not None:
-        return len(new_ids) > 0
-    # Fallback when run manually without new_ids: at most daily
     now = now or datetime.now(UTC)
     last = _parse_ts(state.get("last_digest_at"))
     return last is None or (now - last) >= timedelta(hours=_MIN_HOURS_BETWEEN)
@@ -97,10 +96,12 @@ def should_send(
 
 def _role_row(r: dict) -> str:
     bits = [b for b in (r.get("season"), r.get("location"), r.get("stipend") or r.get("salary")) if b]
+    raw_url = (r.get("url") or "").strip()
+    safe_url = raw_url if raw_url.startswith(("http://", "https://")) else "#"
     return (
         '<tr><td style="padding:10px 0;border-bottom:1px solid #eee">'
         f"<strong>{escape(r.get('company') or '')}</strong> — "
-        f'<a href="{escape(r.get("url") or "")}">{escape(r.get("title") or "")}</a>'
+        f'<a href="{escape(safe_url)}">{escape(r.get("title") or "")}</a>'
         f'<br><span style="color:#666;font-size:13px">{escape(" · ".join(bits))}</span>'
         "</td></tr>"
     )
@@ -113,13 +114,14 @@ def build_digest_html(fresh: list[dict]) -> str:
     of a 60-row email.
     """
     repo = config.repo_slug()
+    app_url = os.environ.get("LIVE_APP_URL", "https://internship-engine-india.vercel.app").rstrip("/")
     rows = "".join(_role_row(r) for r in fresh[:_MAX_ROLES])
     extra = len(fresh) - _MAX_ROLES
     if extra > 0:
         rows += (
             '<tr><td style="padding:10px 0;color:#666">'
             f"…plus {extra} more new role{'s' if extra != 1 else ''} on "
-            f'<a href="{config.pages_base()}/">the live dashboard</a>.'
+            f'<a href="{app_url}/">the live dashboard</a>.'
             "</td></tr>"
         )
     return (
@@ -131,7 +133,7 @@ def build_digest_html(fresh: list[dict]) -> str:
         f'<table style="width:100%;border-collapse:collapse">{rows}</table>'
         f'<p style="margin-top:18px"><a href="https://github.com/{escape(repo)}">'
         "Full list & tracker on GitHub</a> · "
-        f'<a href="{config.pages_base()}/">live dashboard</a></p>'
+        f'<a href="{app_url}/">live dashboard</a></p>'
         '<p style="color:#999;font-size:12px;margin-top:24px">You get this because '
         "you subscribed to new-internship alerts. "
         '<a href="{{UNSUB_URL}}" style="color:#999">Unsubscribe</a> anytime.</p>'
@@ -168,13 +170,10 @@ def _subscribers(base_url: str, service_key: str) -> list[dict]:
 def send_digest(store_data: dict, new_ids: list[str] | set[str] | None = None) -> int:
     """Send email alerts to subscribers.
 
-    When new_ids is provided: sends immediately whenever this run found new roles.
-    When new_ids is None: checks store_data for fresh roles.
+    Checks store_data for fresh roles seen since last digest (or news window).
+    Enforces the daily throttle (_MIN_HOURS_BETWEEN).
     Returns how many emails went out.
     """
-    if new_ids is not None and not new_ids:
-        return 0
-
     api_key = os.environ.get("BREVO_API_KEY")
     base_url = (os.environ.get("SUPABASE_URL") or "").rstrip("/")
     service_key = os.environ.get("SUPABASE_SERVICE_KEY")
@@ -182,18 +181,22 @@ def send_digest(store_data: dict, new_ids: list[str] | set[str] | None = None) -
     if not api_key or not base_url or not service_key or not sender:
         return 0
 
-    if new_ids is not None:
-        fresh = [
-            store_data[jid]
-            for jid in new_ids
-            if jid in store_data and store_data[jid].get("is_open")
-        ]
-        fresh.sort(key=lambda r: r.get("first_seen_at") or "", reverse=True)
-    else:
-        fresh = new_roles(store_data)
-
     state = _load_state()
-    if not should_send(state, len(fresh), new_ids=new_ids):
+    now = datetime.now(UTC)
+    last = _parse_ts(state.get("last_digest_at"))
+
+    if not should_send(state, fresh_count=1, now=now, new_ids=new_ids):
+        return 0
+
+    # Collect all open roles first seen since last digest (or within news window)
+    cutoff = last or (now - timedelta(hours=_NEW_WINDOW_HOURS))
+    fresh = [
+        r
+        for r in store_data.values()
+        if r.get("is_open") and (_parse_ts(r.get("first_seen_at")) or cutoff) > cutoff
+    ]
+    fresh.sort(key=lambda r: r.get("first_seen_at") or "", reverse=True)
+    if not fresh:
         return 0
 
     try:
@@ -203,16 +206,23 @@ def send_digest(store_data: dict, new_ids: list[str] | set[str] | None = None) -
     if not subscribers:
         return 0
 
-    today = datetime.now(UTC).strftime("%b %d")
+    today = now.strftime("%b %d")
     if len(fresh) == 1:
         cname = fresh[0].get("company") or "Company"
         title = fresh[0].get("title") or "Internship"
         subject = f"🎯 New Opening: {cname} — {title}"
     else:
         subject = f"🚨 {len(fresh)} New Internship Openings Spotted · {today}"
+    subject = subject.replace("\r", " ").replace("\n", " ").strip()
 
     body = build_digest_html(fresh)
-    unsub_base = f"{config.pages_base()}/unsubscribe.html"
+    app_url = os.environ.get("LIVE_APP_URL", "https://internship-engine-india.vercel.app").rstrip("/")
+    unsub_base = f"{app_url}/unsubscribe"
+
+    if len(subscribers) > _MAX_SENDS:
+        logger.warning(
+            f"Subscribers count ({len(subscribers)}) exceeds cap ({_MAX_SENDS}); truncating send."
+        )
 
     sent = 0
     with httpx.Client(timeout=20) as client:
@@ -231,6 +241,10 @@ def send_digest(store_data: dict, new_ids: list[str] | set[str] | None = None) -
                         "to": [{"email": address}],
                         "subject": subject,
                         "htmlContent": html,
+                        "headers": {
+                            "List-Unsubscribe": f"<{unsub_base}?t={token}>",
+                            "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+                        },
                     },
                 ).raise_for_status()
                 sent += 1
@@ -239,7 +253,7 @@ def send_digest(store_data: dict, new_ids: list[str] | set[str] | None = None) -
             time.sleep(0.12)  # stay well under Brevo's request rate
 
     if sent:
-        state["last_digest_at"] = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+        state["last_digest_at"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
         state["last_digest_roles"] = len(fresh)
         state["last_digest_sent"] = sent
         _save_state(state)

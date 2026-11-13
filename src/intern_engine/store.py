@@ -17,6 +17,9 @@ import json
 import os
 from datetime import UTC, datetime, timedelta
 
+from . import filters
+from .utils import atomic_write_json
+
 
 def now_iso() -> str:
     return datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -33,10 +36,7 @@ def load(path: str) -> dict:
 
 
 def save(path: str, data: dict) -> None:
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        # sort_keys keeps the file order stable so git diffs stay small.
-        json.dump(data, f, indent=2, ensure_ascii=False, sort_keys=True)
+    atomic_write_json(path, data, indent=2, ensure_ascii=False, sort_keys=True)
 
 
 # Fields we refresh on every run for jobs we've seen before.
@@ -59,7 +59,11 @@ _REFRESH_FIELDS = (
 
 
 def upsert(
-    existing: dict, jobs: list[dict], succeeded_keys: set[str], enriched_ids: set[str] | None = None
+    existing: dict,
+    jobs: list[dict],
+    succeeded_keys: set[str],
+    enriched_ids: set[str] | None = None,
+    max_age_days: int | None = None,
 ) -> list[str]:
     """Merge freshly-fetched jobs into the existing store.
 
@@ -71,6 +75,8 @@ def upsert(
 
     `enriched_ids` are jobs enriched from posting text THIS run;
     those get an enriched_at stamp so enrichment never repeats.
+
+    `max_age_days` closes any open jobs that have exceeded the retention age.
     """
     ts = now_iso()
     enriched_ids = enriched_ids or set()
@@ -126,6 +132,14 @@ def upsert(
         if company_key in succeeded_keys and jid not in seen_ids and record.get("is_open"):
             record["is_open"] = False
             record["closed_at"] = ts
+
+    # Auto-close roles that are stale / older than 3 months (or configured max_age_days)
+    effective_max_days = max_age_days if max_age_days is not None else filters.MAX_STALE_DAYS
+    for record in existing.values():
+        if record.get("is_open"):
+            if filters.is_stale_job(record, max_days=effective_max_days):
+                record["is_open"] = False
+                record["closed_at"] = ts
 
     return new_ids
 

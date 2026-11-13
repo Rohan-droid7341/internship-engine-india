@@ -16,10 +16,10 @@ CI, so the breaker's decisions are auditable in git history like everything else
 from __future__ import annotations
 
 import json
-import os
 from datetime import UTC, datetime, timedelta
 
 from . import paths
+from .utils import atomic_write_json
 
 _THRESHOLD = 3  # consecutive failures before quarantine kicks in
 _BASE_HOURS = 6  # first quarantine window
@@ -39,9 +39,7 @@ def load() -> dict:
 
 
 def save(data: dict) -> None:
-    os.makedirs(os.path.dirname(paths.HEALTH_PATH), exist_ok=True)
-    with open(paths.HEALTH_PATH, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False, sort_keys=True)
+    atomic_write_json(paths.HEALTH_PATH, data, indent=2, ensure_ascii=False, sort_keys=True)
 
 
 def _window_hours(failures: int) -> float:
@@ -56,12 +54,16 @@ def is_quarantined(entry: dict | None, now: datetime) -> bool:
         return False
     last = entry.get("last_attempt_at")
     if not last:
-        return False
+        return True  # Repeat offender with missing timestamp stays quarantined
     try:
-        last_dt = datetime.fromisoformat(last.replace("Z", "+00:00"))
-    except ValueError:
-        return False
-    return now < last_dt + timedelta(hours=_window_hours(failures))
+        last_dt = datetime.fromisoformat(str(last).replace("Z", "+00:00"))
+        if last_dt.tzinfo is None:
+            last_dt = last_dt.replace(tzinfo=UTC)
+        if now.tzinfo is None:
+            now = now.replace(tzinfo=UTC)
+        return now < last_dt + timedelta(hours=_window_hours(failures))
+    except (ValueError, TypeError):
+        return True
 
 
 def partition(

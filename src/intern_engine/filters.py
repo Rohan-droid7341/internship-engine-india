@@ -852,3 +852,49 @@ def categorize(title: str) -> str:
         if pattern.search(title):
             return name
     return "Other"
+
+
+# --- staleness filter (roles older than 3 months are considered stale) --------
+MAX_STALE_DAYS = 90  # 3 months (~90 days)
+
+
+def is_stale(
+    posted_at: str | None = None,
+    first_seen_at: str | None = None,
+    max_days: int = MAX_STALE_DAYS,
+    now: datetime | None = None,
+) -> bool:
+    """Check if a posting date or first-seen date is older than `max_days` (default 90 days / 3 months).
+
+    Any job published more than 3 months ago is considered stale and must not appear.
+    """
+    raw_date = (posted_at or first_seen_at or "").strip()
+    if not raw_date:
+        return False
+    now = now or datetime.now(UTC)
+    try:
+        dt = datetime.fromisoformat(raw_date.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=UTC)
+        age_days = (now - dt).total_seconds() / 86400.0
+        return age_days > max_days
+    except (ValueError, TypeError):
+        try:
+            dt = datetime.strptime(raw_date[:10], "%Y-%m-%d").replace(tzinfo=UTC)
+            return (now - dt).days > max_days
+        except (ValueError, TypeError):
+            return False
+
+
+def is_stale_job(
+    record: dict,
+    max_days: int = MAX_STALE_DAYS,
+    now: datetime | None = None,
+) -> bool:
+    """Return True if the job record is older than `max_days` (default 3 months)."""
+    return is_stale(
+        posted_at=record.get("posted_at"),
+        first_seen_at=record.get("first_seen_at"),
+        max_days=max_days,
+        now=now,
+    )

@@ -585,11 +585,12 @@ async def query_gemini_grounded(
     if not key:
         return None
 
-    model = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
+    model = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
     prompt = _GEMINI_PROMPT_TEMPLATE.format(company=company, title=title, category=category)
 
     # In Gemini REST API v1beta, googleSearch is used for search grounding
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    headers = {"x-goog-api-key": key, "Content-Type": "application/json"}
 
     # We support tools payload format
     payload = {
@@ -603,19 +604,19 @@ async def query_gemini_grounded(
     try:
         # Check if client has a direct post or is a Net instance
         if hasattr(client, "post_json"):
-            data = await client.post_json(url, json=payload, timeout=20.0)
+            data = await client.post_json(url, json=payload, headers=headers, timeout=20.0)
         elif hasattr(client, "post"):
-            resp = await client.post(url, json=payload, timeout=20.0)
+            resp = await client.post(url, json=payload, headers=headers, timeout=20.0)
             if resp.status_code == 400:
                 # Try fallback tool key format if googleSearch returned 400
                 payload["tools"] = [{"google_search": {}}]
-                resp = await client.post(url, json=payload, timeout=20.0)
+                resp = await client.post(url, json=payload, headers=headers, timeout=20.0)
             if resp.status_code != 200:
-                logger.warning(f"Gemini API returned status {resp.status_code}: {resp.text[:120]}")
+                logger.warning(f"Gemini API returned status {resp.status_code}")
                 return None
             data = resp.json()
         elif hasattr(client, "_client") and hasattr(client._client, "post"):
-            resp = await client._client.post(url, json=payload, timeout=20.0)
+            resp = await client._client.post(url, json=payload, headers=headers, timeout=20.0)
             if resp.status_code != 200:
                 return None
             data = resp.json()
@@ -632,7 +633,7 @@ async def query_gemini_grounded(
         grounding = first.get("groundingMetadata")
         return _parse_gemini_json(text, grounding)
     except Exception as exc:
-        logger.warning(f"Gemini search grounding query failed for {company}: {exc}")
+        logger.warning(f"Gemini search grounding query failed for {company}: {type(exc).__name__}")
         return None
 
 

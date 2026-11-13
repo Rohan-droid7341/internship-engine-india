@@ -41,8 +41,6 @@ def _client():
         return None
 
 
-def enabled() -> bool:
-    return _client() is not None
 
 
 def _upsert_batched(client, table: str, rows: list[dict], conflict: str) -> None:
@@ -307,7 +305,7 @@ def _state_rows() -> list[dict]:
         except (OSError, json.JSONDecodeError):
             continue
         if value:
-            rows.append({"key": label, "value": json.dumps(value)})
+            rows.append({"key": label, "value": value})
     return rows
 
 
@@ -322,13 +320,6 @@ def _sync_state(client) -> int:
 # Public API
 # ---------------------------------------------------------------------------
 
-def sync(store_data: dict, stats: dict) -> bool:
-    """Legacy entry point: sync companies + jobs + run metrics.
-
-    Kept for backward compatibility with run.py.
-    Prefer full_sync() for complete mirroring.
-    """
-    return full_sync(store_data=store_data, stats=stats)
 
 
 def full_sync(

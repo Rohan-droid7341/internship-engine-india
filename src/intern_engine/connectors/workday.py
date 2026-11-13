@@ -30,15 +30,17 @@ HEADERS = {
 }
 
 _DAYS_AGO = re.compile(r"(\d+)\s*\+?\s*days?\s+ago", re.IGNORECASE)
+_HOURS_AGO = re.compile(r"(\d+)\s*\+?\s*(?:hours?|hrs?)\s+ago", re.IGNORECASE)
 
 _PAGE_SIZE = 20  # hard server-side cap per request
 _MAX_JOBS = 100  # intern-search results beyond this are noise
 
 
-def _resolve_posted(text: str | None) -> str | None:
+def _resolve_posted(text: str | None, now: datetime | None = None) -> str | None:
     if not text:
         return None
     lowered = text.lower()
+    now = now or datetime.now(UTC)
     if "today" in lowered:
         days = 0
     elif "yesterday" in lowered:
@@ -46,11 +48,15 @@ def _resolve_posted(text: str | None) -> str | None:
     elif "30+" in lowered:
         return None  # too vague to be a real date
     else:
+        h_match = _HOURS_AGO.search(lowered)
+        if h_match:
+            hours = int(h_match.group(1))
+            return (now - timedelta(hours=hours)).strftime("%Y-%m-%dT%H:00:00Z")
         match = _DAYS_AGO.search(lowered)
         if not match or int(match.group(1)) >= 30:
             return None
         days = int(match.group(1))
-    return (datetime.now(UTC) - timedelta(days=days)).strftime("%Y-%m-%dT00:00:00Z")
+    return (now - timedelta(days=days)).strftime("%Y-%m-%dT00:00:00Z")
 
 
 def _urls(company: dict) -> tuple[str, str]:

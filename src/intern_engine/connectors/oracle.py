@@ -39,8 +39,8 @@ async def fetch(company: dict, net: Net) -> list[Job]:
         params = {
             "onlyData": "true",
             "expand": "requisitionList.secondaryLocations",
-            "finder": f"findReqs;siteNumber={site},keyword=intern,sortBy=POSTING_DATES_DESC,offset={offset}",
-            "limit": str(_PAGE_SIZE),
+            "finder": f"findReqs;siteNumber={site},limit={_PAGE_SIZE},offset={offset},keyword=intern,sortBy=POSTING_DATES_DESC",
+
         }
         data = await net.get_json(url, params=params, headers=HEADERS)
         items = data.get("items") or []

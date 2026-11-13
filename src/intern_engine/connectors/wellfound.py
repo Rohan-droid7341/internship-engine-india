@@ -6,11 +6,15 @@ Uses Scrapling's StealthyFetcher for a best-effort public scrape.
 from __future__ import annotations
 
 import asyncio
+import json
+import logging
 import re
 from concurrent.futures import ThreadPoolExecutor
 
 from ..models import Job
 from ..net import Net
+
+logger = logging.getLogger("intern_engine.connectors.wellfound")
 
 _EXECUTOR = ThreadPoolExecutor(max_workers=1, thread_name_prefix="wellfound")
 
@@ -30,6 +34,7 @@ _NEXT_DATA_RE = re.compile(r'<script id="__NEXT_DATA__" type="application/json">
 
 
 def _scrape_page(url: str) -> list[Job]:
+    """Fetch Wellfound HTML, extract Apollo GraphQL cache, and extract internship jobs."""
     try:
         import os
 
@@ -39,28 +44,25 @@ def _scrape_page(url: str) -> list[Job]:
         fetcher = StealthyFetcher(auto_match=False, proxy=proxy) if proxy else StealthyFetcher(auto_match=False)
         resp = fetcher.get(url, headers=_HEADERS, timeout=30, stealth=True)
         html = resp.content or ""
-        
-        m = _NEXT_DATA_RE.search(html)
-        if not m:
+
+        match = _NEXT_DATA_RE.search(html)
+        if not match:
             return []
-            
-        import json
-        data = json.loads(m.group(1))
-        
-        # Traverse the JSON tree (best effort for Next.js props)
-        jobs = []
+
+        jobs: list[Job] = []
         try:
-            page_props = data["props"]["pageProps"]
-            # Look for job listings in Apollo state or direct props
+            next_data = json.loads(match.group(1))
+            page_props = next_data.get("props", {}).get("pageProps", {})
             apollo_state = page_props.get("initialApolloState", {})
             for key, val in apollo_state.items():
-                if key.startswith("JobListing:") and isinstance(val, dict):
+                if not (key.startswith("JobListing:") and isinstance(val, dict)):
+                    continue
+                try:
                     title = val.get("title")
                     job_id = val.get("id")
-                    
-                    if not title or "intern" not in title.lower():
+                    if not title or not job_id or "intern" not in title.lower():
                         continue
-                        
+
                     # Find company
                     company_ref = val.get("startup", {}).get("__ref", "")
                     company = "Unknown"
@@ -69,10 +71,11 @@ def _scrape_page(url: str) -> list[Job]:
                         comp_data = apollo_state[company_ref]
                         company = comp_data.get("name", "Unknown")
                         company_slug = comp_data.get("slug", "unknown")
-                        
-                    location = val.get("locationNames", ["India"])[0]
+
+                    loc_names = val.get("locationNames")
+                    location = loc_names[0] if isinstance(loc_names, list) and loc_names else "India"
                     url = f"https://wellfound.com/jobs/{job_id}"
-                    
+
                     jobs.append(
                         Job(
                             id=f"wellfound:{job_id}",
@@ -85,11 +88,14 @@ def _scrape_page(url: str) -> list[Job]:
                             posted_at=None,
                         )
                     )
-        except KeyError:
+                except Exception:
+                    continue
+        except (KeyError, json.JSONDecodeError):
             pass
-            
+
         return jobs
-    except Exception:
+    except Exception as exc:
+        logger.warning(f"Wellfound scrape failed: {exc}")
         return []
 
 
@@ -98,5 +104,6 @@ async def fetch(company: dict, net: Net) -> list[Job]:
     loop = asyncio.get_event_loop()
     jobs = await loop.run_in_executor(_EXECUTOR, _scrape_page, _SEARCH_URL)
     if not jobs:
-        raise RuntimeError("Wellfound rate limited or returned 0 jobs")
+        logger.warning("Wellfound returned 0 jobs (rate limited or empty)")
+        return []
     return jobs

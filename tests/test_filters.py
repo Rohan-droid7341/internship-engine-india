@@ -1,4 +1,4 @@
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 
 from intern_engine import filters
 
@@ -330,3 +330,35 @@ class TestSeasonFromDescription:
         desc2 = "2027 software engineering internship program. Candidates should know Python."
         assert filters.detect_season_from_description(desc2, CYCLES) == "Summer 2027"
 
+
+
+class TestStalenessFilter:
+    NOW = datetime(2026, 11, 14, 12, 0, tzinfo=UTC)
+
+    def test_recent_job_is_not_stale(self):
+        posted = "2026-11-04T12:00:00Z"
+        assert not filters.is_stale(posted, now=self.NOW)
+        assert not filters.is_stale_job({"posted_at": posted}, now=self.NOW)
+
+    def test_job_under_90_days_is_not_stale(self):
+        posted = (self.NOW - timedelta(days=89)).strftime("%Y-%m-%d")
+        assert not filters.is_stale(posted, now=self.NOW)
+
+    def test_job_over_90_days_is_stale(self):
+        posted = (self.NOW - timedelta(days=91)).strftime("%Y-%m-%d")
+        assert filters.is_stale(posted, now=self.NOW)
+        assert filters.is_stale_job({"posted_at": posted}, now=self.NOW)
+
+    def test_job_4_months_old_is_stale(self):
+        posted = (self.NOW - timedelta(days=120)).strftime("%Y-%m-%dT00:00:00Z")
+        assert filters.is_stale(posted, now=self.NOW)
+        assert filters.is_stale_job({"posted_at": posted}, now=self.NOW)
+
+    def test_fallback_to_first_seen_at(self):
+        first_seen = (self.NOW - timedelta(days=100)).strftime("%Y-%m-%dT00:00:00Z")
+        assert filters.is_stale(None, first_seen_at=first_seen, now=self.NOW)
+        assert filters.is_stale_job({"posted_at": None, "first_seen_at": first_seen}, now=self.NOW)
+
+    def test_no_dates_is_not_stale(self):
+        assert not filters.is_stale(None, None, now=self.NOW)
+        assert not filters.is_stale_job({}, now=self.NOW)

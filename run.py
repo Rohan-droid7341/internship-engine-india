@@ -13,7 +13,6 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "src"))
 
 from intern_engine import (  # noqa: E402
-    dashboard,
     db,
     discover,
     harvester,
@@ -56,9 +55,9 @@ def cmd_update() -> None:
     stats, store_data, new_ids = pipeline.run_update()
     trends.write_readme_charts(store_data)
     summary = readme.generate(store_data)
-    dashboard.generate(store_data, stats)
+
     feed_entries = publish.write_feed(store_data)
-    publish.write_api(store_data, stats)
+
     ics_events = publish.write_radar_ics(store_data)
     if db.full_sync(
         store_data=store_data,
@@ -67,8 +66,9 @@ def cmd_update() -> None:
         observed=observe.load(),
     ):
         print("  synced to Postgres   yes")
-    if notify.send_new_roles(store_data, new_ids):
-        print(f"  Discord alert        {len(new_ids)} new roles")
+    notified = notify.send_new_roles(store_data, new_ids)
+    if notified:
+        print(f"  alerts ({', '.join(notified)})  {len(new_ids)} new roles")
     notify.check_sandbox_reminder()
     sent = mailer.send_digest(store_data, new_ids)
     if sent:

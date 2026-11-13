@@ -11,7 +11,6 @@ Checks each OPEN role in data/jobs.json against the rules the pipeline promises:
   6. a real posted date exists and is inside max_age_days
   7. inferred (~) rows carry a posted date (that date is the inference's basis)
   8. the company isn't blocklisted
-Plus cross-artifact consistency: the JSON API's open count matches the store.
 
 Run it after any filter change or store surgery — it's the "did we break the
 list" button.
@@ -19,7 +18,6 @@ list" button.
 
 from __future__ import annotations
 
-import json
 import os
 import sys
 from datetime import UTC, datetime, timedelta
@@ -57,11 +55,18 @@ def main() -> None:
             flag(r, "title-season-mismatch")
         if stated is None and filters.states_explicit_year(title):
             flag(r, "off-cycle-year-in-title")
-        if config.restrict_region(cfg) and not config.include_international(cfg) and \
-                not filters.region_ok(r.get("location") or "",
-                                      want_us=config.want_us(cfg), want_canada=config.want_canada(cfg),
-                                      want_india=config.want_india(cfg), want_remote=config.want_remote(cfg),
-                                      source=r.get("source", "")):
+        if (
+            config.restrict_region(cfg)
+            and not config.include_international(cfg)
+            and not filters.region_ok(
+                r.get("location") or "",
+                want_us=config.want_us(cfg),
+                want_canada=config.want_canada(cfg),
+                want_india=config.want_india(cfg),
+                want_remote=config.want_remote(cfg),
+                source=r.get("source", ""),
+            )
+        ):
             flag(r, "out-of-region")
         if not filters.is_internship(title):
             flag(r, "not-an-internship-title")
@@ -70,28 +75,20 @@ def main() -> None:
         posted = (r.get("posted_at") or "")[:10]
         if cutoff and posted and posted < cutoff:
             flag(r, "older-than-max-age")
+        if filters.is_stale_job(r, max_days=90):
+            flag(r, "stale-job-over-3-months")
         if r.get("season_inferred") and not posted and not config.infer_undated(cfg):
             flag(r, "inferred-without-posted-date")
         if quality.is_blocked(r.get("company") or "", blocklist):
             flag(r, "blocklisted-company")
 
-    api_path = os.path.join(paths.API_DIR, "jobs.json")
-    try:
-        with open(api_path, encoding="utf-8") as f:
-            api = json.load(f)
-        if api.get("count") != len(open_jobs):
-            problems.append(
-                f"  [api-count-drift] api/jobs.json says {api.get('count')}, "
-                f"store has {len(open_jobs)} open (regenerate outputs)"
-            )
-    except (OSError, ValueError):
-        problems.append("  [api-missing] docs/api/jobs.json unreadable")
-
     n_inferred = sum(1 for r in open_jobs if r.get("season_inferred"))
     by_cycle = {c: sum(1 for r in open_jobs if r.get("season") == c) for c in cycles}
-    print(f"Checked {len(open_jobs)} open roles "
-          f"({', '.join(f'{c}: {n}' for c, n in by_cycle.items())}; "
-          f"{n_inferred} cycle-inferred).")
+    print(
+        f"Checked {len(open_jobs)} open roles "
+        f"({', '.join(f'{c}: {n}' for c, n in by_cycle.items())}; "
+        f"{n_inferred} cycle-inferred)."
+    )
     if problems:
         print(f"\n{len(problems)} violation(s):")
         print("\n".join(problems))

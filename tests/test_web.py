@@ -59,3 +59,21 @@ def test_api_subscribe_invalid():
     assert res.status_code == 400
     assert "valid email" in res.json()["message"]
 
+
+def test_unsubscribe_page_missing_token():
+    res = client.get("/unsubscribe")
+    assert res.status_code == 400
+    assert "Missing unsubscribe token" in res.text
+
+
+def test_unsubscribe_page_with_token_no_db():
+    res = client.get("/unsubscribe?t=00000000-0000-0000-0000-000000000000")
+    assert res.status_code in (503, 200)
+    assert "Unsubscribe" in res.text
+
+
+
+def test_web_stale_filter():
+    from web.app import _is_stale
+    assert not _is_stale({"posted_at": "2026-11-01T00:00:00Z"})
+    assert _is_stale({"posted_at": "2026-06-01T00:00:00Z"})

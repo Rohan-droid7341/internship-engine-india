@@ -1,4 +1,4 @@
-"""Enrichment: attach posting text to matched roles and classify sponsorship.
+"""Enrichment: attach posting text to matched roles and extract pay/stipend/skills.
 
 Cost model: this runs ONLY on roles that already passed every filter (a handful
 per run, not thousands). Lever/Ashby/Amazon/Recruitee ship descriptions in their
@@ -11,6 +11,7 @@ backfills rows the list API only described as "N days ago".
 from __future__ import annotations
 
 import asyncio
+import html
 import re
 
 from . import compensation, filters, skills
@@ -39,7 +40,8 @@ async def _greenhouse(job: Job, net: Net) -> str | None:
     external_id = job.id.rsplit(":", 1)[-1]
     url = f"https://boards-api.greenhouse.io/v1/boards/{job.company_slug}/jobs/{external_id}"
     data = await net.get_json(url)
-    return data.get("content")
+    content = data.get("content")
+    return html.unescape(content) if content else None
 
 
 async def _smartrecruiters(job: Job, net: Net) -> str | None:

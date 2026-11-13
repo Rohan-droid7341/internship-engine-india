@@ -7,9 +7,12 @@ on:
     paths:
       - "src/**"
       - "tests/**"
+      - "web/**"
+      - "scripts/**"
+      - "tools/**"
       - "run.py"
       - "requirements*.txt"
-      - "ruff.toml"
+      - "pyproject.toml"
       - ".github/workflows/ci.yml"
   pull_request:
 
@@ -19,6 +22,7 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -27,6 +31,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements-dev.txt
       - name: Lint (ruff)
-        run: ruff check src tests run.py
+        run: ruff check src tests web scripts tools run.py
       - name: Tests (pytest)
         run: python -m pytest -q
+      - name: Verify accuracy
+        run: python tools/verify_accuracy.py

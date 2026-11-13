@@ -16,7 +16,7 @@ BLOCKLIST_PATH = os.path.join(DATA_DIR, "blocklist.json")  # companies to exclud
 CANDIDATES_PATH = os.path.join(DATA_DIR, "candidates.json")  # raw slugs to probe
 COMPANIES_PATH = os.path.join(DATA_DIR, "companies.json")  # validated companies
 JOBS_PATH = os.path.join(DATA_DIR, "jobs.json")  # persistent job state
-CSV_PATH = os.path.join(DATA_DIR, "internships.csv")  # downloadable tracker
+
 STATS_PATH = os.path.join(DATA_DIR, "stats.json")  # last-run metrics
 HEALTH_PATH = os.path.join(DATA_DIR, "health.json")  # circuit-breaker state
 HISTORY_PATH = os.path.join(DATA_DIR, "history.jsonl")  # one line of metrics per run

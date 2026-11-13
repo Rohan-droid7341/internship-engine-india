@@ -68,12 +68,14 @@ class TestEnrich:
         enriched, fetched = _run(enrich.enrich_jobs([job], existing, net))
         assert job.skills == ["Python"]
         assert enriched == {job.id} and fetched == 1
+        assert "Python" in (job.skills or [])
 
     def test_greenhouse_detail_fetch(self):
-        net = FakeNet({"content": "U.S. citizenship is required for this position."})
+        net = FakeNet({"content": "&lt;p&gt;Looking for Python engineers.&lt;/p&gt;"})
         job = _job(jid="greenhouse:acme:42", source="greenhouse")
         enriched, fetched = _run(enrich.enrich_jobs([job], {}, net))
         assert enriched == {job.id} and fetched == 1
+        assert "Python" in (job.skills or [])
 
     def test_workday_detail_backfills_posted_date(self):
         net = FakeNet(

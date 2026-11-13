@@ -32,7 +32,7 @@ def test_new_roles_window():
         "c": _record(1, is_open=False),  # closed
     }
     fresh = mailer.new_roles(store)
-    assert [r["id"] for r in fresh] == ["a:2"] or len(fresh) == 1
+    assert [r["id"] for r in fresh] == ["x:2"]
 
 
 def test_new_roles_newest_first_and_uncapped():
@@ -69,12 +69,13 @@ def test_should_send_at_most_daily():
     assert mailer.should_send({"last_digest_at": old}, 5) is True
 
 
-def test_should_send_immediate_on_new_ids():
+def test_should_send_enforces_daily_even_with_new_ids():
     now = datetime.now(UTC)
     recent = (now - timedelta(minutes=5)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    assert mailer.should_send({"last_digest_at": recent}, fresh_count=2, new_ids=["job1", "job2"]) is True
+    assert mailer.should_send({"last_digest_at": recent}, fresh_count=2, new_ids=["job1", "job2"]) is False
+    old = (now - timedelta(hours=25)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    assert mailer.should_send({"last_digest_at": old}, fresh_count=2, new_ids=["job1", "job2"]) is True
     assert mailer.should_send({}, fresh_count=0, new_ids=[]) is False
-
 
 
 # --- composition ---------------------------------------------------------------
@@ -89,6 +90,12 @@ def test_digest_html_lists_roles_and_unsub_slot():
     assert "Stripe" in html and "Backend Intern" in html
     assert "$55/hr" in html
     assert "{{UNSUB_URL}}" in html  # per-recipient link slot survives
+
+
+def test_role_row_sanitizes_javascript_url():
+    row = mailer._role_row({"company": "EvilCorp", "title": "Intern", "url": "javascript:alert(1)"})
+    assert 'href="#"' in row
+    assert "javascript:" not in row
 
 
 def test_sender_parsing(monkeypatch):
