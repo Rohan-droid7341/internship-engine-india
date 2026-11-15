@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**10 open roles · 5 new this week · 5,794 companies tracked · updated Nov 13, 2026 at 22:10 UTC**
+**10 open roles · 5 new this week · 5,842 companies tracked · updated Nov 15, 2026 at 18:36 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -17,7 +17,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Honeywell | Intern Bachelors AI ~ 🆕 | Data & ML/AI | ~₹30k–45k/mo (9–14 LPA) | Bengaluru, Karnataka, India | Nov 11, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/161319) |
+| Honeywell | Intern Bachelors AI ~ | Data & ML/AI | ~₹30k–45k/mo (9–14 LPA) | Bengaluru, Karnataka, India | Nov 11, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/161319) |
 | Assurant | AI & Data Science Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Nov 11, 2026 | [Apply](https://assurant.wd1.myworkdayjobs.com/External_Limited_Posting/job/Bengaluru/AI---Data-Science-Intern_R-116198) |
 | Workato | Intern, Automation Engineer ~ | Software | B.Tech/BS | Hyderabad, India | Nov 10, 2026 | [Apply](https://www.workato.com/careers?gh_jid=8924723002#open-roles) |
 | Thales | Embedded Software Intern ~ | Software | B.Tech/BS | Bangalore | Nov 10, 2026 | [Apply](https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Embedded-Software-Intern_R0347902) |
@@ -91,9 +91,9 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | Roblox | ~Sep | ~Sep · any day now | ⏳ waiting |
 | Stripe | ~Sep | ~Sep · any day now | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct · any day now | ⏳ waiting |
-| Coinbase | ~Dec | ~Dec · in ~18d | ⏳ waiting |
-| Ramp | ~Dec | ~Dec · in ~18d | ⏳ waiting |
-| Two Sigma | ~Dec | ~Dec · in ~18d | ⏳ waiting |
+| Coinbase | ~Dec | ~Dec · in ~16d | ⏳ waiting |
+| Ramp | ~Dec | ~Dec · in ~16d | ⏳ waiting |
+| Two Sigma | ~Dec | ~Dec · in ~16d | ⏳ waiting |
 | Apple | rolling | year-round | ⏳ waiting |
 | Datadog | rolling | year-round | ⏳ waiting |
 | Jump Trading | rolling | year-round | ⏳ waiting |
@@ -101,7 +101,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _65 companies on the [full radar](https://internship-engine-india.vercel.app/#radar). **30** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 31 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 26 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -149,7 +149,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,794 companies across 17 ATS platforms · 93% fetch success · completed in 1374.9s · median detection latency 715 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,842 companies across 18 ATS platforms · 97% fetch success · completed in 635.8s · median detection latency 715 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
