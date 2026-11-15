@@ -131,11 +131,6 @@ _65 companies on the [full radar](https://internship-engine-india.vercel.app/#ra
 | Marvell | AI Intern | Summer 2027 | 2026-11-04 |
 | Marvell | Intern, Software Engineer - Bachelor's Degree | Summer 2027 | 2026-11-04 |
 | Marvell | Intern, Software QA Engineer - Bachelor's Degree | Summer 2027 | 2026-11-04 |
-| Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-10-31 |
-| Marvell | Generative AI Forward Deployed Engineer Intern- Master's Degree | Summer 2027 | 2026-10-31 |
-| Revvity | AI Applications DevOps Intern | Summer 2027 | 2026-10-31 |
-| Revvity | Full-Stack AI Engineering Intern | Summer 2027 | 2026-10-31 |
-| Valeo | AI - Intern | Summer 2027 | 2026-10-31 |
 
 </details>
 
