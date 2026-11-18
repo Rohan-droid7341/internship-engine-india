@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**9 open roles · 4 new this week · 5,859 companies tracked · updated Nov 18, 2026 at 02:51 UTC**
+**11 open roles · 6 new this week · 5,859 companies tracked · updated Nov 18, 2026 at 11:08 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,12 +13,14 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://internship-engine-india.vercel.app/#subscribe) — one email a day, only when new internships actually appeared, one-click unsubscribe.
 ---
 
-## Summer 2027  (9 open)
+## Summer 2027  (11 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| Honeywell | Intern Bachelors Software Eng ~ 🆕 | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Pune, Maharashtra, India | Nov 17, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/160864) |
+| Honeywell | Intern Masters AI ~ 🆕 | Data & ML/AI | ~₹30k–45k/mo (9–14 LPA)<br>M.Tech/MS | Bengaluru, Karnataka, India | Nov 18, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/162526) |
+| Zebra Technologies | 2027 (6 Month) Internship - (Bengaluru) Software Engineering 🆕 | Software | B.Tech/BS | Bengaluru, India | Nov 18, 2026 | [Apply](https://zebra.wd501.myworkdayjobs.com/Zebra_careers/job/Bengaluru-India/XMLNAME-2027--6-Month--Internship----Bengaluru--Software-Engineering_JR103480) |
 | Honeywell | Intern Bachelors Cyber Sec ~ 🆕 | Other | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Bengaluru, Karnataka, India | Nov 16, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/162491) |
+| Honeywell | Intern Bachelors Software Eng ~ 🆕 | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Bengaluru, Karnataka, India | Nov 16, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/162256) |
 | Assurant | AI & Data Science Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Nov 11, 2026 | [Apply](https://assurant.wd1.myworkdayjobs.com/External_Limited_Posting/job/Bengaluru/AI---Data-Science-Intern_R-116198) |
 | Workato | Intern, Automation Engineer ~ | Software | B.Tech/BS | Hyderabad, India | Nov 10, 2026 | [Apply](https://www.workato.com/careers?gh_jid=8924723002#open-roles) |
 | Thales | Embedded Software Intern ~ | Software | B.Tech/BS | Bangalore | Nov 10, 2026 | [Apply](https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Embedded-Software-Intern_R0347902) |
@@ -27,7 +29,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Certa | Frontend Engineer - Internship ~ | Software | 0-1 Yr | India | Oct 28, 2026 | [Apply](https://jobs.ashbyhq.com/certa/9f7caf0b-46ff-49ab-ae78-62deadec106e) |
 | HackerRank | AI Researcher Intern ~ | Data & ML/AI | ~₹40k–60k/mo (16–22 LPA)<br>B.Tech/BS | Onsite in Bangalore | Oct 28, 2026 | [Apply](https://job-boards.greenhouse.io/hackerrank/jobs/8281055) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (9 of 9)._
+_~ = the title doesn't state a year; bucketed here from its posting date (10 of 11)._
 
 ## Features
 
@@ -97,16 +99,16 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | Datadog | rolling | year-round | ⏳ waiting |
 | Jump Trading | rolling | year-round | ⏳ waiting |
 
-_65 companies on the [full radar](https://internship-engine-india.vercel.app/#radar). **30** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
+_66 companies on the [full radar](https://internship-engine-india.vercel.app/#radar). **31** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 31 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 25 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-11-18 |
 | Honeywell | Intern Bachelors Cyber Sec | Summer 2027 | 2026-11-18 |
 | Honeywell | Intern Bachelors AI | Summer 2027 | 2026-11-17 |
-| Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-11-17 |
 | Honeywell | Intern Bachelors AI | Summer 2027 | 2026-11-16 |
 | Marvell | Software Engineer Intern - Master's Degree | Summer 2027 | 2026-11-16 |
 | Marvell | Software Validation Intern - Master's Degree | Summer 2027 | 2026-11-16 |
@@ -129,12 +131,6 @@ _65 companies on the [full radar](https://internship-engine-india.vercel.app/#ra
 | Marvell | Software Intern | Summer 2027 | 2026-11-05 |
 | Honeywell | Intern Bachelors AI | Summer 2027 | 2026-11-05 |
 | GE Aerospace | Data Science Intern | Summer 2027 | 2026-11-04 |
-| HackerRank | Software Development Engineer Intern | Summer 2027 | 2026-11-04 |
-| Scopely | Intern - QA Engineer - Royal Lounge Casino | Summer 2027 | 2026-11-04 |
-| DNV | Data Science Intern | Summer 2027 | 2026-11-04 |
-| Marvell | AI Intern | Summer 2027 | 2026-11-04 |
-| Marvell | Intern, Software Engineer - Bachelor's Degree | Summer 2027 | 2026-11-04 |
-| Marvell | Intern, Software QA Engineer - Bachelor's Degree | Summer 2027 | 2026-11-04 |
 
 </details>
 
@@ -153,7 +149,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,859 companies across 18 ATS platforms · 90% fetch success · completed in 504.9s · median detection latency 773 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,859 companies across 18 ATS platforms · 74% fetch success · completed in 494.9s · median detection latency 773 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
