@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**11 open roles · 4 new this week · 5,876 companies tracked · updated Nov 20, 2026 at 11:00 UTC**
+**11 open roles · 4 new this week · 5,886 companies tracked · updated Nov 20, 2026 at 19:35 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -17,9 +17,9 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
+| Honeywell | Intern Masters Embedded Eng ~ 🆕 | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Pune, Maharashtra, India | Nov 20, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/162870) |
 | Honeywell | Intern Bachelors Software Eng ~ 🆕 | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Bengaluru, Karnataka, India | Nov 18, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/161636) |
-| Zebra Technologies | 2027 (6 Month) Internship - (Bengaluru) Software Engineering 🆕 | Software | B.Tech/BS | Bengaluru, India | Nov 18, 2026 | [Apply](https://zebra.wd501.myworkdayjobs.com/Zebra_careers/job/Bengaluru-India/XMLNAME-2027--6-Month--Internship----Bengaluru--Software-Engineering_JR103480) |
-| Honeywell | Intern Bachelors Cyber Sec ~ 🆕 | Other | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Bengaluru, Karnataka, India | Nov 17, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/162565) |
+| Zebra Technologies | 2027 (6 Month) Internship - (Bengaluru) Software Engineering | Software | B.Tech/BS | Bengaluru, India | Nov 18, 2026 | [Apply](https://zebra.wd501.myworkdayjobs.com/Zebra_careers/job/Bengaluru-India/XMLNAME-2027--6-Month--Internship----Bengaluru--Software-Engineering_JR103480) |
 | Crowe | Data Analytics Developer Intern ~ 🆕 | Data & ML/AI | — | Noida Uttar Pradesh India | Nov 17, 2026 | [Apply](https://crowe.wd12.myworkdayjobs.com/external_careers/job/Noida-Uttar-Pradesh-India/Data-Analytics-Developer-Intern_R-71047) |
 | Assurant | AI & Data Science Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Nov 11, 2026 | [Apply](https://assurant.wd1.myworkdayjobs.com/External_Limited_Posting/job/Bengaluru/AI---Data-Science-Intern_R-116198) |
 | Workato | Intern, Automation Engineer ~ | Software | B.Tech/BS | Hyderabad, India | Nov 10, 2026 | [Apply](https://www.workato.com/careers?gh_jid=8924723002#open-roles) |
@@ -107,6 +107,7 @@ _66 companies on the [full radar](https://internship-engine-india.vercel.app/#ra
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
 | Honeywell | Intern Bachelors Cyber Sec | Summer 2027 | 2026-11-20 |
+| Honeywell | Intern Bachelors Cyber Sec | Summer 2027 | 2026-11-20 |
 | Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-11-18 |
 | Honeywell | Intern Masters AI | Summer 2027 | 2026-11-18 |
 | Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-11-18 |
@@ -128,7 +129,6 @@ _66 companies on the [full radar](https://internship-engine-india.vercel.app/#ra
 | Sigmoid | DE Intern + SDE Trainee - Off Campus Hiring 2026 | Fall 2026 | 2026-11-11 |
 | Marvell | Intern, Software QA Engineer Bachelor's Degree | Summer 2027 | 2026-11-09 |
 | Honeywell | Intern Bachelors AI | Summer 2027 | 2026-11-06 |
-| Marvell | Software Engineer Intern | Summer 2027 | 2026-11-06 |
 
 </details>
 
@@ -147,7 +147,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,876 companies across 18 ATS platforms · 85% fetch success · completed in 207.1s · median detection latency 773 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,886 companies across 18 ATS platforms · 95% fetch success · completed in 178.2s · median detection latency 773 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
