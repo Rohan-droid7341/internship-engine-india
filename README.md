@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**11 open roles · 4 new this week · 5,901 companies tracked · updated Nov 22, 2026 at 19:00 UTC**
+**11 open roles · 4 new this week · 5,901 companies tracked · updated Nov 23, 2026 at 01:25 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -18,7 +18,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
 | Zebra Technologies | 2027 (6 Month) Internship - (Bengaluru) Software Engineering 🆕 | Software | B.Tech/BS | Bengaluru, India | Nov 20, 2026 | [Apply](https://zebra.wd501.myworkdayjobs.com/Zebra_careers/job/Bengaluru-India/XMLNAME-2027--6-Month--Internship----Bengaluru--Software-Engineering_JR103237) |
-| Honeywell | Intern Masters Embedded Eng ~ 🆕 | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Pune, Maharashtra, India | Nov 20, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/162870) |
+| Honeywell | Intern Masters Embedded Eng ~ | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Pune, Maharashtra, India | Nov 20, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/162870) |
 | Honeywell | Intern Bachelors Software Eng ~ | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Bengaluru, Karnataka, India | Nov 18, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/161636) |
 | Crowe | Data Analytics Developer Intern ~ | Data & ML/AI | — | Noida Uttar Pradesh India | Nov 17, 2026 | [Apply](https://crowe.wd12.myworkdayjobs.com/external_careers/job/Noida-Uttar-Pradesh-India/Data-Analytics-Developer-Intern_R-71047) |
 | Assurant | AI & Data Science Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Nov 11, 2026 | [Apply](https://assurant.wd1.myworkdayjobs.com/External_Limited_Posting/job/Bengaluru/AI---Data-Science-Intern_R-116198) |
@@ -92,9 +92,9 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | Roblox | ~Sep | ~Sep · any day now | ⏳ waiting |
 | Stripe | ~Sep | ~Sep · any day now | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct · any day now | ⏳ waiting |
-| Coinbase | ~Dec | ~Dec · in ~9d | ⏳ waiting |
-| Ramp | ~Dec | ~Dec · in ~9d | ⏳ waiting |
-| Two Sigma | ~Dec | ~Dec · in ~9d | ⏳ waiting |
+| Coinbase | ~Dec | ~Dec · in ~8d | ⏳ waiting |
+| Ramp | ~Dec | ~Dec · in ~8d | ⏳ waiting |
+| Two Sigma | ~Dec | ~Dec · in ~8d | ⏳ waiting |
 | Apple | rolling | year-round | ⏳ waiting |
 | Datadog | rolling | year-round | ⏳ waiting |
 | Jump Trading | rolling | year-round | ⏳ waiting |
@@ -147,7 +147,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,901 companies across 18 ATS platforms · 95% fetch success · completed in 118.9s · median detection latency 817 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,901 companies across 18 ATS platforms · 93% fetch success · completed in 169.1s · median detection latency 817 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
