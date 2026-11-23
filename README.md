@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**8 open roles · 2 new this week · 5,901 companies tracked · updated Nov 23, 2026 at 11:44 UTC**
+**8 open roles · 2 new this week · 5,906 companies tracked · updated Nov 23, 2026 at 23:18 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -99,7 +99,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _66 companies on the [full radar](https://internship-engine-india.vercel.app/#radar). **31** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 26 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 25 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -128,7 +128,6 @@ _66 companies on the [full radar](https://internship-engine-india.vercel.app/#ra
 | Honeywell | Intern Bachelors AI | Summer 2027 | 2026-11-12 |
 | Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-11-12 |
 | Sigmoid | DE Intern + SDE Trainee - Off Campus Hiring 2026 | Fall 2026 | 2026-11-11 |
-| Marvell | Intern, Software QA Engineer Bachelor's Degree | Summer 2027 | 2026-11-09 |
 
 </details>
 
@@ -147,7 +146,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,901 companies across 18 ATS platforms · 86% fetch success · completed in 160.5s · median detection latency 817 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,906 companies across 18 ATS platforms · 96% fetch success · completed in 107.3s · median detection latency 817 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
