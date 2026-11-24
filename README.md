@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**8 open roles · 2 new this week · 5,906 companies tracked · updated Nov 23, 2026 at 23:18 UTC**
+**9 open roles · 3 new this week · 5,906 companies tracked · updated Nov 24, 2026 at 08:07 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,10 +13,11 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://internship-engine-india.vercel.app/#subscribe) — one email a day, only when new internships actually appeared, one-click unsubscribe.
 ---
 
-## Summer 2027  (8 open)
+## Summer 2027  (9 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
+| Amazon | Data Scientist I 6M Intern ~ 🆕 | Data & ML/AI | ~₹80k–1.1L/mo (28–44 LPA)<br>PhD | Chennai, Tamil Nadu, India | Nov 24, 2026 | [Apply](https://www.amazon.jobs/en/jobs/10443572/data-scientist-i-6m-intern) |
 | Honeywell | Intern Bachelors Software Eng ~ | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Bengaluru, Karnataka, India | Nov 18, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/161636) |
 | Crowe | Data Analytics Developer Intern ~ | Data & ML/AI | — | Noida Uttar Pradesh India | Nov 17, 2026 | [Apply](https://crowe.wd12.myworkdayjobs.com/external_careers/job/Noida-Uttar-Pradesh-India/Data-Analytics-Developer-Intern_R-71047) |
 | Assurant | AI & Data Science Intern ~ | Data & ML/AI | B.Tech/BS | Bengaluru | Nov 11, 2026 | [Apply](https://assurant.wd1.myworkdayjobs.com/External_Limited_Posting/job/Bengaluru/AI---Data-Science-Intern_R-116198) |
@@ -26,7 +27,7 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Certa | Frontend Engineer - Internship ~ | Software | 0-1 Yr | India | Oct 28, 2026 | [Apply](https://jobs.ashbyhq.com/certa/9f7caf0b-46ff-49ab-ae78-62deadec106e) |
 | HackerRank | AI Researcher Intern ~ | Data & ML/AI | ~₹40k–60k/mo (16–22 LPA)<br>B.Tech/BS | Onsite in Bangalore | Oct 28, 2026 | [Apply](https://job-boards.greenhouse.io/hackerrank/jobs/8281055) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (8 of 8)._
+_~ = the title doesn't state a year; bucketed here from its posting date (9 of 9)._
 
 ## Features
 
@@ -89,9 +90,9 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | Roblox | ~Sep | ~Sep · any day now | ⏳ waiting |
 | Stripe | ~Sep | ~Sep · any day now | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct · any day now | ⏳ waiting |
-| Coinbase | ~Dec | ~Dec · in ~8d | ⏳ waiting |
-| Ramp | ~Dec | ~Dec · in ~8d | ⏳ waiting |
-| Two Sigma | ~Dec | ~Dec · in ~8d | ⏳ waiting |
+| Coinbase | ~Dec | ~Dec · in ~7d | ⏳ waiting |
+| Ramp | ~Dec | ~Dec · in ~7d | ⏳ waiting |
+| Two Sigma | ~Dec | ~Dec · in ~7d | ⏳ waiting |
 | Apple | rolling | year-round | ⏳ waiting |
 | Datadog | rolling | year-round | ⏳ waiting |
 | Jump Trading | rolling | year-round | ⏳ waiting |
@@ -146,7 +147,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,906 companies across 18 ATS platforms · 96% fetch success · completed in 107.3s · median detection latency 817 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,906 companies across 18 ATS platforms · 93% fetch success · completed in 273.8s · median detection latency 817 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
