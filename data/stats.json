@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-26T11:52:56Z",
-  "duration_seconds": 201.2,
-  "companies_total": 5931,
+  "generated_at": "2026-11-26T20:54:14Z",
+  "duration_seconds": 171.7,
+  "companies_total": 5941,
   "companies_by_source": {
-    "greenhouse": 1278,
+    "greenhouse": 1280,
     "lever": 492,
     "smartrecruiters": 857,
-    "workable": 254,
-    "ashby": 927,
+    "workable": 256,
+    "ashby": 931,
     "recruitee": 14,
     "workday": 1681,
-    "rippling": 197,
+    "rippling": 199,
     "oracle": 154,
     "amazon": 1,
     "custom": 15,
@@ -22,51 +22,45 @@
     "eightfold": 1,
     "wellfound": 1
   },
-  "quarantined": 1354,
-  "fetched_ok": 3916,
-  "fetch_errors": 661,
+  "quarantined": 1817,
+  "fetched_ok": 3901,
+  "fetch_errors": 223,
   "errors_by_source": {
-    "greenhouse": 97,
-    "recruitee": 4,
-    "workday": 373,
-    "lever": 73,
-    "rippling": 9,
-    "ashby": 69,
-    "workable": 5,
-    "indeed": 9,
-    "linkedin": 12,
-    "naukri": 10
+    "workday": 211,
+    "greenhouse": 3,
+    "workable": 6,
+    "ashby": 3
   },
-  "fetch_success_rate": 0.856,
-  "roles_matched": 8,
-  "roles_cycle_inferred": 8,
-  "dropped_no_year_in_title": 435,
-  "dropped_offcycle_by_text": 54,
+  "fetch_success_rate": 0.946,
+  "roles_matched": 7,
+  "roles_cycle_inferred": 7,
+  "dropped_no_year_in_title": 434,
+  "dropped_offcycle_by_text": 52,
   "roles_by_source": {
     "amazon": 1,
     "ashby": 1,
-    "greenhouse": 4,
+    "greenhouse": 3,
     "oracle": 2
   },
   "roles_by_cycle": {
-    "Summer 2027": 8
+    "Summer 2027": 7
   },
   "roles_by_region": {
-    "India": 8
+    "India": 7
   },
   "posted_date_coverage": 1.0,
-  "enriched_this_run": 5,
-  "enrichment_detail_fetches": 5,
+  "enriched_this_run": 0,
+  "enrichment_detail_fetches": 0,
   "purged_this_run": 0,
-  "new_this_run": 5,
-  "open_total": 13,
+  "new_this_run": 0,
+  "open_total": 12,
   "detection_latency": {
     "median_minutes": 772.8,
     "sample_size": 95,
     "window_days": 7
   },
   "posting_lifetime": {
-    "median_days": 2,
-    "sample_size": 83
+    "median_days": 2.0,
+    "sample_size": 84
   }
 }
