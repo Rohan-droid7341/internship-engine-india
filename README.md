@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**12 open roles · 5 new this week · 5,941 companies tracked · updated Nov 27, 2026 at 03:30 UTC**
+**8 open roles · 3 new this week · 5,941 companies tracked · updated Nov 27, 2026 at 16:05 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -13,13 +13,11 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 **🔔 New roles in your inbox:** [subscribe by email](https://internship-engine-india.vercel.app/#subscribe) — one email a day, only when new internships actually appeared, one-click unsubscribe.
 ---
 
-## Summer 2027  (12 open)
+## Summer 2027  (8 open)
 
 | Company | Role | Category | Pay & Specs | Location | Posted | Apply |
 |---|---|---|---|---|---|---|
-| CommerceIQ | Data Scientist - Intern ~ 🆕 | Data & ML/AI | B.Tech/BS | Bengaluru, Karnataka, India | Nov 26, 2026 | [Apply](https://job-boards.greenhouse.io/commerceiq/jobs/8215092003) |
-| CommerceIQ | SDE - Intern ( UI ) ~ 🆕 | Other | B.Tech/BS | Bengaluru, Karnataka, India | Nov 26, 2026 | [Apply](https://job-boards.greenhouse.io/commerceiq/jobs/8217481003) |
-| Honeywell | Intern Bachelors Cyber Sec ~ 🆕 | Other | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Bengaluru, Karnataka, India | Nov 26, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/163004) |
+| Honeywell | Intern Bachelors Embedded Eng ~ 🆕 | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Bengaluru, Karnataka, India | Nov 27, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/161642) |
 | Honeywell | Intern Bachelors Software Eng ~ 🆕 | Software | ~₹30k–45k/mo (9–14 LPA)<br>B.Tech/BS | Bengaluru, Karnataka, India | Nov 25, 2026 | [Apply](https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/161639) |
 | Amazon | Data Scientist I 6M Intern ~ | Data & ML/AI | ~₹80k–1.1L/mo (28–44 LPA)<br>PhD | Chennai, Tamil Nadu, India | Nov 24, 2026 | [Apply](https://www.amazon.jobs/en/jobs/10443572/data-scientist-i-6m-intern) |
 | Crowe | Data Analytics Developer Intern ~ | Data & ML/AI | — | Noida Uttar Pradesh India | Nov 17, 2026 | [Apply](https://crowe.wd12.myworkdayjobs.com/external_careers/job/Noida-Uttar-Pradesh-India/Data-Analytics-Developer-Intern_R-71047) |
@@ -27,10 +25,8 @@ A self-updating engine that tracks tech internships so you don't have to. Instea
 | Thales | Embedded Software Intern ~ | Software | B.Tech/BS | Bangalore | Nov 10, 2026 | [Apply](https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Embedded-Software-Intern_R0347902) |
 | Thales | Software Intern ~ | Software | B.Tech/BS | Bangalore | Nov 10, 2026 | [Apply](https://thales.wd3.myworkdayjobs.com/careers/job/Bangalore/Software-Intern_R0347867) |
 | Revvity | Intern - Software Developer ~ | Software | — | Mumbai | Nov 05, 2026 | [Apply](https://revvity.wd103.myworkdayjobs.com/External/job/Mumbai/Intern---Software-Developer_JR-045916) |
-| Certa | Frontend Engineer - Internship ~ | Software | 0-1 Yr | India | Oct 28, 2026 | [Apply](https://jobs.ashbyhq.com/certa/9f7caf0b-46ff-49ab-ae78-62deadec106e) |
-| HackerRank | AI Researcher Intern ~ | Data & ML/AI | ~₹40k–60k/mo (16–22 LPA)<br>B.Tech/BS | Onsite in Bangalore | Oct 28, 2026 | [Apply](https://job-boards.greenhouse.io/hackerrank/jobs/8281055) |
 
-_~ = the title doesn't state a year; bucketed here from its posting date (12 of 12)._
+_~ = the title doesn't state a year; bucketed here from its posting date (8 of 8)._
 
 ## Features
 
@@ -103,10 +99,15 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _66 companies on the [full radar](https://internship-engine-india.vercel.app/#radar). **31** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 23 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 28 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
+| Certa | Frontend Engineer - Internship | Summer 2027 | 2026-11-27 |
+| CommerceIQ | Data Scientist - Intern | Summer 2027 | 2026-11-27 |
+| CommerceIQ | SDE - Intern ( UI ) | Summer 2027 | 2026-11-27 |
+| HackerRank | AI Researcher Intern | Summer 2027 | 2026-11-27 |
+| Honeywell | Intern Bachelors Cyber Sec | Summer 2027 | 2026-11-27 |
 | CommerceIQ | SDE Intern | Summer 2027 | 2026-11-26 |
 | Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-11-26 |
 | Honeywell | Intern Bachelors Software Eng | Summer 2027 | 2026-11-25 |
@@ -148,7 +149,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,941 companies across 18 ATS platforms · 94% fetch success · completed in 153.4s · median detection latency 773 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,941 companies across 18 ATS platforms · 94% fetch success · completed in 281.0s · median detection latency 817 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
