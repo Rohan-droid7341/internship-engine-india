@@ -4,7 +4,7 @@
 
 A self-updating engine that tracks tech internships so you don't have to. Instead of refreshing a dozen career pages by hand, it reads company hiring feeds directly and keeps one live list, newest roles on top, refreshed automatically throughout the day.
 
-**8 open roles · 3 new this week · 5,941 companies tracked · updated Nov 27, 2026 at 16:05 UTC**
+**8 open roles · 3 new this week · 5,945 companies tracked · updated Nov 28, 2026 at 01:02 UTC**
 
 **⭐Star this repo⭐** to save it and get updates when new roles are added.
 
@@ -89,9 +89,9 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 | Roblox | ~Sep | ~Sep · any day now | ⏳ waiting |
 | Stripe | ~Sep | ~Sep · any day now | ⏳ waiting |
 | D.E. Shaw | ~Oct | ~Oct · any day now | ⏳ waiting |
-| Coinbase | ~Dec | ~Dec · in ~4d | ⏳ waiting |
-| Ramp | ~Dec | ~Dec · in ~4d | ⏳ waiting |
-| Two Sigma | ~Dec | ~Dec · in ~4d | ⏳ waiting |
+| Coinbase | ~Dec | ~Dec · in ~3d | ⏳ waiting |
+| Ramp | ~Dec | ~Dec · in ~3d | ⏳ waiting |
+| Two Sigma | ~Dec | ~Dec · in ~3d | ⏳ waiting |
 | Apple | rolling | year-round | ⏳ waiting |
 | Datadog | rolling | year-round | ⏳ waiting |
 | Jump Trading | rolling | year-round | ⏳ waiting |
@@ -99,7 +99,7 @@ Stop refreshing career pages. Every date here is **real or verified** — no thi
 _66 companies on the [full radar](https://internship-engine-india.vercel.app/#radar). **31** dated from our own live observations 🎯 (this grows every cycle). "~Aug" = hand-verified typical month, not a promise of the day; "rolling" = posts year-round; "waiting" = not seen in our tracked feeds yet, not a guarantee it isn't out somewhere else._
 
 <details>
-<summary><strong>Recently closed</strong> — 28 roles taken down in the last 14 days</summary>
+<summary><strong>Recently closed</strong> — 22 roles taken down in the last 14 days</summary>
 
 | Company | Role | Cycle | Closed |
 |---|---|---|---|
@@ -125,12 +125,6 @@ _66 companies on the [full radar](https://internship-engine-india.vercel.app/#ra
 | Honeywell | Intern Bachelors AI | Summer 2027 | 2026-11-16 |
 | Marvell | Software Engineer Intern - Master's Degree | Summer 2027 | 2026-11-16 |
 | Marvell | Software Validation Intern - Master's Degree | Summer 2027 | 2026-11-16 |
-| GE Aerospace | Data Science Intern | Summer 2027 | 2026-11-14 |
-| Marvell | Intern, Software Engineer - Bachelor's Degree | Summer 2027 | 2026-11-14 |
-| Member Solutions | Cybersecurity GRC Intern | Summer 2027 | 2026-11-14 |
-| Valeo | Intern - AI | Summer 2027 | 2026-11-14 |
-| GE Healthcare | Software Intern | Summer 2027 | 2026-11-13 |
-| Marvell | Intern, Software Engineer | Summer 2027 | 2026-11-13 |
 
 </details>
 
@@ -149,7 +143,7 @@ Internships posted per week, from each role's real published date - redrawn auto
 
 A small Python engine reads public company hiring feeds directly, keeps the roles that match the scope above, de-duplicates across sources, records each role's published date once (so it never shifts), and regenerates this page through GitHub Actions. It polls every company concurrently (async) with retry/backoff and per-host rate limits. The full source is in this repo.
 
-_Engine (last run): 5,941 companies across 18 ATS platforms · 94% fetch success · completed in 281.0s · median detection latency 817 min · real posted dates on 100% of open roles._
+_Engine (last run): 5,945 companies across 18 ATS platforms · 93% fetch success · completed in 187.5s · median detection latency 817 min · real posted dates on 100% of open roles._
 
 ## Platforms Scraped
 
